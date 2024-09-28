@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const walk_speed = 24
-const sprint_speed = 48
+const sprint_speed = 36
 const direction_to_vector = {
 	"ui_up": Vector2.UP,
 	"ui_left": Vector2.LEFT,
