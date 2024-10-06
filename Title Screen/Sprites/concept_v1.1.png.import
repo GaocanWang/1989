@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b47hcinm1722a"
-path="res://.godot/imported/dorm2.png-656ade7be668f64ee4bdd06382343af9.ctex"
+uid="uid://bbeomqgqy83ph"
+path="res://.godot/imported/concept_v1.1.png-0202c34a5cb4818a1566c15fc97926f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/dorm2.png"
-dest_files=["res://.godot/imported/dorm2.png-656ade7be668f64ee4bdd06382343af9.ctex"]
+source_file="res://Title Screen/Sprites/concept_v1.1.png"
+dest_files=["res://.godot/imported/concept_v1.1.png-0202c34a5cb4818a1566c15fc97926f1.ctex"]
 
 [params]
 

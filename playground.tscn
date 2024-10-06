@@ -1,7 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://bknv4eiw0lgki"]
+[gd_scene load_steps=3 format=3 uid="uid://bknv4eiw0lgki"]
 
 [ext_resource type="PackedScene" uid="uid://dvqgh6lgjqqb0" path="res://Player/player.tscn" id="1_wdyme"]
+[ext_resource type="PackedScene" uid="uid://d1htu88kwjavm" path="res://Tile Maps/dorm.tscn" id="2_s7ie6"]
 
 [node name="Playground" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_wdyme")]
+[node name="Dorm" parent="." instance=ExtResource("2_s7ie6")]
+y_sort_enabled = true
+
+[node name="Player" parent="Dorm" instance=ExtResource("1_wdyme")]
+position = Vector2(205, 141)

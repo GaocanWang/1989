@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://df5njw6eedsuv"]
 
-[ext_resource type="Texture2D" uid="uid://b47hcinm1722a" path="res://assets/tilesets/dorm2.png" id="1_d12oc"]
+[ext_resource type="Texture2D" uid="uid://dbq8vajnit5qr" path="res://Tile Maps/Sprites/dorm.png" id="1_6wueg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t6ewf"]
-texture = ExtResource("1_d12oc")
+texture = ExtResource("1_6wueg")
 texture_region_size = Vector2i(24, 24)
 0:0/0 = 0
 1:0/0 = 0
@@ -52,8 +52,13 @@ texture_region_size = Vector2i(24, 24)
 0:4/0 = 0
 0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 1:4/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, -10, -12, -10, -10, -12, -10)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, -11, -12, -11, 12, -12, 12)
 
 [resource]
 tile_size = Vector2i(24, 24)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 16
+physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_t6ewf")
