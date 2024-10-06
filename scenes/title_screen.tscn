@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://drfx3mwttwtfe"]
 
-[ext_resource type="Script" path="res://scenes/title_screen.gd" id="1_2bghy"]
+[ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_2bghy"]
 [ext_resource type="Texture2D" uid="uid://bbeomqgqy83ph" path="res://assets/backgrounds/concept_v1.1.png" id="2_68sau"]
 
 [node name="title_screen" type="Control"]

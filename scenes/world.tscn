@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=4 uid="uid://d1htu88kwjavm"]
 
 [ext_resource type="TileSet" uid="uid://df5njw6eedsuv" path="res://assets/tilesets/dorm.tres" id="1_puoit"]
-[ext_resource type="PackedScene" uid="uid://tym2bdmk8mpi" path="res://scenes/player.tscn" id="2_a2qck"]
+[ext_resource type="PackedScene" uid="uid://dvqgh6lgjqqb0" path="res://Player/player.tscn" id="2_sn3fi"]
 
 [node name="world" type="Node2D"]
 y_sort_enabled = true
@@ -28,5 +28,5 @@ tile_set = ExtResource("1_puoit")
 position = Vector2(204, 108)
 zoom = Vector2(3, 3)
 
-[node name="player" parent="." instance=ExtResource("2_a2qck")]
-position = Vector2(204, 144)
+[node name="Player" parent="." instance=ExtResource("2_sn3fi")]
+position = Vector2(204, 134)
