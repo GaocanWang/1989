@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=4 uid="uid://d1htu88kwjavm"]
 
 [ext_resource type="TileSet" uid="uid://df5njw6eedsuv" path="res://Tile Maps/Tile Sets/dorm.tres" id="1_ma5pp"]
-[ext_resource type="Script" path="res://Tile Maps/LevelTileMap.gd" id="1_xmmju"]
+[ext_resource type="Script" path="res://Tile Maps/level_tile_map.gd" id="1_xmmju"]
 
 [node name="dorm" type="Node2D"]
 script = ExtResource("1_xmmju")

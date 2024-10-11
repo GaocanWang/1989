@@ -5,8 +5,8 @@
 [ext_resource type="Script" path="res://Player/Scripts/player_state_machine.gd" id="3_nhlgr"]
 [ext_resource type="Script" path="res://Player/Scripts/state_idle.gd" id="4_hu4d1"]
 [ext_resource type="Script" path="res://Player/Scripts/state_walk.gd" id="5_6nyq6"]
-[ext_resource type="Script" path="res://Player/Scripts/PlayerInteractionsHost.gd" id="6_knfwp"]
-[ext_resource type="Script" path="res://Player/Scripts/PlayerCamera.gd" id="6_w4quj"]
+[ext_resource type="Script" path="res://Player/Scripts/player_interactions_host.gd" id="6_knfwp"]
+[ext_resource type="Script" path="res://Player/Scripts/player_camera.gd" id="6_w4quj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xnupc"]
 radius = 4.0

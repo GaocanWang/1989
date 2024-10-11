@@ -12,9 +12,9 @@ func _ready() -> void:
 func GetTilemapBounds() -> Array[ Vector2 ]:
 	var bounds : Array[ Vector2 ]
 	bounds.append(
-		Vector2( largest_layer.get_used_rect().position * largest_layer.rendering_quadrant_size )
+		Vector2( largest_layer.get_used_rect().position * 24 )
 	)
 	bounds.append(
-		Vector2( largest_layer.get_used_rect().end * largest_layer.rendering_quadrant_size )
+		Vector2( largest_layer.get_used_rect().end * 24 )
 	)
 	return bounds
