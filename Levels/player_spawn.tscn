@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://uqut3xy8f7mb"]
+
+[ext_resource type="Script" path="res://Levels/scripts/player_spawn.gd" id="1_0sk8t"]
+[ext_resource type="Texture2D" uid="uid://csdnh14bl2535" path="res://Player/Sprites/amelia.png" id="2_4buib"]
+
+[node name="PlayerSpawn" type="Node2D"]
+script = ExtResource("1_0sk8t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -10)
+texture = ExtResource("2_4buib")
+hframes = 3
+vframes = 4
+frame = 1
