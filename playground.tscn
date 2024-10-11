@@ -8,5 +8,5 @@
 [node name="Dorm" parent="." instance=ExtResource("2_s7ie6")]
 y_sort_enabled = true
 
-[node name="Player" parent="Dorm" instance=ExtResource("1_wdyme")]
+[node name="Player" parent="." instance=ExtResource("1_wdyme")]
 position = Vector2(204, 109)

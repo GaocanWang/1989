@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dvqgh6lgjqqb0"]
+[gd_scene load_steps=16 format=3 uid="uid://dvqgh6lgjqqb0"]
 
 [ext_resource type="Script" path="res://Player/Scripts/player.gd" id="1_kdav8"]
 [ext_resource type="Texture2D" uid="uid://csdnh14bl2535" path="res://Player/Sprites/amelia.png" id="2_625o0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Player/Scripts/state_idle.gd" id="4_hu4d1"]
 [ext_resource type="Script" path="res://Player/Scripts/state_walk.gd" id="5_6nyq6"]
 [ext_resource type="Script" path="res://Player/Scripts/PlayerInteractionsHost.gd" id="6_knfwp"]
+[ext_resource type="Script" path="res://Player/Scripts/PlayerCamera.gd" id="6_w4quj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xnupc"]
 radius = 4.0
@@ -151,6 +152,7 @@ script = ExtResource("5_6nyq6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+script = ExtResource("6_w4quj")
 
 [node name="Audio" type="Node2D" parent="."]
 
