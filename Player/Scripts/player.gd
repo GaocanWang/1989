@@ -55,6 +55,14 @@ func SetDirection() -> bool:
 	return true
 
 
+func check_pressed() -> void:
+	for input in direction_to_vector.keys():
+		if !Input.is_action_pressed(input):
+			var index = direction_history.find(input)
+			if index != -1:
+				direction_history.remove_at(index)
+
+
 func UpdateAnimation( state : String ) -> void:
 	animation_player.play( state + "_" + AnimDirection() )
 	pass
