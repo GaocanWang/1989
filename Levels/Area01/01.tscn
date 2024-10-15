@@ -29,10 +29,10 @@ modulate = Color(0, 1, 0, 0.501961)
 position = Vector2(877, 144)
 
 [node name="LevelTransition" parent="." instance=ExtResource("4_ubxua")]
-position = Vector2(84, 72)
+position = Vector2(84, 84)
 size = 1
 side = 2
 
 [node name="LevelTransition2" parent="." instance=ExtResource("4_ubxua")]
-position = Vector2(816, 240)
+position = Vector2(828, 240)
 level = "res://Levels/Area01/02.tscn"
