@@ -1,6 +1,4 @@
-class_name LevelTileMap extends Node2D
-
-@onready var largest_layer : TileMapLayer = $Floor
+class_name LevelTileMap extends TileMapLayer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,9 +10,9 @@ func _ready() -> void:
 func GetTilemapBounds() -> Array[ Vector2 ]:
 	var bounds : Array[ Vector2 ]
 	bounds.append(
-		Vector2( largest_layer.get_used_rect().position * 24 )
+		Vector2( get_used_rect().position * rendering_quadrant_size )
 	)
 	bounds.append(
-		Vector2( largest_layer.get_used_rect().end * 24 )
+		Vector2( get_used_rect().end * rendering_quadrant_size )
 	)
 	return bounds
