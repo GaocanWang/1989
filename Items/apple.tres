@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=7 format=3 uid="uid://chspymh1338v8"]
+
+[ext_resource type="Script" path="res://Items/item_effects/item_effect.gd" id="1_1yneo"]
+[ext_resource type="Script" path="res://Items/scripts/item_data.gd" id="2_2dhot"]
+[ext_resource type="Script" path="res://Items/item_effects/item_effect_example.gd" id="2_l8br6"]
+[ext_resource type="Texture2D" uid="uid://bvn57mrniu8yc" path="res://Items/sprites/items.png" id="4_c8tlc"]
+
+[sub_resource type="Resource" id="Resource_7hie2"]
+script = ExtResource("2_l8br6")
+amount = 1
+use_description = ""
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdfuc"]
+atlas = ExtResource("4_c8tlc")
+region = Rect2(192, 0, 32, 32)
+
+[resource]
+script = ExtResource("2_2dhot")
+name = ""
+description = "A delicious red apple!"
+texture = SubResource("AtlasTexture_vdfuc")
+effects = Array[ExtResource("1_1yneo")]([SubResource("Resource_7hie2")])

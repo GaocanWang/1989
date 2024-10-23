@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=4 uid="uid://dxufigbxig5mg"]
+[gd_scene load_steps=11 format=4 uid="uid://dxufigbxig5mg"]
 
 [ext_resource type="TileSet" uid="uid://df5njw6eedsuv" path="res://Tile Maps/Tile Sets/dorm.tres" id="1_0b0lk"]
 [ext_resource type="Script" path="res://Tile Maps/level_tile_map.gd" id="1_gn2xn"]
 [ext_resource type="Script" path="res://Levels/scripts/level.gd" id="1_u8hsu"]
 [ext_resource type="PackedScene" uid="uid://uqut3xy8f7mb" path="res://Levels/player_spawn.tscn" id="2_fa4cq"]
 [ext_resource type="PackedScene" uid="uid://bt4r7451gfkr5" path="res://Levels/level_transition.tscn" id="4_ubxua"]
+[ext_resource type="PackedScene" uid="uid://ch53nwrfc0688" path="res://Items/item_pickup/item_pickup.tscn" id="6_weh7g"]
+[ext_resource type="Resource" uid="uid://bmyughs86ky32" path="res://Items/gem.tres" id="7_7tjx7"]
+[ext_resource type="Resource" uid="uid://1t3j2hniij4r" path="res://Items/stone.tres" id="8_n5f6c"]
+[ext_resource type="Resource" uid="uid://cjujgm2wl7ma5" path="res://Items/potion.tres" id="9_uftsx"]
+[ext_resource type="Resource" uid="uid://chspymh1338v8" path="res://Items/apple.tres" id="10_tsqmj"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_u8hsu")
@@ -36,3 +41,19 @@ side = 2
 [node name="LevelTransition2" parent="." instance=ExtResource("4_ubxua")]
 position = Vector2(828, 240)
 level = "res://Levels/Area01/02.tscn"
+
+[node name="ItemPickup" parent="." instance=ExtResource("6_weh7g")]
+position = Vector2(872, 175)
+item_data = ExtResource("7_7tjx7")
+
+[node name="ItemPickup2" parent="." instance=ExtResource("6_weh7g")]
+position = Vector2(840, 146)
+item_data = ExtResource("8_n5f6c")
+
+[node name="ItemPickup3" parent="." instance=ExtResource("6_weh7g")]
+position = Vector2(804, 125)
+item_data = ExtResource("9_uftsx")
+
+[node name="ItemPickup4" parent="." instance=ExtResource("6_weh7g")]
+position = Vector2(840, 110)
+item_data = ExtResource("10_tsqmj")
