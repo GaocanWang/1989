@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dxufigbxig5mg"]
+[gd_scene load_steps=15 format=4 uid="uid://dxufigbxig5mg"]
 
 [ext_resource type="Script" path="res://Levels/scripts/level.gd" id="1_g2qe2"]
 [ext_resource type="Script" path="res://Tile Maps/level_tile_map.gd" id="1_v1sc2"]
@@ -10,6 +10,10 @@
 [ext_resource type="Resource" uid="uid://1t3j2hniij4r" path="res://Items/stone.tres" id="8_ppghh"]
 [ext_resource type="Resource" uid="uid://bmyughs86ky32" path="res://Items/gem.tres" id="9_ap6is"]
 [ext_resource type="Resource" uid="uid://cjujgm2wl7ma5" path="res://Items/potion.tres" id="10_ahpma"]
+[ext_resource type="PackedScene" uid="uid://dm15w3ux3txs4" path="res://npc/npc.tscn" id="11_1e5k2"]
+[ext_resource type="PackedScene" uid="uid://ccvl5le7m2vrt" path="res://npc/npc_behavior_wander.tscn" id="12_2f4mq"]
+[ext_resource type="Resource" uid="uid://bi6hhxmyhbg8x" path="res://npc/00_npcs/npc_01.tres" id="12_6snfq"]
+[ext_resource type="Resource" uid="uid://di457jgt256ub" path="res://npc/00_npcs/npc_02.tres" id="12_jpq7m"]
 
 [node name="02" type="Node2D"]
 script = ExtResource("1_g2qe2")
@@ -35,7 +39,7 @@ modulate = Color(0, 1, 0, 0.501961)
 position = Vector2(877, 144)
 
 [node name="LevelTransition" parent="." instance=ExtResource("4_h47rc")]
-position = Vector2(84, 108)
+position = Vector2(84, 96)
 level = "res://Levels/Area01/01.tscn"
 size = 1
 side = 2
@@ -57,3 +61,13 @@ quantity = 10
 [node name="Treasure-chest3" parent="." instance=ExtResource("7_crkat")]
 position = Vector2(769, 98)
 item_data = ExtResource("10_ahpma")
+
+[node name="NPC" parent="." instance=ExtResource("11_1e5k2")]
+position = Vector2(717, 128)
+npc_resource = ExtResource("12_6snfq")
+
+[node name="NpcBehaviorWander" parent="NPC" instance=ExtResource("12_2f4mq")]
+
+[node name="NPC2" parent="." instance=ExtResource("11_1e5k2")]
+position = Vector2(876, 240)
+npc_resource = ExtResource("12_jpq7m")
