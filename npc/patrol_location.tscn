@@ -52,5 +52,5 @@ theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 8
-text = "wait: 1s"
+text = "wait: 0s"
 horizontal_alignment = 1
