@@ -1,10 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://np2826ya085l"]
+[gd_scene load_steps=16 format=3 uid="uid://np2826ya085l"]
 
 [ext_resource type="Script" path="res://GUI/dialog_system/scripts/dialog_system.gd" id="1_xj1h2"]
 [ext_resource type="Texture2D" uid="uid://d1bj7nb4613y6" path="res://GUI/dialog_system/sprites/text-bubble.png" id="2_vac1q"]
 [ext_resource type="FontFile" uid="uid://1waxq8ral8jt" path="res://GUI/fonts/Abaddon Light.ttf" id="3_rbskj"]
 [ext_resource type="FontFile" uid="uid://di4ukig88u1hc" path="res://GUI/fonts/Abaddon Bold.ttf" id="4_f13wm"]
 [ext_resource type="Texture2D" uid="uid://b0ptroag2plb5" path="res://npc/sprites/portraits/npc_portrait_01.png" id="5_pgk65"]
+[ext_resource type="Script" path="res://GUI/dialog_system/scripts/dialog_portrait.gd" id="6_dgtfi"]
+[ext_resource type="AudioStream" uid="uid://cp5qia3itg5y8" path="res://GUI/dialog_system/audio/voice_blip.wav" id="6_fon7m"]
 [ext_resource type="FontFile" uid="uid://d2tsrci0mjm5u" path="res://GUI/fonts/m5x7.ttf" id="6_h6n0s"]
 
 [sub_resource type="Gradient" id="Gradient_w4mtv"]
@@ -147,10 +149,15 @@ position = Vector2(120, 470.4)
 scale = Vector2(2.4, 2.4)
 texture = ExtResource("5_pgk65")
 hframes = 4
+script = ExtResource("6_dgtfi")
 
 [node name="Timer" type="Timer" parent="DialogUI"]
+one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="DialogUI"]
+stream = ExtResource("6_fon7m")
+max_polyphony = 6
+bus = &"SFX"
 
 [node name="DialogProgressIndicator" type="PanelContainer" parent="DialogUI"]
 self_modulate = Color(0.207843, 0.513726, 0.345098, 1)

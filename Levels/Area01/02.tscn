@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cihooo7si7me1" path="res://npc/npc_behavior_patrol.tscn" id="15_ec1ob"]
 [ext_resource type="PackedScene" uid="uid://wjevu6ic5k82" path="res://npc/patrol_location.tscn" id="15_u2s53"]
 [ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_text.gd" id="15_y44ni"]
-[ext_resource type="Resource" uid="uid://c2w2tyjg78bol" path="res://Player/00_hero.tres" id="16_hhfny"]
+[ext_resource type="Resource" uid="uid://c2w2tyjg78bol" path="res://npc/00_npcs/00_hero.tres" id="16_hhfny"]
 
 [node name="02" type="Node2D"]
 script = ExtResource("1_g2qe2")
@@ -74,7 +74,6 @@ npc_resource = ExtResource("12_6snfq")
 [node name="NpcBehaviorWander" parent="NPC" instance=ExtResource("12_2f4mq")]
 
 [node name="DialogInteraction" parent="NPC" instance=ExtResource("14_wls4j")]
-enabled = true
 
 [node name="DialogText" type="Node" parent="NPC/DialogInteraction"]
 script = ExtResource("15_y44ni")
