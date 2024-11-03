@@ -81,6 +81,7 @@ npc_resource = ExtResource("12_6snfq")
 script = ExtResource("15_y44ni")
 text = "
 Hi, [b]Amelia[/b] is that you?"
+npc_info = ExtResource("12_6snfq")
 
 [node name="DialogText2" type="Node" parent="NPC/DialogInteraction"]
 script = ExtResource("15_y44ni")
@@ -92,6 +93,7 @@ npc_info = ExtResource("16_hhfny")
 script = ExtResource("15_y44ni")
 text = "Nice bro!
 Good to meet you!"
+npc_info = ExtResource("12_6snfq")
 
 [node name="NPC2" parent="." instance=ExtResource("11_1e5k2")]
 position = Vector2(852, 192)
@@ -119,26 +121,33 @@ position = Vector2(0, 96)
 [node name="DialogText" type="Node" parent="NPC2/DialogInteraction2"]
 script = ExtResource("15_y44ni")
 text = "erm what the sigma"
+npc_info = ExtResource("12_jpq7m")
 
 [node name="DialogChoice" type="Node" parent="NPC2/DialogInteraction2"]
 script = ExtResource("20_vaecv")
+npc_info = ExtResource("12_jpq7m")
 
 [node name="DialogBranch" type="Node" parent="NPC2/DialogInteraction2/DialogChoice"]
 script = ExtResource("21_knfm8")
 text = "bet"
+npc_info = ExtResource("12_jpq7m")
 
 [node name="DialogText" type="Node" parent="NPC2/DialogInteraction2/DialogChoice/DialogBranch"]
 script = ExtResource("15_y44ni")
 text = "yessir"
+npc_info = ExtResource("12_jpq7m")
 
 [node name="DialogText2" type="Node" parent="NPC2/DialogInteraction2/DialogChoice/DialogBranch"]
 script = ExtResource("15_y44ni")
 text = "be careful of opps tho"
+npc_info = ExtResource("12_jpq7m")
 
 [node name="DialogBranch2" type="Node" parent="NPC2/DialogInteraction2/DialogChoice"]
 script = ExtResource("21_knfm8")
 text = "nah"
+npc_info = ExtResource("12_jpq7m")
 
 [node name="DialogText" type="Node" parent="NPC2/DialogInteraction2/DialogChoice/DialogBranch2"]
 script = ExtResource("15_y44ni")
 text = "this guy"
+npc_info = ExtResource("12_jpq7m")
