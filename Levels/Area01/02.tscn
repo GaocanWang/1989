@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://dxufigbxig5mg"]
+[gd_scene load_steps=22 format=4 uid="uid://dxufigbxig5mg"]
 
 [ext_resource type="Script" path="res://Levels/scripts/level.gd" id="1_g2qe2"]
 [ext_resource type="Script" path="res://Tile Maps/level_tile_map.gd" id="1_v1sc2"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://wjevu6ic5k82" path="res://npc/patrol_location.tscn" id="15_u2s53"]
 [ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_text.gd" id="15_y44ni"]
 [ext_resource type="Resource" uid="uid://c2w2tyjg78bol" path="res://npc/00_npcs/00_hero.tres" id="16_hhfny"]
+[ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_choice.gd" id="20_vaecv"]
+[ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_branch.gd" id="21_knfm8"]
 
 [node name="02" type="Node2D"]
 script = ExtResource("1_g2qe2")
@@ -116,4 +118,27 @@ position = Vector2(0, 96)
 
 [node name="DialogText" type="Node" parent="NPC2/DialogInteraction2"]
 script = ExtResource("15_y44ni")
-text = "Hi! How's Hero?"
+text = "erm what the sigma"
+
+[node name="DialogChoice" type="Node" parent="NPC2/DialogInteraction2"]
+script = ExtResource("20_vaecv")
+
+[node name="DialogBranch" type="Node" parent="NPC2/DialogInteraction2/DialogChoice"]
+script = ExtResource("21_knfm8")
+text = "bet"
+
+[node name="DialogText" type="Node" parent="NPC2/DialogInteraction2/DialogChoice/DialogBranch"]
+script = ExtResource("15_y44ni")
+text = "yessir"
+
+[node name="DialogText2" type="Node" parent="NPC2/DialogInteraction2/DialogChoice/DialogBranch"]
+script = ExtResource("15_y44ni")
+text = "be careful of opps tho"
+
+[node name="DialogBranch2" type="Node" parent="NPC2/DialogInteraction2/DialogChoice"]
+script = ExtResource("21_knfm8")
+text = "nah"
+
+[node name="DialogText" type="Node" parent="NPC2/DialogInteraction2/DialogChoice/DialogBranch2"]
+script = ExtResource("15_y44ni")
+text = "this guy"
