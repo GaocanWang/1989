@@ -111,3 +111,9 @@ position = Vector2(48, 96)
 [node name="PatrolLocation4" parent="NPC2/NpcBehaviorPatrol" instance=ExtResource("15_u2s53")]
 modulate = Color(0, 1, 1, 1)
 position = Vector2(0, 96)
+
+[node name="DialogInteraction2" parent="NPC2" instance=ExtResource("14_wls4j")]
+
+[node name="DialogText" type="Node" parent="NPC2/DialogInteraction2"]
+script = ExtResource("15_y44ni")
+text = "Hi! How's Hero?"
