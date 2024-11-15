@@ -51,7 +51,6 @@ func SetDirection() -> bool:
 	
 	cardinal_direction = direction
 	DirectionChanged.emit( direction )
-	sprite.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1
 	return true
 
 
@@ -73,5 +72,7 @@ func AnimDirection() -> String:
 		return "down"
 	elif cardinal_direction == Vector2.UP:
 		return "up"
+	elif cardinal_direction == Vector2.RIGHT:
+		return "right"
 	else:
-		return "side"
+		return "left"

@@ -39,7 +39,7 @@ func play_music( _audio : AudioStream ) -> void:
 
 
 func play_and_fade_in( player : AudioStreamPlayer ) -> void:
-	player.play( 0 )
+	#player.play( 0 )
 	var tween : Tween = create_tween()
 	tween.tween_property( player, "volume_db", 0, music_fade_duration )
 	pass
