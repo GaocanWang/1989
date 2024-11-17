@@ -6,6 +6,7 @@ signal player_interacted
 signal finished
 
 @export var enabled : bool = true
+@export var size : Vector2 = Vector2( 24, 24 ) : set = _set_size
 
 var dialog_items : Array[ DialogItem ]
 
@@ -40,13 +41,13 @@ func player_interact() -> void:
 func _on_area_enter( _a : Area2D ) -> void:
 	if enabled == false || dialog_items.size() == 0:
 		return
-	animation_player.play("show")
+	#animation_player.play("show")
 	PlayerManager.interact_pressed.connect( player_interact )
 	pass
 
 
 func _on_area_exit( _a : Area2D ) -> void:
-	animation_player.play("hide")
+	#animation_player.play("hide")
 	PlayerManager.interact_pressed.disconnect( player_interact )
 	pass
 
@@ -68,3 +69,10 @@ func _check_for_dialog_items() -> bool:
 		if c is DialogItem:
 			return true
 	return false
+
+
+func _set_size( value : Vector2 ) -> void:
+	size = value
+	var shape = RectangleShape2D.new()
+	shape.size = size
+	$CollisionShape2D.set_shape( shape )

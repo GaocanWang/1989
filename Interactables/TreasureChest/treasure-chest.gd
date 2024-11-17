@@ -55,7 +55,7 @@ func _on_area_enter( _a : Area2D ) -> void:
 
 
 func _on_area_exit( _a : Area2D ) -> void:
-	
+	PlayerManager.interact_pressed.disconnect( player_interact )
 	pass
 
 

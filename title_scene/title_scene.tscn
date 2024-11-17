@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0ibw83vuq84m"]
+
+[ext_resource type="Texture2D" uid="uid://bw5lmfpl644r5" path="res://title_scene/sprites/concept_v1.4_20241112220924.png" id="1_07ceg"]
+[ext_resource type="Script" path="res://title_scene/title_scene.gd" id="1_osuia"]
+[ext_resource type="AudioStream" uid="uid://ywdydcaveuqj" path="res://title_scene/audio/waves.mp3" id="2_5ysud"]
+[ext_resource type="AudioStream" uid="uid://c7qh6fiyncnv3" path="res://title_scene/audio/menu_focus.wav" id="3_841gw"]
+[ext_resource type="AudioStream" uid="uid://yiqu5xcbfeb" path="res://title_scene/audio/menu_select.wav" id="4_pslun"]
+[ext_resource type="PackedScene" uid="uid://cj0dch28synuo" path="res://title_scene/splash_scene.tscn" id="6_ys7o3"]
+
+[node name="TitleScene" type="Node2D"]
+script = ExtResource("1_osuia")
+music = ExtResource("2_5ysud")
+button_focus_audio = ExtResource("3_841gw")
+button_press_audio = ExtResource("4_pslun")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_07ceg")
+
+[node name="ButtonNew" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 694.0
+offset_top = 325.0
+offset_right = 814.0
+offset_bottom = 349.0
+
+[node name="ButtonContinue" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 694.0
+offset_top = 366.0
+offset_right = 814.0
+offset_bottom = 390.0
+
+[node name="SplashScene" parent="CanvasLayer" instance=ExtResource("6_ys7o3")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 4

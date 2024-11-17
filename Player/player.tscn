@@ -26,6 +26,36 @@ tracks/0/keys = {
 "values": [1]
 }
 
+[sub_resource type="Animation" id="Animation_24l0p"]
+resource_name = "idle_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_7e1ii"]
+resource_name = "idle_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
 [sub_resource type="Animation" id="Animation_oqwl8"]
 resource_name = "idle_up"
 tracks/0/type = "value"
@@ -58,8 +88,8 @@ tracks/0/keys = {
 "values": [0, 2]
 }
 
-[sub_resource type="Animation" id="Animation_lop65"]
-resource_name = "walk_up"
+[sub_resource type="Animation" id="Animation_lpv8u"]
+resource_name = "walk_left"
 length = 0.5
 loop_mode = 2
 tracks/0/type = "value"
@@ -72,7 +102,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [9, 11]
+"values": [3, 5]
 }
 
 [sub_resource type="Animation" id="Animation_fwvgq"]
@@ -92,8 +122,8 @@ tracks/0/keys = {
 "values": [6, 8]
 }
 
-[sub_resource type="Animation" id="Animation_lpv8u"]
-resource_name = "walk_left"
+[sub_resource type="Animation" id="Animation_lop65"]
+resource_name = "walk_up"
 length = 0.5
 loop_mode = 2
 tracks/0/type = "value"
@@ -106,37 +136,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [3, 5]
-}
-
-[sub_resource type="Animation" id="Animation_7e1ii"]
-resource_name = "idle_right"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [7]
-}
-
-[sub_resource type="Animation" id="Animation_24l0p"]
-resource_name = "idle_left"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
+"values": [9, 11]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0gdjp"]
@@ -167,7 +167,7 @@ position = Vector2(0, -10)
 texture = ExtResource("2_625o0")
 hframes = 3
 vframes = 4
-frame = 4
+frame = 1
 
 [node name="EffectSprite" type="Sprite2D" parent="Sprite2D"]
 
