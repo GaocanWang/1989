@@ -6,6 +6,8 @@ enum SIDE { LEFT, RIGHT, TOP, BOTTOM }
 @export_file( "*.tscn" ) var level
 @export var target_transition_area : String = "LevelTransition"
 
+@export var door : bool = false
+
 @export_category("Collision Area Settings")
 
 @export_range(1,12,1, "or_greater") var size : int = 2 :
@@ -38,6 +40,10 @@ func _ready() -> void:
 	monitoring = true
 	body_entered.connect( _player_entered )
 	
+	if door:
+		area_entered.connect( _on_area_enter )
+		area_exited.connect( _on_area_exit )
+	
 	pass
 
 
@@ -65,7 +71,7 @@ func get_offset() -> Vector2:
 		offset.x = player_pos.x - global_position.x
 		offset.y = 12
 		if side == SIDE.TOP:
-			offset.x *= -1
+			offset.y *= -1
 	
 	return offset
 
@@ -97,3 +103,13 @@ func _update_area() -> void:
 func _snap_to_grid() -> void:
 	position.x = round( position.x / 12 ) * 12
 	position.y = round( position.y / 12 ) * 12
+
+
+func _on_area_enter( _a : Area2D ) -> void:
+	PlayerManager.interact_pressed.connect( _player_entered.bind( _a ) )
+	pass
+
+
+func _on_area_exit( _a : Area2D ) -> void:
+	PlayerManager.interact_pressed.disconnect( _player_entered.bind( _a ) )
+	pass

@@ -36,12 +36,12 @@ position = Vector2(204, 128)
 [node name="LevelTransition" parent="." instance=ExtResource("6_mjdyj")]
 position = Vector2(204, 204)
 level = "res://Levels/Part1/02.tscn"
+door = false
 size = 1
 side = 3
 
 [node name="Chair" parent="." instance=ExtResource("7_6xuwr")]
 position = Vector2(228, 120)
-size = Vector2(24, 24)
 
 [node name="DialogText" type="Node" parent="Chair"]
 script = ExtResource("8_sles3")
@@ -59,7 +59,6 @@ npc_info = ExtResource("9_1xg5t")
 
 [node name="Box" parent="." instance=ExtResource("7_6xuwr")]
 position = Vector2(180, 97)
-size = Vector2(24, 24)
 
 [node name="DialogText" type="Node" parent="Box"]
 script = ExtResource("8_sles3")
@@ -68,7 +67,6 @@ npc_info = ExtResource("9_1xg5t")
 
 [node name="Boxes" parent="." instance=ExtResource("7_6xuwr")]
 position = Vector2(132, 126)
-size = Vector2(24, 24)
 
 [node name="DialogText" type="Node" parent="Boxes"]
 script = ExtResource("8_sles3")
@@ -77,7 +75,6 @@ npc_info = ExtResource("9_1xg5t")
 
 [node name="Boxes2" parent="." instance=ExtResource("7_6xuwr")]
 position = Vector2(252, 175)
-size = Vector2(24, 24)
 
 [node name="DialogText" type="Node" parent="Boxes2"]
 script = ExtResource("8_sles3")

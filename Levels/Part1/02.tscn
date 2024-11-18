@@ -48,12 +48,14 @@ position = Vector2(877, 144)
 [node name="LevelTransition" parent="." instance=ExtResource("4_h47rc")]
 position = Vector2(84, 96)
 level = "res://Levels/Part1/01.tscn"
+door = true
 size = 1
 side = 2
 
 [node name="LevelTransition2" parent="." instance=ExtResource("4_h47rc")]
 position = Vector2(828, 240)
 level = "res://Levels/Part1/03.tscn"
+door = false
 
 [node name="Treasure-chest" parent="." instance=ExtResource("7_crkat")]
 position = Vector2(890, 98)
@@ -76,7 +78,6 @@ npc_resource = ExtResource("12_6snfq")
 [node name="NpcBehaviorWander" parent="NPC" instance=ExtResource("12_2f4mq")]
 
 [node name="DialogInteraction" parent="NPC" instance=ExtResource("14_wls4j")]
-size = Vector2(24, 24)
 
 [node name="DialogText" type="Node" parent="NPC/DialogInteraction"]
 script = ExtResource("15_y44ni")
@@ -118,7 +119,6 @@ modulate = Color(0, 1, 1, 1)
 position = Vector2(0, 96)
 
 [node name="DialogInteraction2" parent="NPC2" instance=ExtResource("14_wls4j")]
-size = Vector2(24, 24)
 
 [node name="DialogText" type="Node" parent="NPC2/DialogInteraction2"]
 script = ExtResource("15_y44ni")

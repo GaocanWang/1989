@@ -8,6 +8,7 @@ size = Vector2(24, 48)
 
 [node name="LevelTransition" type="Area2D"]
 collision_layer = 0
+collision_mask = 5
 monitorable = false
 script = ExtResource("1_s8l0t")
 
