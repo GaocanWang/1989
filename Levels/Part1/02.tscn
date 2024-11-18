@@ -55,7 +55,6 @@ side = 2
 [node name="LevelTransition2" parent="." instance=ExtResource("4_h47rc")]
 position = Vector2(828, 240)
 level = "res://Levels/Part1/03.tscn"
-door = false
 
 [node name="Treasure-chest" parent="." instance=ExtResource("7_crkat")]
 position = Vector2(890, 98)

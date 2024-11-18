@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://xcrva135cjif"]
+[gd_scene load_steps=8 format=4 uid="uid://xcrva135cjif"]
 
 [ext_resource type="Script" path="res://Levels/scripts/level.gd" id="1_yq1mk"]
 [ext_resource type="AudioStream" uid="uid://51ngo5w0lsqe" path="res://Levels/music/example_music_03.ogg" id="2_xw1l0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Tile Maps/level_tile_map.gd" id="4_4y4qe"]
 [ext_resource type="PackedScene" uid="uid://uqut3xy8f7mb" path="res://Levels/player_spawn.tscn" id="5_t6kd7"]
 [ext_resource type="PackedScene" uid="uid://bt4r7451gfkr5" path="res://Levels/level_transition.tscn" id="6_gxsuj"]
+[ext_resource type="PackedScene" uid="uid://cwh3rvrsg38ko" path="res://Props/torches/torch.tscn" id="7_5khfi"]
 
 [node name="03" type="Node2D"]
 script = ExtResource("1_yq1mk")
@@ -40,3 +41,10 @@ side = 1
 position = Vector2(324, 300)
 size = 1
 side = 2
+
+[node name="Torch" parent="." instance=ExtResource("7_5khfi")]
+position = Vector2(134, 211)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.501407, 0.501406, 0.501406, 1)
+blend_mode = 2

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://npc/scripts/npc_resource.gd" id="1_d5sb1"]
 [ext_resource type="Texture2D" uid="uid://dtw7op47v8qmk" path="res://npc/sprites/portraits/hero_portrait.png" id="1_jbkn7"]
-[ext_resource type="Texture2D" uid="uid://csdnh14bl2535" path="res://Player/Sprites/amelia.png" id="3_e8ont"]
+[ext_resource type="Texture2D" uid="uid://c5mo4ugu2uvtj" path="res://Player/Sprites/amelia.png" id="3_e8ont"]
 
 [resource]
 script = ExtResource("1_d5sb1")

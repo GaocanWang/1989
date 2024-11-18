@@ -36,7 +36,6 @@ position = Vector2(204, 128)
 [node name="LevelTransition" parent="." instance=ExtResource("6_mjdyj")]
 position = Vector2(204, 204)
 level = "res://Levels/Part1/02.tscn"
-door = false
 size = 1
 side = 3
 
