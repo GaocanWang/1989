@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0ibw83vuq84m"]
+[gd_scene load_steps=12 format=3 uid="uid://c0ibw83vuq84m"]
 
 [ext_resource type="Texture2D" uid="uid://bw5lmfpl644r5" path="res://title_scene/sprites/concept_v1.4_20241112220924.png" id="1_07ceg"]
 [ext_resource type="Script" path="res://title_scene/title_scene.gd" id="1_osuia"]
@@ -6,6 +6,44 @@
 [ext_resource type="AudioStream" uid="uid://c7qh6fiyncnv3" path="res://title_scene/audio/menu_focus.wav" id="3_841gw"]
 [ext_resource type="AudioStream" uid="uid://yiqu5xcbfeb" path="res://title_scene/audio/menu_select.wav" id="4_pslun"]
 [ext_resource type="PackedScene" uid="uid://cj0dch28synuo" path="res://title_scene/splash_scene.tscn" id="6_ys7o3"]
+[ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_text.gd" id="7_qv0fu"]
+[ext_resource type="Resource" uid="uid://dqtfv6xkyjcdl" path="res://npc/00_npcs/text.tres" id="8_1gvb2"]
+
+[sub_resource type="Animation" id="Animation_uj7hr"]
+resource_name = "black_screen"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_o62ji"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5prji"]
+_data = {
+"RESET": SubResource("Animation_o62ji"),
+"black_screen": SubResource("Animation_uj7hr")
+}
 
 [node name="TitleScene" type="Node2D"]
 script = ExtResource("1_osuia")
@@ -45,7 +83,47 @@ offset_top = 366.0
 offset_right = 814.0
 offset_bottom = 390.0
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
 [node name="SplashScene" parent="CanvasLayer" instance=ExtResource("6_ys7o3")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+root_node = NodePath("../Control")
+libraries = {
+"": SubResource("AnimationLibrary_5prji")
+}
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 max_polyphony = 4
+
+[node name="DialogText" type="Node" parent="."]
+script = ExtResource("7_qv0fu")
+text = "5 days."
+npc_info = ExtResource("8_1gvb2")
+
+[node name="DialogText2" type="Node" parent="."]
+script = ExtResource("7_qv0fu")
+text = "5 days until everything changes."
+npc_info = ExtResource("8_1gvb2")
+
+[node name="DialogText3" type="Node" parent="."]
+script = ExtResource("7_qv0fu")
+text = "I'm not one to believe in fate or destiny but..."
+npc_info = ExtResource("8_1gvb2")
+
+[node name="DialogText4" type="Node" parent="."]
+script = ExtResource("7_qv0fu")
+text = "This time feels different."
+npc_info = ExtResource("8_1gvb2")
+
+[node name="DialogText5" type="Node" parent="."]
+script = ExtResource("7_qv0fu")
+text = "And for once, I can't predict what will happen next."
+npc_info = ExtResource("8_1gvb2")

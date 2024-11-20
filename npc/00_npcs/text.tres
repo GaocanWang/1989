@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="NPCResource" load_steps=2 format=3 uid="uid://dqtfv6xkyjcdl"]
 
-[ext_resource type="Script" path="res://npc/scripts/npc_resource.gd" id="1_pvk03"]
+[ext_resource type="Script" path="res://npc/scripts/npc_resource.gd" id="1_b6oo3"]
 
 [resource]
-script = ExtResource("1_pvk03")
+script = ExtResource("1_b6oo3")
 npc_name = ""
 dialog_audio_pitch = 1.0
