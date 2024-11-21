@@ -44,7 +44,13 @@ position = Vector2(228, 120)
 
 [node name="DialogText" type="Node" parent="Chair"]
 script = ExtResource("8_sles3")
-text = "is thsi facing up or down bro"
+text = "Your chair."
+npc_info = ExtResource("9_1xg5t")
+
+[node name="DialogText2" type="Node" parent="Chair"]
+script = ExtResource("8_sles3")
+text = "For something you bought at a garage sale, it has served
+you quite well for the past three years."
 npc_info = ExtResource("9_1xg5t")
 
 [node name="Bed" parent="." instance=ExtResource("7_6xuwr")]
@@ -71,7 +77,12 @@ position = Vector2(180, 97)
 
 [node name="DialogText" type="Node" parent="Box"]
 script = ExtResource("8_sles3")
-text = "a box"
+text = "Your box full of clothing."
+npc_info = ExtResource("9_1xg5t")
+
+[node name="DialogText2" type="Node" parent="Box"]
+script = ExtResource("8_sles3")
+text = "Not that you'll be using anyways."
 npc_info = ExtResource("9_1xg5t")
 
 [node name="Boxes" parent="." instance=ExtResource("7_6xuwr")]
@@ -79,7 +90,12 @@ position = Vector2(132, 126)
 
 [node name="DialogText" type="Node" parent="Boxes"]
 script = ExtResource("8_sles3")
-text = "some boxes"
+text = "Boxes filled to the brim with your things."
+npc_info = ExtResource("9_1xg5t")
+
+[node name="DialogText2" type="Node" parent="Boxes"]
+script = ExtResource("8_sles3")
+text = "You'll tape them closed later."
 npc_info = ExtResource("9_1xg5t")
 
 [node name="Boxes2" parent="." instance=ExtResource("7_6xuwr")]
@@ -96,7 +112,13 @@ size = Vector2(6, 72)
 
 [node name="DialogText" type="Node" parent="Shelves"]
 script = ExtResource("8_sles3")
-text = "shelf unit."
+text = "Shelves covered in dust."
+npc_info = ExtResource("9_1xg5t")
+
+[node name="DialogText2" type="Node" parent="Shelves"]
+script = ExtResource("8_sles3")
+text = "You can’t recall one single time you actually used these
+shelves for anything important."
 npc_info = ExtResource("9_1xg5t")
 
 [node name="Desk" parent="." instance=ExtResource("7_6xuwr")]
@@ -105,7 +127,7 @@ size = Vector2(48, 24)
 
 [node name="DialogText" type="Node" parent="Desk"]
 script = ExtResource("8_sles3")
-text = "Your desk."
+text = "Your desk, still relatively untouched, basks in the dim light."
 npc_info = ExtResource("9_1xg5t")
 
 [node name="DialogText2" type="Node" parent="Desk"]
