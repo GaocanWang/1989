@@ -60,7 +60,7 @@ func start_game() -> void:
 	
 	#play_audio( 80s ahh music )
 	
-	await animation_player.animation_finished
+	await get_tree().create_timer( 2.0 ).timeout
 	
 	DialogSystem.show_dialog( dialog_items )
 	
