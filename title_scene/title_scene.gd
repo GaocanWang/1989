@@ -20,10 +20,6 @@ func _ready() -> void:
 	get_tree().paused = true
 	PlayerManager.player.visible = false
 	
-	if SaveManager.get_save_file() == null:
-		button_continue.disabled = true
-		button_continue.visible = false
-	
 	$CanvasLayer/SplashScene.finished.connect( setup_title_screen )
 	
 	LevelManager.level_load_started.connect( exit_title_screen )
@@ -73,7 +69,7 @@ func start_game() -> void:
 
 func load_game() -> void:
 	play_audio( button_press_audio )
-	SaveManager.load_game()
+	
 	pass
 
 

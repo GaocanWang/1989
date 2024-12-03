@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2j2bc053rn7j"]
+
+[ext_resource type="Texture2D" uid="uid://qudk730ce1fa" path="res://GUI/sprites/image (3).png" id="1_r1x16"]
+[ext_resource type="Texture2D" uid="uid://dobuooyvb41qy" path="res://GUI/sprites/image (2).png" id="2_dhmky"]
+[ext_resource type="Script" path="res://GUI/save_system/scripts/save_slot.gd" id="3_r3kdv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x0ne2"]
+texture = ExtResource("1_r1x16")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5yhrq"]
+texture = ExtResource("2_dhmky")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+
+[node name="SaveSlot" type="Button"]
+offset_right = 151.0
+offset_bottom = 66.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_x0ne2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5yhrq")
+text = "What the sigma"
+script = ExtResource("3_r3kdv")

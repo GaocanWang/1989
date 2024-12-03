@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://dxufigbxig5mg"]
+[gd_scene load_steps=23 format=4 uid="uid://dxufigbxig5mg"]
 
 [ext_resource type="Script" path="res://Levels/scripts/level.gd" id="1_g2qe2"]
 [ext_resource type="Script" path="res://Tile Maps/level_tile_map.gd" id="1_v1sc2"]
@@ -21,6 +21,7 @@
 [ext_resource type="Resource" uid="uid://c2w2tyjg78bol" path="res://npc/00_npcs/00_hero.tres" id="16_hhfny"]
 [ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_choice.gd" id="20_vaecv"]
 [ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_branch.gd" id="21_knfm8"]
+[ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/text.tres" id="22_es78d"]
 
 [node name="02" type="Node2D"]
 y_sort_enabled = true
@@ -59,26 +60,31 @@ position = Vector2(828, 240)
 level = "res://Levels/Part1/03.tscn"
 
 [node name="Treasure-chest" parent="." instance=ExtResource("7_crkat")]
+visible = false
 position = Vector2(890, 98)
 item_data = ExtResource("8_ppghh")
 quantity = 50
 
 [node name="Treasure-chest2" parent="." instance=ExtResource("7_crkat")]
+visible = false
 position = Vector2(829, 98)
 item_data = ExtResource("9_ap6is")
 quantity = 10
 
 [node name="Treasure-chest3" parent="." instance=ExtResource("7_crkat")]
+visible = false
 position = Vector2(769, 98)
 item_data = ExtResource("10_ahpma")
 
 [node name="NPC" parent="." instance=ExtResource("11_1e5k2")]
+visible = false
 position = Vector2(717, 128)
 npc_resource = ExtResource("12_6snfq")
 
 [node name="NpcBehaviorWander" parent="NPC" instance=ExtResource("12_2f4mq")]
 
 [node name="DialogInteraction" parent="NPC" instance=ExtResource("14_wls4j")]
+next = null
 
 [node name="DialogText" type="Node" parent="NPC/DialogInteraction"]
 script = ExtResource("15_y44ni")
@@ -99,6 +105,7 @@ Good to meet you!"
 npc_info = ExtResource("12_6snfq")
 
 [node name="NPC2" parent="." instance=ExtResource("11_1e5k2")]
+visible = false
 position = Vector2(852, 192)
 npc_resource = ExtResource("12_jpq7m")
 
@@ -120,6 +127,7 @@ modulate = Color(0, 1, 1, 1)
 position = Vector2(0, 96)
 
 [node name="DialogInteraction2" parent="NPC2" instance=ExtResource("14_wls4j")]
+next = null
 
 [node name="DialogText" type="Node" parent="NPC2/DialogInteraction2"]
 script = ExtResource("15_y44ni")
@@ -154,3 +162,87 @@ npc_info = ExtResource("12_jpq7m")
 script = ExtResource("15_y44ni")
 text = "this guy"
 npc_info = ExtResource("12_jpq7m")
+
+[node name="Door" parent="." instance=ExtResource("14_wls4j")]
+position = Vector2(204, 84)
+next = null
+
+[node name="DialogText" type="Node" parent="Door"]
+script = ExtResource("15_y44ni")
+text = "The door is locked."
+npc_info = ExtResource("22_es78d")
+
+[node name="DialogText2" type="Node" parent="Door"]
+script = ExtResource("15_y44ni")
+text = "Best to not disturb the other students."
+npc_info = ExtResource("22_es78d")
+
+[node name="Door2" parent="." instance=ExtResource("14_wls4j")]
+position = Vector2(324, 84)
+next = null
+
+[node name="DialogText" type="Node" parent="Door2"]
+script = ExtResource("15_y44ni")
+text = "The door is locked."
+npc_info = ExtResource("22_es78d")
+
+[node name="DialogText2" type="Node" parent="Door2"]
+script = ExtResource("15_y44ni")
+text = "Best to not disturb the other students."
+npc_info = ExtResource("22_es78d")
+
+[node name="Door3" parent="." instance=ExtResource("14_wls4j")]
+position = Vector2(444, 84)
+next = null
+
+[node name="DialogText" type="Node" parent="Door3"]
+script = ExtResource("15_y44ni")
+text = "The door is locked."
+npc_info = ExtResource("22_es78d")
+
+[node name="DialogText2" type="Node" parent="Door3"]
+script = ExtResource("15_y44ni")
+text = "Best to not disturb the other students."
+npc_info = ExtResource("22_es78d")
+
+[node name="Door4" parent="." instance=ExtResource("14_wls4j")]
+position = Vector2(564, 84)
+next = null
+
+[node name="DialogText" type="Node" parent="Door4"]
+script = ExtResource("15_y44ni")
+text = "The door is locked."
+npc_info = ExtResource("22_es78d")
+
+[node name="DialogText2" type="Node" parent="Door4"]
+script = ExtResource("15_y44ni")
+text = "Best to not disturb the other students."
+npc_info = ExtResource("22_es78d")
+
+[node name="Door5" parent="." instance=ExtResource("14_wls4j")]
+position = Vector2(684, 84)
+next = null
+
+[node name="DialogText" type="Node" parent="Door5"]
+script = ExtResource("15_y44ni")
+text = "The door is locked."
+npc_info = ExtResource("22_es78d")
+
+[node name="DialogText2" type="Node" parent="Door5"]
+script = ExtResource("15_y44ni")
+text = "Best to not disturb the other students."
+npc_info = ExtResource("22_es78d")
+
+[node name="Door6" parent="." instance=ExtResource("14_wls4j")]
+position = Vector2(804, 84)
+next = null
+
+[node name="DialogText" type="Node" parent="Door6"]
+script = ExtResource("15_y44ni")
+text = "The door is locked."
+npc_info = ExtResource("22_es78d")
+
+[node name="DialogText2" type="Node" parent="Door6"]
+script = ExtResource("15_y44ni")
+text = "Best to not disturb the other students."
+npc_info = ExtResource("22_es78d")

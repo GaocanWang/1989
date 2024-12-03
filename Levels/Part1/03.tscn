@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://xcrva135cjif"]
+[gd_scene load_steps=12 format=4 uid="uid://xcrva135cjif"]
 
 [ext_resource type="Script" path="res://Levels/scripts/level.gd" id="1_yq1mk"]
 [ext_resource type="AudioStream" uid="uid://51ngo5w0lsqe" path="res://Levels/music/example_music_03.ogg" id="2_xw1l0"]
@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://uqut3xy8f7mb" path="res://Levels/player_spawn.tscn" id="5_t6kd7"]
 [ext_resource type="PackedScene" uid="uid://bt4r7451gfkr5" path="res://Levels/level_transition.tscn" id="6_gxsuj"]
 [ext_resource type="PackedScene" uid="uid://cwh3rvrsg38ko" path="res://Props/torches/torch.tscn" id="7_5khfi"]
+[ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="8_kedyg"]
+[ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_text.gd" id="9_hs5gw"]
+[ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/text.tres" id="10_45svh"]
+[ext_resource type="Resource" uid="uid://dqtfv6xkyjcdl" path="res://npc/00_npcs/unknown.tres" id="10_h5vvh"]
 
 [node name="03" type="Node2D"]
 y_sort_enabled = true
@@ -40,13 +44,186 @@ target_transition_area = "LevelTransition2"
 side = 1
 
 [node name="LevelTransition2" parent="." instance=ExtResource("6_gxsuj")]
-position = Vector2(324, 300)
+position = Vector2(312, 266)
 size = 1
 side = 2
 
 [node name="Torch" parent="." instance=ExtResource("7_5khfi")]
+visible = false
 position = Vector2(134, 211)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 color = Color(0.501407, 0.501406, 0.501406, 1)
 blend_mode = 2
+
+[node name="LoungeChair" parent="." instance=ExtResource("8_kedyg")]
+position = Vector2(84, 96)
+size = Vector2(48, 24)
+
+[node name="DialogText" type="Node" parent="LoungeChair"]
+script = ExtResource("9_hs5gw")
+text = "A lounge chair."
+npc_info = ExtResource("10_45svh")
+
+[node name="DialogText2" type="Node" parent="LoungeChair"]
+script = ExtResource("9_hs5gw")
+text = "Not particularly comfy."
+npc_info = ExtResource("10_45svh")
+
+[node name="LoungeChair2" parent="." instance=ExtResource("8_kedyg")]
+position = Vector2(180, 96)
+size = Vector2(48, 24)
+
+[node name="DialogText" type="Node" parent="LoungeChair2"]
+script = ExtResource("9_hs5gw")
+text = "A lounge chair."
+npc_info = ExtResource("10_45svh")
+
+[node name="DialogText2" type="Node" parent="LoungeChair2"]
+script = ExtResource("9_hs5gw")
+text = "Not particularly comfy."
+npc_info = ExtResource("10_45svh")
+
+[node name="Plant" parent="." instance=ExtResource("8_kedyg")]
+position = Vector2(133, 84)
+size = Vector2(24, 48)
+
+[node name="DialogText" type="Node" parent="Plant"]
+script = ExtResource("9_hs5gw")
+text = "A large tiger's tongue rests inside the vase."
+npc_info = ExtResource("10_45svh")
+
+[node name="DialogText2" type="Node" parent="Plant"]
+script = ExtResource("9_hs5gw")
+text = "It's actually a fake."
+npc_info = ExtResource("10_45svh")
+
+[node name="PoolTable" parent="." instance=ExtResource("8_kedyg")]
+position = Vector2(36, 180)
+size = Vector2(24, 48)
+
+[node name="DialogText" type="Node" parent="PoolTable"]
+script = ExtResource("9_hs5gw")
+text = "A surprisingly sleek and lavish pool table."
+npc_info = ExtResource("10_45svh")
+
+[node name="DialogText2" type="Node" parent="PoolTable"]
+script = ExtResource("9_hs5gw")
+text = "Three of the balls are missing though."
+npc_info = ExtResource("10_45svh")
+
+[node name="FoosballTable" parent="." instance=ExtResource("8_kedyg")]
+position = Vector2(36, 276)
+size = Vector2(24, 48)
+
+[node name="DialogText" type="Node" parent="FoosballTable"]
+script = ExtResource("9_hs5gw")
+text = "The foosball table."
+npc_info = ExtResource("10_45svh")
+
+[node name="DialogText2" type="Node" parent="FoosballTable"]
+script = ExtResource("9_hs5gw")
+text = "Someone keeps pushing it to the wall, making the other side unplayable."
+npc_info = ExtResource("10_45svh")
+
+[node name="TableChair" parent="." instance=ExtResource("8_kedyg")]
+position = Vector2(84, 324)
+
+[node name="DialogText" type="Node" parent="TableChair"]
+script = ExtResource("9_hs5gw")
+text = "Very boring wooden chairs."
+npc_info = ExtResource("10_45svh")
+
+[node name="TableChair2" parent="." instance=ExtResource("8_kedyg")]
+position = Vector2(108, 324)
+
+[node name="DialogText" type="Node" parent="TableChair2"]
+script = ExtResource("9_hs5gw")
+text = "Very boring wooden chairs."
+npc_info = ExtResource("10_45svh")
+
+[node name="TableChair3" parent="." instance=ExtResource("8_kedyg")]
+position = Vector2(156, 324)
+
+[node name="DialogText" type="Node" parent="TableChair3"]
+script = ExtResource("9_hs5gw")
+text = "Very boring wooden chairs."
+npc_info = ExtResource("10_45svh")
+
+[node name="TableChair4" parent="." instance=ExtResource("8_kedyg")]
+position = Vector2(180, 324)
+
+[node name="DialogText" type="Node" parent="TableChair4"]
+script = ExtResource("9_hs5gw")
+text = "Very boring wooden chairs."
+npc_info = ExtResource("10_45svh")
+
+[node name="Table" parent="." instance=ExtResource("8_kedyg")]
+position = Vector2(84, 348)
+
+[node name="DialogText" type="Node" parent="Table"]
+script = ExtResource("9_hs5gw")
+text = "Very boring wooden tables."
+npc_info = ExtResource("10_45svh")
+
+[node name="Table2" parent="." instance=ExtResource("8_kedyg")]
+position = Vector2(108, 348)
+
+[node name="DialogText" type="Node" parent="Table2"]
+script = ExtResource("9_hs5gw")
+text = "Very boring wooden tables."
+npc_info = ExtResource("10_45svh")
+
+[node name="Table3" parent="." instance=ExtResource("8_kedyg")]
+position = Vector2(156, 348)
+
+[node name="DialogText" type="Node" parent="Table3"]
+script = ExtResource("9_hs5gw")
+text = "Very boring wooden tables."
+npc_info = ExtResource("10_45svh")
+
+[node name="Table4" parent="." instance=ExtResource("8_kedyg")]
+position = Vector2(180, 348)
+
+[node name="DialogText" type="Node" parent="Table4"]
+script = ExtResource("9_hs5gw")
+text = "Very boring wooden tables."
+npc_info = ExtResource("10_45svh")
+
+[node name="CoffeeTable" parent="." instance=ExtResource("8_kedyg")]
+position = Vector2(276, 312)
+size = Vector2(48, 24)
+
+[node name="DialogText" type="Node" parent="CoffeeTable"]
+script = ExtResource("9_hs5gw")
+text = "A large coffee making table with stains all over the surface."
+npc_info = ExtResource("10_45svh")
+
+[node name="DialogText2" type="Node" parent="CoffeeTable"]
+script = ExtResource("9_hs5gw")
+text = "When was the last time it was wiped clean?"
+npc_info = ExtResource("10_45svh")
+
+[node name="DialogInteraction" parent="." instance=ExtResource("8_kedyg")]
+position = Vector2(324, 300)
+
+[node name="DialogText" type="Node" parent="DialogInteraction"]
+script = ExtResource("9_hs5gw")
+text = "..."
+npc_info = ExtResource("10_h5vvh")
+
+[node name="DialogText2" type="Node" parent="DialogInteraction"]
+script = ExtResource("9_hs5gw")
+text = "Wake up..."
+npc_info = ExtResource("10_h5vvh")
+
+[node name="DialogText3" type="Node" parent="DialogInteraction"]
+script = ExtResource("9_hs5gw")
+text = "…We need you…."
+npc_info = ExtResource("10_h5vvh")
+
+[node name="DialogText4" type="Node" parent="DialogInteraction"]
+script = ExtResource("9_hs5gw")
+text = "…Wake up, Amelia...."
+npc_info = ExtResource("10_h5vvh")

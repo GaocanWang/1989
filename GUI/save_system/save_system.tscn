@@ -1,6 +1,49 @@
-[gd_scene load_steps=2 format=3 uid="uid://36vhc1pkmslw"]
+[gd_scene load_steps=5 format=3 uid="uid://36vhc1pkmslw"]
 
 [ext_resource type="Script" path="res://GUI/save_system/scripts/save_system.gd" id="1_05m00"]
+[ext_resource type="Texture2D" uid="uid://dobuooyvb41qy" path="res://GUI/sprites/image (2).png" id="2_g020e"]
+[ext_resource type="PackedScene" uid="uid://b2j2bc053rn7j" path="res://GUI/save_system/save_slot.tscn" id="3_rj1tr"]
 
-[node name="SaveSystem" type="Node2D"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xxm7q"]
+texture = ExtResource("2_g020e")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+
+[node name="SaveSystem" type="CanvasLayer"]
 script = ExtResource("1_05m00")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 316.0
+offset_top = 165.0
+offset_right = 796.0
+offset_bottom = 443.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_xxm7q")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="SaveSlot" parent="Control/PanelContainer/VBoxContainer" instance=ExtResource("3_rj1tr")]
+layout_mode = 2
+
+[node name="SaveSlot2" parent="Control/PanelContainer/VBoxContainer" instance=ExtResource("3_rj1tr")]
+layout_mode = 2
+
+[node name="SaveSlot3" parent="Control/PanelContainer/VBoxContainer" instance=ExtResource("3_rj1tr")]
+layout_mode = 2

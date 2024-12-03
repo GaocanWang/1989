@@ -1,13 +1,43 @@
-[gd_scene load_steps=12 format=3 uid="uid://c0ibw83vuq84m"]
+[gd_scene load_steps=18 format=3 uid="uid://c0ibw83vuq84m"]
 
 [ext_resource type="Texture2D" uid="uid://bw5lmfpl644r5" path="res://title_scene/sprites/concept_v1.4_20241112220924.png" id="1_07ceg"]
 [ext_resource type="Script" path="res://title_scene/title_scene.gd" id="1_osuia"]
 [ext_resource type="AudioStream" uid="uid://ywdydcaveuqj" path="res://title_scene/audio/waves.mp3" id="2_5ysud"]
 [ext_resource type="AudioStream" uid="uid://c7qh6fiyncnv3" path="res://title_scene/audio/menu_focus.wav" id="3_841gw"]
 [ext_resource type="AudioStream" uid="uid://yiqu5xcbfeb" path="res://title_scene/audio/menu_select.wav" id="4_pslun"]
+[ext_resource type="Texture2D" uid="uid://qudk730ce1fa" path="res://GUI/sprites/image (3).png" id="6_qy5iu"]
 [ext_resource type="PackedScene" uid="uid://cj0dch28synuo" path="res://title_scene/splash_scene.tscn" id="6_ys7o3"]
+[ext_resource type="Texture2D" uid="uid://dobuooyvb41qy" path="res://GUI/sprites/image (2).png" id="7_0unsn"]
 [ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_text.gd" id="7_qv0fu"]
-[ext_resource type="Resource" uid="uid://dqtfv6xkyjcdl" path="res://npc/00_npcs/text.tres" id="8_1gvb2"]
+[ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/text.tres" id="8_iscpo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sugrs"]
+texture = ExtResource("6_qy5iu")
+texture_margin_left = 4.0
+texture_margin_top = 6.0
+texture_margin_right = 4.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bcwfp"]
+texture = ExtResource("7_0unsn")
+texture_margin_left = 4.0
+texture_margin_top = 6.0
+texture_margin_right = 4.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ofojg"]
+texture = ExtResource("6_qy5iu")
+texture_margin_left = 4.0
+texture_margin_top = 6.0
+texture_margin_right = 4.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bplvs"]
+texture = ExtResource("7_0unsn")
+texture_margin_left = 4.0
+texture_margin_top = 6.0
+texture_margin_right = 4.0
+texture_margin_bottom = 2.0
 
 [sub_resource type="Animation" id="Animation_o62ji"]
 length = 0.001
@@ -75,13 +105,20 @@ offset_left = 694.0
 offset_top = 325.0
 offset_right = 814.0
 offset_bottom = 349.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_sugrs")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bcwfp")
+text = "NEW GAME"
 
 [node name="ButtonContinue" type="Button" parent="CanvasLayer/Control"]
+visible = false
 layout_mode = 0
 offset_left = 694.0
 offset_top = 366.0
 offset_right = 814.0
 offset_bottom = 390.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_ofojg")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bplvs")
+text = "CONTINUE GAME"
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -106,24 +143,24 @@ max_polyphony = 4
 [node name="DialogText" type="Node" parent="."]
 script = ExtResource("7_qv0fu")
 text = "5 days."
-npc_info = ExtResource("8_1gvb2")
+npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText2" type="Node" parent="."]
 script = ExtResource("7_qv0fu")
 text = "5 days until everything changes."
-npc_info = ExtResource("8_1gvb2")
+npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText3" type="Node" parent="."]
 script = ExtResource("7_qv0fu")
 text = "I'm not one to believe in fate or destiny but..."
-npc_info = ExtResource("8_1gvb2")
+npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText4" type="Node" parent="."]
 script = ExtResource("7_qv0fu")
 text = "This time feels different."
-npc_info = ExtResource("8_1gvb2")
+npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText5" type="Node" parent="."]
 script = ExtResource("7_qv0fu")
 text = "And for once, I can't predict what will happen next."
-npc_info = ExtResource("8_1gvb2")
+npc_info = ExtResource("8_iscpo")

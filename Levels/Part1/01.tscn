@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bt4r7451gfkr5" path="res://Levels/level_transition.tscn" id="6_mjdyj"]
 [ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="7_6xuwr"]
 [ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_text.gd" id="8_sles3"]
-[ext_resource type="Resource" uid="uid://dqtfv6xkyjcdl" path="res://npc/00_npcs/text.tres" id="9_1xg5t"]
+[ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/text.tres" id="9_8ypoo"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_c6bey")
@@ -41,111 +41,124 @@ side = 3
 
 [node name="Chair" parent="." instance=ExtResource("7_6xuwr")]
 position = Vector2(228, 120)
+next = null
 
 [node name="DialogText" type="Node" parent="Chair"]
 script = ExtResource("8_sles3")
 text = "Your chair."
-npc_info = ExtResource("9_1xg5t")
+npc_info = ExtResource("9_8ypoo")
 
 [node name="DialogText2" type="Node" parent="Chair"]
 script = ExtResource("8_sles3")
 text = "For something you bought at a garage sale, it has served
 you quite well for the past three years."
-npc_info = ExtResource("9_1xg5t")
+npc_info = ExtResource("9_8ypoo")
 
 [node name="Bed" parent="." instance=ExtResource("7_6xuwr")]
 position = Vector2(156, 102)
 size = Vector2(24, 36)
+next = null
 
 [node name="DialogText" type="Node" parent="Bed"]
 script = ExtResource("8_sles3")
 text = "Your bed admittedly isn't the comfiest."
-npc_info = ExtResource("9_1xg5t")
+npc_info = ExtResource("9_8ypoo")
 
 [node name="DialogText2" type="Node" parent="Bed"]
 script = ExtResource("8_sles3")
 text = "You won't miss the bed at all."
-npc_info = ExtResource("9_1xg5t")
+npc_info = ExtResource("9_8ypoo")
 
 [node name="DialogText3" type="Node" parent="Bed"]
 script = ExtResource("8_sles3")
 text = "It creaked too much anyways."
-npc_info = ExtResource("9_1xg5t")
+npc_info = ExtResource("9_8ypoo")
 
 [node name="Box" parent="." instance=ExtResource("7_6xuwr")]
 position = Vector2(180, 97)
+next = null
 
 [node name="DialogText" type="Node" parent="Box"]
 script = ExtResource("8_sles3")
 text = "Your box full of clothing."
-npc_info = ExtResource("9_1xg5t")
+npc_info = ExtResource("9_8ypoo")
 
 [node name="DialogText2" type="Node" parent="Box"]
 script = ExtResource("8_sles3")
-text = "Not that you'll be using anyways."
-npc_info = ExtResource("9_1xg5t")
+text = "Not that you'll be using any of them anyways."
+npc_info = ExtResource("9_8ypoo")
 
 [node name="Boxes" parent="." instance=ExtResource("7_6xuwr")]
 position = Vector2(132, 126)
+next = null
 
 [node name="DialogText" type="Node" parent="Boxes"]
 script = ExtResource("8_sles3")
 text = "Boxes filled to the brim with your things."
-npc_info = ExtResource("9_1xg5t")
+npc_info = ExtResource("9_8ypoo")
 
 [node name="DialogText2" type="Node" parent="Boxes"]
 script = ExtResource("8_sles3")
 text = "You'll tape them closed later."
-npc_info = ExtResource("9_1xg5t")
+npc_info = ExtResource("9_8ypoo")
 
 [node name="Boxes2" parent="." instance=ExtResource("7_6xuwr")]
 position = Vector2(252, 175)
+next = null
 
 [node name="DialogText" type="Node" parent="Boxes2"]
 script = ExtResource("8_sles3")
-text = "a few boxes"
-npc_info = ExtResource("9_1xg5t")
+text = "Boxes filled to the brim with your things."
+npc_info = ExtResource("9_8ypoo")
+
+[node name="DialogText2" type="Node" parent="Boxes2"]
+script = ExtResource("8_sles3")
+text = "You'll tape them closed later."
+npc_info = ExtResource("9_8ypoo")
 
 [node name="Shelves" parent="." instance=ExtResource("7_6xuwr")]
 position = Vector2(285, 132)
 size = Vector2(6, 72)
+next = null
 
 [node name="DialogText" type="Node" parent="Shelves"]
 script = ExtResource("8_sles3")
 text = "Shelves covered in dust."
-npc_info = ExtResource("9_1xg5t")
+npc_info = ExtResource("9_8ypoo")
 
 [node name="DialogText2" type="Node" parent="Shelves"]
 script = ExtResource("8_sles3")
 text = "You can’t recall one single time you actually used these
 shelves for anything important."
-npc_info = ExtResource("9_1xg5t")
+npc_info = ExtResource("9_8ypoo")
 
 [node name="Desk" parent="." instance=ExtResource("7_6xuwr")]
 position = Vector2(228, 96)
 size = Vector2(48, 24)
+next = null
 
 [node name="DialogText" type="Node" parent="Desk"]
 script = ExtResource("8_sles3")
 text = "Your desk, still relatively untouched, basks in the dim light."
-npc_info = ExtResource("9_1xg5t")
+npc_info = ExtResource("9_8ypoo")
 
 [node name="DialogText2" type="Node" parent="Desk"]
 script = ExtResource("8_sles3")
 text = "It feels odd to be departing with it after so long."
-npc_info = ExtResource("9_1xg5t")
+npc_info = ExtResource("9_8ypoo")
 
 [node name="Lamp" parent="." instance=ExtResource("7_6xuwr")]
 position = Vector2(258, 80)
 size = Vector2(12, 48)
+next = null
 
 [node name="DialogText" type="Node" parent="Lamp"]
 script = ExtResource("8_sles3")
 text = "Even after all this time, the lamp still has that unfixable
 humming noise every time you turn it on."
-npc_info = ExtResource("9_1xg5t")
+npc_info = ExtResource("9_8ypoo")
 
 [node name="DialogText2" type="Node" parent="Lamp"]
 script = ExtResource("8_sles3")
 text = "Only now do you begin to appreciate it."
-npc_info = ExtResource("9_1xg5t")
+npc_info = ExtResource("9_8ypoo")

@@ -8,6 +8,8 @@ signal finished
 @export var enabled : bool = true
 @export var size : Vector2 = Vector2( 24, 24 ) : set = _set_size
 
+@export var next : String = ""
+
 var dialog_items : Array[ DialogItem ]
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer

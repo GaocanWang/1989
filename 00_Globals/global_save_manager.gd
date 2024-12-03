@@ -21,11 +21,11 @@ var current_save : Dictionary = {
 
 
 
-func save_game() -> void:
+func save_game( file_name : String ) -> void:
 	update_player_data()
 	update_scene_path()
 	update_item_data()
-	var file := FileAccess.open( SAVE_PATH + "save.sav", FileAccess.WRITE )
+	var file := FileAccess.open( SAVE_PATH + file_name + ".sav", FileAccess.WRITE )
 	var save_json = JSON.stringify( current_save )
 	file.store_line( save_json )
 	game_saved.emit()
@@ -33,13 +33,13 @@ func save_game() -> void:
 
 
 
-func get_save_file() -> FileAccess:
-	return FileAccess.open( SAVE_PATH + "save.sav", FileAccess.READ )
+func get_save_file( file_name : String ) -> FileAccess:
+	return FileAccess.open( SAVE_PATH + file_name + "sav", FileAccess.READ )
 
 
 
-func load_game() -> void:
-	var file := get_save_file()
+func load_game( file_name : String ) -> void:
+	var file := get_save_file( file_name )
 	var json := JSON.new()
 	json.parse( file.get_line() )
 	var save_dict : Dictionary = json.get_data() as Dictionary
