@@ -110,7 +110,6 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_bcwfp")
 text = "NEW GAME"
 
 [node name="ButtonContinue" type="Button" parent="CanvasLayer/Control"]
-visible = false
 layout_mode = 0
 offset_left = 694.0
 offset_top = 366.0

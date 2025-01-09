@@ -69,7 +69,7 @@ func start_game() -> void:
 
 func load_game() -> void:
 	play_audio( button_press_audio )
-	
+	SaveManager.load_game()
 	pass
 
 

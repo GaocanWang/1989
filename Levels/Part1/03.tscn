@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://xcrva135cjif"]
+[gd_scene load_steps=10 format=4 uid="uid://xcrva135cjif"]
 
 [ext_resource type="Script" path="res://Levels/scripts/level.gd" id="1_yq1mk"]
 [ext_resource type="AudioStream" uid="uid://51ngo5w0lsqe" path="res://Levels/music/example_music_03.ogg" id="2_xw1l0"]
@@ -6,11 +6,9 @@
 [ext_resource type="Script" path="res://Tile Maps/level_tile_map.gd" id="4_4y4qe"]
 [ext_resource type="PackedScene" uid="uid://uqut3xy8f7mb" path="res://Levels/player_spawn.tscn" id="5_t6kd7"]
 [ext_resource type="PackedScene" uid="uid://bt4r7451gfkr5" path="res://Levels/level_transition.tscn" id="6_gxsuj"]
-[ext_resource type="PackedScene" uid="uid://cwh3rvrsg38ko" path="res://Props/torches/torch.tscn" id="7_5khfi"]
 [ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="8_kedyg"]
 [ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_text.gd" id="9_hs5gw"]
 [ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/text.tres" id="10_45svh"]
-[ext_resource type="Resource" uid="uid://dqtfv6xkyjcdl" path="res://npc/00_npcs/unknown.tres" id="10_h5vvh"]
 
 [node name="03" type="Node2D"]
 y_sort_enabled = true
@@ -35,7 +33,7 @@ rendering_quadrant_size = 24
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_t6kd7")]
 modulate = Color(0, 1, 0, 0.501961)
-position = Vector2(103, 170)
+position = Vector2(232, 178)
 
 [node name="LevelTransition" parent="." instance=ExtResource("6_gxsuj")]
 position = Vector2(252, 168)
@@ -44,18 +42,10 @@ target_transition_area = "LevelTransition2"
 side = 1
 
 [node name="LevelTransition2" parent="." instance=ExtResource("6_gxsuj")]
-position = Vector2(312, 266)
+position = Vector2(324, 312)
+level = "res://Levels/Part2/01.tscn"
 size = 1
 side = 2
-
-[node name="Torch" parent="." instance=ExtResource("7_5khfi")]
-visible = false
-position = Vector2(134, 211)
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
-color = Color(0.501407, 0.501406, 0.501406, 1)
-blend_mode = 2
 
 [node name="LoungeChair" parent="." instance=ExtResource("8_kedyg")]
 position = Vector2(84, 96)
@@ -204,26 +194,3 @@ npc_info = ExtResource("10_45svh")
 script = ExtResource("9_hs5gw")
 text = "When was the last time it was wiped clean?"
 npc_info = ExtResource("10_45svh")
-
-[node name="DialogInteraction" parent="." instance=ExtResource("8_kedyg")]
-position = Vector2(324, 300)
-
-[node name="DialogText" type="Node" parent="DialogInteraction"]
-script = ExtResource("9_hs5gw")
-text = "..."
-npc_info = ExtResource("10_h5vvh")
-
-[node name="DialogText2" type="Node" parent="DialogInteraction"]
-script = ExtResource("9_hs5gw")
-text = "Wake up..."
-npc_info = ExtResource("10_h5vvh")
-
-[node name="DialogText3" type="Node" parent="DialogInteraction"]
-script = ExtResource("9_hs5gw")
-text = "…We need you…."
-npc_info = ExtResource("10_h5vvh")
-
-[node name="DialogText4" type="Node" parent="DialogInteraction"]
-script = ExtResource("9_hs5gw")
-text = "…Wake up, Amelia...."
-npc_info = ExtResource("10_h5vvh")

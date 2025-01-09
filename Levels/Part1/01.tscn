@@ -41,7 +41,6 @@ side = 3
 
 [node name="Chair" parent="." instance=ExtResource("7_6xuwr")]
 position = Vector2(228, 120)
-next = null
 
 [node name="DialogText" type="Node" parent="Chair"]
 script = ExtResource("8_sles3")
@@ -57,7 +56,6 @@ npc_info = ExtResource("9_8ypoo")
 [node name="Bed" parent="." instance=ExtResource("7_6xuwr")]
 position = Vector2(156, 102)
 size = Vector2(24, 36)
-next = null
 
 [node name="DialogText" type="Node" parent="Bed"]
 script = ExtResource("8_sles3")
@@ -76,7 +74,6 @@ npc_info = ExtResource("9_8ypoo")
 
 [node name="Box" parent="." instance=ExtResource("7_6xuwr")]
 position = Vector2(180, 97)
-next = null
 
 [node name="DialogText" type="Node" parent="Box"]
 script = ExtResource("8_sles3")
@@ -90,7 +87,6 @@ npc_info = ExtResource("9_8ypoo")
 
 [node name="Boxes" parent="." instance=ExtResource("7_6xuwr")]
 position = Vector2(132, 126)
-next = null
 
 [node name="DialogText" type="Node" parent="Boxes"]
 script = ExtResource("8_sles3")
@@ -104,7 +100,6 @@ npc_info = ExtResource("9_8ypoo")
 
 [node name="Boxes2" parent="." instance=ExtResource("7_6xuwr")]
 position = Vector2(252, 175)
-next = null
 
 [node name="DialogText" type="Node" parent="Boxes2"]
 script = ExtResource("8_sles3")
@@ -119,7 +114,6 @@ npc_info = ExtResource("9_8ypoo")
 [node name="Shelves" parent="." instance=ExtResource("7_6xuwr")]
 position = Vector2(285, 132)
 size = Vector2(6, 72)
-next = null
 
 [node name="DialogText" type="Node" parent="Shelves"]
 script = ExtResource("8_sles3")
@@ -135,7 +129,6 @@ npc_info = ExtResource("9_8ypoo")
 [node name="Desk" parent="." instance=ExtResource("7_6xuwr")]
 position = Vector2(228, 96)
 size = Vector2(48, 24)
-next = null
 
 [node name="DialogText" type="Node" parent="Desk"]
 script = ExtResource("8_sles3")
@@ -150,7 +143,6 @@ npc_info = ExtResource("9_8ypoo")
 [node name="Lamp" parent="." instance=ExtResource("7_6xuwr")]
 position = Vector2(258, 80)
 size = Vector2(12, 48)
-next = null
 
 [node name="DialogText" type="Node" parent="Lamp"]
 script = ExtResource("8_sles3")

@@ -38,11 +38,12 @@ func _ready() -> void:
 	await LevelManager.level_loaded
 	
 	monitoring = true
-	body_entered.connect( _player_entered )
 	
 	if door:
 		area_entered.connect( _on_area_enter )
 		area_exited.connect( _on_area_exit )
+	else:
+		body_entered.connect( _player_entered )
 	
 	pass
 

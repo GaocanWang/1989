@@ -84,7 +84,6 @@ npc_resource = ExtResource("12_6snfq")
 [node name="NpcBehaviorWander" parent="NPC" instance=ExtResource("12_2f4mq")]
 
 [node name="DialogInteraction" parent="NPC" instance=ExtResource("14_wls4j")]
-next = null
 
 [node name="DialogText" type="Node" parent="NPC/DialogInteraction"]
 script = ExtResource("15_y44ni")
@@ -127,7 +126,6 @@ modulate = Color(0, 1, 1, 1)
 position = Vector2(0, 96)
 
 [node name="DialogInteraction2" parent="NPC2" instance=ExtResource("14_wls4j")]
-next = null
 
 [node name="DialogText" type="Node" parent="NPC2/DialogInteraction2"]
 script = ExtResource("15_y44ni")
@@ -165,7 +163,6 @@ npc_info = ExtResource("12_jpq7m")
 
 [node name="Door" parent="." instance=ExtResource("14_wls4j")]
 position = Vector2(204, 84)
-next = null
 
 [node name="DialogText" type="Node" parent="Door"]
 script = ExtResource("15_y44ni")
@@ -179,7 +176,6 @@ npc_info = ExtResource("22_es78d")
 
 [node name="Door2" parent="." instance=ExtResource("14_wls4j")]
 position = Vector2(324, 84)
-next = null
 
 [node name="DialogText" type="Node" parent="Door2"]
 script = ExtResource("15_y44ni")
@@ -193,7 +189,6 @@ npc_info = ExtResource("22_es78d")
 
 [node name="Door3" parent="." instance=ExtResource("14_wls4j")]
 position = Vector2(444, 84)
-next = null
 
 [node name="DialogText" type="Node" parent="Door3"]
 script = ExtResource("15_y44ni")
@@ -207,7 +202,6 @@ npc_info = ExtResource("22_es78d")
 
 [node name="Door4" parent="." instance=ExtResource("14_wls4j")]
 position = Vector2(564, 84)
-next = null
 
 [node name="DialogText" type="Node" parent="Door4"]
 script = ExtResource("15_y44ni")
@@ -221,7 +215,6 @@ npc_info = ExtResource("22_es78d")
 
 [node name="Door5" parent="." instance=ExtResource("14_wls4j")]
 position = Vector2(684, 84)
-next = null
 
 [node name="DialogText" type="Node" parent="Door5"]
 script = ExtResource("15_y44ni")
@@ -235,7 +228,6 @@ npc_info = ExtResource("22_es78d")
 
 [node name="Door6" parent="." instance=ExtResource("14_wls4j")]
 position = Vector2(804, 84)
-next = null
 
 [node name="DialogText" type="Node" parent="Door6"]
 script = ExtResource("15_y44ni")
