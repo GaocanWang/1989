@@ -62,7 +62,6 @@ func _place_player() -> void:
 func get_offset() -> Vector2:
 	var offset : Vector2 = Vector2.ZERO
 	var player_pos = PlayerManager.player.global_position
-	
 	if side == SIDE.LEFT or side == SIDE.RIGHT:
 		offset.y = player_pos.y - global_position.y
 		offset.x = 12

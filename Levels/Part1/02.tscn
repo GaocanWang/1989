@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://dxufigbxig5mg"]
+[gd_scene load_steps=10 format=4 uid="uid://dxufigbxig5mg"]
 
 [ext_resource type="Script" path="res://Levels/scripts/level.gd" id="1_g2qe2"]
 [ext_resource type="Script" path="res://Tile Maps/level_tile_map.gd" id="1_v1sc2"]
@@ -6,21 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://bk3gx0jom4p37" path="res://Levels/music/example_music_01.ogg" id="2_s3fo4"]
 [ext_resource type="PackedScene" uid="uid://uqut3xy8f7mb" path="res://Levels/player_spawn.tscn" id="3_mwlkv"]
 [ext_resource type="PackedScene" uid="uid://bt4r7451gfkr5" path="res://Levels/level_transition.tscn" id="4_h47rc"]
-[ext_resource type="PackedScene" uid="uid://d7mm2tbk2xuf" path="res://Interactables/TreasureChest/treasure-chest.tscn" id="7_crkat"]
-[ext_resource type="Resource" uid="uid://1t3j2hniij4r" path="res://Items/stone.tres" id="8_ppghh"]
-[ext_resource type="Resource" uid="uid://bmyughs86ky32" path="res://Items/gem.tres" id="9_ap6is"]
-[ext_resource type="Resource" uid="uid://cjujgm2wl7ma5" path="res://Items/potion.tres" id="10_ahpma"]
-[ext_resource type="PackedScene" uid="uid://dm15w3ux3txs4" path="res://npc/npc.tscn" id="11_1e5k2"]
-[ext_resource type="PackedScene" uid="uid://ccvl5le7m2vrt" path="res://npc/npc_behavior_wander.tscn" id="12_2f4mq"]
-[ext_resource type="Resource" uid="uid://bi6hhxmyhbg8x" path="res://npc/00_npcs/npc_01.tres" id="12_6snfq"]
-[ext_resource type="Resource" uid="uid://di457jgt256ub" path="res://npc/00_npcs/npc_02.tres" id="12_jpq7m"]
 [ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="14_wls4j"]
-[ext_resource type="PackedScene" uid="uid://cihooo7si7me1" path="res://npc/npc_behavior_patrol.tscn" id="15_ec1ob"]
-[ext_resource type="PackedScene" uid="uid://wjevu6ic5k82" path="res://npc/patrol_location.tscn" id="15_u2s53"]
 [ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_text.gd" id="15_y44ni"]
-[ext_resource type="Resource" uid="uid://c2w2tyjg78bol" path="res://npc/00_npcs/00_hero.tres" id="16_hhfny"]
-[ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_choice.gd" id="20_vaecv"]
-[ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_branch.gd" id="21_knfm8"]
 [ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/text.tres" id="22_es78d"]
 
 [node name="02" type="Node2D"]
@@ -58,108 +45,6 @@ side = 2
 [node name="LevelTransition2" parent="." instance=ExtResource("4_h47rc")]
 position = Vector2(828, 240)
 level = "res://Levels/Part1/03.tscn"
-
-[node name="Treasure-chest" parent="." instance=ExtResource("7_crkat")]
-visible = false
-position = Vector2(890, 98)
-item_data = ExtResource("8_ppghh")
-quantity = 50
-
-[node name="Treasure-chest2" parent="." instance=ExtResource("7_crkat")]
-visible = false
-position = Vector2(829, 98)
-item_data = ExtResource("9_ap6is")
-quantity = 10
-
-[node name="Treasure-chest3" parent="." instance=ExtResource("7_crkat")]
-visible = false
-position = Vector2(769, 98)
-item_data = ExtResource("10_ahpma")
-
-[node name="NPC" parent="." instance=ExtResource("11_1e5k2")]
-visible = false
-position = Vector2(717, 128)
-npc_resource = ExtResource("12_6snfq")
-
-[node name="NpcBehaviorWander" parent="NPC" instance=ExtResource("12_2f4mq")]
-
-[node name="DialogInteraction" parent="NPC" instance=ExtResource("14_wls4j")]
-
-[node name="DialogText" type="Node" parent="NPC/DialogInteraction"]
-script = ExtResource("15_y44ni")
-text = "
-Hi, [b]Amelia[/b] is that you?"
-npc_info = ExtResource("12_6snfq")
-
-[node name="DialogText2" type="Node" parent="NPC/DialogInteraction"]
-script = ExtResource("15_y44ni")
-text = "
-[wave]Heck yeah it's me![/wave]"
-npc_info = ExtResource("16_hhfny")
-
-[node name="DialogText3" type="Node" parent="NPC/DialogInteraction"]
-script = ExtResource("15_y44ni")
-text = "Nice bro!
-Good to meet you!"
-npc_info = ExtResource("12_6snfq")
-
-[node name="NPC2" parent="." instance=ExtResource("11_1e5k2")]
-visible = false
-position = Vector2(852, 192)
-npc_resource = ExtResource("12_jpq7m")
-
-[node name="NpcBehaviorPatrol" parent="NPC2" instance=ExtResource("15_ec1ob")]
-
-[node name="PatrolLocation" parent="NPC2/NpcBehaviorPatrol" instance=ExtResource("15_u2s53")]
-modulate = Color(1, 0, 0, 1)
-
-[node name="PatrolLocation2" parent="NPC2/NpcBehaviorPatrol" instance=ExtResource("15_u2s53")]
-modulate = Color(1, 1, 0, 1)
-position = Vector2(48, 0)
-
-[node name="PatrolLocation3" parent="NPC2/NpcBehaviorPatrol" instance=ExtResource("15_u2s53")]
-modulate = Color(0, 1, 0, 1)
-position = Vector2(48, 96)
-
-[node name="PatrolLocation4" parent="NPC2/NpcBehaviorPatrol" instance=ExtResource("15_u2s53")]
-modulate = Color(0, 1, 1, 1)
-position = Vector2(0, 96)
-
-[node name="DialogInteraction2" parent="NPC2" instance=ExtResource("14_wls4j")]
-
-[node name="DialogText" type="Node" parent="NPC2/DialogInteraction2"]
-script = ExtResource("15_y44ni")
-text = "erm what the sigma"
-npc_info = ExtResource("12_jpq7m")
-
-[node name="DialogChoice" type="Node" parent="NPC2/DialogInteraction2"]
-script = ExtResource("20_vaecv")
-npc_info = ExtResource("12_jpq7m")
-
-[node name="DialogBranch" type="Node" parent="NPC2/DialogInteraction2/DialogChoice"]
-script = ExtResource("21_knfm8")
-text = "bet"
-npc_info = ExtResource("12_jpq7m")
-
-[node name="DialogText" type="Node" parent="NPC2/DialogInteraction2/DialogChoice/DialogBranch"]
-script = ExtResource("15_y44ni")
-text = "yessir"
-npc_info = ExtResource("12_jpq7m")
-
-[node name="DialogText2" type="Node" parent="NPC2/DialogInteraction2/DialogChoice/DialogBranch"]
-script = ExtResource("15_y44ni")
-text = "be careful of opps tho"
-npc_info = ExtResource("12_jpq7m")
-
-[node name="DialogBranch2" type="Node" parent="NPC2/DialogInteraction2/DialogChoice"]
-script = ExtResource("21_knfm8")
-text = "nah"
-npc_info = ExtResource("12_jpq7m")
-
-[node name="DialogText" type="Node" parent="NPC2/DialogInteraction2/DialogChoice/DialogBranch2"]
-script = ExtResource("15_y44ni")
-text = "this guy"
-npc_info = ExtResource("12_jpq7m")
 
 [node name="Door" parent="." instance=ExtResource("14_wls4j")]
 position = Vector2(204, 84)

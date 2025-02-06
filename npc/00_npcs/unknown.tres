@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_gcywb")
-npc_name = ""
-dialog_audio_pitch = 1.0
+npc_name = "???"
+dialog_audio_pitch = 0.76

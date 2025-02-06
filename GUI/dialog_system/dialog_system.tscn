@@ -19,10 +19,10 @@ fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nbe4o"]
-content_margin_left = 28.0
-content_margin_top = 20.0
-content_margin_right = 28.0
-content_margin_bottom = 20.0
+content_margin_left = 24.0
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
 texture = ExtResource("2_vac1q")
 texture_margin_left = 16.0
 texture_margin_top = 16.0

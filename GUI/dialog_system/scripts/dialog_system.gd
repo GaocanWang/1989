@@ -71,7 +71,6 @@ func _unhandled_input( _event: InputEvent ) -> void:
 ## Show the dialog UI
 func show_dialog( _items : Array[ DialogItem ] ) -> void:
 	is_active = true
-	dialog_ui.visible = true
 	dialog_ui.process_mode = Node.PROCESS_MODE_ALWAYS
 	dialog_items = _items
 	dialog_item_index = 0
@@ -127,6 +126,7 @@ func set_dialog_text( _d : DialogText ) -> void:
 	plain_text = content.get_parsed_text()
 	text_in_progress = true
 	start_timer()
+	dialog_ui.visible = true
 	pass
 
 

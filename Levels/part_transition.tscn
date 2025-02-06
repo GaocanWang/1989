@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://co0l7nrsat2gg"]
+
+[ext_resource type="Script" path="res://Levels/scripts/part_transition.gd" id="1_nakq8"]
+[ext_resource type="Texture2D" uid="uid://by1oyhinkv2wc" path="res://FullScreenArt/teresa full screen.png" id="2_7dtem"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l05fn"]
+resource_local_to_scene = true
+size = Vector2(24, 48)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddmx8"]
+bg_color = Color(0.187176, 0.187176, 0.187176, 1)
+
+[node name="PartTransition" type="Node2D"]
+script = ExtResource("1_nakq8")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 5
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-12, 0)
+shape = SubResource("RectangleShape2D_l05fn")
+debug_color = Color(0.864668, 0.000592971, 0.863902, 0.42)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 300.0
+offset_right = 723.0
+offset_bottom = 378.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ddmx8")
+text = "OPEN THE DOOR?"
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "yes"
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "no"
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control"]
+visible = false
+position = Vector2(576, 660)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_7dtem")

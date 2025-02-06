@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=2 format=3 uid="uid://di457jgt256ub"]
+
+[ext_resource type="Script" path="res://npc/scripts/npc_resource.gd" id="1_e8lfc"]
+
+[resource]
+script = ExtResource("1_e8lfc")
+npc_name = "Teresa"
+dialog_audio_pitch = 1.5
