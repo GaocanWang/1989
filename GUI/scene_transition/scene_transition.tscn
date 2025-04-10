@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://da3xppsk1vibv"]
 
-[ext_resource type="Script" path="res://GUI/scene_transition/scene_transition.gd" id="1_6er6g"]
+[ext_resource type="Script" uid="uid://bdv2y50lexw2b" path="res://GUI/scene_transition/scene_transition.gd" id="1_6er6g"]
 
 [sub_resource type="Animation" id="Animation_c3bne"]
 length = 0.001
@@ -66,10 +66,10 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_60ykv"]
 _data = {
-"RESET": SubResource("Animation_c3bne"),
-"default": SubResource("Animation_lclwb"),
-"fade_in": SubResource("Animation_3prqe"),
-"fade_out": SubResource("Animation_0a4qp")
+&"RESET": SubResource("Animation_c3bne"),
+&"default": SubResource("Animation_lclwb"),
+&"fade_in": SubResource("Animation_3prqe"),
+&"fade_out": SubResource("Animation_0a4qp")
 }
 
 [node name="SceneTransition" type="CanvasLayer"]
@@ -95,6 +95,6 @@ color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
 libraries = {
-"": SubResource("AnimationLibrary_60ykv")
+&"": SubResource("AnimationLibrary_60ykv")
 }
 autoplay = "default"

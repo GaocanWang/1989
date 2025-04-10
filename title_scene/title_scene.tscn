@@ -1,14 +1,14 @@
 [gd_scene load_steps=18 format=3 uid="uid://c0ibw83vuq84m"]
 
 [ext_resource type="Texture2D" uid="uid://bw5lmfpl644r5" path="res://title_scene/sprites/concept_v1.4_20241112220924.png" id="1_07ceg"]
-[ext_resource type="Script" path="res://title_scene/title_scene.gd" id="1_osuia"]
+[ext_resource type="Script" uid="uid://nholskpy0p5t" path="res://title_scene/title_scene.gd" id="1_osuia"]
 [ext_resource type="AudioStream" uid="uid://ywdydcaveuqj" path="res://title_scene/audio/waves.mp3" id="2_5ysud"]
 [ext_resource type="AudioStream" uid="uid://c7qh6fiyncnv3" path="res://title_scene/audio/menu_focus.wav" id="3_841gw"]
 [ext_resource type="AudioStream" uid="uid://yiqu5xcbfeb" path="res://title_scene/audio/menu_select.wav" id="4_pslun"]
 [ext_resource type="Texture2D" uid="uid://qudk730ce1fa" path="res://GUI/sprites/image (3).png" id="6_qy5iu"]
 [ext_resource type="PackedScene" uid="uid://cj0dch28synuo" path="res://title_scene/splash_scene.tscn" id="6_ys7o3"]
 [ext_resource type="Texture2D" uid="uid://dobuooyvb41qy" path="res://GUI/sprites/image (2).png" id="7_0unsn"]
-[ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_text.gd" id="7_qv0fu"]
+[ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="7_qv0fu"]
 [ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/text.tres" id="8_iscpo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sugrs"]
@@ -71,8 +71,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5prji"]
 _data = {
-"RESET": SubResource("Animation_o62ji"),
-"black_screen": SubResource("Animation_uj7hr")
+&"RESET": SubResource("Animation_o62ji"),
+&"black_screen": SubResource("Animation_uj7hr")
 }
 
 [node name="TitleScene" type="Node2D"]
@@ -133,7 +133,7 @@ color = Color(0, 0, 0, 0)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 root_node = NodePath("../Control")
 libraries = {
-"": SubResource("AnimationLibrary_5prji")
+&"": SubResource("AnimationLibrary_5prji")
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

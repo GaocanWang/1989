@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://d7mm2tbk2xuf"]
 
-[ext_resource type="Script" path="res://Interactables/TreasureChest/treasure-chest.gd" id="1_fg5n5"]
+[ext_resource type="Script" uid="uid://bknavg3ui7xrd" path="res://Interactables/TreasureChest/treasure-chest.gd" id="1_fg5n5"]
 [ext_resource type="Texture2D" uid="uid://ca2fndnsoqs1f" path="res://Interactables/TreasureChest/treasure-chest.png" id="2_8hrrk"]
 [ext_resource type="Texture2D" uid="uid://bvn57mrniu8yc" path="res://Items/sprites/items.png" id="3_crsus"]
 [ext_resource type="AudioStream" uid="uid://cs6cmrn2ps1dl" path="res://Interactables/TreasureChest/treasure-open.wav" id="4_a83ew"]
@@ -184,10 +184,10 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ku65r"]
 _data = {
-"RESET": SubResource("Animation_hmnio"),
-"closed": SubResource("Animation_txg2s"),
-"open": SubResource("Animation_j00c3"),
-"open_chest": SubResource("Animation_dh7hq")
+&"RESET": SubResource("Animation_hmnio"),
+&"closed": SubResource("Animation_txg2s"),
+&"open": SubResource("Animation_j00c3"),
+&"open_chest": SubResource("Animation_dh7hq")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j34pj"]

@@ -91,9 +91,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1rkv8"]
 _data = {
-"Default": SubResource("Animation_7pbh7"),
-"RESET": SubResource("Animation_lwwmu"),
-"black_screen": SubResource("Animation_rxw7g")
+&"Default": SubResource("Animation_7pbh7"),
+&"RESET": SubResource("Animation_lwwmu"),
+&"black_screen": SubResource("Animation_rxw7g")
 }
 
 [node name="SplashScene" type="Control"]

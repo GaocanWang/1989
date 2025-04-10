@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://htdi1kinagxb"]
 
-[ext_resource type="Script" path="res://GUI/pause_menu/pause_menu.gd" id="1_mx0dx"]
+[ext_resource type="Script" uid="uid://x78vi5klflde" path="res://GUI/pause_menu/pause_menu.gd" id="1_mx0dx"]
 [ext_resource type="Texture2D" uid="uid://bvn57mrniu8yc" path="res://Items/sprites/items.png" id="2_f782u"]
-[ext_resource type="Script" path="res://GUI/pause_menu/inventory/scripts/inventory_ui.gd" id="3_8i8i4"]
+[ext_resource type="Script" uid="uid://bh4r5hkwojb78" path="res://GUI/pause_menu/inventory/scripts/inventory_ui.gd" id="3_8i8i4"]
 [ext_resource type="PackedScene" uid="uid://b2dj4j8eh8825" path="res://GUI/pause_menu/inventory/inventory_slot.tscn" id="3_tntq5"]
 [ext_resource type="Resource" uid="uid://cnhencemob3qg" path="res://GUI/pause_menu/inventory/player_inventory.tres" id="4_op3ac"]
 

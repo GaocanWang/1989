@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://co0l7nrsat2gg"]
 
-[ext_resource type="Script" path="res://Levels/scripts/part_transition.gd" id="1_nakq8"]
+[ext_resource type="Script" uid="uid://b7p7bkpuqktb8" path="res://Levels/scripts/part_transition.gd" id="1_nakq8"]
 [ext_resource type="Texture2D" uid="uid://by1oyhinkv2wc" path="res://FullScreenArt/teresa full screen.png" id="2_7dtem"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l05fn"]

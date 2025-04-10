@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cwh3rvrsg38ko"]
 
 [ext_resource type="Texture2D" uid="uid://dub1k6p35brtr" path="res://Props/torches/torch.png" id="1_xxbmi"]
-[ext_resource type="Script" path="res://Props/torches/torch_light_flicker.gd" id="2_cblwn"]
+[ext_resource type="Script" uid="uid://lqshc0utfr3e" path="res://Props/torches/torch_light_flicker.gd" id="2_cblwn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_84shd"]
 radius = 6.0
@@ -40,8 +40,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gjprd"]
 _data = {
-"RESET": SubResource("Animation_3amxd"),
-"default": SubResource("Animation_vfq0l")
+&"RESET": SubResource("Animation_3amxd"),
+&"default": SubResource("Animation_vfq0l")
 }
 
 [sub_resource type="Gradient" id="Gradient_7prdi"]

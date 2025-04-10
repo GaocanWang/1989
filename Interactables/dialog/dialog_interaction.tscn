@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bkssnj2mcwv8c"]
 
 [ext_resource type="Texture2D" uid="uid://b73a63xbetycr" path="res://Interactables/dialog/sprites/dialog_interactable.png" id="1_244jj"]
-[ext_resource type="Script" path="res://Interactables/dialog/scripts/dialog_interaction.gd" id="1_o73if"]
+[ext_resource type="Script" uid="uid://ejdl6ah0v2yt" path="res://Interactables/dialog/scripts/dialog_interaction.gd" id="1_o73if"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rdh50"]
 size = Vector2(24, 24)
@@ -118,10 +118,10 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2i4bt"]
 _data = {
-"RESET": SubResource("Animation_5enmf"),
-"default": SubResource("Animation_4e0om"),
-"hide": SubResource("Animation_hfhc4"),
-"show": SubResource("Animation_xofd3")
+&"RESET": SubResource("Animation_5enmf"),
+&"default": SubResource("Animation_4e0om"),
+&"hide": SubResource("Animation_hfhc4"),
+&"show": SubResource("Animation_xofd3")
 }
 
 [node name="DialogInteraction" type="Area2D"]
@@ -143,6 +143,6 @@ hframes = 2
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 process_mode = 3
 libraries = {
-"": SubResource("AnimationLibrary_2i4bt")
+&"": SubResource("AnimationLibrary_2i4bt")
 }
 autoplay = "default"

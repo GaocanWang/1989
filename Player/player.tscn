@@ -1,12 +1,12 @@
 [gd_scene load_steps=20 format=3 uid="uid://dvqgh6lgjqqb0"]
 
-[ext_resource type="Script" path="res://Player/Scripts/player.gd" id="1_kdav8"]
+[ext_resource type="Script" uid="uid://dngaafqs0siiw" path="res://Player/Scripts/player.gd" id="1_kdav8"]
 [ext_resource type="Texture2D" uid="uid://c5mo4ugu2uvtj" path="res://Player/Sprites/amelia.png" id="2_625o0"]
-[ext_resource type="Script" path="res://Player/Scripts/player_state_machine.gd" id="3_nhlgr"]
-[ext_resource type="Script" path="res://Player/Scripts/states/state_idle.gd" id="4_hu4d1"]
-[ext_resource type="Script" path="res://Player/Scripts/states/state_walk.gd" id="5_6nyq6"]
-[ext_resource type="Script" path="res://Player/Scripts/player_interactions_host.gd" id="6_knfwp"]
-[ext_resource type="Script" path="res://Player/Scripts/player_camera.gd" id="6_w4quj"]
+[ext_resource type="Script" uid="uid://clo65pbgwo4ij" path="res://Player/Scripts/player_state_machine.gd" id="3_nhlgr"]
+[ext_resource type="Script" uid="uid://brh6ltud308q1" path="res://Player/Scripts/states/state_idle.gd" id="4_hu4d1"]
+[ext_resource type="Script" uid="uid://3n1gp1u3hwnk" path="res://Player/Scripts/states/state_walk.gd" id="5_6nyq6"]
+[ext_resource type="Script" uid="uid://df53kaigwvvmx" path="res://Player/Scripts/player_interactions_host.gd" id="6_knfwp"]
+[ext_resource type="Script" uid="uid://dqh1t5i2fx2m3" path="res://Player/Scripts/player_camera.gd" id="6_w4quj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xnupc"]
 radius = 4.0
@@ -156,15 +156,15 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0gdjp"]
 _data = {
-"RESET": SubResource("Animation_4x8gc"),
-"idle_down": SubResource("Animation_o4873"),
-"idle_left": SubResource("Animation_24l0p"),
-"idle_right": SubResource("Animation_7e1ii"),
-"idle_up": SubResource("Animation_oqwl8"),
-"walk_down": SubResource("Animation_duhlu"),
-"walk_left": SubResource("Animation_lpv8u"),
-"walk_right": SubResource("Animation_fwvgq"),
-"walk_up": SubResource("Animation_lop65")
+&"RESET": SubResource("Animation_4x8gc"),
+&"idle_down": SubResource("Animation_o4873"),
+&"idle_left": SubResource("Animation_24l0p"),
+&"idle_right": SubResource("Animation_7e1ii"),
+&"idle_up": SubResource("Animation_oqwl8"),
+&"walk_down": SubResource("Animation_duhlu"),
+&"walk_left": SubResource("Animation_lpv8u"),
+&"walk_right": SubResource("Animation_fwvgq"),
+&"walk_up": SubResource("Animation_lop65")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dws7a"]
@@ -193,7 +193,7 @@ root_node = NodePath("../..")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 process_mode = 3
 libraries = {
-"": SubResource("AnimationLibrary_0gdjp")
+&"": SubResource("AnimationLibrary_0gdjp")
 }
 
 [node name="StateMachine" type="Node" parent="."]
