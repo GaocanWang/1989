@@ -55,7 +55,6 @@ layout_mode = 2
 text = "no"
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control"]
-visible = false
-position = Vector2(576, 660)
+position = Vector2(576, -12)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_7dtem")

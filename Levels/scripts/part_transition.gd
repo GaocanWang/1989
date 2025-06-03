@@ -164,7 +164,10 @@ func _on_yes() -> void:
 	DialogSystem.show_dialog( dialog_items_3 )
 	await DialogSystem.finished
 	art.show()
-	await SceneTransition.fade_in()
+	SceneTransition.fade_in()
+	for n in 168:
+		await get_tree().create_timer(0.01).timeout
+		art.position.y += 4;
 	DialogSystem.show_dialog( dialog_items_4 )
 	await DialogSystem.finished
 	get_tree().paused = false
