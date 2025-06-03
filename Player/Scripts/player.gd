@@ -10,9 +10,11 @@ const direction_to_vector = {
 var cardinal_direction : Vector2 = Vector2.DOWN
 var direction : Vector2 = Vector2.ZERO
 var direction_history = []
+var part2 = false
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite : Sprite2D = $Sprite2D
+@onready var sprite2: Sprite2D = $Sprite2D2
 @onready var state_machine : PlayerStateMachine = $StateMachine
 
 signal DirectionChanged( new_direction: Vector2 )
@@ -21,6 +23,7 @@ signal DirectionChanged( new_direction: Vector2 )
 func _ready() -> void:
 	PlayerManager.player = self
 	state_machine.Initialize(self)
+	LevelManager.part2.connect( _on_part2 )
 	pass # Replace with function body.
 
 
@@ -71,7 +74,10 @@ func check_pressed() -> void:
 
 
 func UpdateAnimation( state : String ) -> void:
-	animation_player.play( state + "_" + AnimDirection() )
+	if part2:
+		animation_player.play( state + "_" + AnimDirection() )
+	else:
+		animation_player.play( state + "_" + AnimDirection() + "_2")
 	pass
 
 
@@ -84,3 +90,9 @@ func AnimDirection() -> String:
 		return "right"
 	else:
 		return "left"
+
+
+func _on_part2() -> void:
+	part2 = true
+	sprite.visible = true
+	sprite2.visible = false

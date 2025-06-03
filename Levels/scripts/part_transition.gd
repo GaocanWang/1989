@@ -171,7 +171,8 @@ func _on_yes() -> void:
 	DialogSystem.show_dialog( dialog_items_4 )
 	await DialogSystem.finished
 	get_tree().paused = false
-	LevelManager.load_new_part( "res://Levels/Part2/01.tscn", "LevelTransition", get_offset() )
+	LevelManager.part2.emit()
+	LevelManager.load_new_part( "res://Levels/Part2/04.tscn", "LevelTransition", get_offset() )
 	pass
 
 
