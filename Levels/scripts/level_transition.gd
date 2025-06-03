@@ -26,6 +26,8 @@ enum SIDE { LEFT, RIGHT, TOP, BOTTOM }
 
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
+var dialog_items : Array[ DialogItem ]
+
 
 func _ready() -> void:
 	_update_area()
@@ -44,6 +46,11 @@ func _ready() -> void:
 		area_exited.connect( _on_area_exit )
 	else:
 		body_entered.connect( _player_entered )
+	
+	LevelManager.part2.connect( _on_part2 )
+	
+	for c in get_children():
+		dialog_items.append( c )
 	
 	pass
 
@@ -113,3 +120,9 @@ func _on_area_enter( _a : Area2D ) -> void:
 func _on_area_exit( _a : Area2D ) -> void:
 	PlayerManager.interact_pressed.disconnect( _player_entered.bind( _a ) )
 	pass
+
+
+func _on_part2() -> void:
+	if !dialog_items.is_empty():
+		DialogSystem.show_dialog( dialog_items )
+		await DialogSystem.finished

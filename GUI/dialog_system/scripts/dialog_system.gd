@@ -26,6 +26,7 @@ var dialog_item_index : int = 0
 @onready var timer: Timer = $DialogUI/Timer
 @onready var audio_stream_player: AudioStreamPlayer = $DialogUI/AudioStreamPlayer
 @onready var choice_options : VBoxContainer = $DialogUI/VBoxContainer
+@onready var content_container: PanelContainer = $DialogUI/PanelContainer
 
 
 
@@ -120,6 +121,16 @@ func set_dialog_text( _d : DialogText ) -> void:
 	choice_options.visible = false
 	name_label.text = _d.npc_info.npc_name
 	portrait_sprite.texture = _d.npc_info.portrait
+	
+	if portrait_sprite.texture == null:
+		name_label.position.x = 24
+		content_container.position.x = 24
+		content_container.size.x = 1104
+	else:
+		name_label.position.x = 360
+		content_container.position.x = 360
+		content_container.size.x = 768
+	
 	portrait_sprite.audio_pitch_base = _d.npc_info.dialog_audio_pitch
 	content.visible_characters = 0
 	text_length = content.get_total_character_count()

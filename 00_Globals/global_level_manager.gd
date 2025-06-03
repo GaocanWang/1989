@@ -78,5 +78,7 @@ func load_new_part(
 	
 	level_loaded.emit()
 	
+	if level_path == "res://Levels/Part2/04.tscn":
+		part2.emit()
 	
 	pass

@@ -55,6 +55,8 @@ func _ready() -> void:
 	yes.pressed.connect( _on_yes )
 	no.pressed.connect( _on_no )
 	
+	LevelManager.part2.connect(func(): DialogSystem.show_dialog( dialog_items_1 ))
+	
 	for c in get_children():
 		for d in c.get_children():
 			if c.name == "1":
@@ -171,7 +173,6 @@ func _on_yes() -> void:
 	DialogSystem.show_dialog( dialog_items_4 )
 	await DialogSystem.finished
 	get_tree().paused = false
-	LevelManager.part2.emit()
 	LevelManager.load_new_part( "res://Levels/Part2/04.tscn", "LevelTransition", get_offset() )
 	pass
 

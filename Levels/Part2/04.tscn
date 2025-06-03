@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://ct5se6suijt5w"]
+[gd_scene load_steps=12 format=4 uid="uid://ct5se6suijt5w"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_1negt"]
 [ext_resource type="AudioStream" uid="uid://bk3gx0jom4p37" path="res://Levels/music/example_music_01.ogg" id="2_3yff1"]
@@ -6,6 +6,11 @@
 [ext_resource type="Script" uid="uid://2hobeot03u4v" path="res://Tile Maps/level_tile_map.gd" id="4_0hkk6"]
 [ext_resource type="PackedScene" uid="uid://uqut3xy8f7mb" path="res://Levels/player_spawn.tscn" id="5_ko3bk"]
 [ext_resource type="PackedScene" uid="uid://bt4r7451gfkr5" path="res://Levels/level_transition.tscn" id="6_1b4t0"]
+[ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="7_ko3bk"]
+[ext_resource type="Resource" uid="uid://c2w2tyjg78bol" path="res://npc/00_npcs/amelia.tres" id="8_1b4t0"]
+[ext_resource type="Resource" uid="uid://di457jgt256ub" path="res://npc/00_npcs/teresa.tres" id="9_xevt3"]
+[ext_resource type="PackedScene" uid="uid://dm15w3ux3txs4" path="res://npc/npc.tscn" id="10_1b4t0"]
+[ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="11_xevt3"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_1negt")
@@ -28,12 +33,79 @@ tile_map_data = PackedByteArray("AAATAAEAAQAEAAEAAAATAAIAAQAEAAEAAAATAAMAAQAEAAE
 tile_set = ExtResource("3_dd5gb")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_ko3bk")]
-position = Vector2(108, 108)
+position = Vector2(60, 244)
 
 [node name="LevelTransition" parent="." instance=ExtResource("6_1b4t0")]
 position = Vector2(60, 252)
-level = "res://Levels/Part2/01.tscn"
+level = "uid://xcrva135cjif"
 target_transition_area = "LevelTransition2"
 door = true
 size = 1
 side = 3
+
+[node name="DialogText" type="Node" parent="LevelTransition"]
+script = ExtResource("7_ko3bk")
+text = "Sorry for getting distracted, Teresa."
+npc_info = ExtResource("8_1b4t0")
+
+[node name="DialogText2" type="Node" parent="LevelTransition"]
+script = ExtResource("7_ko3bk")
+text = "You're right."
+npc_info = ExtResource("8_1b4t0")
+
+[node name="DialogText3" type="Node" parent="LevelTransition"]
+script = ExtResource("7_ko3bk")
+text = "We have to act quick if we want to find the missing lifeguard."
+npc_info = ExtResource("8_1b4t0")
+
+[node name="DialogText4" type="Node" parent="LevelTransition"]
+script = ExtResource("7_ko3bk")
+text = "Where are the others?"
+npc_info = ExtResource("8_1b4t0")
+
+[node name="DialogText5" type="Node" parent="LevelTransition"]
+script = ExtResource("7_ko3bk")
+text = "Officer Eris and Detective Lowkey are in the pool room already."
+npc_info = ExtResource("9_xevt3")
+
+[node name="DialogText6" type="Node" parent="LevelTransition"]
+script = ExtResource("7_ko3bk")
+text = "The dispatch request said that the lifeguard was last seen in the pool area, but they didn’t see where they went after."
+npc_info = ExtResource("9_xevt3")
+
+[node name="DialogText7" type="Node" parent="LevelTransition"]
+script = ExtResource("7_ko3bk")
+text = "Everyone was evacuated after a while. The other lifeguard seemed to have called the police after his partner went missing."
+npc_info = ExtResource("9_xevt3")
+
+[node name="DialogText8" type="Node" parent="LevelTransition"]
+script = ExtResource("7_ko3bk")
+text = "We should get moving now."
+npc_info = ExtResource("9_xevt3")
+
+[node name="DialogText9" type="Node" parent="LevelTransition"]
+script = ExtResource("7_ko3bk")
+text = "The others are waiting."
+npc_info = ExtResource("9_xevt3")
+
+[node name="LevelTransition2" parent="." instance=ExtResource("6_1b4t0")]
+position = Vector2(468, 132)
+level = "uid://co4f0ibd8t1gp"
+size = 1
+side = 1
+
+[node name="NPC" parent="." instance=ExtResource("10_1b4t0")]
+position = Vector2(60, 216)
+npc_resource = ExtResource("9_xevt3")
+
+[node name="DialogInteraction" parent="NPC" instance=ExtResource("11_xevt3")]
+
+[node name="DialogText" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("7_ko3bk")
+text = "We should get moving now."
+npc_info = ExtResource("9_xevt3")
+
+[node name="DialogText1" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("7_ko3bk")
+text = "The others are waiting."
+npc_info = ExtResource("9_xevt3")

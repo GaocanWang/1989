@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d1bj7nb4613y6" path="res://GUI/dialog_system/sprites/text-bubble.png" id="2_vac1q"]
 [ext_resource type="FontFile" uid="uid://1waxq8ral8jt" path="res://GUI/fonts/Abaddon Light.ttf" id="3_rbskj"]
 [ext_resource type="FontFile" uid="uid://di4ukig88u1hc" path="res://GUI/fonts/Abaddon Bold.ttf" id="4_f13wm"]
-[ext_resource type="Texture2D" uid="uid://b0ptroag2plb5" path="res://npc/sprites/portraits/npc_portrait_01.png" id="5_pgk65"]
+[ext_resource type="Texture2D" uid="uid://b23b74ejvbf24" path="res://npc/sprites/portraits/teresa game size neutral.png" id="5_onhof"]
 [ext_resource type="Script" uid="uid://d2vlfsil2ge2" path="res://GUI/dialog_system/scripts/dialog_portrait.gd" id="6_dgtfi"]
 [ext_resource type="AudioStream" uid="uid://cp5qia3itg5y8" path="res://GUI/dialog_system/audio/voice_blip.wav" id="6_fon7m"]
 [ext_resource type="FontFile" uid="uid://d2tsrci0mjm5u" path="res://GUI/fonts/m5x7.ttf" id="6_h6n0s"]
@@ -109,13 +109,14 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1128.0
+offset_left = -792.0
 offset_top = -197.0
 offset_right = -24.0
 offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_nbe4o")
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="DialogUI/PanelContainer"]
 layout_mode = 2
@@ -129,9 +130,9 @@ scroll_active = false
 
 [node name="NameLabel" type="Label" parent="DialogUI"]
 layout_mode = 0
-offset_left = 24.0
+offset_left = 360.0
 offset_top = 405.0
-offset_right = 126.0
+offset_right = 462.0
 offset_bottom = 459.0
 theme_override_colors/font_color = Color(0.894118, 0.862745, 0.796078, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -142,11 +143,9 @@ theme_override_fonts/font = ExtResource("4_f13wm")
 theme_override_font_sizes/font_size = 40
 
 [node name="PortraitSprite" type="Sprite2D" parent="DialogUI"]
-visible = false
-position = Vector2(120, 470.4)
-scale = Vector2(2.4, 2.4)
-texture = ExtResource("5_pgk65")
-hframes = 4
+position = Vector2(240, 404)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_onhof")
 script = ExtResource("6_dgtfi")
 
 [node name="Timer" type="Timer" parent="DialogUI"]
