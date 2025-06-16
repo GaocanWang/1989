@@ -123,15 +123,17 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Logo"]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-scale = Vector2(0.6, 0.6)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_sys6a")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Logo"]
 libraries = {
-"": SubResource("AnimationLibrary_1rkv8")
+&"": SubResource("AnimationLibrary_1rkv8")
 }
 autoplay = "Default"
 

@@ -62,7 +62,7 @@ func start_game() -> void:
 	
 	await DialogSystem.finished
 	
-	LevelManager.load_new_level( START_LEVEL, "LevelTransition", Vector2(0, -12) )
+	LevelManager.load_new_part( START_LEVEL, "LevelTransition", Vector2(0, -12) )
 	
 	pass
 

@@ -10,6 +10,7 @@ func _ready() -> void:
 func flicker() -> void:
 	energy = randf() * 0.01 + 0.5
 	scale = Vector2( 2, 2 ) * energy
-	await get_tree().create_timer( 0.1 ).timeout
-	flicker()
+	if self.visible == true:
+		await get_tree().create_timer( 0.1 ).timeout
+		flicker()
 	pass

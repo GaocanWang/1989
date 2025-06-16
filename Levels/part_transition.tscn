@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://co0l7nrsat2gg"]
+[gd_scene load_steps=8 format=3 uid="uid://co0l7nrsat2gg"]
 
 [ext_resource type="Script" uid="uid://b7p7bkpuqktb8" path="res://Levels/scripts/part_transition.gd" id="1_nakq8"]
 [ext_resource type="Texture2D" uid="uid://by1oyhinkv2wc" path="res://FullScreenArt/teresa full screen.png" id="2_7dtem"]
@@ -9,6 +9,42 @@ size = Vector2(24, 48)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddmx8"]
 bg_color = Color(0.187176, 0.187176, 0.187176, 1)
+
+[sub_resource type="Animation" id="Animation_55yav"]
+resource_name = "lower_art"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, -20), Vector2(960, 1100)]
+}
+
+[sub_resource type="Animation" id="Animation_r2lym"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, -20)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eoaue"]
+_data = {
+&"RESET": SubResource("Animation_r2lym"),
+&"lower_art": SubResource("Animation_55yav")
+}
 
 [node name="PartTransition" type="Node2D"]
 script = ExtResource("1_nakq8")
@@ -35,11 +71,18 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 426.0
-offset_top = 300.0
-offset_right = 723.0
-offset_bottom = 378.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.5
+offset_top = -39.0
+offset_right = 148.5
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
@@ -48,14 +91,18 @@ text = "OPEN THE DOOR?"
 
 [node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
-text = "yes"
+text = "Yes"
 
 [node name="Button2" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
-text = "no"
+text = "No"
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control"]
 visible = false
-position = Vector2(576, -12)
-scale = Vector2(0.6, 0.6)
+position = Vector2(960, -20)
 texture = ExtResource("2_7dtem")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_eoaue")
+}

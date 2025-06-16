@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dvqgh6lgjqqb0"]
+[gd_scene load_steps=32 format=3 uid="uid://dvqgh6lgjqqb0"]
 
 [ext_resource type="Script" uid="uid://dngaafqs0siiw" path="res://Player/Scripts/player.gd" id="1_kdav8"]
 [ext_resource type="Texture2D" uid="uid://cwiwtw5dn7s33" path="res://Player/Sprites/amelia2.png" id="2_vtle1"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://3n1gp1u3hwnk" path="res://Player/Scripts/states/state_walk.gd" id="5_6nyq6"]
 [ext_resource type="Script" uid="uid://df53kaigwvvmx" path="res://Player/Scripts/player_interactions_host.gd" id="6_knfwp"]
 [ext_resource type="Script" uid="uid://dqh1t5i2fx2m3" path="res://Player/Scripts/player_camera.gd" id="6_w4quj"]
+[ext_resource type="Script" uid="uid://lqshc0utfr3e" path="res://Props/torches/torch_light_flicker.gd" id="9_00tjw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xnupc"]
 radius = 4.0
@@ -319,6 +320,15 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dws7a"]
 size = Vector2(8, 8)
 
+[sub_resource type="Gradient" id="Gradient_od3ui"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0.501961)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_00tjw"]
+gradient = SubResource("Gradient_od3ui")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 16
 motion_mode = 1
@@ -368,7 +378,7 @@ script = ExtResource("4_hu4d1")
 script = ExtResource("5_6nyq6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(5, 5)
 script = ExtResource("6_w4quj")
 
 [node name="Audio" type="Node2D" parent="."]
@@ -388,3 +398,8 @@ monitoring = false
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_dws7a")
 debug_color = Color(0, 1, 0, 0.419608)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -10)
+texture = SubResource("GradientTexture2D_00tjw")
+script = ExtResource("9_00tjw")

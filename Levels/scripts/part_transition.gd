@@ -25,6 +25,7 @@ enum SIDE { LEFT, RIGHT, TOP, BOTTOM }
 @onready var yes: Button = $CanvasLayer/Control/VBoxContainer/Button
 @onready var no: Button = $CanvasLayer/Control/VBoxContainer/Button2
 @onready var art: Sprite2D = $CanvasLayer/Control/Sprite2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var dialog_items_1 : Array[ DialogItem ]
 var dialog_items_2 : Array[ DialogItem ]
@@ -167,9 +168,8 @@ func _on_yes() -> void:
 	await DialogSystem.finished
 	art.show()
 	SceneTransition.fade_in()
-	for n in 168:
-		await get_tree().create_timer(0.01).timeout
-		art.position.y += 4;
+	animation_player.play("lower_art")
+	await animation_player.animation_finished
 	DialogSystem.show_dialog( dialog_items_4 )
 	await DialogSystem.finished
 	get_tree().paused = false

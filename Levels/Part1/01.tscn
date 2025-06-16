@@ -154,3 +154,6 @@ npc_info = ExtResource("9_8ypoo")
 script = ExtResource("8_sles3")
 text = "Only now do you begin to appreciate it."
 npc_info = ExtResource("9_8ypoo")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+blend_mode = 1

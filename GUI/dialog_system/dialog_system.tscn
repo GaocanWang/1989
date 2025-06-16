@@ -1,10 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://np2826ya085l"]
+[gd_scene load_steps=24 format=3 uid="uid://np2826ya085l"]
 
 [ext_resource type="Script" uid="uid://bmxl7n5om7mck" path="res://GUI/dialog_system/scripts/dialog_system.gd" id="1_xj1h2"]
 [ext_resource type="Texture2D" uid="uid://d1bj7nb4613y6" path="res://GUI/dialog_system/sprites/text-bubble.png" id="2_vac1q"]
 [ext_resource type="FontFile" uid="uid://1waxq8ral8jt" path="res://GUI/fonts/Abaddon Light.ttf" id="3_rbskj"]
 [ext_resource type="FontFile" uid="uid://di4ukig88u1hc" path="res://GUI/fonts/Abaddon Bold.ttf" id="4_f13wm"]
-[ext_resource type="Texture2D" uid="uid://b23b74ejvbf24" path="res://npc/sprites/portraits/teresa game size neutral.png" id="5_onhof"]
 [ext_resource type="Script" uid="uid://d2vlfsil2ge2" path="res://GUI/dialog_system/scripts/dialog_portrait.gd" id="6_dgtfi"]
 [ext_resource type="AudioStream" uid="uid://cp5qia3itg5y8" path="res://GUI/dialog_system/audio/voice_blip.wav" id="6_fon7m"]
 [ext_resource type="FontFile" uid="uid://d2tsrci0mjm5u" path="res://GUI/fonts/m5x7.ttf" id="6_h6n0s"]
@@ -77,6 +76,354 @@ _data = {
 &"default": SubResource("Animation_hpc7p")
 }
 
+[sub_resource type="Animation" id="Animation_onhof"]
+resource_name = "textbox_rise"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(480, 1134), Vector2(480, 784)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NameLabel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(480, 1080), Vector2(480, 730)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NameLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DialogProgressIndicator:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1350, 1374), Vector2(1350, 1024)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DialogProgressIndicator:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2mc8p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(480, 784)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NameLabel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(480, 730)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NameLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DialogProgressIndicator:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1350, 1024)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PortraitSprite:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(240, 840)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("DialogProgressIndicator:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PortraitSprite:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_04hu3"]
+resource_name = "textbox_drop"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(480, 784), Vector2(480, 1134)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NameLabel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(480, 730), Vector2(480, 1080)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NameLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DialogProgressIndicator:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1350, 1024), Vector2(1350, 1374)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DialogProgressIndicator:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ffdbi"]
+_data = {
+&"RESET": SubResource("Animation_2mc8p"),
+&"textbox_drop": SubResource("Animation_04hu3"),
+&"textbox_rise": SubResource("Animation_onhof")
+}
+
+[sub_resource type="Animation" id="Animation_ffdbi"]
+resource_name = "portrait_appear"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PortraitSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-240, 840), Vector2(240, 840)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PortraitSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_feq15"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PortraitSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-240, 840)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PortraitSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wr32x"]
+resource_name = "portrait_disappear"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PortraitSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(240, 840), Vector2(-240, 840)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PortraitSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pwx8d"]
+_data = {
+&"RESET": SubResource("Animation_feq15"),
+&"portrait_appear": SubResource("Animation_ffdbi"),
+&"portrait_disappear": SubResource("Animation_wr32x")
+}
+
 [node name="DialogSystem" type="CanvasLayer"]
 process_mode = 3
 layer = 3
@@ -103,37 +450,38 @@ grow_vertical = 0
 texture = SubResource("GradientTexture2D_jocu5")
 
 [node name="PanelContainer" type="PanelContainer" parent="DialogUI"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -792.0
-offset_top = -197.0
-offset_right = -24.0
-offset_bottom = -24.0
+offset_left = -1440.0
+offset_top = -296.0
+offset_right = -480.0
+offset_bottom = -26.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_nbe4o")
-metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="DialogUI/PanelContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.439216, 0.396078, 0.321569, 1)
 theme_override_fonts/normal_font = ExtResource("3_rbskj")
 theme_override_fonts/bold_font = ExtResource("4_f13wm")
-theme_override_font_sizes/normal_font_size = 40
-theme_override_font_sizes/bold_font_size = 40
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
 bbcode_enabled = true
+text = "wuh"
 scroll_active = false
 
 [node name="NameLabel" type="Label" parent="DialogUI"]
 layout_mode = 0
-offset_left = 360.0
-offset_top = 405.0
-offset_right = 462.0
-offset_bottom = 459.0
+offset_left = 480.0
+offset_top = 730.0
+offset_right = 582.0
+offset_bottom = 784.0
 theme_override_colors/font_color = Color(0.894118, 0.862745, 0.796078, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
@@ -143,9 +491,10 @@ theme_override_fonts/font = ExtResource("4_f13wm")
 theme_override_font_sizes/font_size = 40
 
 [node name="PortraitSprite" type="Sprite2D" parent="DialogUI"]
-position = Vector2(240, 404)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("5_onhof")
+modulate = Color(1, 1, 1, 0)
+texture_filter = 2
+position = Vector2(-240, 840)
+scale = Vector2(0.4, 0.4)
 script = ExtResource("6_dgtfi")
 
 [node name="Timer" type="Timer" parent="DialogUI"]
@@ -157,13 +506,12 @@ max_polyphony = 6
 bus = &"SFX"
 
 [node name="DialogProgressIndicator" type="PanelContainer" parent="DialogUI"]
-visible = false
 self_modulate = Color(0.207843, 0.513726, 0.345098, 1)
 layout_mode = 0
-offset_left = 1044.0
-offset_top = 600.0
-offset_right = 1140.0
-offset_bottom = 636.0
+offset_left = 1350.0
+offset_top = 1024.0
+offset_right = 1446.0
+offset_bottom = 1060.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_yk2ck")
 
 [node name="Label" type="Label" parent="DialogUI/DialogProgressIndicator"]
@@ -215,3 +563,14 @@ text = "Choice 1..."
 [node name="Button5" type="Button" parent="DialogUI/VBoxContainer"]
 layout_mode = 2
 text = "Choice 1..."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DialogUI"]
+libraries = {
+&"": SubResource("AnimationLibrary_ffdbi")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="DialogUI"]
+root_node = NodePath("../AnimationPlayer")
+libraries = {
+&"": SubResource("AnimationLibrary_pwx8d")
+}

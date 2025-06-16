@@ -62,13 +62,15 @@ func load_new_part(
 	target_transition = _target_transition
 	position_offset = _position_offset
 	
+	await SceneTransition.fade_out()
+	
 	level_load_started.emit()
 	
 	await get_tree().process_frame
 	
 	get_tree().change_scene_to_file( level_path )
 	
-	await SceneTransition.fade_in()
+	await SceneTransition.long_fade_in()
 	
 	PlayerManager.player.check_pressed()
 	

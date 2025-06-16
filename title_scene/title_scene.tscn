@@ -89,32 +89,31 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control"]
-position = Vector2(576, 324)
-scale = Vector2(0.6, 0.6)
+position = Vector2(960, 540)
 texture = ExtResource("1_07ceg")
 
 [node name="ButtonNew" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 694.0
-offset_top = 325.0
-offset_right = 814.0
-offset_bottom = 349.0
+offset_left = 1155.0
+offset_top = 545.0
+offset_right = 1355.0
+offset_bottom = 585.0
+theme_override_font_sizes/font_size = 28
 theme_override_styles/focus = SubResource("StyleBoxTexture_sugrs")
 theme_override_styles/normal = SubResource("StyleBoxTexture_bcwfp")
 text = "NEW GAME"
 
 [node name="ButtonContinue" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 694.0
-offset_top = 366.0
-offset_right = 814.0
-offset_bottom = 390.0
+offset_left = 1155.0
+offset_top = 615.0
+offset_right = 1355.0
+offset_bottom = 655.0
+theme_override_font_sizes/font_size = 28
 theme_override_styles/focus = SubResource("StyleBoxTexture_ofojg")
 theme_override_styles/normal = SubResource("StyleBoxTexture_bplvs")
 text = "CONTINUE GAME"

@@ -370,3 +370,6 @@ npc_info = ExtResource("10_45svh")
 script = ExtResource("9_hs5gw")
 text = "When was the last time it was wiped clean?"
 npc_info = ExtResource("10_45svh")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+blend_mode = 1

@@ -16,6 +16,7 @@ var part2 = false
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var sprite2: Sprite2D = $Sprite2D2
 @onready var state_machine : PlayerStateMachine = $StateMachine
+@onready var point_light_2d: PointLight2D = $PointLight2D
 
 signal DirectionChanged( new_direction: Vector2 )
 
@@ -96,3 +97,4 @@ func _on_part2() -> void:
 	part2 = true
 	sprite.visible = true
 	sprite2.visible = false
+	point_light_2d.visible = false
