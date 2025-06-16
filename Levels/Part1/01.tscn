@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://d1htu88kwjavm"]
+[gd_scene load_steps=11 format=4 uid="uid://d1htu88kwjavm"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_c6bey"]
 [ext_resource type="AudioStream" uid="uid://bk3gx0jom4p37" path="res://Levels/music/example_music_01.ogg" id="2_775yw"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="7_6xuwr"]
 [ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="8_sles3"]
 [ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/text.tres" id="9_8ypoo"]
+[ext_resource type="PackedScene" uid="uid://cwh3rvrsg38ko" path="res://Props/torches/torch.tscn" id="10_s6px5"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_c6bey")
@@ -49,8 +50,7 @@ npc_info = ExtResource("9_8ypoo")
 
 [node name="DialogText2" type="Node" parent="Chair"]
 script = ExtResource("8_sles3")
-text = "For something you bought at a garage sale, it has served
-you quite well for the past three years."
+text = "For something you bought at a garage sale, it has served you quite well for the past three years."
 npc_info = ExtResource("9_8ypoo")
 
 [node name="Bed" parent="." instance=ExtResource("7_6xuwr")]
@@ -122,8 +122,7 @@ npc_info = ExtResource("9_8ypoo")
 
 [node name="DialogText2" type="Node" parent="Shelves"]
 script = ExtResource("8_sles3")
-text = "You can’t recall one single time you actually used these
-shelves for anything important."
+text = "You can’t recall one single time you actually used these shelves for anything important."
 npc_info = ExtResource("9_8ypoo")
 
 [node name="Desk" parent="." instance=ExtResource("7_6xuwr")]
@@ -146,14 +145,17 @@ size = Vector2(12, 48)
 
 [node name="DialogText" type="Node" parent="Lamp"]
 script = ExtResource("8_sles3")
-text = "Even after all this time, the lamp still has that unfixable
-humming noise every time you turn it on."
+text = "Even after all this time, the lamp still has that unfixable humming noise every time you turn it on."
 npc_info = ExtResource("9_8ypoo")
 
 [node name="DialogText2" type="Node" parent="Lamp"]
 script = ExtResource("8_sles3")
 text = "Only now do you begin to appreciate it."
 npc_info = ExtResource("9_8ypoo")
+
+[node name="Torch" parent="Lamp" instance=ExtResource("10_s6px5")]
+visible = false
+position = Vector2(-6, 19)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 blend_mode = 1
