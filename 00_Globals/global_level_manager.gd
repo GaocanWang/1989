@@ -70,6 +70,9 @@ func load_new_part(
 	
 	get_tree().change_scene_to_file( level_path )
 	
+	if level_path == "res://Levels/Part2/04.tscn":
+		part2.emit()
+	
 	await SceneTransition.long_fade_in()
 	
 	PlayerManager.player.check_pressed()
@@ -79,8 +82,5 @@ func load_new_part(
 	await get_tree().process_frame
 	
 	level_loaded.emit()
-	
-	if level_path == "res://Levels/Part2/04.tscn":
-		part2.emit()
 	
 	pass

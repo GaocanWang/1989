@@ -44,13 +44,14 @@ func check_mouth_open( l : String ) -> void:
 
 
 func update_portrait() -> void:
-	if open_mouth == true:
-		frame = 2
-	else:
-		frame = 0
-	
-	if blink == true:
-		frame += 1
+	#if open_mouth == true:
+		#frame = 2
+	#else:
+		#frame = 0
+	#
+	#if blink == true:
+		#frame += 1
+	pass
 
 
 

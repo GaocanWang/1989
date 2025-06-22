@@ -34,6 +34,10 @@ window/size/mode=3
 window/size/resizable=false
 window/stretch/mode="viewport"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
 [gui]
 
 theme/custom_font="res://GUI/fonts/Abaddon Light.ttf"

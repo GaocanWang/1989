@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bg0omm6hpjbsi"
+path="res://.godot/imported/dream sequence bgm.mp3-c14289e5d7593494fbf1c2d289c69e25.mp3str"
+
+[deps]
+
+source_file="res://Levels/music/dream sequence bgm.mp3"
+dest_files=["res://.godot/imported/dream sequence bgm.mp3-c14289e5d7593494fbf1c2d289c69e25.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

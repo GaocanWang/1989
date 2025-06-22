@@ -41,7 +41,6 @@ func _ready() -> void:
 		return
 	timer.timeout.connect( _on_timer_timeout )
 	dialog_ui.visible = false
-	hide_dialog()
 	pass
 
 
@@ -84,7 +83,12 @@ func show_dialog( _items : Array[ DialogItem ] ) -> void:
 	start_dialog()
 	dialog_ui.visible = true
 	textbox_animation_player.play("textbox_rise")
-	portrait_animation_player.play("portrait_appear")
+	if (portrait_sprite.texture == null ):
+		portrait_animation_player.play("portrait_appear_left")
+	elif (portrait_sprite.texture.resource_path == "res://Player/Sprites/GAME SIZE amelia placeholder sprite.png"):
+		portrait_animation_player.play("portrait_appear_left")
+	else:
+		portrait_animation_player.play("portrait_appear_right")
 	pass
 
 
@@ -92,7 +96,12 @@ func show_dialog( _items : Array[ DialogItem ] ) -> void:
 ## Hide Dialog System UI
 func hide_dialog() -> void:
 	textbox_animation_player.play("textbox_drop")
-	portrait_animation_player.play("portrait_disappear")
+	if (portrait_sprite.texture == null):
+		portrait_animation_player.play("portrait_disappear_left")
+	elif (portrait_sprite.texture.resource_path == "res://Player/Sprites/GAME SIZE amelia placeholder sprite.png"):
+		portrait_animation_player.play("portrait_disappear_left")
+	else:
+		portrait_animation_player.play("portrait_disappear_right")
 	await portrait_animation_player.animation_finished
 	is_active = false
 	choice_options.visible = false
@@ -129,16 +138,28 @@ func set_dialog_text( _d : DialogText ) -> void:
 	content.text = _d.text
 	choice_options.visible = false
 	name_label.text = _d.npc_info.npc_name
-	if portrait_sprite.texture != _d.npc_info.portrait:
-		portrait_animation_player.play("portrait_disappear")
-		portrait_sprite.texture = _d.npc_info.portrait
-		portrait_animation_player.play("portrait_appear")
 	portrait_sprite.audio_pitch_base = _d.npc_info.dialog_audio_pitch
 	content.visible_characters = 0
 	text_length = content.get_total_character_count()
 	plain_text = content.get_parsed_text()
 	text_in_progress = true
 	start_timer()
+	if portrait_sprite.texture != _d.npc_info.portrait:
+		if (portrait_sprite.texture == null):
+			pass
+		elif (portrait_sprite.texture.resource_path == "res://Player/Sprites/GAME SIZE amelia placeholder sprite.png"):
+			portrait_animation_player.play("portrait_disappear_left")
+			await portrait_animation_player.animation_finished
+		else:
+			portrait_animation_player.play("portrait_disappear_right")
+			await portrait_animation_player.animation_finished
+		portrait_sprite.texture = _d.npc_info.portrait
+		if (portrait_sprite.texture == null ):
+			pass
+		elif (portrait_sprite.texture.resource_path == "res://Player/Sprites/GAME SIZE amelia placeholder sprite.png"):
+			portrait_animation_player.play("portrait_appear_left")
+		else:
+			portrait_animation_player.play("portrait_appear_right")
 	pass
 
 

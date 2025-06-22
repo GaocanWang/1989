@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://c2w2tyjg78bol"]
 
-[ext_resource type="Texture2D" uid="uid://bjuwwbofp2hal" path="res://Player/Sprites/amelia game size neutral.png" id="1_mn66j"]
+[ext_resource type="Texture2D" uid="uid://b0tn6w36ophoc" path="res://Player/Sprites/GAME SIZE amelia placeholder sprite.png" id="1_mn66j"]
 [ext_resource type="Script" uid="uid://cg8c1j6taerih" path="res://npc/scripts/npc_resource.gd" id="1_tw8mj"]
 [ext_resource type="Texture2D" uid="uid://c5mo4ugu2uvtj" path="res://Player/Sprites/amelia.png" id="2_o5vo6"]
 

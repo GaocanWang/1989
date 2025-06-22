@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwh3rvrsg38ko"]
+[gd_scene load_steps=8 format=3 uid="uid://cwh3rvrsg38ko"]
 
-[ext_resource type="Texture2D" uid="uid://dub1k6p35brtr" path="res://Props/torches/torch.png" id="1_xxbmi"]
 [ext_resource type="Script" uid="uid://lqshc0utfr3e" path="res://Props/torches/torch_light_flicker.gd" id="2_cblwn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_84shd"]
@@ -60,7 +59,6 @@ fill_to = Vector2(1, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -26)
-texture = ExtResource("1_xxbmi")
 hframes = 5
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://k4sa1rxa7ww0"]
 
-[ext_resource type="Texture2D" uid="uid://c2mgreus8qfgd" path="res://Tile Maps/Sprites/pool.png" id="1_aycxv"]
+[ext_resource type="Texture2D" uid="uid://bj08g4m3d3w3t" path="res://Tile Maps/Sprites/pool.png" id="1_aycxv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6vgnk"]
 texture = ExtResource("1_aycxv")
@@ -59,6 +59,34 @@ texture_region_size = Vector2i(24, 24)
 2:5/0 = 0
 2:5/0/texture_origin = Vector2i(-12, 12)
 2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, 0, 36.1508, -0.176777, 36.125, -12, -12, -12)
+1:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+5:1/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:4/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+0:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
 
 [resource]
 tile_size = Vector2i(24, 24)
