@@ -11,8 +11,8 @@
 [ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="9_hs5gw"]
 [ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/text.tres" id="10_45svh"]
 [ext_resource type="PackedScene" uid="uid://co0l7nrsat2gg" path="res://Levels/part_transition.tscn" id="10_gdjcq"]
-[ext_resource type="Resource" uid="uid://c2w2tyjg78bol" path="res://npc/00_npcs/amelia.tres" id="11_e47pi"]
-[ext_resource type="Resource" uid="uid://di457jgt256ub" path="res://npc/00_npcs/teresa.tres" id="12_rpyh4"]
+[ext_resource type="Resource" uid="uid://q5twg4buxc41" path="res://npc/00_npcs/amelia_np.tres" id="11_jkwsr"]
+[ext_resource type="Resource" uid="uid://bppgf84a88nah" path="res://npc/00_npcs/teresa_np.tres" id="12_w5156"]
 
 [node name="03" type="Node2D"]
 y_sort_enabled = true
@@ -46,7 +46,7 @@ target_transition_area = "LevelTransition2"
 side = 1
 
 [node name="PartTransition" parent="." instance=ExtResource("10_gdjcq")]
-position = Vector2(324, 312)
+position = Vector2(324, 313)
 size = 1
 side = 2
 
@@ -94,12 +94,12 @@ npc_info = ExtResource("9_1hxyw")
 [node name="DialogText3" type="Node" parent="PartTransition/3"]
 script = ExtResource("9_hs5gw")
 text = "(This voice...)"
-npc_info = ExtResource("11_e47pi")
+npc_info = ExtResource("11_jkwsr")
 
 [node name="DialogText4" type="Node" parent="PartTransition/3"]
 script = ExtResource("9_hs5gw")
 text = "(Why does it sound so familiar?)"
-npc_info = ExtResource("11_e47pi")
+npc_info = ExtResource("11_jkwsr")
 
 [node name="DialogText5" type="Node" parent="PartTransition/3"]
 script = ExtResource("9_hs5gw")
@@ -119,12 +119,12 @@ npc_info = ExtResource("9_1hxyw")
 [node name="DialogText8" type="Node" parent="PartTransition/3"]
 script = ExtResource("9_hs5gw")
 text = "(Was I dreaming this whole time...?)"
-npc_info = ExtResource("11_e47pi")
+npc_info = ExtResource("11_jkwsr")
 
 [node name="DialogText9" type="Node" parent="PartTransition/3"]
 script = ExtResource("9_hs5gw")
 text = "(Who's speaking to me...?)"
-npc_info = ExtResource("11_e47pi")
+npc_info = ExtResource("11_jkwsr")
 
 [node name="DialogText10" type="Node" parent="PartTransition/3"]
 script = ExtResource("9_hs5gw")
@@ -141,7 +141,7 @@ npc_info = ExtResource("10_45svh")
 [node name="DialogText" type="Node" parent="PartTransition/4"]
 script = ExtResource("9_hs5gw")
 text = "Amelia, are you still with us?"
-npc_info = ExtResource("12_rpyh4")
+npc_info = ExtResource("12_w5156")
 
 [node name="DialogText2" type="Node" parent="PartTransition/4"]
 script = ExtResource("9_hs5gw")
@@ -156,72 +156,72 @@ npc_info = ExtResource("10_45svh")
 [node name="DialogText4" type="Node" parent="PartTransition/4"]
 script = ExtResource("9_hs5gw")
 text = "..."
-npc_info = ExtResource("11_e47pi")
+npc_info = ExtResource("11_jkwsr")
 
 [node name="DialogText5" type="Node" parent="PartTransition/4"]
 script = ExtResource("9_hs5gw")
 text = "Hey, Teresa."
-npc_info = ExtResource("11_e47pi")
+npc_info = ExtResource("11_jkwsr")
 
 [node name="DialogText6" type="Node" parent="PartTransition/4"]
 script = ExtResource("9_hs5gw")
 text = "Ah, welcome back to earth."
-npc_info = ExtResource("12_rpyh4")
+npc_info = ExtResource("12_w5156")
 
 [node name="DialogText7" type="Node" parent="PartTransition/4"]
 script = ExtResource("9_hs5gw")
 text = "You've been spacing out like that all week, you know?"
-npc_info = ExtResource("12_rpyh4")
+npc_info = ExtResource("12_w5156")
 
 [node name="DialogText8" type="Node" parent="PartTransition/4"]
 script = ExtResource("9_hs5gw")
 text = "Are you sure you're up for this case? If you're nt feeling well, I can always call in someone else."
-npc_info = ExtResource("12_rpyh4")
+npc_info = ExtResource("12_w5156")
 
 [node name="DialogText9" type="Node" parent="PartTransition/4"]
 script = ExtResource("9_hs5gw")
 text = "...I'm alright."
-npc_info = ExtResource("11_e47pi")
+npc_info = ExtResource("11_jkwsr")
 
 [node name="DialogText10" type="Node" parent="PartTransition/4"]
 script = ExtResource("9_hs5gw")
 text = "I was daydreaming, that's about it. Did I miss much?"
-npc_info = ExtResource("11_e47pi")
+npc_info = ExtResource("11_jkwsr")
 
 [node name="DialogText11" type="Node" parent="PartTransition/4"]
 script = ExtResource("9_hs5gw")
 text = "Dreaming on the job? Now that's a new one."
-npc_info = ExtResource("12_rpyh4")
+npc_info = ExtResource("12_w5156")
 
 [node name="DialogText12" type="Node" parent="PartTransition/4"]
 script = ExtResource("9_hs5gw")
 text = "No, you didn't miss much. We were just discussing which area we want to start examining first."
-npc_info = ExtResource("12_rpyh4")
+npc_info = ExtResource("12_w5156")
 
 [node name="DialogText13" type="Node" parent="PartTransition/4"]
 script = ExtResource("9_hs5gw")
 text = "Everyone evacuated earlier when we got the dispatch, so we have the whole place to ourselves."
-npc_info = ExtResource("12_rpyh4")
+npc_info = ExtResource("12_w5156")
 
 [node name="DialogText14" type="Node" parent="PartTransition/4"]
 script = ExtResource("9_hs5gw")
 text = "We better act quick though."
-npc_info = ExtResource("12_rpyh4")
+npc_info = ExtResource("12_w5156")
 
 [node name="DialogText15" type="Node" parent="PartTransition/4"]
 script = ExtResource("9_hs5gw")
 text = "(Right, the case.)"
-npc_info = ExtResource("11_e47pi")
+npc_info = ExtResource("11_jkwsr")
 
 [node name="DialogText16" type="Node" parent="PartTransition/4"]
 script = ExtResource("9_hs5gw")
 text = "(That's why I'm here after all.)"
-npc_info = ExtResource("11_e47pi")
+npc_info = ExtResource("11_jkwsr")
 
 [node name="DialogText17" type="Node" parent="PartTransition/4"]
 script = ExtResource("9_hs5gw")
 text = "(I guess it's time to put my attention to where it really matters now and solve this case quickly.)"
-npc_info = ExtResource("11_e47pi")
+npc_info = ExtResource("11_jkwsr")
 
 [node name="LoungeChair" parent="." instance=ExtResource("8_kedyg")]
 position = Vector2(84, 96)
@@ -369,6 +369,38 @@ npc_info = ExtResource("10_45svh")
 [node name="DialogText2" type="Node" parent="CoffeeTable"]
 script = ExtResource("9_hs5gw")
 text = "When was the last time it was wiped clean?"
+npc_info = ExtResource("10_45svh")
+
+[node name="Lamp" parent="." instance=ExtResource("8_kedyg")]
+position = Vector2(234, 80)
+size = Vector2(12, 48)
+
+[node name="DialogText" type="Node" parent="Lamp"]
+script = ExtResource("9_hs5gw")
+text = "A very uninteresting lamp."
+npc_info = ExtResource("10_45svh")
+
+[node name="DialogText2" type="Node" parent="Lamp"]
+script = ExtResource("9_hs5gw")
+text = "You try turning it on."
+npc_info = ExtResource("10_45svh")
+
+[node name="DialogText3" type="Node" parent="Lamp"]
+script = ExtResource("9_hs5gw")
+text = "It doesn't work."
+npc_info = ExtResource("10_45svh")
+
+[node name="GarbageCan" parent="." instance=ExtResource("8_kedyg")]
+position = Vector2(36, 96)
+
+[node name="DialogText" type="Node" parent="GarbageCan"]
+script = ExtResource("9_hs5gw")
+text = "A garbage can sits in the corner of the room."
+npc_info = ExtResource("10_45svh")
+
+[node name="DialogText2" type="Node" parent="GarbageCan"]
+script = ExtResource("9_hs5gw")
+text = "The trash has already been taken out."
 npc_info = ExtResource("10_45svh")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]

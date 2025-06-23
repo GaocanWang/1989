@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=3 format=3 uid="uid://bppgf84a88nah"]
+
+[ext_resource type="Script" uid="uid://cg8c1j6taerih" path="res://npc/scripts/npc_resource.gd" id="2_e1ghw"]
+[ext_resource type="Texture2D" uid="uid://ciqf11ur00q3q" path="res://npc/sprites/teresa.png" id="3_0tq4i"]
+
+[resource]
+script = ExtResource("2_e1ghw")
+npc_name = "Teresa"
+sprite = ExtResource("3_0tq4i")
+dialog_audio_pitch = 1.5

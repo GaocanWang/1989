@@ -54,7 +54,7 @@ func start_game() -> void:
 	
 	animation_player.play( "black_screen" )
 	
-	#play_audio( 80s ahh music )
+	AudioManager.play_music(null)
 	
 	await get_tree().create_timer( 2.0 ).timeout
 	

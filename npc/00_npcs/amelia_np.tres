@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=3 format=3 uid="uid://q5twg4buxc41"]
+
+[ext_resource type="Script" uid="uid://cg8c1j6taerih" path="res://npc/scripts/npc_resource.gd" id="2_2sci6"]
+[ext_resource type="Texture2D" uid="uid://c5mo4ugu2uvtj" path="res://Player/Sprites/amelia.png" id="3_q85jw"]
+
+[resource]
+script = ExtResource("2_2sci6")
+npc_name = "Amelia"
+sprite = ExtResource("3_q85jw")
+dialog_audio_pitch = 1.26
