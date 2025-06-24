@@ -154,7 +154,6 @@ text = "Only now do you begin to appreciate it."
 npc_info = ExtResource("9_8ypoo")
 
 [node name="Torch" parent="Lamp" instance=ExtResource("10_s6px5")]
-visible = false
 position = Vector2(-6, 19)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
