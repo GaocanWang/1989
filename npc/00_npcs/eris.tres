@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=3 format=3 uid="uid://ctbf7x8e37pym"]
+
+[ext_resource type="Texture2D" uid="uid://enrdumhu7k2e" path="res://npc/sprites/portraits/GAME SIZE officer y placeholder sprite.png" id="1_6acr4"]
+[ext_resource type="Script" uid="uid://cg8c1j6taerih" path="res://npc/scripts/npc_resource.gd" id="1_p0pt8"]
+
+[resource]
+script = ExtResource("1_p0pt8")
+npc_name = "Eris"
+portrait = ExtResource("1_6acr4")
+dialog_audio_pitch = 1.38

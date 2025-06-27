@@ -36,6 +36,7 @@ tile_set = ExtResource("3_qw5bp")
 position = Vector2(60, 244)
 
 [node name="LevelTransition" parent="." instance=ExtResource("6_ekd8h")]
+process_mode = 4
 position = Vector2(48, 252)
 level = "uid://xcrva135cjif"
 target_transition_area = "LevelTransition2"
@@ -107,3 +108,19 @@ npc_info = ExtResource("9_6c266")
 script = ExtResource("7_761wi")
 text = "The others are waiting."
 npc_info = ExtResource("9_6c266")
+
+[node name="DialogInteraction2" parent="NPC" instance=ExtResource("11_iqqml")]
+position = Vector2(-12, 48)
+size = Vector2(48, 24)
+
+[node name="DialogText" type="Node" parent="NPC/DialogInteraction2"]
+script = ExtResource("7_761wi")
+text = "Where are you going?"
+npc_info = ExtResource("9_6c266")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="NPC/DialogInteraction2"]
+script = ExtResource("7_761wi")
+text = "The pool entrance is the other way."
+npc_info = ExtResource("9_6c266")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"

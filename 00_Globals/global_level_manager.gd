@@ -48,6 +48,9 @@ func load_new_level(
 	
 	level_loaded.emit()
 	
+	var res := ResourceLoader.load(level_path)
+	if res.resource_path == "res://Levels/Part2/02.tscn":
+		part2.emit()
 	
 	pass
 
@@ -82,5 +85,8 @@ func load_new_part(
 	await get_tree().process_frame
 	
 	level_loaded.emit()
+	
+	if level_path == "res://Levels/Part2/01.tscn":
+		part2.emit()
 	
 	pass
