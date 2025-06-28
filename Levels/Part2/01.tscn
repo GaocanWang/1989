@@ -109,17 +109,17 @@ script = ExtResource("7_761wi")
 text = "The others are waiting."
 npc_info = ExtResource("9_6c266")
 
-[node name="DialogInteraction2" parent="NPC" instance=ExtResource("11_iqqml")]
-position = Vector2(-12, 48)
+[node name="DialogInteraction2" parent="." instance=ExtResource("11_iqqml")]
+position = Vector2(48, 264)
 size = Vector2(48, 24)
 
-[node name="DialogText" type="Node" parent="NPC/DialogInteraction2"]
+[node name="DialogText" type="Node" parent="DialogInteraction2"]
 script = ExtResource("7_761wi")
 text = "Where are you going?"
 npc_info = ExtResource("9_6c266")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText2" type="Node" parent="NPC/DialogInteraction2"]
+[node name="DialogText2" type="Node" parent="DialogInteraction2"]
 script = ExtResource("7_761wi")
 text = "The pool entrance is the other way."
 npc_info = ExtResource("9_6c266")

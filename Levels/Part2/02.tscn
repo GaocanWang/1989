@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://co4f0ibd8t1gp"]
+[gd_scene load_steps=14 format=4 uid="uid://co4f0ibd8t1gp"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_1wuq7"]
 [ext_resource type="AudioStream" uid="uid://bg0omm6hpjbsi" path="res://Levels/music/dream sequence bgm.mp3" id="2_yllp4"]
@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://c2w2tyjg78bol" path="res://npc/00_npcs/amelia.tres" id="10_h8wce"]
 [ext_resource type="Resource" uid="uid://di457jgt256ub" path="res://npc/00_npcs/teresa.tres" id="11_4xy53"]
 [ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/text.tres" id="12_ja1e1"]
+[ext_resource type="PackedScene" uid="uid://dm15w3ux3txs4" path="res://npc/npc.tscn" id="13_f06bb"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_1wuq7")
@@ -151,7 +152,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText19" type="Node" parent="LevelTransition"]
 script = ExtResource("7_566gx")
-text = "*High-school student solves Marson Bridge Case and catches murderer before police.*"
+text = "[i]High-school student solves Marson Bridge Case and catches murderer before police.[/i]"
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
@@ -559,7 +560,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText87" type="Node" parent="LevelTransition"]
 script = ExtResource("7_566gx")
-text = "*Eris shrugs.*"
+text = "[i]Eris shrugs.[/i]"
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
@@ -677,6 +678,234 @@ text = "We should review everything we know so far."
 npc_info = ExtResource("10_h8wce")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
+[node name="DialogText107" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "Right. Let’s start from the beginning."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText108" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "We all got on our shifts at 7 PM, and we got a call around 7:50."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText109" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "The lifeguard from this community center was the one who called emergency telecommunicators."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText110" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "He said he was supposed to be working with his shift partner, who was last seen heading into the changeroom today."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText111" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "This was around 5 PM, give or take."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText112" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "He hasn’t been seen since."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText113" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "The caller said his partner went inside to check a maintenance leak in the changeroom."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText114" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "He locked the door to inspect it safely, so no one else would get hurt."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText115" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "But he never came out."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText116" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "The other lifeguard called us after 2 hours with no sign of his shift partner."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText117" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "He tried unlocking the changeroom door but somehow lost his keys."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText118" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "Sounds like a real idiot to me."
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText119" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "Me too."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText120" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "Anyway, he evacuated the remaining swimmers shortly after calling us."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText121" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "Most swimmers had left by then, since the pool closes at 8."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText122" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "Ten or so minutes later, we arrive on scene."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText123" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "And that’s the whole story."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText124" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "Sounds like an open and shut case to me."
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText125" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "The guy probably underestimated the leak and probably got knocked out trying to fix it."
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText126" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "I bet he’s still inside, just unconscious."
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText127" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "[i]No, this can’t be right.[/i]"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText128" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "[i]Something about this case isn’t adding up.[/i]"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText129" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "[i]It feels….like there’s something we’re missing.[/i]"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText130" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "Well, if we’re going to get started, let’s do it now."
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText131" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "The community center closes at 9 and the pool lights are automatic."
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText132" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "We better move quick unless we want to be searching around in the dark."
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText133" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "Then let’s start looking now."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText134" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "We should probably start with the women’s changeroom."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText135" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "Maybe our mystery man will finally reveal himself, and we can call it a day."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText136" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "Amelia and I have been here before."
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText137" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "It’s not too big of a place."
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText138" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "I’m sure we’ll wrap up before 9."
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText139" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "This is my first time here."
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText140" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "You and Amelia can lead the investigation."
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText141" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "LOWKEY might overlook something if we let him lead anyway."
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText142" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "Alright, then."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText143" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "It’s your lucky day, miss detective."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText144" type="Node" parent="LevelTransition"]
+script = ExtResource("7_566gx")
+text = "Lead the way."
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
 [node name="LevelTransition2" parent="." instance=ExtResource("6_7afvj")]
 position = Vector2(360, 684)
 level = "uid://c1ei0hjvfb0yb"
@@ -688,3 +917,11 @@ level = "uid://kaiv4m7e4ftt"
 door = true
 size = 1
 side = 2
+
+[node name="NPC" parent="." instance=ExtResource("13_f06bb")]
+position = Vector2(72, 564)
+npc_resource = ExtResource("8_f06bb")
+
+[node name="NPC2" parent="." instance=ExtResource("13_f06bb")]
+position = Vector2(72, 636)
+npc_resource = ExtResource("9_yjrug")
