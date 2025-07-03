@@ -8,6 +8,7 @@ signal part2
 var current_tilemap_bounds : Array[ Vector2 ]
 var target_transition : String
 var position_offset : Vector2
+var beenToPool : bool = false
 
 
 func _ready() -> void:
@@ -49,7 +50,8 @@ func load_new_level(
 	level_loaded.emit()
 	
 	var res := ResourceLoader.load(level_path)
-	if res.resource_path == "res://Levels/Part2/02.tscn":
+	if res.resource_path == "res://Levels/Part2/02.tscn" && beenToPool == false:
+		beenToPool = true
 		part2.emit()
 	
 	pass
