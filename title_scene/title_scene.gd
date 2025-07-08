@@ -11,7 +11,8 @@ const START_LEVEL : String = "res://Levels/Part1/01.tscn"
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var animation_player: AnimationPlayer = $CanvasLayer/AnimationPlayer
 
-var dialog_items : Array[ DialogItem ]
+var dialog_items_1 : Array[ DialogItem ]
+var dialog_items_2 : Array[ DialogItem ]
 
 
 
@@ -25,8 +26,11 @@ func _ready() -> void:
 	LevelManager.level_load_started.connect( exit_title_screen )
 	
 	for c in get_children():
-		if c is DialogItem:
-			dialog_items.append( c )
+		for d in c.get_children():
+			if c.name == "1":
+				dialog_items_1.append( d )
+			elif c.name == "2":
+				dialog_items_2.append( d )
 	
 	pass
 
@@ -58,7 +62,15 @@ func start_game() -> void:
 	
 	await get_tree().create_timer( 2.0 ).timeout
 	
-	DialogSystem.show_dialog( dialog_items )
+	DialogSystem.show_dialog( dialog_items_1 )
+	
+	await DialogSystem.finished
+	
+	animation_player.play( "full_screen" )
+	
+	await animation_player.animation_finished
+	
+	DialogSystem.show_dialog( dialog_items_2 )
 	
 	await DialogSystem.finished
 	

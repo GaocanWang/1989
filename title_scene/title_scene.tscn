@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c0ibw83vuq84m"]
+[gd_scene load_steps=20 format=3 uid="uid://c0ibw83vuq84m"]
 
 [ext_resource type="Texture2D" uid="uid://bw5lmfpl644r5" path="res://title_scene/sprites/concept_v1.4_20241112220924.png" id="1_07ceg"]
 [ext_resource type="Script" uid="uid://nholskpy0p5t" path="res://title_scene/title_scene.gd" id="1_osuia"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dobuooyvb41qy" path="res://GUI/sprites/image (2).png" id="7_0unsn"]
 [ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="7_qv0fu"]
 [ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/text.tres" id="8_iscpo"]
+[ext_resource type="Texture2D" uid="uid://ncbgihupfc0o" path="res://FullScreenArt/opening dream fullscreen 3.png" id="8_svbj5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sugrs"]
 texture = ExtResource("6_qy5iu")
@@ -53,9 +54,34 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_uj7hr"]
 resource_name = "black_screen"
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -63,16 +89,45 @@ tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_fp78m"]
+resource_name = "full_screen"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5prji"]
 _data = {
 &"RESET": SubResource("Animation_o62ji"),
-&"black_screen": SubResource("Animation_uj7hr")
+&"black_screen": SubResource("Animation_uj7hr"),
+&"full_screen": SubResource("Animation_fp78m")
 }
 
 [node name="TitleScene" type="Node2D"]
@@ -127,6 +182,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Control"]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("8_svbj5")
+
 [node name="SplashScene" parent="CanvasLayer" instance=ExtResource("6_ys7o3")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
@@ -138,27 +198,81 @@ libraries = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 max_polyphony = 4
 
-[node name="DialogText" type="Node" parent="."]
+[node name="1" type="Node" parent="."]
+
+[node name="DialogText" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
-text = "5 days."
+text = "I never asked for this."
 npc_info = ExtResource("8_iscpo")
 
-[node name="DialogText2" type="Node" parent="."]
+[node name="DialogText2" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
-text = "5 days until everything changes."
+text = "Not really, anyway."
 npc_info = ExtResource("8_iscpo")
 
-[node name="DialogText3" type="Node" parent="."]
+[node name="DialogText3" type="Node" parent="1"]
+script = ExtResource("7_qv0fu")
+text = "But then again, thats always the problem with me."
+npc_info = ExtResource("8_iscpo")
+
+[node name="DialogText4" type="Node" parent="1"]
+script = ExtResource("7_qv0fu")
+text = "I never ask for anything."
+npc_info = ExtResource("8_iscpo")
+
+[node name="DialogText5" type="Node" parent="1"]
+script = ExtResource("7_qv0fu")
+text = "It's not like i have all the answers."
+npc_info = ExtResource("8_iscpo")
+
+[node name="DialogText6" type="Node" parent="1"]
+script = ExtResource("7_qv0fu")
+text = "I...just don't feel like i need them."
+npc_info = ExtResource("8_iscpo")
+
+[node name="DialogText7" type="Node" parent="1"]
+script = ExtResource("7_qv0fu")
+text = "So why?"
+npc_info = ExtResource("8_iscpo")
+
+[node name="DialogText8" type="Node" parent="1"]
+script = ExtResource("7_qv0fu")
+text = "Why am I still looking?"
+npc_info = ExtResource("8_iscpo")
+
+[node name="DialogText9" type="Node" parent="1"]
+script = ExtResource("7_qv0fu")
+text = "What truths am I trying to find?"
+npc_info = ExtResource("8_iscpo")
+
+[node name="DialogText10" type="Node" parent="1"]
+script = ExtResource("7_qv0fu")
+text = "Every choice I've made in my life..."
+npc_info = ExtResource("8_iscpo")
+
+[node name="DialogText11" type="Node" parent="1"]
+script = ExtResource("7_qv0fu")
+text = "All the choices I'm about to make..."
+npc_info = ExtResource("8_iscpo")
+
+[node name="DialogText12" type="Node" parent="1"]
+script = ExtResource("7_qv0fu")
+text = "...everyhing is about to change."
+npc_info = ExtResource("8_iscpo")
+
+[node name="2" type="Node" parent="."]
+
+[node name="DialogText13" type="Node" parent="2"]
 script = ExtResource("7_qv0fu")
 text = "I'm not one to believe in fate or destiny but..."
 npc_info = ExtResource("8_iscpo")
 
-[node name="DialogText4" type="Node" parent="."]
+[node name="DialogText14" type="Node" parent="2"]
 script = ExtResource("7_qv0fu")
-text = "This time feels different."
+text = "This time , it feels different."
 npc_info = ExtResource("8_iscpo")
 
-[node name="DialogText5" type="Node" parent="."]
+[node name="DialogText15" type="Node" parent="2"]
 script = ExtResource("7_qv0fu")
 text = "And for once, I can't predict what will happen next."
 npc_info = ExtResource("8_iscpo")

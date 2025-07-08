@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://ct5se6suijt5w"]
+[gd_scene load_steps=14 format=4 uid="uid://ct5se6suijt5w"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_l8wmu"]
 [ext_resource type="AudioStream" uid="uid://bg0omm6hpjbsi" path="res://Levels/music/dream sequence bgm.mp3" id="2_lwo7p"]
@@ -11,6 +11,8 @@
 [ext_resource type="Resource" uid="uid://di457jgt256ub" path="res://npc/00_npcs/teresa.tres" id="9_6c266"]
 [ext_resource type="PackedScene" uid="uid://dm15w3ux3txs4" path="res://npc/npc.tscn" id="10_fvy66"]
 [ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="11_iqqml"]
+[ext_resource type="Script" uid="uid://b8kxiife71bd1" path="res://Interactables/dialog/scripts/dialog_choice.gd" id="12_6c266"]
+[ext_resource type="Script" uid="uid://cm6c0rnohy8s1" path="res://Interactables/dialog/scripts/dialog_branch.gd" id="13_fvy66"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_l8wmu")
@@ -29,7 +31,7 @@ rendering_quadrant_size = 24
 
 [node name="Other" type="TileMapLayer" parent="."]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAATAAEAAQAEAAEAAAATAAIAAQAEAAEAAAATAAMAAQAEAAEAAAABAAAAAQAEAAEAAGACAAAAAQAEAAEAAGADAAAAAQAEAAEAAGAEAAAAAQAEAAEAAGAFAAAAAQAEAAEAAGAGAAAAAQAEAAEAAGAHAAAAAQAEAAEAAGAIAAAAAQAEAAEAAGAJAAAAAQAEAAEAAGAKAAAAAQAEAAEAAGALAAAAAQAEAAEAAGAMAAAAAQAEAAEAAGANAAAAAQAEAAEAAGAOAAAAAQAEAAEAAGAPAAAAAQAEAAEAAGAQAAAAAQAEAAEAAGARAAAAAQAEAAEAAGASAAAAAQAEAAEAAGAAAAEAAQAEAAEAADAAAAIAAQAEAAEAADAAAAMAAQAEAAEAADAAAAQAAQAEAAEAADAAAAUAAQAEAAEAADAAAAYAAQAEAAEAADAAAAcAAQAEAAEAADAAAAgAAQAEAAEAADAAAAkAAQAEAAEAADATAAAAAQAEAAAAAGAAAAAAAQAEAAAAADAAAAoAAQAEAAAAAFASAAYAAQAEAAEAAFARAAYAAQAEAAEAAFAQAAYAAQAEAAEAAFAPAAYAAQAEAAEAAFAOAAYAAQAEAAEAAFANAAYAAQAEAAEAAFAMAAYAAQAEAAEAAFALAAYAAQAEAAEAAFAKAAYAAQAEAAEAAFAJAAYAAQAEAAEAAFAIAAYAAQAEAAEAAFAHAAYAAQAEAAEAAFAGAAYAAQAEAAEAAFAFAAYAAQAEAAEAAFAEAAYAAQAEAAEAAFADAAcAAQAEAAEAAAADAAgAAQAEAAEAAAADAAkAAQAEAAEAAAATAAYAAQAEAAAAAAADAAoAAQAEAAAAAAA=")
+tile_map_data = PackedByteArray("AAATAAEAAQAEAAEAAAATAAIAAQAEAAEAAAATAAMAAQAEAAEAAAABAAAAAQAEAAEAAGACAAAAAQAEAAEAAGADAAAAAQAEAAEAAGAEAAAAAQAEAAEAAGAFAAAAAQAEAAEAAGAGAAAAAQAEAAEAAGAHAAAAAQAEAAEAAGAIAAAAAQAEAAEAAGAJAAAAAQAEAAEAAGAKAAAAAQAEAAEAAGALAAAAAQAEAAEAAGAMAAAAAQAEAAEAAGANAAAAAQAEAAEAAGAOAAAAAQAEAAEAAGAPAAAAAQAEAAEAAGAQAAAAAQAEAAEAAGARAAAAAQAEAAEAAGASAAAAAQAEAAEAAGAAAAEAAQAEAAEAADAAAAIAAQAEAAEAADAAAAMAAQAEAAEAADAAAAQAAQAEAAEAADAAAAUAAQAEAAEAADAAAAYAAQAEAAEAADAAAAcAAQAEAAEAADAAAAgAAQAEAAEAADAAAAkAAQAEAAEAADATAAAAAQAEAAAAAGAAAAAAAQAEAAAAADAAAAoAAQAEAAAAAFASAAYAAQAEAAEAAFARAAYAAQAEAAEAAFAQAAYAAQAEAAEAAFAPAAYAAQAEAAEAAFAOAAYAAQAEAAEAAFANAAYAAQAEAAEAAFAMAAYAAQAEAAEAAFALAAYAAQAEAAEAAFAKAAYAAQAEAAEAAFAJAAYAAQAEAAEAAFAIAAYAAQAEAAEAAFAHAAYAAQAEAAEAAFAGAAYAAQAEAAEAAFAFAAYAAQAEAAEAAFAEAAYAAQAEAAEAAFADAAcAAQAEAAEAAAADAAgAAQAEAAEAAAADAAkAAQAEAAEAAAATAAYAAQAEAAAAAAADAAoAAQAEAAAAAAADAAYAAQAHAAAAAGA=")
 tile_set = ExtResource("3_qw5bp")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_1giyw")]
@@ -122,5 +124,34 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 [node name="DialogText2" type="Node" parent="DialogInteraction2"]
 script = ExtResource("7_761wi")
 text = "The pool entrance is the other way."
+npc_info = ExtResource("9_6c266")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogChoice" type="Node" parent="."]
+script = ExtResource("12_6c266")
+npc_info = ExtResource("8_ml4fq")
+metadata/_custom_type_script = "uid://b8kxiife71bd1"
+
+[node name="DialogBranch" type="Node" parent="DialogChoice"]
+script = ExtResource("13_fvy66")
+text = "wils pmo"
+npc_info = ExtResource("8_ml4fq")
+metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
+
+[node name="DialogText" type="Node" parent="DialogChoice/DialogBranch"]
+script = ExtResource("7_761wi")
+text = "ong"
+npc_info = ExtResource("9_6c266")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBranch2" type="Node" parent="DialogChoice"]
+script = ExtResource("13_fvy66")
+text = "jaimes pmo"
+npc_info = ExtResource("8_ml4fq")
+metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
+
+[node name="DialogText" type="Node" parent="DialogChoice/DialogBranch2"]
+script = ExtResource("7_761wi")
+text = "fr"
 npc_info = ExtResource("9_6c266")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
