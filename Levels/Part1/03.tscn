@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://xcrva135cjif"]
+[gd_scene load_steps=15 format=4 uid="uid://xcrva135cjif"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_yq1mk"]
 [ext_resource type="AudioStream" uid="uid://bg0omm6hpjbsi" path="res://Levels/music/dream sequence bgm.mp3" id="2_jkwsr"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://uqut3xy8f7mb" path="res://Levels/player_spawn.tscn" id="5_t6kd7"]
 [ext_resource type="PackedScene" uid="uid://bt4r7451gfkr5" path="res://Levels/level_transition.tscn" id="6_gxsuj"]
 [ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="8_kedyg"]
+[ext_resource type="AudioStream" uid="uid://csqenyhi7hb5g" path="res://Levels/music/teresa dialogue music.mp3" id="8_w5156"]
 [ext_resource type="Resource" uid="uid://dqtfv6xkyjcdl" path="res://npc/00_npcs/unknown.tres" id="9_1hxyw"]
 [ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="9_hs5gw"]
 [ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/text.tres" id="10_45svh"]
@@ -49,6 +50,7 @@ side = 1
 position = Vector2(324, 313)
 size = 1
 side = 2
+music = ExtResource("8_w5156")
 
 [node name="1" type="Node" parent="PartTransition"]
 
@@ -141,7 +143,7 @@ npc_info = ExtResource("10_45svh")
 [node name="DialogText" type="Node" parent="PartTransition/4"]
 script = ExtResource("9_hs5gw")
 text = "Amelia, are you still with us?"
-npc_info = ExtResource("12_w5156")
+npc_info = ExtResource("9_1hxyw")
 
 [node name="DialogText2" type="Node" parent="PartTransition/4"]
 script = ExtResource("9_hs5gw")
@@ -163,62 +165,64 @@ script = ExtResource("9_hs5gw")
 text = "Hey, Teresa."
 npc_info = ExtResource("11_jkwsr")
 
-[node name="DialogText6" type="Node" parent="PartTransition/4"]
+[node name="5" type="Node" parent="PartTransition"]
+
+[node name="DialogText" type="Node" parent="PartTransition/5"]
 script = ExtResource("9_hs5gw")
 text = "Ah, welcome back to earth."
 npc_info = ExtResource("12_w5156")
 
-[node name="DialogText7" type="Node" parent="PartTransition/4"]
+[node name="DialogText2" type="Node" parent="PartTransition/5"]
 script = ExtResource("9_hs5gw")
 text = "You've been spacing out like that all week, you know?"
 npc_info = ExtResource("12_w5156")
 
-[node name="DialogText8" type="Node" parent="PartTransition/4"]
+[node name="DialogText3" type="Node" parent="PartTransition/5"]
 script = ExtResource("9_hs5gw")
 text = "Are you sure you're up for this case? If you're nt feeling well, I can always call in someone else."
 npc_info = ExtResource("12_w5156")
 
-[node name="DialogText9" type="Node" parent="PartTransition/4"]
+[node name="DialogText4" type="Node" parent="PartTransition/5"]
 script = ExtResource("9_hs5gw")
 text = "...I'm alright."
 npc_info = ExtResource("11_jkwsr")
 
-[node name="DialogText10" type="Node" parent="PartTransition/4"]
+[node name="DialogText5" type="Node" parent="PartTransition/5"]
 script = ExtResource("9_hs5gw")
 text = "I was daydreaming, that's about it. Did I miss much?"
 npc_info = ExtResource("11_jkwsr")
 
-[node name="DialogText11" type="Node" parent="PartTransition/4"]
+[node name="DialogText6" type="Node" parent="PartTransition/5"]
 script = ExtResource("9_hs5gw")
 text = "Dreaming on the job? Now that's a new one."
 npc_info = ExtResource("12_w5156")
 
-[node name="DialogText12" type="Node" parent="PartTransition/4"]
+[node name="DialogText7" type="Node" parent="PartTransition/5"]
 script = ExtResource("9_hs5gw")
 text = "No, you didn't miss much. We were just discussing which area we want to start examining first."
 npc_info = ExtResource("12_w5156")
 
-[node name="DialogText13" type="Node" parent="PartTransition/4"]
+[node name="DialogText8" type="Node" parent="PartTransition/5"]
 script = ExtResource("9_hs5gw")
 text = "Everyone evacuated earlier when we got the dispatch, so we have the whole place to ourselves."
 npc_info = ExtResource("12_w5156")
 
-[node name="DialogText14" type="Node" parent="PartTransition/4"]
+[node name="DialogText9" type="Node" parent="PartTransition/5"]
 script = ExtResource("9_hs5gw")
 text = "We better act quick though."
 npc_info = ExtResource("12_w5156")
 
-[node name="DialogText15" type="Node" parent="PartTransition/4"]
+[node name="DialogText10" type="Node" parent="PartTransition/5"]
 script = ExtResource("9_hs5gw")
 text = "(Right, the case.)"
 npc_info = ExtResource("11_jkwsr")
 
-[node name="DialogText16" type="Node" parent="PartTransition/4"]
+[node name="DialogText11" type="Node" parent="PartTransition/5"]
 script = ExtResource("9_hs5gw")
 text = "(That's why I'm here after all.)"
 npc_info = ExtResource("11_jkwsr")
 
-[node name="DialogText17" type="Node" parent="PartTransition/4"]
+[node name="DialogText12" type="Node" parent="PartTransition/5"]
 script = ExtResource("9_hs5gw")
 text = "(I guess it's time to put my attention to where it really matters now and solve this case quickly.)"
 npc_info = ExtResource("11_jkwsr")

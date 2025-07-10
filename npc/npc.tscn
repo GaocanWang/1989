@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dm15w3ux3txs4"]
+[gd_scene load_steps=13 format=3 uid="uid://dm15w3ux3txs4"]
 
 [ext_resource type="Script" uid="uid://b31p6tvcvn0ps" path="res://npc/scripts/npc.gd" id="1_pgy5s"]
+[ext_resource type="Resource" uid="uid://di457jgt256ub" path="res://npc/00_npcs/teresa.tres" id="2_3i1kj"]
 [ext_resource type="Texture2D" uid="uid://ciqf11ur00q3q" path="res://npc/sprites/teresa.png" id="2_nhy3c"]
 
 [sub_resource type="Animation" id="Animation_wfnmg"]
@@ -45,7 +46,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [4]
 }
 
 [sub_resource type="Animation" id="Animation_tcc7m"]
@@ -60,7 +61,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [10]
 }
 
 [sub_resource type="Animation" id="Animation_d714p"]
@@ -133,6 +134,7 @@ height = 22.0
 collision_layer = 0
 collision_mask = 16
 script = ExtResource("1_pgy5s")
+npc_resource = ExtResource("2_3i1kj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -14)

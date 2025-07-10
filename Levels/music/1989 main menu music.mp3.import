@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djclq4t5i5e7"
+path="res://.godot/imported/1989 main menu music.mp3-f4790a58004a8251f241765f5bdefd2f.mp3str"
+
+[deps]
+
+source_file="res://Levels/music/1989 main menu music.mp3"
+dest_files=["res://.godot/imported/1989 main menu music.mp3-f4790a58004a8251f241765f5bdefd2f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

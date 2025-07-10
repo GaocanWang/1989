@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://csqenyhi7hb5g"
+path="res://.godot/imported/teresa dialogue music.mp3-a486b2647506dd2194a6200b7a146a21.mp3str"
+
+[deps]
+
+source_file="res://Levels/music/teresa dialogue music.mp3"
+dest_files=["res://.godot/imported/teresa dialogue music.mp3-a486b2647506dd2194a6200b7a146a21.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

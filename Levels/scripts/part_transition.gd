@@ -19,6 +19,8 @@ enum SIDE { LEFT, RIGHT, TOP, BOTTOM }
 	set( _v ):
 		_snap_to_grid()
 
+@export var music : AudioStream
+
 @onready var area: Area2D = $Area2D
 @onready var collision_shape: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var buttons: VBoxContainer = $CanvasLayer/Control/VBoxContainer
@@ -31,6 +33,7 @@ var dialog_items_1 : Array[ DialogItem ]
 var dialog_items_2 : Array[ DialogItem ]
 var dialog_items_3 : Array[ DialogItem ]
 var dialog_items_4 : Array[ DialogItem ]
+var dialog_items_5 : Array[ DialogItem ]
 
 var first_interaction : bool = true
 
@@ -68,6 +71,8 @@ func _ready() -> void:
 				dialog_items_3.append( d )
 			elif c.name == "4":
 				dialog_items_4.append( d )
+			elif c.name == "5":
+				dialog_items_5.append( d )
 	pass
 
 
@@ -171,6 +176,9 @@ func _on_yes() -> void:
 	animation_player.play("lower_art")
 	await animation_player.animation_finished
 	DialogSystem.show_dialog( dialog_items_4 )
+	await DialogSystem.finished
+	AudioManager.play_music( music )
+	DialogSystem.show_dialog( dialog_items_5 )
 	await DialogSystem.finished
 	get_tree().paused = false
 	LevelManager.load_new_part( "res://Levels/Part2/01.tscn", "LevelTransition", get_offset() )

@@ -56,7 +56,7 @@ func start_game() -> void:
 	
 	play_audio( button_press_audio )
 	
-	animation_player.play( "black_screen" )
+	animation_player.play( "fadeout" )
 	
 	AudioManager.play_music(null)
 	
@@ -73,6 +73,10 @@ func start_game() -> void:
 	DialogSystem.show_dialog( dialog_items_2 )
 	
 	await DialogSystem.finished
+	
+	animation_player.play( "full_screen_fadeout" )
+	
+	await animation_player.animation_finished
 	
 	LevelManager.load_new_part( START_LEVEL, "LevelTransition", Vector2(0, -12) )
 	

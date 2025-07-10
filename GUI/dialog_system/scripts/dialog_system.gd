@@ -16,6 +16,8 @@ var plain_text : String
 var dialog_items : Array[ DialogItem ]
 var dialog_item_index : int = 0
 
+var slow : bool = false
+
 
 @onready var dialog_ui: Control = $DialogUI
 @onready var content: RichTextLabel = $DialogUI/PanelContainer/RichTextLabel
@@ -135,6 +137,8 @@ func start_dialog() -> void:
 ## Set dialog and NPC variables, etc based on dialog item parameters.
 ## Once set, start text typing timer
 func set_dialog_text( _d : DialogText ) -> void:
+	slow = _d.slow
+	
 	content.text = _d.text
 	choice_options.visible = false
 	name_label.text = _d.npc_info.npc_name
@@ -224,5 +228,9 @@ func start_timer() -> void:
 		timer.wait_time *= 4
 	elif ", ".contains( _char ):
 		timer.wait_time *= 2
+	
+	if slow:
+		timer.wait_time *= 4
+	
 	timer.start()
 	pass

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://uqut3xy8f7mb" path="res://Levels/player_spawn.tscn" id="5_ko3bk"]
 [ext_resource type="PackedScene" uid="uid://bt4r7451gfkr5" path="res://Levels/level_transition.tscn" id="6_1b4t0"]
 
-[node name="03" type="Node2D"]
+[node name="04" type="Node2D"]
 script = ExtResource("1_1negt")
 music = ExtResource("2_1b4t0")
 

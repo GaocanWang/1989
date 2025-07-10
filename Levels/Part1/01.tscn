@@ -46,11 +46,13 @@ position = Vector2(228, 120)
 [node name="DialogText" type="Node" parent="Chair"]
 script = ExtResource("8_sles3")
 text = "Your chair."
+slow = null
 npc_info = ExtResource("9_8ypoo")
 
 [node name="DialogText2" type="Node" parent="Chair"]
 script = ExtResource("8_sles3")
 text = "For something you bought at a garage sale, it has served you quite well for the past three years."
+slow = null
 npc_info = ExtResource("9_8ypoo")
 
 [node name="Bed" parent="." instance=ExtResource("7_6xuwr")]
@@ -60,16 +62,19 @@ size = Vector2(24, 36)
 [node name="DialogText" type="Node" parent="Bed"]
 script = ExtResource("8_sles3")
 text = "Your bed admittedly isn't the comfiest."
+slow = null
 npc_info = ExtResource("9_8ypoo")
 
 [node name="DialogText2" type="Node" parent="Bed"]
 script = ExtResource("8_sles3")
 text = "You won't miss the bed at all."
+slow = null
 npc_info = ExtResource("9_8ypoo")
 
 [node name="DialogText3" type="Node" parent="Bed"]
 script = ExtResource("8_sles3")
 text = "It creaked too much anyways."
+slow = null
 npc_info = ExtResource("9_8ypoo")
 
 [node name="Box" parent="." instance=ExtResource("7_6xuwr")]
@@ -78,11 +83,13 @@ position = Vector2(180, 97)
 [node name="DialogText" type="Node" parent="Box"]
 script = ExtResource("8_sles3")
 text = "Your box full of clothing."
+slow = null
 npc_info = ExtResource("9_8ypoo")
 
 [node name="DialogText2" type="Node" parent="Box"]
 script = ExtResource("8_sles3")
 text = "Not that you'll be using any of them anyways."
+slow = null
 npc_info = ExtResource("9_8ypoo")
 
 [node name="Boxes" parent="." instance=ExtResource("7_6xuwr")]
@@ -91,11 +98,13 @@ position = Vector2(132, 126)
 [node name="DialogText" type="Node" parent="Boxes"]
 script = ExtResource("8_sles3")
 text = "Boxes filled to the brim with your things."
+slow = null
 npc_info = ExtResource("9_8ypoo")
 
 [node name="DialogText2" type="Node" parent="Boxes"]
 script = ExtResource("8_sles3")
 text = "You'll tape them closed later."
+slow = null
 npc_info = ExtResource("9_8ypoo")
 
 [node name="Boxes2" parent="." instance=ExtResource("7_6xuwr")]
@@ -104,11 +113,13 @@ position = Vector2(252, 175)
 [node name="DialogText" type="Node" parent="Boxes2"]
 script = ExtResource("8_sles3")
 text = "Boxes filled to the brim with your things."
+slow = null
 npc_info = ExtResource("9_8ypoo")
 
 [node name="DialogText2" type="Node" parent="Boxes2"]
 script = ExtResource("8_sles3")
 text = "You'll tape them closed later."
+slow = null
 npc_info = ExtResource("9_8ypoo")
 
 [node name="Shelves" parent="." instance=ExtResource("7_6xuwr")]
@@ -118,11 +129,13 @@ size = Vector2(6, 72)
 [node name="DialogText" type="Node" parent="Shelves"]
 script = ExtResource("8_sles3")
 text = "Shelves covered in dust."
+slow = null
 npc_info = ExtResource("9_8ypoo")
 
 [node name="DialogText2" type="Node" parent="Shelves"]
 script = ExtResource("8_sles3")
 text = "You can't recall one single time you actually used these shelves for anything important."
+slow = null
 npc_info = ExtResource("9_8ypoo")
 
 [node name="Desk" parent="." instance=ExtResource("7_6xuwr")]
@@ -132,11 +145,13 @@ size = Vector2(48, 24)
 [node name="DialogText" type="Node" parent="Desk"]
 script = ExtResource("8_sles3")
 text = "Your desk, still relatively untouched, basks in the dim light."
+slow = null
 npc_info = ExtResource("9_8ypoo")
 
 [node name="DialogText2" type="Node" parent="Desk"]
 script = ExtResource("8_sles3")
 text = "It feels odd to be departing with it after so long."
+slow = null
 npc_info = ExtResource("9_8ypoo")
 
 [node name="Lamp" parent="." instance=ExtResource("7_6xuwr")]
@@ -146,11 +161,13 @@ size = Vector2(12, 48)
 [node name="DialogText" type="Node" parent="Lamp"]
 script = ExtResource("8_sles3")
 text = "Even after all this time, the lamp still has that unfixable humming noise every time you turn it on."
+slow = null
 npc_info = ExtResource("9_8ypoo")
 
 [node name="DialogText2" type="Node" parent="Lamp"]
 script = ExtResource("8_sles3")
 text = "Only now do you begin to appreciate it."
+slow = null
 npc_info = ExtResource("9_8ypoo")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]

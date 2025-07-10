@@ -4,6 +4,8 @@ class_name DialogText extends DialogItem
 
 @export_multiline var text : String = "Placeholder text" : set = _set_text
 
+@export var slow : bool = false
+
 
 
 func _set_text( value : String ) -> void:
