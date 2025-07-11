@@ -2,6 +2,8 @@ class_name Level extends Node2D
 
 @export var music : AudioStream
 
+var dialog_items : Array[ DialogItem ]
+
 
 
 func _ready() -> void:
@@ -9,6 +11,9 @@ func _ready() -> void:
 	PlayerManager.set_as_parent( self )
 	LevelManager.level_load_started.connect( _free_level )
 	AudioManager.play_music( music )
+	
+	for c in get_children():
+		dialog_items.append( c )
 
 
 func _free_level() -> void:

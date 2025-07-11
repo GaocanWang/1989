@@ -219,73 +219,61 @@ max_polyphony = 4
 [node name="DialogText" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
 text = "I never asked for this."
-slow = null
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText2" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
 text = "Not really, anyway."
-slow = null
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText3" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
 text = "But then again, thats always the problem with me."
-slow = null
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText4" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
 text = "I never ask for anything."
-slow = null
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText5" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
 text = "It's not like i have all the answers."
-slow = null
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText6" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
 text = "I...just don't feel like i need them."
-slow = null
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText7" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
 text = "So why?"
-slow = null
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText8" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
 text = "Why am I still looking?"
-slow = null
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText9" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
 text = "What truths am I trying to find?"
-slow = null
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText10" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
 text = "Every choice I've made in my life..."
-slow = null
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText11" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
 text = "All the choices I'm about to make..."
-slow = null
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText12" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
 text = "...everyhing is about to change."
-slow = null
 npc_info = ExtResource("8_iscpo")
 
 [node name="2" type="Node" parent="."]
@@ -293,13 +281,11 @@ npc_info = ExtResource("8_iscpo")
 [node name="DialogText13" type="Node" parent="2"]
 script = ExtResource("7_qv0fu")
 text = "I'm not one to believe in fate or destiny but..."
-slow = null
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText14" type="Node" parent="2"]
 script = ExtResource("7_qv0fu")
 text = "This time , it feels different."
-slow = null
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText15" type="Node" parent="2"]
