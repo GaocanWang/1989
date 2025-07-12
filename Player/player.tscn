@@ -345,6 +345,7 @@ position = Vector2(0, -10)
 texture = ExtResource("2_vtle1")
 hframes = 3
 vframes = 5
+frame = 1
 
 [node name="EffectSprite" type="Sprite2D" parent="Sprite2D"]
 
@@ -356,7 +357,6 @@ position = Vector2(0, -10)
 texture = ExtResource("3_od3ui")
 hframes = 3
 vframes = 4
-frame = 9
 
 [node name="EffectSprite" type="Sprite2D" parent="Sprite2D2"]
 

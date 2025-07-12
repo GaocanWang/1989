@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://csqenyhi7hb5g" path="res://Levels/music/teresa dialogue music.mp3" id="8_w5156"]
 [ext_resource type="Resource" uid="uid://dqtfv6xkyjcdl" path="res://npc/00_npcs/unknown.tres" id="9_1hxyw"]
 [ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="9_hs5gw"]
-[ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/text.tres" id="10_45svh"]
+[ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/box.tres" id="10_45svh"]
 [ext_resource type="PackedScene" uid="uid://co0l7nrsat2gg" path="res://Levels/part_transition.tscn" id="10_gdjcq"]
 [ext_resource type="Resource" uid="uid://q5twg4buxc41" path="res://npc/00_npcs/amelia_np.tres" id="11_jkwsr"]
 [ext_resource type="Resource" uid="uid://bppgf84a88nah" path="res://npc/00_npcs/teresa_np.tres" id="12_w5156"]

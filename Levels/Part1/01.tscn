@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bt4r7451gfkr5" path="res://Levels/level_transition.tscn" id="6_mjdyj"]
 [ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="7_6xuwr"]
 [ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="8_sles3"]
-[ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/text.tres" id="9_8ypoo"]
+[ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/box.tres" id="9_8ypoo"]
 [ext_resource type="PackedScene" uid="uid://cwh3rvrsg38ko" path="res://Props/torches/torch.tscn" id="10_s6px5"]
 
 [node name="01" type="Node2D"]

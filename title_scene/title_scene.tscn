@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cj0dch28synuo" path="res://title_scene/splash_scene.tscn" id="6_ys7o3"]
 [ext_resource type="Texture2D" uid="uid://dobuooyvb41qy" path="res://GUI/sprites/image (2).png" id="7_0unsn"]
 [ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="7_qv0fu"]
-[ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/text.tres" id="8_iscpo"]
+[ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/box.tres" id="8_iscpo"]
 [ext_resource type="Texture2D" uid="uid://ncbgihupfc0o" path="res://FullScreenArt/opening dream fullscreen 3.png" id="8_svbj5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sugrs"]

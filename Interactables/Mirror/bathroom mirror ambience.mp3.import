@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://crnmpik3qpwgl"
+path="res://.godot/imported/bathroom mirror ambience.mp3-7130f71ad51faf994fc8f21a7e7544e0.mp3str"
+
+[deps]
+
+source_file="res://Interactables/Mirror/bathroom mirror ambience.mp3"
+dest_files=["res://.godot/imported/bathroom mirror ambience.mp3-7130f71ad51faf994fc8f21a7e7544e0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
