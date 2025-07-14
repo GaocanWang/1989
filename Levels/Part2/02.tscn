@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://co4f0ibd8t1gp"]
+[gd_scene load_steps=16 format=4 uid="uid://co4f0ibd8t1gp"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_1wuq7"]
 [ext_resource type="AudioStream" uid="uid://cm2i1sko5rk5e" path="res://Levels/music/pool ambience.mp3" id="2_f06bb"]
@@ -7,12 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://uqut3xy8f7mb" path="res://Levels/player_spawn.tscn" id="5_g4mln"]
 [ext_resource type="PackedScene" uid="uid://bt4r7451gfkr5" path="res://Levels/level_transition.tscn" id="6_7afvj"]
 [ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="7_566gx"]
+[ext_resource type="Script" uid="uid://g5bqtugamppd" path="res://Levels/scripts/WChangeroomTransition.gd" id="7_h8wce"]
 [ext_resource type="Resource" uid="uid://cx8yq3fk58aei" path="res://npc/00_npcs/lowkey.tres" id="8_f06bb"]
 [ext_resource type="Resource" uid="uid://ctbf7x8e37pym" path="res://npc/00_npcs/eris.tres" id="9_yjrug"]
 [ext_resource type="Resource" uid="uid://c2w2tyjg78bol" path="res://npc/00_npcs/amelia.tres" id="10_h8wce"]
 [ext_resource type="Resource" uid="uid://di457jgt256ub" path="res://npc/00_npcs/teresa.tres" id="11_4xy53"]
 [ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/box.tres" id="12_ja1e1"]
 [ext_resource type="PackedScene" uid="uid://dm15w3ux3txs4" path="res://npc/npc.tscn" id="13_f06bb"]
+[ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="14_yjrug"]
 
 [node name="02" type="Node2D"]
 script = ExtResource("1_1wuq7")
@@ -35,7 +37,7 @@ tile_map_data = PackedByteArray("AAABAAIAAQAEAAEAADABAAMAAQAEAAEAADABAAQAAQAEAAE
 tile_set = ExtResource("3_fkk6q")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_g4mln")]
-position = Vector2(53, 611)
+position = Vector2(575, 309)
 
 [node name="LevelTransition" parent="." instance=ExtResource("6_7afvj")]
 position = Vector2(36, 600)
@@ -47,12 +49,277 @@ position = Vector2(360, 684)
 level = "uid://dl50n0plv4kh2"
 side = 3
 
-[node name="LevelTransition3" parent="." instance=ExtResource("6_7afvj")]
+[node name="WChangeroomTransition" parent="." instance=ExtResource("6_7afvj")]
 position = Vector2(324, 96)
+script = ExtResource("7_h8wce")
 level = "uid://kaiv4m7e4ftt"
 door = true
 size = 1
 side = 2
+
+[node name="1" type="Node" parent="WChangeroomTransition"]
+
+[node name="pmo" type="Node" parent="WChangeroomTransition/1"]
+script = ExtResource("7_566gx")
+text = "pmo"
+npc_info = ExtResource("12_ja1e1")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText1" type="Node" parent="WChangeroomTransition/1"]
+script = ExtResource("7_566gx")
+text = "“You try turning the knob, but it refuses to move.”"
+npc_info = ExtResource("12_ja1e1")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="WChangeroomTransition/1"]
+script = ExtResource("7_566gx")
+text = "“The lifeguard was last seen entering this room, right?”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="WChangeroomTransition/1"]
+script = ExtResource("7_566gx")
+text = "“You knock on the door firmly.”"
+npc_info = ExtResource("12_ja1e1")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="WChangeroomTransition/1"]
+script = ExtResource("7_566gx")
+text = "”Hey, anyone in there?!”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="WChangeroomTransition/1"]
+script = ExtResource("7_566gx")
+text = "“Open the door!”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="WChangeroomTransition/1"]
+script = ExtResource("7_566gx")
+text = "”Let me try.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="2" type="Node" parent="WChangeroomTransition"]
+
+[node name="DialogText1" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“What are you doing?”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“He’s doing his usual thing, hon.”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“…”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“It’s no use.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“I could normally lock pick one of these, but I don’t have any tools on me at the moment.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“I’m also unfamiliar with this type of lock. It looks different.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“The only way to unlock this is with the key.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“I don’t think that’s possible.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“The other lifeguard who called us said he lost his set of keys.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“That means the only two keys that could open this door are missing.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“…”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“How do you even lose a set of keys as a lifeguard?”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText13" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“While on duty, not to mention.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“It’s not like you’re taking it home or anything.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“I don’t know.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“But either way, both keys are missing.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“Can’t we get the keys from the community center front desk?”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText18" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“Or what about the janitor?”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText19" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“That wouldn’t work either.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText20" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“The front desk only holds duplicates for public access rooms.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText21" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“Changerooms are off-limits without staff permission.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText22" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“And the janitor doesn’t have clearance either.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText23" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“Some sort of privacy or harassment regulation thing.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText24" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“Are you sure we can’t just brute force this thing?”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText25" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“You know, I’m stronger than I look.”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText26" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“What, does everyone think I can’t bust down a door?”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText27" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“You know that’s not how that works, Eris.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText28" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“It’s locked tight.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText29" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“If you want to open this door, you’re gonna have to find the key.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText30" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“The lifeguard said he lost them around here, right?”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText31" type="Node" parent="WChangeroomTransition/2"]
+script = ExtResource("7_566gx")
+text = "“So unless he flushed them, they’re nearby.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Repeat" type="Node" parent="WChangeroomTransition"]
+
+[node name="pmo" type="Node" parent="WChangeroomTransition/Repeat"]
+script = ExtResource("7_566gx")
+text = "pmo"
+npc_info = ExtResource("12_ja1e1")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText28" type="Node" parent="WChangeroomTransition/Repeat"]
+script = ExtResource("7_566gx")
+text = "“It’s locked tight.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText29" type="Node" parent="WChangeroomTransition/Repeat"]
+script = ExtResource("7_566gx")
+text = "“If you want to open this door, you’re gonna have to find the key.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText30" type="Node" parent="WChangeroomTransition/Repeat"]
+script = ExtResource("7_566gx")
+text = "“The lifeguard said he lost them around here, right?”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText31" type="Node" parent="WChangeroomTransition/Repeat"]
+script = ExtResource("7_566gx")
+text = "“So unless he flushed them, they’re nearby.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="LevelTransition4" parent="." instance=ExtResource("6_7afvj")]
 position = Vector2(36, 384)
@@ -78,301 +345,301 @@ npc_resource = ExtResource("9_yjrug")
 
 [node name="DialogText" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Well, look who finally made it. We were worried you two might’ve gotten lost or something."
+text = "\"Well, look who finally made it. We were worried you two might’ve gotten lost or something.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText2" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Say Amelia, you look barely out of high school."
+text = "\"Say Amelia, you look barely out of high school.\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText3" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "I was honestly expecting the great detective to actually look her age."
+text = "\"I was honestly expecting the great detective to actually look her age.\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText4" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Well I'll take that as a compliment."
+text = "\"Well I'll take that as a compliment.\""
 npc_info = ExtResource("10_h8wce")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText5" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "It's been years since I was in high school."
+text = "\"It's been years since I was in high school.\""
 npc_info = ExtResource("10_h8wce")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText7" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "I didn't know they recruited literal children now."
+text = "\"I didn't know they recruited literal children now.\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText9" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Unless you really are as good as they say."
+text = "\"Unless you really are as good as they say.\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText10" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Oh you have no idea."
+text = "\"Oh you have no idea.\""
 npc_info = ExtResource("11_4xy53")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText15" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "The number of cases we've closed since Amelia joined our department has doubled."
+text = "\"The number of cases we've closed since Amelia joined our department has doubled.\""
 npc_info = ExtResource("11_4xy53")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText16" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "You know I heard about you a while back when I was still an officer."
+text = "\"You know I heard about you a while back when I was still an officer.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText17" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "You're the one who solved the Marson Bridge case, right?"
+text = "\"You're the one who solved the Marson Bridge case, right?\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText18" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "I remember that too."
+text = "\"I remember that too.\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText19" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "[i]High-school student solves Marson Bridge Case and catches murderer before police.[/i]"
+text = "[i]\"High-school student solves Marson Bridge Case and catches murderer before police.\"[/i]"
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText21" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "The body wasn't found for three weeks."
+text = "\"The body wasn't found for three weeks.\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText23" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Everyone thought the evidence would was gone for good."
+text = "\"Everyone thought the evidence would was gone for good.\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText24" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "How did you solve it?"
+text = "\"How did you solve it?\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText26" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "I mean you kind of have more freedom to poke around when no one suspects anything of you."
+text = "\"I mean you kind of have more freedom to poke around when no one suspects anything of you.\""
 npc_info = ExtResource("10_h8wce")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText27" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "You know... being a high-schooler and all."
+text = "\"You know... being a high-schooler and all.\""
 npc_info = ExtResource("10_h8wce")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText29" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "When did you end up joining the force, Amelia?"
+text = "\"When did you end up joining the force, Amelia?\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText30" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "I'd have given you a proper welcome."
+text = "\"I'd have given you a proper welcome.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText31" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Like some six months ago, when I dropped out."
+text = "\"Like some six months ago, when I dropped out.\""
 npc_info = ExtResource("10_h8wce")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText33" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Figured I could put my skills somewhere of use."
+text = "\"Figured I could put my skills somewhere of use.\""
 npc_info = ExtResource("10_h8wce")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText34" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Don't regret it all though."
+text = "\"Don't regret it all though.\""
 npc_info = ExtResource("10_h8wce")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText35" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Cause she never would have met me if she stayed in college!"
+text = "\"Cause she never would have met me if she stayed in college!\""
 npc_info = ExtResource("11_4xy53")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText36" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Kinda took her under my wing, you know."
+text = "\"Kinda took her under my wing, you know.\""
 npc_info = ExtResource("11_4xy53")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText37" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "It's more like a fifty-fifty."
+text = "\"It's more like a fifty-fifty.\""
 npc_info = ExtResource("10_h8wce")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText38" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "I do the thinking and she... tags along."
+text = "\"I do the thinking and she... tags along.\""
 npc_info = ExtResource("10_h8wce")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText39" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "For the most part, until things get serious."
+text = "\"For the most part, until things get serious.\""
 npc_info = ExtResource("11_4xy53")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText40" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "So you're more action-oriented?"
+text = "\"So you're more action-oriented?\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText41" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Reminds me of a certain someone."
+text = "\"Reminds me of a certain someone.\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText50" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Oh please, not now, Eris..."
+text = "\"Oh please, not now, Eris...\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText51" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Lowkey's had his fair share of fights."
+text = "\"Lowkey's had his fair share of fights.\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText52" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "He took down an active bomber literally weeks ago."
+text = "\"He took down an active bomber literally weeks ago.\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText54" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Right, like you haven't done anything insane either to finish the job."
+text = "\"Right, like you haven't done anything insane either to finish the job.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText59" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "One time you scared a suspect into confessing."
+text = "\"One time you scared a suspect into confessing.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText60" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Threw a chair and everything during the interrogation, in front of everybody."
+text = "\"Threw a chair and everything during the interrogation, in front of everybody.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText61" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "That is NOT what happened!"
+text = "\"That is NOT what happened!\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText62" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Well that's how I remember it!"
+text = "\"Well that's how I remember it!\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText63" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Eris switches personalities in a flash."
+text = "\"Eris switches personalities in a flash.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText64" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "You never know with her."
+text = "\"You never know with her.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText68" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "I'm sure she definitely stands out in any room."
+text = "\"I'm sure she definitely stands out in any room.\""
 npc_info = ExtResource("10_h8wce")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText69" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "And Eris... your perfurm is pretty strong, too."
+text = "\"And Eris... your perfurm is pretty strong, too.\""
 npc_info = ExtResource("10_h8wce")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText70" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Why thank you, Amelia!"
+text = "\"Why thank you, Amelia!\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText71" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "I do invest a lot into my looks."
+text = "\"I do invest a lot into my looks.\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText72" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Appearance is key in a world full of lookers."
+text = "\"Appearance is key in a world full of lookers.\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText73" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Isn't it against protocol to wear perfume?"
+text = "\"Isn't it against protocol to wear perfume?\""
 npc_info = ExtResource("11_4xy53")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText74" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Only for crime scenes, hon."
+text = "\"Only for crime scenes, hon.\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText75" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "There's no rules against smelling nice on simple dispatches."
+text = "\"There's no rules against smelling nice on simple dispatches.\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText76" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "We always do our best to come prepared and sharp."
+text = "\"We always do our best to come prepared and sharp.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText77" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "That's how we made it this far anyways."
+text = "\"That's how we made it this far anyways.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
@@ -384,187 +651,187 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText79" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Gloves."
+text = "\"Gloves.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText80" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Much easier to handle any evidence if you come arrived."
+text = "\"Much easier to handle any evidence if you come arrived.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText81" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "It's a staple thing for me, but Eris agreed to it today too."
+text = "\"It's a staple thing for me, but Eris agreed to it today too.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText82" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Wouldn't want to appear so reckless in front of the great detective Amelia, now would I?"
+text = "\"Wouldn't want to appear so reckless in front of the great detective Amelia, now would I?\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText83" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "But it seems she isn't even wearing gloves."
+text = "\"But it seems she isn't even wearing gloves.\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText101" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Alright guys let's wrap it up."
+text = "\"Alright guys let's wrap it up.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText102" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "I think we've been dilly-dallying for too long."
+text = "\"I think we've been dilly-dallying for too long.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText103" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "This case isn't going to close itself."
+text = "\"This case isn't going to close itself.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText104" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "That missing lifeguard is probably somewhere waiting to be found and here we are yapping."
+text = "\"That missing lifeguard is probably somewhere waiting to be found and here we are yapping.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText105" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Right, right... let's get back on track."
+text = "\"Right, right... let's get back on track.\""
 npc_info = ExtResource("10_h8wce")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText106" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "We should review everything we know so far."
+text = "\"We should review everything we know so far.\""
 npc_info = ExtResource("10_h8wce")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText107" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Right. Let's start from the beginning."
+text = "\"Right. Let's start from the beginning.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText108" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "We all got on our shifts at 7 PM, and we got a call around 7:50."
+text = "\"We all got on our shifts at 7 PM, and we got a call around 7:50.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText109" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "The lifeguard from this community center was the one who called emergency telecommunicators."
+text = "\"The lifeguard from this community center was the one who called emergency telecommunicators.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText110" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "He said he was supposed to be working with his shift partner, who was last seen heading into the changeroom today."
+text = "\"He said he was supposed to be working with his shift partner, who was last seen heading into the changeroom today.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText111" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "This was around 5 PM, give or take."
+text = "\"This was around 5 PM, give or take.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText112" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "He hasn't been seen since."
+text = "\"He hasn't been seen since.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText113" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "The caller said his partner went inside to check a maintenance leak in the changeroom."
+text = "\"The caller said his partner went inside to check a maintenance leak in the changeroom.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText114" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "He locked the door to inspect it safely, so no one else would get hurt."
+text = "\"He locked the door to inspect it safely, so no one else would get hurt.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText115" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "But he never came out."
+text = "\"But he never came out.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText116" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "The other lifeguard called us after 2 hours with no sign of his shift partner."
+text = "\"The other lifeguard called us after 2 hours with no sign of his shift partner.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText117" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "He tried unlocking the changeroom door but somehow lost his keys."
+text = "\"He tried unlocking the changeroom door but somehow lost his keys.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText118" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Sounds like a real idiot to me."
+text = "\"Sounds like a real idiot to me.\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText119" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Me too."
+text = "\"Me too.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText120" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Anyway, he evacuated the remaining swimmers shortly after calling us."
+text = "\"Anyway, he evacuated the remaining swimmers shortly after calling us.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText121" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Most swimmers had left by then, since the pool closes at 8."
+text = "\"Most swimmers had left by then, since the pool closes at 8.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText122" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Ten or so minutes later, we arrive on scene."
+text = "\"Ten or so minutes later, we arrive on scene.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText123" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "And that's the whole story."
+text = "\"And that's the whole story.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText124" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Sounds like an open and shut case to me."
+text = "\"Sounds like an open and shut case to me.\""
 npc_info = ExtResource("11_4xy53")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText125" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "The guy probably underestimated the leak and probably got knocked out trying to fix it."
+text = "\"The guy probably underestimated the leak and probably got knocked out trying to fix it.\""
 npc_info = ExtResource("11_4xy53")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText126" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "I bet he's still inside, just unconscious."
+text = "\"I bet he's still inside, just unconscious.\""
 npc_info = ExtResource("11_4xy53")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
@@ -588,60 +855,1101 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText130" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Well, if we're going to get started, let's do it now."
+text = "\"Well, if we're going to get started, let's do it now.\""
 npc_info = ExtResource("11_4xy53")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText131" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "The community center closes at 9 and the pool lights are automatic."
+text = "\"The community center closes at 9 and the pool lights are automatic.\""
 npc_info = ExtResource("11_4xy53")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText132" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "We better move quick unless we want to be searching around in the dark."
+text = "\"We better move quick unless we want to be searching around in the dark.\""
 npc_info = ExtResource("11_4xy53")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText136" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "This place isn't too big."
+text = "\"This place isn't too big.\""
 npc_info = ExtResource("11_4xy53")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText137" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Amelia and I have been here before."
+text = "\"Amelia and I have been here before.\""
 npc_info = ExtResource("11_4xy53")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText139" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "This is my first time here."
+text = "\"This is my first time here.\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText140" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "You and Amelia can lead the investigation."
+text = "\"You and Amelia can lead the investigation.\""
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText142" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "It's your lucky day, miss detective."
+text = "\"It's your lucky day, miss detective.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText143" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Let's start with the women's changeroom."
+text = "\"Let's start with the women's changeroom.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText144" type="Node" parent="."]
 script = ExtResource("7_566gx")
-text = "Lead the way."
+text = "\"Lead the way.\""
 npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="PoolSign" parent="." instance=ExtResource("14_yjrug")]
+position = Vector2(60, 348)
+
+[node name="DialogText" type="Node" parent="PoolSign"]
+script = ExtResource("7_566gx")
+text = "(Looks like normal pool signs.)"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="PoolSign"]
+script = ExtResource("7_566gx")
+text = "(Nothing particularly interesting about these.)"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Pool1" parent="." instance=ExtResource("14_yjrug")]
+position = Vector2(324, 420)
+size = Vector2(120, 120)
+
+[node name="DialogText" type="Node" parent="Pool1"]
+script = ExtResource("7_566gx")
+text = "“You’re gonna have a harder time doing your detective work if you’re soaking wet, you know.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Pool1"]
+script = ExtResource("7_566gx")
+text = "“I’m really resisting the urge to push you in right now.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Pool1"]
+script = ExtResource("7_566gx")
+text = "“Don’t you dare, Teresa.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="Pool1"]
+script = ExtResource("7_566gx")
+text = "“It wouldn’t be the first time you’d be wet on the job.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="Pool1"]
+script = ExtResource("7_566gx")
+text = "“Hey!”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="Pool1"]
+script = ExtResource("7_566gx")
+text = "”Oh my…sounds like you’ve got your share of juicy cases too.”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="Pool1"]
+script = ExtResource("7_566gx")
+text = "“It’s not like that!”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="Pool1"]
+script = ExtResource("7_566gx")
+text = "“You’re so dead, Teresa.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="Pool1"]
+script = ExtResource("7_566gx")
+text = "”You kind of set yourself up for that.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="Pool1"]
+script = ExtResource("7_566gx")
+text = "“Alright girls, calm down.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="Pool1"]
+script = ExtResource("7_566gx")
+text = "“We still have a job to do.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="Pool1"]
+script = ExtResource("7_566gx")
+text = "“Something in the pool catch your attention, Amelia?”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText13" type="Node" parent="Pool1"]
+script = ExtResource("7_566gx")
+text = "“Anything we should be worried about?”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="Pool1"]
+script = ExtResource("7_566gx")
+text = "“…”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="Pool1"]
+script = ExtResource("7_566gx")
+text = "“No, not really.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="Pool1"]
+script = ExtResource("7_566gx")
+text = "“I was just thinking.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="Pool1"]
+script = ExtResource("7_566gx")
+text = "“Alright then, let’s keep moving then.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Repeat" type="Node" parent="Pool1"]
+
+[node name="DialogText13" type="Node" parent="Pool1/Repeat"]
+script = ExtResource("7_566gx")
+text = "“Anything we should be worried about?”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="Pool1/Repeat"]
+script = ExtResource("7_566gx")
+text = "“…”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="Pool1/Repeat"]
+script = ExtResource("7_566gx")
+text = "“No, not really.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="Pool1/Repeat"]
+script = ExtResource("7_566gx")
+text = "“I was just thinking.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="Pool1/Repeat"]
+script = ExtResource("7_566gx")
+text = "“Alright then, let’s keep moving then.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Pool12" parent="." instance=ExtResource("14_yjrug")]
+position = Vector2(204, 504)
+size = Vector2(120, 96)
+
+[node name="DialogText" type="Node" parent="Pool12"]
+script = ExtResource("7_566gx")
+text = "“You’re gonna have a harder time doing your detective work if you’re soaking wet, you know.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Pool12"]
+script = ExtResource("7_566gx")
+text = "“I’m really resisting the urge to push you in right now.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Pool12"]
+script = ExtResource("7_566gx")
+text = "“Don’t you dare, Teresa.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="Pool12"]
+script = ExtResource("7_566gx")
+text = "“It wouldn’t be the first time you’d be wet on the job.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="Pool12"]
+script = ExtResource("7_566gx")
+text = "“Hey!”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="Pool12"]
+script = ExtResource("7_566gx")
+text = "”Oh my…sounds like you’ve got your share of juicy cases too.”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="Pool12"]
+script = ExtResource("7_566gx")
+text = "“It’s not like that!”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="Pool12"]
+script = ExtResource("7_566gx")
+text = "“You’re so dead, Teresa.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="Pool12"]
+script = ExtResource("7_566gx")
+text = "”You kind of set yourself up for that.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="Pool12"]
+script = ExtResource("7_566gx")
+text = "“Alright girls, calm down.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="Pool12"]
+script = ExtResource("7_566gx")
+text = "“We still have a job to do.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="Pool12"]
+script = ExtResource("7_566gx")
+text = "“Something in the pool catch your attention, Amelia?”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText13" type="Node" parent="Pool12"]
+script = ExtResource("7_566gx")
+text = "“Anything we should be worried about?”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="Pool12"]
+script = ExtResource("7_566gx")
+text = "“…”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="Pool12"]
+script = ExtResource("7_566gx")
+text = "“No, not really.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="Pool12"]
+script = ExtResource("7_566gx")
+text = "“I was just thinking.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="Pool12"]
+script = ExtResource("7_566gx")
+text = "“Alright then, let’s keep moving then.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Repeat" type="Node" parent="Pool12"]
+
+[node name="DialogText13" type="Node" parent="Pool12/Repeat"]
+script = ExtResource("7_566gx")
+text = "“Anything we should be worried about?”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="Pool12/Repeat"]
+script = ExtResource("7_566gx")
+text = "“…”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="Pool12/Repeat"]
+script = ExtResource("7_566gx")
+text = "“No, not really.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="Pool12/Repeat"]
+script = ExtResource("7_566gx")
+text = "“I was just thinking.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="Pool12/Repeat"]
+script = ExtResource("7_566gx")
+text = "“Alright then, let’s keep moving then.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Pool13" parent="." instance=ExtResource("14_yjrug")]
+position = Vector2(360, 552)
+size = Vector2(288, 144)
+
+[node name="DialogText" type="Node" parent="Pool13"]
+script = ExtResource("7_566gx")
+text = "“You’re gonna have a harder time doing your detective work if you’re soaking wet, you know.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Pool13"]
+script = ExtResource("7_566gx")
+text = "“I’m really resisting the urge to push you in right now.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Pool13"]
+script = ExtResource("7_566gx")
+text = "“Don’t you dare, Teresa.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="Pool13"]
+script = ExtResource("7_566gx")
+text = "“It wouldn’t be the first time you’d be wet on the job.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="Pool13"]
+script = ExtResource("7_566gx")
+text = "“Hey!”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="Pool13"]
+script = ExtResource("7_566gx")
+text = "”Oh my…sounds like you’ve got your share of juicy cases too.”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="Pool13"]
+script = ExtResource("7_566gx")
+text = "“It’s not like that!”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="Pool13"]
+script = ExtResource("7_566gx")
+text = "“You’re so dead, Teresa.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="Pool13"]
+script = ExtResource("7_566gx")
+text = "”You kind of set yourself up for that.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="Pool13"]
+script = ExtResource("7_566gx")
+text = "“Alright girls, calm down.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="Pool13"]
+script = ExtResource("7_566gx")
+text = "“We still have a job to do.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="Pool13"]
+script = ExtResource("7_566gx")
+text = "“Something in the pool catch your attention, Amelia?”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText13" type="Node" parent="Pool13"]
+script = ExtResource("7_566gx")
+text = "“Anything we should be worried about?”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="Pool13"]
+script = ExtResource("7_566gx")
+text = "“…”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="Pool13"]
+script = ExtResource("7_566gx")
+text = "“No, not really.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="Pool13"]
+script = ExtResource("7_566gx")
+text = "“I was just thinking.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="Pool13"]
+script = ExtResource("7_566gx")
+text = "“Alright then, let’s keep moving then.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Repeat" type="Node" parent="Pool13"]
+
+[node name="DialogText13" type="Node" parent="Pool13/Repeat"]
+script = ExtResource("7_566gx")
+text = "“Anything we should be worried about?”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="Pool13/Repeat"]
+script = ExtResource("7_566gx")
+text = "“…”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="Pool13/Repeat"]
+script = ExtResource("7_566gx")
+text = "“No, not really.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="Pool13/Repeat"]
+script = ExtResource("7_566gx")
+text = "“I was just thinking.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="Pool13/Repeat"]
+script = ExtResource("7_566gx")
+text = "“Alright then, let’s keep moving then.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Pool2" parent="." instance=ExtResource("14_yjrug")]
+position = Vector2(168, 336)
+size = Vector2(96, 48)
+
+[node name="DialogText" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“…”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“You know, the pool smells kinda bad.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“That’s every pool, Amelia.”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“Ever heard of chlorine?"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“Hey, maybe she meant something else.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“What is it, Amelia?”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“Well, first off, chlorine doesn’t cause pool smell.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“It’s chloramines.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“You know, a mix of piss, oils, sweat, and chlorine.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“Okay, gross.”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“Really didn’t need to drop that on us.”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“Something in the pool catch your attention, Amelia?”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText13" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“Could be worse, like the coffee at the station.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“Almost died after one sip.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“I’m honestly surprised you know that off the top of your head, Amelia.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“Knowing things is part of my job, LOWKEY.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“And I was only thinking.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText18" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“You know, chlorine itself doesn’t actually smell too bad.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText19" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“But more importantly, the smell must be stronger than usual.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText20" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“We smell like chloramines even though we haven’t swam in the pools today.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText21" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“We do?”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText22" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“That can’t be right…”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText23" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“No, Amelia’s right.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText24" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“When Eris and I arrived on the scene I’d already picked up on that pool smell.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText25" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“It was faint, but I smelled it before we entered the deck.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText26" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“…”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText27" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“I don’t really smell it.\""
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText28" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“Just something I thought I’d point out.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText29" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“Any detail could matter later down the line.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText30" type="Node" parent="Pool2"]
+script = ExtResource("7_566gx")
+text = "“Even the way a pool smells.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Repeat" type="Node" parent="Pool2"]
+
+[node name="DialogText13" type="Node" parent="Pool2/Repeat"]
+script = ExtResource("7_566gx")
+text = "(This pool has quite the strong smell.)"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="Pool2/Repeat"]
+script = ExtResource("7_566gx")
+text = "(That, and what LOWKEY said earlier...)"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="Pool2/Repeat"]
+script = ExtResource("7_566gx")
+text = "“…”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Pool22" parent="." instance=ExtResource("14_yjrug")]
+position = Vector2(480, 168)
+size = Vector2(96, 48)
+
+[node name="DialogText" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“…”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“You know, the pool smells kinda bad.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“That’s every pool, Amelia.”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“Ever heard of chlorine?"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“Hey, maybe she meant something else.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“What is it, Amelia?”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“Well, first off, chlorine doesn’t cause pool smell.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“It’s chloramines.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“You know, a mix of piss, oils, sweat, and chlorine.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“Okay, gross.”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“Really didn’t need to drop that on us.”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“Something in the pool catch your attention, Amelia?”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText13" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“Could be worse, like the coffee at the station.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“Almost died after one sip.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“I’m honestly surprised you know that off the top of your head, Amelia.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“Knowing things is part of my job, LOWKEY.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“And I was only thinking.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText18" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“You know, chlorine itself doesn’t actually smell too bad.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText19" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“But more importantly, the smell must be stronger than usual.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText20" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“We smell like chloramines even though we haven’t swam in the pools today.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText21" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“We do?”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText22" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“That can’t be right…”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText23" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“No, Amelia’s right.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText24" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“When Eris and I arrived on the scene I’d already picked up on that pool smell.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText25" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“It was faint, but I smelled it before we entered the deck.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText26" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“…”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText27" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“I don’t really smell it.\""
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText28" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“Just something I thought I’d point out.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText29" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“Any detail could matter later down the line.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText30" type="Node" parent="Pool22"]
+script = ExtResource("7_566gx")
+text = "“Even the way a pool smells.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Repeat" type="Node" parent="Pool22"]
+
+[node name="DialogText13" type="Node" parent="Pool22/Repeat"]
+script = ExtResource("7_566gx")
+text = "(This pool has quite the strong smell.)"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="Pool22/Repeat"]
+script = ExtResource("7_566gx")
+text = "(That, and what LOWKEY said earlier...)"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="Pool22/Repeat"]
+script = ExtResource("7_566gx")
+text = "“…”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Pool23" parent="." instance=ExtResource("14_yjrug")]
+position = Vector2(324, 252)
+size = Vector2(408, 120)
+
+[node name="DialogText" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“…”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“You know, the pool smells kinda bad.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“That’s every pool, Amelia.”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“Ever heard of chlorine?"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“Hey, maybe she meant something else.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“What is it, Amelia?”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“Well, first off, chlorine doesn’t cause pool smell.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“It’s chloramines.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“You know, a mix of piss, oils, sweat, and chlorine.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“Okay, gross.”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“Really didn’t need to drop that on us.”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“Something in the pool catch your attention, Amelia?”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText13" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“Could be worse, like the coffee at the station.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“Almost died after one sip.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“I’m honestly surprised you know that off the top of your head, Amelia.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“Knowing things is part of my job, LOWKEY.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“And I was only thinking.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText18" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“You know, chlorine itself doesn’t actually smell too bad.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText19" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“But more importantly, the smell must be stronger than usual.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText20" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“We smell like chloramines even though we haven’t swam in the pools today.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText21" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“We do?”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText22" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“That can’t be right…”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText23" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“No, Amelia’s right.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText24" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“When Eris and I arrived on the scene I’d already picked up on that pool smell.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText25" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“It was faint, but I smelled it before we entered the deck.”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText26" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“…”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText27" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“I don’t really smell it.\""
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText28" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“Just something I thought I’d point out.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText29" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“Any detail could matter later down the line.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText30" type="Node" parent="Pool23"]
+script = ExtResource("7_566gx")
+text = "“Even the way a pool smells.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Repeat" type="Node" parent="Pool23"]
+
+[node name="DialogText13" type="Node" parent="Pool23/Repeat"]
+script = ExtResource("7_566gx")
+text = "(This pool has quite the strong smell.)"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="Pool23/Repeat"]
+script = ExtResource("7_566gx")
+text = "(That, and what LOWKEY said earlier...)"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="Pool23/Repeat"]
+script = ExtResource("7_566gx")
+text = "“…”"
+npc_info = ExtResource("10_h8wce")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"

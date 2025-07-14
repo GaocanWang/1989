@@ -8,9 +8,9 @@ signal finished
 @export var enabled : bool = true
 @export var size : Vector2 = Vector2( 24, 24 ) : set = _set_size
 
-@export var next : String = ""
-
 var dialog_items : Array[ DialogItem ]
+var dialog_items_2 : Array[ DialogItem ]
+var first_time : bool = true
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -25,6 +25,9 @@ func _ready() -> void:
 	for c in get_children():
 		if c is DialogItem:
 			dialog_items.append( c )
+		elif c.name == "Repeat":
+			for d in c.get_children():
+				dialog_items_2.append( d )
 	
 	pass
 
@@ -34,7 +37,11 @@ func player_interact() -> void:
 	player_interacted.emit()
 	await get_tree().process_frame
 	await get_tree().process_frame
-	DialogSystem.show_dialog( dialog_items )
+	if ( first_time ):
+		first_time = false
+		DialogSystem.show_dialog( dialog_items )
+	else:
+		DialogSystem.show_dialog( dialog_items_2 )
 	DialogSystem.finished.connect( _on_dialog_finished )
 	pass
 

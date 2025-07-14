@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://ct5se6suijt5w"]
+[gd_scene load_steps=13 format=4 uid="uid://ct5se6suijt5w"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_l8wmu"]
 [ext_resource type="AudioStream" uid="uid://csqenyhi7hb5g" path="res://Levels/music/teresa dialogue music.mp3" id="2_6c266"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="7_761wi"]
 [ext_resource type="Resource" uid="uid://c2w2tyjg78bol" path="res://npc/00_npcs/amelia.tres" id="8_ml4fq"]
 [ext_resource type="Resource" uid="uid://di457jgt256ub" path="res://npc/00_npcs/teresa.tres" id="9_6c266"]
+[ext_resource type="Resource" uid="uid://cx8yq3fk58aei" path="res://npc/00_npcs/lowkey.tres" id="9_ml4fq"]
 [ext_resource type="PackedScene" uid="uid://dm15w3ux3txs4" path="res://npc/npc.tscn" id="10_fvy66"]
 [ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="11_iqqml"]
 
@@ -43,55 +44,34 @@ target_transition_area = "LevelTransition2"
 door = true
 side = 3
 
-[node name="DialogText" type="Node" parent="LevelTransition"]
-script = ExtResource("7_761wi")
-text = "Sorry for getting distracted, Teresa."
-npc_info = ExtResource("8_ml4fq")
-
-[node name="DialogText2" type="Node" parent="LevelTransition"]
-script = ExtResource("7_761wi")
-text = "You're right."
-npc_info = ExtResource("8_ml4fq")
-
-[node name="DialogText3" type="Node" parent="LevelTransition"]
-script = ExtResource("7_761wi")
-text = "We have to act quick if we want to find the missing lifeguard."
-npc_info = ExtResource("8_ml4fq")
-
-[node name="DialogText4" type="Node" parent="LevelTransition"]
-script = ExtResource("7_761wi")
-text = "Where are the others?"
-npc_info = ExtResource("8_ml4fq")
-
-[node name="DialogText5" type="Node" parent="LevelTransition"]
-script = ExtResource("7_761wi")
-text = "Officer Eris and Detective Lowkey are in the pool room already."
-npc_info = ExtResource("9_6c266")
-
-[node name="DialogText6" type="Node" parent="LevelTransition"]
-script = ExtResource("7_761wi")
-text = "The dispatch request said that the lifeguard was last seen in the pool area, but they didn’t see where they went after."
-npc_info = ExtResource("9_6c266")
-
-[node name="DialogText7" type="Node" parent="LevelTransition"]
-script = ExtResource("7_761wi")
-text = "Everyone was evacuated after a while. The other lifeguard seemed to have called the police after his partner went missing."
-npc_info = ExtResource("9_6c266")
-
-[node name="DialogText8" type="Node" parent="LevelTransition"]
-script = ExtResource("7_761wi")
-text = "We should get moving now."
-npc_info = ExtResource("9_6c266")
-
-[node name="DialogText9" type="Node" parent="LevelTransition"]
-script = ExtResource("7_761wi")
-text = "The others are waiting."
-npc_info = ExtResource("9_6c266")
-
 [node name="LevelTransition2" parent="." instance=ExtResource("6_ekd8h")]
 position = Vector2(468, 120)
 level = "uid://co4f0ibd8t1gp"
 side = 1
+
+[node name="DialogText" type="Node" parent="LevelTransition2"]
+script = ExtResource("7_761wi")
+text = "“Uh…Amelia?”"
+npc_info = ExtResource("9_6c266")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="LevelTransition2"]
+script = ExtResource("7_761wi")
+text = "“This is the wrong way.”"
+npc_info = ExtResource("9_6c266")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="LevelTransition2"]
+script = ExtResource("7_761wi")
+text = "“We’re not quite done yet.”"
+npc_info = ExtResource("9_ml4fq")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="LevelTransition2"]
+script = ExtResource("7_761wi")
+text = "“Let’s hurry back before we run out of time.”"
+npc_info = ExtResource("9_ml4fq")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="NPC" parent="." instance=ExtResource("10_fvy66")]
 position = Vector2(60, 216)
@@ -100,12 +80,12 @@ position = Vector2(60, 216)
 
 [node name="DialogText" type="Node" parent="NPC/DialogInteraction"]
 script = ExtResource("7_761wi")
-text = "We should get moving now."
+text = "\"We should get moving now.\""
 npc_info = ExtResource("9_6c266")
 
 [node name="DialogText1" type="Node" parent="NPC/DialogInteraction"]
 script = ExtResource("7_761wi")
-text = "The others are waiting."
+text = "\"The others are waiting.\""
 npc_info = ExtResource("9_6c266")
 
 [node name="DialogInteraction2" parent="." instance=ExtResource("11_iqqml")]
@@ -114,12 +94,57 @@ size = Vector2(48, 24)
 
 [node name="DialogText" type="Node" parent="DialogInteraction2"]
 script = ExtResource("7_761wi")
-text = "Where are you going?"
+text = "\"Where are you going?\""
 npc_info = ExtResource("9_6c266")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText2" type="Node" parent="DialogInteraction2"]
 script = ExtResource("7_761wi")
-text = "The pool entrance is the other way."
+text = "\"The pool entrance is the other way.\""
 npc_info = ExtResource("9_6c266")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText" type="Node" parent="."]
+script = ExtResource("7_761wi")
+text = "\"Sorry for getting distracted, Teresa.\""
+npc_info = ExtResource("8_ml4fq")
+
+[node name="DialogText2" type="Node" parent="."]
+script = ExtResource("7_761wi")
+text = "\"You're right.\""
+npc_info = ExtResource("8_ml4fq")
+
+[node name="DialogText3" type="Node" parent="."]
+script = ExtResource("7_761wi")
+text = "\"We have to act quick if we want to find the missing lifeguard.\""
+npc_info = ExtResource("8_ml4fq")
+
+[node name="DialogText4" type="Node" parent="."]
+script = ExtResource("7_761wi")
+text = "\"Where are the others?\""
+npc_info = ExtResource("8_ml4fq")
+
+[node name="DialogText5" type="Node" parent="."]
+script = ExtResource("7_761wi")
+text = "\"Officer Eris and Detective Lowkey are in the pool room already.\""
+npc_info = ExtResource("9_6c266")
+
+[node name="DialogText6" type="Node" parent="."]
+script = ExtResource("7_761wi")
+text = "\"The dispatch request said that the lifeguard was last seen in the pool area, but they didn't see where they went after.\""
+npc_info = ExtResource("9_6c266")
+
+[node name="DialogText7" type="Node" parent="."]
+script = ExtResource("7_761wi")
+text = "\"Everyone was evacuated after a while. The other lifeguard seemed to have called the police after his partner went missing.\""
+npc_info = ExtResource("9_6c266")
+
+[node name="DialogText8" type="Node" parent="."]
+script = ExtResource("7_761wi")
+text = "\"We should get moving now.\""
+npc_info = ExtResource("9_6c266")
+
+[node name="DialogText9" type="Node" parent="."]
+script = ExtResource("7_761wi")
+text = "\"The others are waiting.\""
+npc_info = ExtResource("9_6c266")

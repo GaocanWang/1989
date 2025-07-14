@@ -33,7 +33,7 @@ position = Vector2(177, 119)
 [node name="LevelTransition" parent="." instance=ExtResource("6_1b4t0")]
 position = Vector2(276, 408)
 level = "uid://co4f0ibd8t1gp"
-target_transition_area = "LevelTransition3"
+target_transition_area = "WChangeroomTransition"
 door = true
 size = 1
 side = 3

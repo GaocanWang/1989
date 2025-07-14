@@ -1,5 +1,5 @@
 @tool
-class_name LevelTransition extends Area2D
+class_name WChangeroomTransition extends Area2D
 
 enum SIDE { LEFT, RIGHT, TOP, BOTTOM }
 
@@ -27,6 +27,10 @@ enum SIDE { LEFT, RIGHT, TOP, BOTTOM }
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 var dialog_items : Array[ DialogItem ]
+var dialog_items_2 : Array[ DialogItem ]
+var repeat : Array[ DialogItem ]
+var first_time : bool = true
+var unlocked : bool = false
 
 
 func _ready() -> void:
@@ -48,13 +52,33 @@ func _ready() -> void:
 		body_entered.connect( _player_entered )
 	
 	for c in get_children():
-		dialog_items.append( c )
+		if c.name == "1":
+			for d in c.get_children():
+				dialog_items.append( d )
+		elif c.name == "2":
+			for d in c.get_children():
+				dialog_items_2.append( d )
+		elif c.name == "Repeat":
+			for d in c.get_children():
+				repeat.append( d )
 	
 	pass
 
 
 func _player_entered( _p : Node2D ) -> void:
-	LevelManager.load_new_level( level, target_transition_area, get_offset() )
+	if ( unlocked ):
+		LevelManager.load_new_level( level, target_transition_area, get_offset() )
+	else:
+		if ( first_time ):
+			first_time = false
+			DialogSystem.show_dialog( dialog_items )
+			await DialogSystem.finished
+			get_tree().paused = true
+			await get_tree().create_timer(1.0).timeout
+			get_tree().paused = false
+			DialogSystem.show_dialog( dialog_items_2 )
+		else:
+			DialogSystem.show_dialog( repeat )
 	pass
 
 

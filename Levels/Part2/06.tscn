@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://c1ei0hjvfb0yb"]
+[gd_scene load_steps=15 format=4 uid="uid://c1ei0hjvfb0yb"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_n7hlk"]
 [ext_resource type="AudioStream" uid="uid://bg0omm6hpjbsi" path="res://Levels/music/dream sequence bgm.mp3" id="2_y1dao"]
@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://c2w2tyjg78bol" path="res://npc/00_npcs/amelia.tres" id="11_iv8hn"]
 [ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="12_iv8hn"]
 [ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/box.tres" id="13_g7cit"]
+[ext_resource type="PackedScene" uid="uid://byu8d21qbdi0r" path="res://Interactables/Bulletin/Bulletin.tscn" id="14_g7cit"]
 
 [node name="06" type="Node2D"]
 script = ExtResource("1_n7hlk")
@@ -233,81 +234,90 @@ script = ExtResource("7_q4xlc")
 text = "“Just checking.”"
 npc_info = ExtResource("11_iv8hn")
 
-[node name="BulletinBoard" parent="." instance=ExtResource("12_iv8hn")]
+[node name="Bulletin" parent="." instance=ExtResource("14_g7cit")]
 position = Vector2(144, 84)
-size = Vector2(48, 24)
 
-[node name="DialogText" type="Node" parent="BulletinBoard"]
+[node name="1" type="Node" parent="Bulletin"]
+
+[node name="pmo" type="Node" parent="Bulletin/1"]
+script = ExtResource("7_q4xlc")
+text = "pmo"
+npc_info = ExtResource("13_g7cit")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText" type="Node" parent="Bulletin/1"]
 script = ExtResource("7_q4xlc")
 text = "A faded bulletin board hangs on the wall."
 npc_info = ExtResource("13_g7cit")
 
-[node name="DialogText2" type="Node" parent="BulletinBoard"]
+[node name="DialogText2" type="Node" parent="Bulletin/1"]
 script = ExtResource("7_q4xlc")
 text = "Most of the papers are outdated event flyers or sun-bleached schedules."
 npc_info = ExtResource("13_g7cit")
 
-[node name="DialogText3" type="Node" parent="BulletinBoard"]
+[node name="DialogText3" type="Node" parent="Bulletin/1"]
 script = ExtResource("7_q4xlc")
 text = "“Wait a minute…”"
 npc_info = ExtResource("11_iv8hn")
 
-[node name="DialogText4" type="Node" parent="BulletinBoard"]
+[node name="DialogText4" type="Node" parent="Bulletin/1"]
 script = ExtResource("7_q4xlc")
 text = "“This is the checkout log we were looking for earlier.”"
 npc_info = ExtResource("11_iv8hn")
 
-[node name="DialogText5" type="Node" parent="BulletinBoard"]
+[node name="DialogText5" type="Node" parent="Bulletin/1"]
 script = ExtResource("7_q4xlc")
 text = "“For the pool equipment.”"
 npc_info = ExtResource("11_iv8hn")
 
-[node name="DialogText6" type="Node" parent="BulletinBoard"]
+[node name="2" type="Node" parent="Bulletin"]
+
+[node name="DialogText6" type="Node" parent="Bulletin/2"]
 script = ExtResource("7_q4xlc")
 text = "“They track everything on there?”"
 npc_info = ExtResource("8_q4xlc")
 
-[node name="DialogText7" type="Node" parent="BulletinBoard"]
+[node name="DialogText7" type="Node" parent="Bulletin/2"]
 script = ExtResource("7_q4xlc")
 text = "“Only the community center’s equipment.”"
 npc_info = ExtResource("9_5gb84")
 
-[node name="DialogText8" type="Node" parent="BulletinBoard"]
+[node name="DialogText8" type="Node" parent="Bulletin/2"]
 script = ExtResource("7_q4xlc")
 text = "“If a lifeguard needs to grab something for a swimmer, they’re supposed to log it.”"
 npc_info = ExtResource("9_5gb84")
 
-[node name="DialogText9" type="Node" parent="BulletinBoard"]
+[node name="DialogText9" type="Node" parent="Bulletin/2"]
 script = ExtResource("7_q4xlc")
 text = "“That makes sense…”"
 npc_info = ExtResource("8_q4xlc")
 
-[node name="DialogText10" type="Node" parent="BulletinBoard"]
+[node name="DialogText10" type="Node" parent="Bulletin/2"]
 script = ExtResource("7_q4xlc")
 text = "“So if piece of equipment went missing, they’d know who was last responsible.”"
 npc_info = ExtResource("8_q4xlc")
 
-[node name="DialogText11" type="Node" parent="BulletinBoard"]
+[node name="DialogText11" type="Node" parent="Bulletin/2"]
 script = ExtResource("7_q4xlc")
 text = "“Is there anything about the keys?”"
 npc_info = ExtResource("10_j788d")
 
-[node name="DialogText12" type="Node" parent="BulletinBoard"]
+[node name="DialogText12" type="Node" parent="Bulletin/2"]
 script = ExtResource("7_q4xlc")
 text = "“Nope.”"
 npc_info = ExtResource("11_iv8hn")
 
-[node name="DialogText13" type="Node" parent="BulletinBoard"]
+[node name="DialogText13" type="Node" parent="Bulletin/2"]
 script = ExtResource("7_q4xlc")
 text = "“I’m starting to doubt the keys are in this room.”"
 npc_info = ExtResource("11_iv8hn")
 
-[node name="DialogText14" type="Node" parent="BulletinBoard"]
+[node name="DialogText14" type="Node" parent="Bulletin/2"]
 script = ExtResource("7_q4xlc")
 text = "“I’ll hang onto it just in case though.”"
 npc_info = ExtResource("11_iv8hn")
 
-[node name="DialogText15" type="Node" parent="BulletinBoard"]
+[node name="DialogText15" type="Node" parent="Bulletin/2"]
 script = ExtResource("7_q4xlc")
 text = "“YOU OBTAINED: [color=red]EQUIPMENT CHECKOUT LOG”[/color]"
 npc_info = ExtResource("13_g7cit")

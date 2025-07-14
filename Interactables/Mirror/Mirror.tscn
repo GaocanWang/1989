@@ -1,19 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://brcokd2rqfg8p"]
+[gd_scene load_steps=3 format=3 uid="uid://brcokd2rqfg8p"]
 
 [ext_resource type="Script" uid="uid://bxq3ayroxauce" path="res://Interactables/Mirror/mirror.gd" id="1_7mf78"]
-[ext_resource type="VideoStream" uid="uid://ddwdxqc1kljoh" path="res://Interactables/Mirror/amelia-mirror-fullscreen-aya-ver.ogv" id="2_kux0b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mf78"]
 size = Vector2(72, 20)
 
 [node name="Mirror" type="Area2D"]
+process_mode = 3
+collision_layer = 0
+collision_mask = 4
+monitorable = false
 script = ExtResource("1_7mf78")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7mf78")
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-offset_right = 1920.0
-offset_bottom = 1080.0
-stream = ExtResource("2_kux0b")
-loop = true
