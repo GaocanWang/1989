@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://kaiv4m7e4ftt"]
+[gd_scene load_steps=23 format=4 uid="uid://kaiv4m7e4ftt"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_1negt"]
 [ext_resource type="AudioStream" uid="uid://bg0omm6hpjbsi" path="res://Levels/music/dream sequence bgm.mp3" id="2_1b4t0"]
@@ -6,6 +6,22 @@
 [ext_resource type="Script" uid="uid://2hobeot03u4v" path="res://Tile Maps/level_tile_map.gd" id="4_0hkk6"]
 [ext_resource type="PackedScene" uid="uid://uqut3xy8f7mb" path="res://Levels/player_spawn.tscn" id="5_ko3bk"]
 [ext_resource type="PackedScene" uid="uid://bt4r7451gfkr5" path="res://Levels/level_transition.tscn" id="6_1b4t0"]
+[ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="7_xevt3"]
+[ext_resource type="Resource" uid="uid://c2w2tyjg78bol" path="res://npc/00_npcs/amelia.tres" id="8_jhc5q"]
+[ext_resource type="Resource" uid="uid://ctbf7x8e37pym" path="res://npc/00_npcs/eris.tres" id="9_535np"]
+[ext_resource type="Resource" uid="uid://di457jgt256ub" path="res://npc/00_npcs/teresa.tres" id="10_25jsw"]
+[ext_resource type="Resource" uid="uid://cx8yq3fk58aei" path="res://npc/00_npcs/lowkey.tres" id="11_i6i35"]
+[ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/box.tres" id="12_k3n85"]
+[ext_resource type="PackedScene" uid="uid://dm15w3ux3txs4" path="res://npc/npc.tscn" id="13_jhc5q"]
+[ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="14_i6i35"]
+[ext_resource type="Script" uid="uid://b8kxiife71bd1" path="res://Interactables/dialog/scripts/dialog_choice.gd" id="15_k3n85"]
+[ext_resource type="Script" uid="uid://cm6c0rnohy8s1" path="res://Interactables/dialog/scripts/dialog_branch.gd" id="16_1p580"]
+[ext_resource type="Script" uid="uid://cpgbhw0gipvs7" path="res://Interactables/dialog/scripts/debate_text.gd" id="17_1p580"]
+[ext_resource type="Script" uid="uid://cfslpprw6tope" path="res://Interactables/dialog/scripts/debate_choice.gd" id="17_k3n85"]
+[ext_resource type="Resource" uid="uid://db6m3p8sr6mxj" path="res://npc/00_npcs/lowkey_np.tres" id="18_87m88"]
+[ext_resource type="Resource" uid="uid://q5twg4buxc41" path="res://npc/00_npcs/amelia_np.tres" id="20_opt2k"]
+[ext_resource type="Script" uid="uid://btkhhyqen270v" path="res://Interactables/dialog/scripts/debate_branch.gd" id="21_74ku1"]
+[ext_resource type="Resource" uid="uid://b125yid6rqvrs" path="res://npc/00_npcs/eris_np.tres" id="21_opt2k"]
 
 [node name="04" type="Node2D"]
 script = ExtResource("1_1negt")
@@ -28,7 +44,7 @@ tile_map_data = PackedByteArray("AAAFAAIAAQAKAAEAAAAGAAIAAQAKAAEAAAAIAAYAAQASAAQ
 tile_set = ExtResource("3_1negt")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_ko3bk")]
-position = Vector2(177, 119)
+position = Vector2(277, 386)
 
 [node name="LevelTransition" parent="." instance=ExtResource("6_1b4t0")]
 position = Vector2(276, 408)
@@ -44,3 +60,841 @@ level = "uid://duj200f4xwn6"
 door = true
 size = 1
 side = 1
+
+[node name="DialogText" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“Whoa.”"
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“Why’s there so much steam in the changeroom?”"
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“It sounds like some of the showers are on.”"
+npc_info = ExtResource("9_535np")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“Maybe that’s why.”"
+npc_info = ExtResource("9_535np")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“Why would the showers be on?”"
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“Is the lifeguard here?”"
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“HEY!”"
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“IS ANYONE IN HERE?”"
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "..."
+slow = true
+npc_info = ExtResource("12_k3n85")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“It doesn’t sound like he’s in here.”"
+slow = true
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“Let’s go check.”"
+slow = true
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“Wait!”"
+slow = true
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText13" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“There’s something I need to do.”"
+slow = true
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“Oh not this again.”"
+slow = true
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "”What is it, Amelia?”"
+slow = true
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "(Here goes nothing.)"
+slow = true
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "You take a deep breath to calm yourself."
+slow = true
+npc_info = ExtResource("12_k3n85")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText18" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "(…)"
+slow = true
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText19" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“I want you to let me explore the changeroom first.”"
+slow = true
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText20" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“Alone.”"
+slow = true
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText21" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“You can’t be serious!”"
+slow = true
+npc_info = ExtResource("9_535np")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText22" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“Why would you need to do that?”"
+slow = true
+npc_info = ExtResource("9_535np")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText23" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“We can’t just let you go in by yourself, Amelia.”"
+slow = true
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText24" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“We don’t know what’s in there.”"
+slow = true
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText25" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“There might be important evidence.”"
+slow = true
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText26" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“Can’t we just follow your lead?”"
+slow = true
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText27" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“That way, you’re still being the first to explore.”"
+slow = true
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText28" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“I need to be by myself.”"
+slow = true
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText29" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“I work best uninterrupted when it comes to things like this.”"
+slow = true
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText30" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“This room…there’s something not right.”"
+slow = true
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText31" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“You can’t just act like you’re in charge of this case.”"
+slow = true
+npc_info = ExtResource("9_535np")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText32" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“We’re wasting time.”"
+slow = true
+npc_info = ExtResource("9_535np")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText33" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“Let’s just go in.”"
+slow = true
+npc_info = ExtResource("9_535np")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText34" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“Hold on.”"
+slow = true
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText35" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“…”"
+slow = true
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText36" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“You can’t be seriously considering her idea!”"
+slow = true
+npc_info = ExtResource("9_535np")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText37" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“I’ve worked many cases with Amelia before.”"
+slow = true
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText38" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“She does this a lot.”"
+slow = true
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText39" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“Just let it happen.”"
+slow = true
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText40" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“Alright, Amelia.”"
+slow = true
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText41" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“You’ve got to show us that we can trust you in there…alone.”"
+slow = true
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText42" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“Looks like Teresa’s already on your side."
+slow = true
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText43" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“If you can convince Eris and I, then we’ll all agree to let you go inside.”"
+slow = true
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText44" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“That won’t be easy.”"
+slow = true
+npc_info = ExtResource("9_535np")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText45" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“Hey, Amelia…”"
+slow = true
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText46" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“All they’re gonna do is ask you questions.”"
+slow = true
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText47" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“Think about it, then answer wisely.”"
+slow = true
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText48" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“Try not to say the wrong thing too many times.”"
+slow = true
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText49" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“If you do that and can’t answer in time, they won’t be convinced.”"
+slow = true
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText50" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“If your answers are good enough, they shouldn’t have any objections left.”"
+slow = true
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText51" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“You got this.”"
+slow = true
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText52" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“I’ll give you a minute to collect your thoughts.”"
+slow = true
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText53" type="Node" parent="."]
+script = ExtResource("7_xevt3")
+text = "“Come to me when you’re ready.”"
+slow = true
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="NPC" parent="." instance=ExtResource("13_jhc5q")]
+position = Vector2(236, 389)
+npc_resource = ExtResource("11_i6i35")
+
+[node name="DialogInteraction" parent="NPC" instance=ExtResource("14_i6i35")]
+
+[node name="DialogText" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("7_xevt3")
+text = "\"Ready?\""
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("7_xevt3")
+text = "“Do you need my advice again?”"
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogChoice" type="Node" parent="NPC/DialogInteraction"]
+script = ExtResource("15_k3n85")
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://b8kxiife71bd1"
+
+[node name="DialogBranch" type="Node" parent="NPC/DialogInteraction/DialogChoice"]
+script = ExtResource("16_1p580")
+text = "Yes"
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
+
+[node name="DialogText" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("7_xevt3")
+text = "Pmo"
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBranch2" type="Node" parent="NPC/DialogInteraction/DialogChoice"]
+script = ExtResource("16_1p580")
+text = "No"
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
+
+[node name="DialogText" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("7_xevt3")
+text = "“Okay then, here we go.”"
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DebateText" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("17_1p580")
+text = "“What exactly are you planning to do in there that you can’t do with us?”"
+npc_info = ExtResource("18_87m88")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateChoice" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("17_k3n85")
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://cfslpprw6tope"
+
+[node name="DebateBranch" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice"]
+script = ExtResource("21_74ku1")
+text = "“I need total quiet to figure out what could have happened here.”"
+correct = true
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://btkhhyqen270v"
+
+[node name="DebateText" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice/DebateBranch"]
+script = ExtResource("17_1p580")
+text = "“I need total quiet to piece together what happened.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice/DebateBranch"]
+script = ExtResource("17_1p580")
+text = "“Noise and distraction make me miss important details.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText3" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice/DebateBranch"]
+script = ExtResource("17_1p580")
+text = "“…Alright. Stay focused on finding the lifeguard though.”"
+npc_info = ExtResource("18_87m88")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateBranch2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice"]
+script = ExtResource("21_74ku1")
+text = "“I just need to look around by myself first.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://btkhhyqen270v"
+
+[node name="DebateText" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice/DebateBranch2"]
+script = ExtResource("17_1p580")
+text = "“I just need to look around by myself.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice/DebateBranch2"]
+script = ExtResource("17_1p580")
+text = "“We don’t have time for sightseeing.”"
+npc_info = ExtResource("18_87m88")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateBranch3" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice"]
+script = ExtResource("21_74ku1")
+text = "“I need to take a look at any important evidence and find the lifeguard.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://btkhhyqen270v"
+
+[node name="DebateText" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice/DebateBranch3"]
+script = ExtResource("17_1p580")
+text = "“I need to take a look at any important evidence and find the lifeguard.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice/DebateBranch3"]
+script = ExtResource("17_1p580")
+text = "“And you can do that with us in the room as well.”"
+npc_info = ExtResource("18_87m88")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText3" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice/DebateBranch3"]
+script = ExtResource("17_1p580")
+text = "“Not a good answer.”"
+npc_info = ExtResource("18_87m88")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("17_1p580")
+text = "“What if you accidentally tamper with any evidence?”"
+npc_info = ExtResource("21_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateChoice2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("17_k3n85")
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://cfslpprw6tope"
+
+[node name="DebateBranch" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice2"]
+script = ExtResource("21_74ku1")
+text = "“There’s no important evidence inside!”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://btkhhyqen270v"
+
+[node name="DebateText" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice2/DebateBranch"]
+script = ExtResource("17_1p580")
+text = "“There’s no important evidence inside!”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice2/DebateBranch"]
+script = ExtResource("17_1p580")
+text = "“You don’t know that yet. That’s careless.”"
+npc_info = ExtResource("21_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateBranch2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice2"]
+script = ExtResource("21_74ku1")
+text = "“I’ve handled cases like this before.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://btkhhyqen270v"
+
+[node name="DebateText" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice2/DebateBranch2"]
+script = ExtResource("17_1p580")
+text = "“I’ve handled cases like this before.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice2/DebateBranch2"]
+script = ExtResource("17_1p580")
+text = "“Cute, but that doesn’t help if there’s evidence you’re not used to.\""
+npc_info = ExtResource("21_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateBranch3" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice2"]
+script = ExtResource("21_74ku1")
+text = "“I won’t touch a thing unless I have to.”"
+correct = true
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://btkhhyqen270v"
+
+[node name="DebateText" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice2/DebateBranch3"]
+script = ExtResource("17_1p580")
+text = "“I won’t touch a thing unless I have to.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice2/DebateBranch3"]
+script = ExtResource("17_1p580")
+text = "“Simply observing things is all I ask for.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText3" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice2/DebateBranch3"]
+script = ExtResource("17_1p580")
+text = "“You better keep your word then.”"
+npc_info = ExtResource("21_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText3" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("17_1p580")
+text = "“What happens if you take too long, or get stuck on something?”"
+npc_info = ExtResource("18_87m88")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateChoice3" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("17_k3n85")
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://cfslpprw6tope"
+
+[node name="DebateBranch" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice3"]
+script = ExtResource("21_74ku1")
+text = "“If I’m not out in five minutes, come in and get me.”"
+correct = true
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://btkhhyqen270v"
+
+[node name="DebateText" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice3/DebateBranch"]
+script = ExtResource("17_1p580")
+text = "“If I’m not out in five minutes, come in and get me.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice3/DebateBranch"]
+script = ExtResource("17_1p580")
+text = "“That way we barely lose any time.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText3" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice3/DebateBranch"]
+script = ExtResource("17_1p580")
+text = "“…Sounds reasonable.”"
+npc_info = ExtResource("18_87m88")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateBranch2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice3"]
+script = ExtResource("21_74ku1")
+text = "“I won’t take long.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://btkhhyqen270v"
+
+[node name="DebateText" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice3/DebateBranch2"]
+script = ExtResource("17_1p580")
+text = "“I won’t take long.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice3/DebateBranch2"]
+script = ExtResource("17_1p580")
+text = "“You don’t know that.”"
+npc_info = ExtResource("18_87m88")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateBranch3" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice3"]
+script = ExtResource("21_74ku1")
+text = "“I might uncover something important if you gave more time.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://btkhhyqen270v"
+
+[node name="DebateText" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice3/DebateBranch3"]
+script = ExtResource("17_1p580")
+text = "“I might uncover something important if you gave more time.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice3/DebateBranch3"]
+script = ExtResource("17_1p580")
+text = "“I’m sure you would, but we’re short on time.”"
+npc_info = ExtResource("18_87m88")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText3" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice3/DebateBranch3"]
+script = ExtResource("17_1p580")
+text = "“All you’re getting is five minutes max.”"
+npc_info = ExtResource("18_87m88")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText4" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("17_1p580")
+text = "”What makes you so sure you’ll find everything? What if you miss something only we can catch?”"
+npc_info = ExtResource("21_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateChoice4" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("17_k3n85")
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://cfslpprw6tope"
+
+[node name="DebateBranch" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice4"]
+script = ExtResource("21_74ku1")
+text = "“I’ll make sure not to miss anything important.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://btkhhyqen270v"
+
+[node name="DebateText" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice4/DebateBranch"]
+script = ExtResource("17_1p580")
+text = "“I’ll make sure not to miss anything important.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice4/DebateBranch"]
+script = ExtResource("17_1p580")
+text = "“You sound less logical and more overconfident.”"
+npc_info = ExtResource("21_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText3" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice4/DebateBranch"]
+script = ExtResource("17_1p580")
+text = "“We need an actual solution, hon.”"
+npc_info = ExtResource("21_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateBranch2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice4"]
+script = ExtResource("21_74ku1")
+text = "“You can check every inch of this place once I’m done.”"
+correct = true
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://btkhhyqen270v"
+
+[node name="DebateText" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice4/DebateBranch2"]
+script = ExtResource("17_1p580")
+text = "“You can check every inch of this place once I’m done.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice4/DebateBranch2"]
+script = ExtResource("17_1p580")
+text = "“That way you’ll get the chance to find anything I missed.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText3" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice4/DebateBranch2"]
+script = ExtResource("17_1p580")
+text = "“…Fine. Just don’t break anything first.”"
+npc_info = ExtResource("21_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateBranch3" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice4"]
+script = ExtResource("21_74ku1")
+text = "“That’s your problem, not mine.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://btkhhyqen270v"
+
+[node name="DebateText" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice4/DebateBranch3"]
+script = ExtResource("17_1p580")
+text = "“That’s your problem, not mine.”"
+npc_info = ExtResource("20_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DebateText2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2/DebateChoice4/DebateBranch3"]
+script = ExtResource("17_1p580")
+text = "“Well then I’m not convinced.\""
+npc_info = ExtResource("21_opt2k")
+metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
+
+[node name="DialogText2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("7_xevt3")
+text = "“…”"
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("7_xevt3")
+text = "“I gotta admit.”"
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("7_xevt3")
+text = "“You think quick on your feet, Amelia.”"
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("7_xevt3")
+text = "“I guess we’re fine with giving you some time to search around.”"
+npc_info = ExtResource("9_535np")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("7_xevt3")
+text = "“Just stick to your promises, hon.”"
+npc_info = ExtResource("9_535np")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("7_xevt3")
+text = "“No. Touching. Anything.”"
+npc_info = ExtResource("9_535np")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("7_xevt3")
+text = "“Timer starts now detective.”"
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("7_xevt3")
+text = "“Get in there.”"
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("7_xevt3")
+text = "“Holler if you need us.”"
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("7_xevt3")
+text = "“Come back to us when you’re finished, okay?”"
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DebateFail" type="Node" parent="NPC/DialogInteraction"]
+
+[node name="DialogText" type="Node" parent="NPC/DialogInteraction/DebateFail"]
+script = ExtResource("7_xevt3")
+text = "(Crap…)"
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="NPC/DialogInteraction/DebateFail"]
+script = ExtResource("7_xevt3")
+text = "(I don’t think I convinced them…)"
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="NPC/DialogInteraction/DebateFail"]
+script = ExtResource("7_xevt3")
+text = "“Well, you gave it a good shot, Amelia.”"
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="NPC/DialogInteraction/DebateFail"]
+script = ExtResource("7_xevt3")
+text = "“Let’s go search the room now.”"
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="NPC/DialogInteraction/DebateFail"]
+script = ExtResource("7_xevt3")
+text = "“Wait!”"
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="NPC/DialogInteraction/DebateFail"]
+script = ExtResource("7_xevt3")
+text = "“If Amelia wants to go into the room alone, she probably has a good reason to.”"
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="NPC/DialogInteraction/DebateFail"]
+script = ExtResource("7_xevt3")
+text = "“Just give her one more chance.”"
+npc_info = ExtResource("10_25jsw")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="NPC/DialogInteraction/DebateFail"]
+script = ExtResource("7_xevt3")
+text = "“…Sigh.”"
+npc_info = ExtResource("9_535np")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="NPC/DialogInteraction/DebateFail"]
+script = ExtResource("7_xevt3")
+text = "“What do you think, Lowkey?”"
+npc_info = ExtResource("9_535np")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="NPC/DialogInteraction/DebateFail"]
+script = ExtResource("7_xevt3")
+text = "“Alright, then.”"
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"

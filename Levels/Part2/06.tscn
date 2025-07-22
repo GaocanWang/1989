@@ -234,6 +234,50 @@ script = ExtResource("7_q4xlc")
 text = "“Just checking.”"
 npc_info = ExtResource("11_iv8hn")
 
+[node name="Table" parent="." instance=ExtResource("12_iv8hn")]
+position = Vector2(192, 144)
+size = Vector2(48, 24)
+
+[node name="DialogText" type="Node" parent="Table"]
+script = ExtResource("7_q4xlc")
+text = "A rectangular table sits at the center of the lounge."
+npc_info = ExtResource("13_g7cit")
+
+[node name="DialogText2" type="Node" parent="Table"]
+script = ExtResource("7_q4xlc")
+text = "Its plastic surface is scratched and stained from years of use."
+npc_info = ExtResource("13_g7cit")
+
+[node name="DialogText3" type="Node" parent="Table"]
+script = ExtResource("7_q4xlc")
+text = "“Guess this is where they hang out between shifts.”"
+npc_info = ExtResource("8_q4xlc")
+
+[node name="DialogText4" type="Node" parent="Table"]
+script = ExtResource("7_q4xlc")
+text = "“Not much of a break room if you ask me.”"
+npc_info = ExtResource("9_5gb84")
+
+[node name="DialogText5" type="Node" parent="Table"]
+script = ExtResource("7_q4xlc")
+text = "“And there’s no key on here either.”"
+npc_info = ExtResource("9_5gb84")
+
+[node name="DialogText6" type="Node" parent="Table"]
+script = ExtResource("7_q4xlc")
+text = "“At least they have a fridge.”"
+npc_info = ExtResource("10_j788d")
+
+[node name="DialogText7" type="Node" parent="Table"]
+script = ExtResource("7_q4xlc")
+text = "(…)"
+npc_info = ExtResource("11_iv8hn")
+
+[node name="DialogText8" type="Node" parent="Table"]
+script = ExtResource("7_q4xlc")
+text = "(Is the key even in this room?)"
+npc_info = ExtResource("11_iv8hn")
+
 [node name="Bulletin" parent="." instance=ExtResource("14_g7cit")]
 position = Vector2(144, 84)
 

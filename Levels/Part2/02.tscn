@@ -37,7 +37,7 @@ tile_map_data = PackedByteArray("AAABAAIAAQAEAAEAADABAAMAAQAEAAEAADABAAQAAQAEAAE
 tile_set = ExtResource("3_fkk6q")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_g4mln")]
-position = Vector2(575, 309)
+position = Vector2(328, 145)
 
 [node name="LevelTransition" parent="." instance=ExtResource("6_7afvj")]
 position = Vector2(36, 600)
@@ -319,6 +319,50 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 script = ExtResource("7_566gx")
 text = "“So unless he flushed them, they’re nearby.”"
 npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Unlock" type="Node" parent="WChangeroomTransition"]
+
+[node name="DialogText" type="Node" parent="WChangeroomTransition/Unlock"]
+script = ExtResource("7_566gx")
+text = "The changeroom door unlocks."
+npc_info = ExtResource("12_ja1e1")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="WChangeroomTransition/Unlock"]
+script = ExtResource("7_566gx")
+text = "“…”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="WChangeroomTransition/Unlock"]
+script = ExtResource("7_566gx")
+text = "“Everyone ready?”"
+npc_info = ExtResource("8_f06bb")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="WChangeroomTransition/Unlock"]
+script = ExtResource("7_566gx")
+text = "“Whenever you guys are.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="WChangeroomTransition/Unlock"]
+script = ExtResource("7_566gx")
+text = "“Can’t be too bad.”"
+npc_info = ExtResource("9_yjrug")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="WChangeroomTransition/Unlock"]
+script = ExtResource("7_566gx")
+text = "“Yeah.”"
+npc_info = ExtResource("10_h8wce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="WChangeroomTransition/Unlock"]
+script = ExtResource("7_566gx")
+text = "“Let’s get this over with.\""
+npc_info = ExtResource("10_h8wce")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="LevelTransition4" parent="." instance=ExtResource("6_7afvj")]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://np2826ya085l"]
+[gd_scene load_steps=25 format=3 uid="uid://np2826ya085l"]
 
 [ext_resource type="Script" uid="uid://bmxl7n5om7mck" path="res://GUI/dialog_system/scripts/dialog_system.gd" id="1_xj1h2"]
+[ext_resource type="Texture2D" uid="uid://dykoc6tspwxgs" path="res://FullScreenArt/debate eris talking.png" id="2_onhof"]
 [ext_resource type="Texture2D" uid="uid://d1bj7nb4613y6" path="res://GUI/dialog_system/sprites/text-bubble.png" id="2_vac1q"]
 [ext_resource type="FontFile" uid="uid://1waxq8ral8jt" path="res://GUI/fonts/Abaddon Light.ttf" id="3_rbskj"]
 [ext_resource type="FontFile" uid="uid://di4ukig88u1hc" path="res://GUI/fonts/Abaddon Bold.ttf" id="4_f13wm"]
@@ -8,14 +9,6 @@
 [ext_resource type="AudioStream" uid="uid://cp5qia3itg5y8" path="res://GUI/dialog_system/audio/voice_blip.wav" id="6_fon7m"]
 [ext_resource type="FontFile" uid="uid://d2tsrci0mjm5u" path="res://GUI/fonts/m5x7.ttf" id="6_h6n0s"]
 [ext_resource type="Theme" uid="uid://4648uwgl2wty" path="res://GUI/dialog_system/dialog_choice_theme.tres" id="9_32wc4"]
-
-[sub_resource type="Gradient" id="Gradient_w4mtv"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_jocu5"]
-gradient = SubResource("Gradient_w4mtv")
-fill_from = Vector2(0, 1)
-fill_to = Vector2(0, 0)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nbe4o"]
 content_margin_left = 24.0
@@ -495,19 +488,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="DialogUI"]
-visible = false
-modulate = Color(0, 0, 0, 0.501961)
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = 360.0
-grow_horizontal = 2
-grow_vertical = 0
-texture = SubResource("GradientTexture2D_jocu5")
-
 [node name="PanelContainer" type="PanelContainer" parent="DialogUI"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
@@ -517,9 +497,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1440.0
-offset_top = 54.0
+offset_top = -296.0
 offset_right = -480.0
-offset_bottom = 324.0
+offset_bottom = -26.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_nbe4o")
@@ -539,9 +519,9 @@ scroll_active = false
 [node name="NameLabel" type="Label" parent="DialogUI"]
 layout_mode = 0
 offset_left = 480.0
-offset_top = 1080.0
+offset_top = 730.0
 offset_right = 582.0
-offset_bottom = 1134.0
+offset_bottom = 784.0
 theme_override_colors/font_color = Color(0.894118, 0.862745, 0.796078, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
@@ -568,9 +548,9 @@ bus = &"SFX"
 self_modulate = Color(0.207843, 0.513726, 0.345098, 1)
 layout_mode = 0
 offset_left = 1350.0
-offset_top = 1374.0
+offset_top = 1024.0
 offset_right = 1446.0
-offset_bottom = 1410.0
+offset_bottom = 1060.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_yk2ck")
 
 [node name="Label" type="Label" parent="DialogUI/DialogProgressIndicator"]
@@ -633,3 +613,27 @@ root_node = NodePath("../AnimationPlayer")
 libraries = {
 &"": SubResource("AnimationLibrary_pwx8d")
 }
+
+[node name="TextureRect" type="TextureRect" parent="DialogUI"]
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_onhof")
+
+[node name="ProgressBar" type="ProgressBar" parent="DialogUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 22.0
+grow_horizontal = 2
+max_value = 5.0
+value = 5.0
+show_percentage = false
+
+[node name="Timer2" type="Timer" parent="DialogUI"]

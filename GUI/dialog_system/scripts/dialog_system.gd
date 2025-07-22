@@ -5,6 +5,8 @@ class_name DialogSystemNode extends CanvasLayer
 signal finished
 signal letter_added( letter : String )
 
+signal debate_failed
+
 var is_active : bool = false
 var text_in_progress : bool = false
 var waiting_for_choice : bool = false
@@ -17,7 +19,8 @@ var dialog_items : Array[ DialogItem ]
 var dialog_item_index : int = 0
 
 var slow : bool = false
-
+var debate : bool = false
+var debate_fails : int = 0
 
 @onready var dialog_ui: Control = $DialogUI
 @onready var content: RichTextLabel = $DialogUI/PanelContainer/RichTextLabel
@@ -31,6 +34,9 @@ var slow : bool = false
 @onready var content_container: PanelContainer = $DialogUI/PanelContainer
 @onready var textbox_animation_player: AnimationPlayer = $DialogUI/AnimationPlayer
 @onready var portrait_animation_player: AnimationPlayer = $DialogUI/AnimationPlayer2
+@onready var background: TextureRect = $DialogUI/TextureRect
+@onready var progress_bar: ProgressBar = $DialogUI/ProgressBar
+@onready var timer_2: Timer = $DialogUI/Timer2
 
 
 
@@ -42,7 +48,16 @@ func _ready() -> void:
 			return
 		return
 	timer.timeout.connect( _on_timer_timeout )
+	timer_2.timeout.connect( _on_timer_2_timeout )
+	timer_2.wait_time = 5.0
 	dialog_ui.visible = false
+	pass
+
+
+
+func _process(delta: float) -> void:
+	if ( debate ):
+		progress_bar.value = timer_2.time_left
 	pass
 
 
@@ -111,6 +126,8 @@ func hide_dialog() -> void:
 	dialog_ui.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	content.text = ""
+	background.hide()
+	progress_bar.hide()
 	
 	PlayerManager.player.check_pressed()
 	get_tree().paused = false
@@ -129,6 +146,10 @@ func start_dialog() -> void:
 		set_dialog_text( _d as DialogText )
 	elif _d is DialogChoice:
 		set_dialog_choice( _d as DialogChoice )
+	elif _d is DebateText:
+		set_dialog_text( _d as DebateText )
+	elif _d is DebateChoice:
+		set_dialog_choice( _d as DebateChoice )
 	
 	pass
 
@@ -136,9 +157,13 @@ func start_dialog() -> void:
 
 ## Set dialog and NPC variables, etc based on dialog item parameters.
 ## Once set, start text typing timer
-func set_dialog_text( _d : DialogText ) -> void:
-	slow = _d.slow
+func set_dialog_text( _d ) -> void:
+	if ( _d is DebateText ):
+		background.texture = _d.npc_info.background
+		background.show()
+		progress_bar.show()
 	
+	slow = _d.slow
 	content.text = _d.text
 	choice_options.visible = false
 	name_label.text = _d.npc_info.npc_name
@@ -169,7 +194,11 @@ func set_dialog_text( _d : DialogText ) -> void:
 
 
 ## Set dialog choice UI based on parameters
-func set_dialog_choice( _d : DialogChoice ) -> void:
+func set_dialog_choice( _d ) -> void:
+	if ( _d is DebateChoice ):
+		timer_2.start()
+		debate = true
+	
 	choice_options.visible = true
 	waiting_for_choice = true
 	for c in choice_options.get_children():
@@ -191,9 +220,28 @@ func set_dialog_choice( _d : DialogChoice ) -> void:
 
 
 
-func _dialog_choice_selected( _d : DialogBranch ) -> void:
+func _dialog_choice_selected( _d ) -> void:
 	choice_options.visible = false
-	show_dialog( _d.dialog_items )
+	
+	if ( debate ):
+		debate = false
+		timer_2.stop()
+		if ( !_d.correct ):
+			debate_fails += 1
+	
+	if ( dialog_item_index < dialog_items.size() - 1):
+		var temp_items = dialog_items
+		var temp_index = dialog_item_index
+		show_dialog( _d.dialog_items )
+		await DialogSystem.finished
+		dialog_items = temp_items
+		show_dialog(dialog_items)
+		dialog_item_index = temp_index + 1
+	else:
+		show_dialog( _d.dialog_items )
+	
+	check_debate_failed()
+	
 	pass
 
 
@@ -206,6 +254,32 @@ func _on_timer_timeout() -> void:
 	else:
 		show_dialog_button_indicator( true )
 		text_in_progress = false
+	pass
+
+
+
+func _on_timer_2_timeout() -> void:
+	timer_2.stop()
+	
+	var temp_dialog : Array[ DialogItem ]
+	temp_dialog.append( DebateText.new() )
+	temp_dialog[0].text = "(I wasn’t fast enough…!)"
+	temp_dialog[0].npc_info = load( "res://npc/00_npcs/amelia_np.tres" )
+	
+	if ( dialog_item_index < dialog_items.size() - 1):
+		var temp_items = dialog_items
+		var temp_index = dialog_item_index
+		show_dialog( temp_dialog )
+		await DialogSystem.finished
+		dialog_items = temp_items
+		show_dialog(dialog_items)
+		dialog_item_index = temp_index + 1
+	else:
+		show_dialog( temp_dialog )
+	
+	debate_fails += 1
+	check_debate_failed()
+	
 	pass
 
 
@@ -234,3 +308,12 @@ func start_timer() -> void:
 	
 	timer.start()
 	pass
+
+
+
+func check_debate_failed() -> void:
+	if (debate_fails >= 2):
+		debate = false
+		debate_fails = 0
+		debate_failed.emit()
+		pass

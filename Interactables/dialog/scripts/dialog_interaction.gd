@@ -22,6 +22,8 @@ func _ready() -> void:
 	area_entered.connect( _on_area_enter )
 	area_exited.connect( _on_area_exit )
 	
+	DialogSystem.debate_failed.connect( _on_debate_fail )
+	
 	for c in get_children():
 		if c is DialogItem:
 			dialog_items.append( c )
@@ -41,7 +43,10 @@ func player_interact() -> void:
 		first_time = false
 		DialogSystem.show_dialog( dialog_items )
 	else:
-		DialogSystem.show_dialog( dialog_items_2 )
+		if ( !dialog_items_2.is_empty() ):
+			DialogSystem.show_dialog( dialog_items_2 )
+		else:
+			DialogSystem.show_dialog( dialog_items )
 	DialogSystem.finished.connect( _on_dialog_finished )
 	pass
 
@@ -64,6 +69,14 @@ func _on_area_exit( _a : Area2D ) -> void:
 func _on_dialog_finished() -> void:
 	DialogSystem.finished.disconnect( _on_dialog_finished )
 	finished.emit()
+
+
+func _on_debate_fail() -> void:
+	var temp_dialog : Array[ DialogItem ]
+	for c in find_child("DebateFail").get_children():
+		temp_dialog.append( c )
+	DialogSystem.show_dialog( temp_dialog + dialog_items )
+	pass
 
 
 func _get_configuration_warnings() -> PackedStringArray:

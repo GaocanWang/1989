@@ -28,6 +28,7 @@ enum SIDE { LEFT, RIGHT, TOP, BOTTOM }
 
 var dialog_items : Array[ DialogItem ]
 var dialog_items_2 : Array[ DialogItem ]
+var dialog_items_unlock : Array[ DialogItem ]
 var repeat : Array[ DialogItem ]
 var first_time : bool = true
 var unlocked : bool = false
@@ -61,12 +62,20 @@ func _ready() -> void:
 		elif c.name == "Repeat":
 			for d in c.get_children():
 				repeat.append( d )
+		elif c.name == "Unlock":
+			for d in c.get_children():
+				dialog_items_unlock.append( d )
 	
 	pass
 
 
 func _player_entered( _p : Node2D ) -> void:
 	if ( unlocked ):
+		LevelManager.load_new_level( level, target_transition_area, get_offset() )
+	elif ( true ):
+		# Door opening sfx
+		DialogSystem.show_dialog( dialog_items_unlock )
+		await DialogSystem.finished
 		LevelManager.load_new_level( level, target_transition_area, get_offset() )
 	else:
 		if ( first_time ):

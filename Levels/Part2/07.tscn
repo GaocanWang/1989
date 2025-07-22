@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://casrrdxe161c7"]
+[gd_scene load_steps=12 format=4 uid="uid://casrrdxe161c7"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_kqh74"]
 [ext_resource type="AudioStream" uid="uid://bg0omm6hpjbsi" path="res://Levels/music/dream sequence bgm.mp3" id="2_0h2v2"]
@@ -6,6 +6,11 @@
 [ext_resource type="Script" uid="uid://2hobeot03u4v" path="res://Tile Maps/level_tile_map.gd" id="4_xcr2s"]
 [ext_resource type="PackedScene" uid="uid://uqut3xy8f7mb" path="res://Levels/player_spawn.tscn" id="5_iaodl"]
 [ext_resource type="PackedScene" uid="uid://bt4r7451gfkr5" path="res://Levels/level_transition.tscn" id="6_p2jfs"]
+[ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="7_p2jfs"]
+[ext_resource type="Resource" uid="uid://c2w2tyjg78bol" path="res://npc/00_npcs/amelia.tres" id="8_gesnh"]
+[ext_resource type="Resource" uid="uid://cx8yq3fk58aei" path="res://npc/00_npcs/lowkey.tres" id="9_qm6nn"]
+[ext_resource type="Resource" uid="uid://ctbf7x8e37pym" path="res://npc/00_npcs/eris.tres" id="10_1sjru"]
+[ext_resource type="Resource" uid="uid://di457jgt256ub" path="res://npc/00_npcs/teresa.tres" id="11_ggs1l"]
 
 [node name="07" type="Node2D"]
 script = ExtResource("1_kqh74")
@@ -44,3 +49,57 @@ level = "uid://c5b6raoo2orms"
 door = true
 size = 1
 side = 3
+
+[node name="DialogText" type="Node" parent="."]
+script = ExtResource("7_p2jfs")
+text = "“Looks like the changeroom.”"
+npc_info = ExtResource("8_gesnh")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="."]
+script = ExtResource("7_p2jfs")
+text = "“This must be the men’s changeroom.”"
+npc_info = ExtResource("9_qm6nn")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="."]
+script = ExtResource("7_p2jfs")
+text = "“Do you think it connects to the women’s one?”"
+npc_info = ExtResource("9_qm6nn")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="."]
+script = ExtResource("7_p2jfs")
+text = "“I hope not.”"
+npc_info = ExtResource("10_1sjru")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="."]
+script = ExtResource("7_p2jfs")
+text = "“That’d be really weird.”"
+npc_info = ExtResource("10_1sjru")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="."]
+script = ExtResource("7_p2jfs")
+text = "“We could check, but I don’t think so.”"
+npc_info = ExtResource("11_ggs1l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="."]
+script = ExtResource("7_p2jfs")
+text = "“The women’s changeroom can probably only be accessed through the key.”"
+npc_info = ExtResource("11_ggs1l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="."]
+script = ExtResource("7_p2jfs")
+text = "“It’s still worth checking this room.”"
+npc_info = ExtResource("8_gesnh")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="."]
+script = ExtResource("7_p2jfs")
+text = "“Just in case.”"
+npc_info = ExtResource("8_gesnh")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
