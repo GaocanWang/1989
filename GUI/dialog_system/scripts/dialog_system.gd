@@ -34,6 +34,7 @@ var debate_fails : int = 0
 @onready var content_container: PanelContainer = $DialogUI/PanelContainer
 @onready var textbox_animation_player: AnimationPlayer = $DialogUI/AnimationPlayer
 @onready var portrait_animation_player: AnimationPlayer = $DialogUI/AnimationPlayer2
+@onready var background_animation_player: AnimationPlayer = $DialogUI/TextureRect/AnimationPlayer
 @onready var background: TextureRect = $DialogUI/TextureRect
 @onready var progress_bar: ProgressBar = $DialogUI/ProgressBar
 @onready var timer_2: Timer = $DialogUI/Timer2
@@ -126,6 +127,7 @@ func hide_dialog() -> void:
 	dialog_ui.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	content.text = ""
+	background.texture = null
 	background.hide()
 	progress_bar.hide()
 	
@@ -150,6 +152,8 @@ func start_dialog() -> void:
 		set_dialog_text( _d as DebateText )
 	elif _d is DebateChoice:
 		set_dialog_choice( _d as DebateChoice )
+	elif _d is DialogBackground:
+		set_dialog_background( _d as DialogBackground )
 	
 	pass
 
@@ -242,6 +246,23 @@ func _dialog_choice_selected( _d ) -> void:
 	
 	check_debate_failed()
 	
+	pass
+
+
+
+func set_dialog_background( _d : DialogBackground ):
+	if ( background.texture == null ):
+		background.texture = _d.background
+		background_animation_player.play( "initial_fade_in" )
+	elif ( _d.background != null ):
+		background_animation_player.play( "fade_out" )
+		await background_animation_player.animation_finished
+		background.texture = _d.background
+		background_animation_player.play( "fade_in" )
+	else:
+		background_animation_player.play( "final_fade_out" )
+		await background_animation_player.animation_finished
+		background.texture = null
 	pass
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bdsd0lgj3ywc2"]
+[gd_scene load_steps=15 format=4 uid="uid://bdsd0lgj3ywc2"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_xllnh"]
 [ext_resource type="AudioStream" uid="uid://bg0omm6hpjbsi" path="res://Levels/music/dream sequence bgm.mp3" id="2_5r4hx"]
@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://ctbf7x8e37pym" path="res://npc/00_npcs/eris.tres" id="11_i1rcq"]
 [ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="12_trw21"]
 [ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/box.tres" id="13_ek7bd"]
+[ext_resource type="PackedScene" uid="uid://bilml01wjryfn" path="res://Interactables/ValveSystem/valve_system.tscn" id="14_ek7bd"]
 
 [node name="10" type="Node2D"]
 script = ExtResource("1_xllnh")
@@ -372,3 +373,5 @@ script = ExtResource("7_5lixq")
 text = "(We need to increase the water pressure and float it up.)"
 npc_info = ExtResource("8_mgodn")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="ValveSystem" parent="." instance=ExtResource("14_ek7bd")]

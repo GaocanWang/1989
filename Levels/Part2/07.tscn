@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://casrrdxe161c7"]
+[gd_scene load_steps=13 format=4 uid="uid://casrrdxe161c7"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_kqh74"]
 [ext_resource type="AudioStream" uid="uid://bg0omm6hpjbsi" path="res://Levels/music/dream sequence bgm.mp3" id="2_0h2v2"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://cx8yq3fk58aei" path="res://npc/00_npcs/lowkey.tres" id="9_qm6nn"]
 [ext_resource type="Resource" uid="uid://ctbf7x8e37pym" path="res://npc/00_npcs/eris.tres" id="10_1sjru"]
 [ext_resource type="Resource" uid="uid://di457jgt256ub" path="res://npc/00_npcs/teresa.tres" id="11_ggs1l"]
+[ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="12_gesnh"]
 
 [node name="07" type="Node2D"]
 script = ExtResource("1_kqh74")
@@ -101,5 +102,145 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 [node name="DialogText9" type="Node" parent="."]
 script = ExtResource("7_p2jfs")
 text = "“Just in case.”"
+npc_info = ExtResource("8_gesnh")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Lockers" parent="." instance=ExtResource("12_gesnh")]
+position = Vector2(168, 60)
+size = Vector2(96, 24)
+
+[node name="DialogText" type="Node" parent="Lockers"]
+script = ExtResource("7_p2jfs")
+text = "“Huh.”"
+npc_info = ExtResource("8_gesnh")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Lockers"]
+script = ExtResource("7_p2jfs")
+text = "“Why are these already lockers open?”"
+npc_info = ExtResource("8_gesnh")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Lockers"]
+script = ExtResource("7_p2jfs")
+text = "“Basic pool procedure.”"
+npc_info = ExtResource("9_qm6nn")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="Lockers"]
+script = ExtResource("7_p2jfs")
+text = "“They leave them unlocked so swimmers can stash their stuff.”"
+npc_info = ExtResource("9_qm6nn")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="Lockers"]
+script = ExtResource("7_p2jfs")
+text = "“The key stays on the latch when it’s unused.”"
+npc_info = ExtResource("9_qm6nn")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="Lockers"]
+script = ExtResource("7_p2jfs")
+text = "“Looks like no one’s using any of them.”"
+npc_info = ExtResource("11_ggs1l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="Lockers"]
+script = ExtResource("7_p2jfs")
+text = "“All these lockers look open to me.”"
+npc_info = ExtResource("11_ggs1l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="Lockers"]
+script = ExtResource("7_p2jfs")
+text = "“Everyone was forced to leave, remember?”"
+npc_info = ExtResource("10_1sjru")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="Lockers"]
+script = ExtResource("7_p2jfs")
+text = "“All their stuff’s been taken out.”"
+npc_info = ExtResource("10_1sjru")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="Lockers"]
+script = ExtResource("7_p2jfs")
+text = "“Still…I might check them just in case.”"
+npc_info = ExtResource("8_gesnh")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="Lockers"]
+script = ExtResource("7_p2jfs")
+text = "“Anything might be important later.”"
+npc_info = ExtResource("8_gesnh")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Lockers2" parent="." instance=ExtResource("12_gesnh")]
+position = Vector2(336, 60)
+size = Vector2(96, 24)
+
+[node name="DialogText" type="Node" parent="Lockers2"]
+script = ExtResource("7_p2jfs")
+text = "“Huh.”"
+npc_info = ExtResource("8_gesnh")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Lockers2"]
+script = ExtResource("7_p2jfs")
+text = "“Why are these already lockers open?”"
+npc_info = ExtResource("8_gesnh")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Lockers2"]
+script = ExtResource("7_p2jfs")
+text = "“Basic pool procedure.”"
+npc_info = ExtResource("9_qm6nn")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="Lockers2"]
+script = ExtResource("7_p2jfs")
+text = "“They leave them unlocked so swimmers can stash their stuff.”"
+npc_info = ExtResource("9_qm6nn")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="Lockers2"]
+script = ExtResource("7_p2jfs")
+text = "“The key stays on the latch when it’s unused.”"
+npc_info = ExtResource("9_qm6nn")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="Lockers2"]
+script = ExtResource("7_p2jfs")
+text = "“Looks like no one’s using any of them.”"
+npc_info = ExtResource("11_ggs1l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="Lockers2"]
+script = ExtResource("7_p2jfs")
+text = "“All these lockers look open to me.”"
+npc_info = ExtResource("11_ggs1l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="Lockers2"]
+script = ExtResource("7_p2jfs")
+text = "“Everyone was forced to leave, remember?”"
+npc_info = ExtResource("10_1sjru")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="Lockers2"]
+script = ExtResource("7_p2jfs")
+text = "“All their stuff’s been taken out.”"
+npc_info = ExtResource("10_1sjru")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="Lockers2"]
+script = ExtResource("7_p2jfs")
+text = "“Still…I might check them just in case.”"
+npc_info = ExtResource("8_gesnh")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="Lockers2"]
+script = ExtResource("7_p2jfs")
+text = "“Anything might be important later.”"
 npc_info = ExtResource("8_gesnh")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"

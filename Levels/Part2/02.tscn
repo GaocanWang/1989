@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://co4f0ibd8t1gp"]
+[gd_scene load_steps=20 format=4 uid="uid://co4f0ibd8t1gp"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_1wuq7"]
 [ext_resource type="AudioStream" uid="uid://cm2i1sko5rk5e" path="res://Levels/music/pool ambience.mp3" id="2_f06bb"]
@@ -15,6 +15,10 @@
 [ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/box.tres" id="12_ja1e1"]
 [ext_resource type="PackedScene" uid="uid://dm15w3ux3txs4" path="res://npc/npc.tscn" id="13_f06bb"]
 [ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="14_yjrug"]
+[ext_resource type="Script" uid="uid://6cyylp4dfkoi" path="res://Interactables/dialog/scripts/dialog_background.gd" id="15_dmdwu"]
+[ext_resource type="Texture2D" uid="uid://lif6ysy0jebs" path="res://FullScreenArt/1920x1080-black-solid-color-background.jpg" id="16_ihyjf"]
+[ext_resource type="Texture2D" uid="uid://cmw0gxfi72b2a" path="res://FullScreenArt/lifeguard going in changeroom fs.png" id="17_0mcmy"]
+[ext_resource type="Texture2D" uid="uid://dog5te6oyhvvf" path="res://FullScreenArt/lifeguard already inside changeroom fs.png" id="18_tjsls"]
 
 [node name="02" type="Node2D"]
 script = ExtResource("1_1wuq7")
@@ -765,6 +769,11 @@ text = "\"Right. Let's start from the beginning.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
+[node name="DialogBackground" type="Node" parent="."]
+script = ExtResource("15_dmdwu")
+background = ExtResource("16_ihyjf")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
 [node name="DialogText108" type="Node" parent="."]
 script = ExtResource("7_566gx")
 text = "\"We all got on our shifts at 7 PM, and we got a call around 7:50.\""
@@ -795,6 +804,11 @@ text = "\"He hasn't been seen since.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
+[node name="DialogBackground2" type="Node" parent="."]
+script = ExtResource("15_dmdwu")
+background = ExtResource("17_0mcmy")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
 [node name="DialogText113" type="Node" parent="."]
 script = ExtResource("7_566gx")
 text = "\"The caller said his partner went inside to check a maintenance leak in the changeroom.\""
@@ -806,6 +820,11 @@ script = ExtResource("7_566gx")
 text = "\"He locked the door to inspect it safely, so no one else would get hurt.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground3" type="Node" parent="."]
+script = ExtResource("15_dmdwu")
+background = ExtResource("18_tjsls")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
 
 [node name="DialogText115" type="Node" parent="."]
 script = ExtResource("7_566gx")
@@ -824,6 +843,10 @@ script = ExtResource("7_566gx")
 text = "\"He tried unlocking the changeroom door but somehow lost his keys.\""
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground4" type="Node" parent="."]
+script = ExtResource("15_dmdwu")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
 
 [node name="DialogText118" type="Node" parent="."]
 script = ExtResource("7_566gx")

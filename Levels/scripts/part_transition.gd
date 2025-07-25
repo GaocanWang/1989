@@ -27,7 +27,7 @@ enum SIDE { LEFT, RIGHT, TOP, BOTTOM }
 @onready var yes: Button = $CanvasLayer/Control/VBoxContainer/Button
 @onready var no: Button = $CanvasLayer/Control/VBoxContainer/Button2
 @onready var art: Sprite2D = $CanvasLayer/Control/Sprite2D
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_player: AnimationPlayer = $CanvasLayer/Control/Sprite2D/AnimationPlayer
 
 var dialog_items_1 : Array[ DialogItem ]
 var dialog_items_2 : Array[ DialogItem ]

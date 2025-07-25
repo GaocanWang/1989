@@ -34,7 +34,7 @@ tile_map_data = PackedByteArray("AAATAAEAAQAEAAEAAAATAAIAAQAEAAEAAAATAAMAAQAEAAE
 tile_set = ExtResource("3_qw5bp")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_1giyw")]
-position = Vector2(60, 244)
+position = Vector2(447, 131)
 
 [node name="LevelTransition" parent="." instance=ExtResource("6_ekd8h")]
 process_mode = 4

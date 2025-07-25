@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4eooh07ntbv7"]
+
+[ext_resource type="Script" uid="uid://dip6w0fypvw7l" path="res://Interactables/Cabinet/cabinet.gd" id="1_cwfl6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o22oq"]
+size = Vector2(24, 24)
+
+[node name="Cabinet" type="Area2D"]
+script = ExtResource("1_cwfl6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_o22oq")
