@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://co4f0ibd8t1gp"]
+[gd_scene load_steps=24 format=4 uid="uid://co4f0ibd8t1gp"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_1wuq7"]
 [ext_resource type="AudioStream" uid="uid://cm2i1sko5rk5e" path="res://Levels/music/pool ambience.mp3" id="2_f06bb"]
@@ -19,6 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://lif6ysy0jebs" path="res://FullScreenArt/1920x1080-black-solid-color-background.jpg" id="16_ihyjf"]
 [ext_resource type="Texture2D" uid="uid://cmw0gxfi72b2a" path="res://FullScreenArt/lifeguard going in changeroom fs.png" id="17_0mcmy"]
 [ext_resource type="Texture2D" uid="uid://dog5te6oyhvvf" path="res://FullScreenArt/lifeguard already inside changeroom fs.png" id="18_tjsls"]
+[ext_resource type="PackedScene" uid="uid://bhu6ijoxy18b7" path="res://Follower/follower.tscn" id="20_ihyjf"]
+[ext_resource type="Texture2D" uid="uid://ciqf11ur00q3q" path="res://npc/sprites/teresa.png" id="21_0mcmy"]
+[ext_resource type="Texture2D" uid="uid://cnr378d1u8r1o" path="res://npc/sprites/x.png" id="22_2refi"]
+[ext_resource type="Texture2D" uid="uid://cht6lgnfn4ay2" path="res://npc/sprites/y.png" id="23_d247f"]
 
 [node name="02" type="Node2D"]
 script = ExtResource("1_1wuq7")
@@ -41,7 +45,7 @@ tile_map_data = PackedByteArray("AAABAAIAAQAEAAEAADABAAMAAQAEAAEAADABAAQAAQAEAAE
 tile_set = ExtResource("3_fkk6q")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_g4mln")]
-position = Vector2(328, 145)
+position = Vector2(115, 608)
 
 [node name="LevelTransition" parent="." instance=ExtResource("6_7afvj")]
 position = Vector2(36, 600)
@@ -2020,3 +2024,15 @@ script = ExtResource("7_566gx")
 text = "“…”"
 npc_info = ExtResource("10_h8wce")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Follower" parent="." instance=ExtResource("20_ihyjf")]
+spritesheet = ExtResource("21_0mcmy")
+distance = 20
+
+[node name="Follower2" parent="." instance=ExtResource("20_ihyjf")]
+spritesheet = ExtResource("22_2refi")
+distance = 40
+
+[node name="Follower3" parent="." instance=ExtResource("20_ihyjf")]
+spritesheet = ExtResource("23_d247f")
+distance = 60

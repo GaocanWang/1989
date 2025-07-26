@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cy6skrvywkmm7"
+path="res://.godot/imported/evidence or important thing sfx.mp3-d8a863cfd113558b4a54c59d09d25a27.mp3str"
+
+[deps]
+
+source_file="res://Interactables/Cabinet/evidence or important thing sfx.mp3"
+dest_files=["res://.godot/imported/evidence or important thing sfx.mp3-d8a863cfd113558b4a54c59d09d25a27.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

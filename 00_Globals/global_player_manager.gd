@@ -10,8 +10,13 @@ var interact_handled : bool = true
 var player : Player
 var player_spawned : bool = false
 
+var past_positions = []
+var size = 100
+
 
 func _ready() -> void:
+	past_positions.resize( size )
+	
 	add_player_instance()
 	await get_tree().create_timer(0.2).timeout
 	player_spawned = true

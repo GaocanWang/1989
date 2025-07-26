@@ -155,6 +155,7 @@ texture_region_size = Vector2i(24, 24)
 15:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, -2.0058, -12, -2.06311)
 8:5/0 = 0
 8:5/0/texture_origin = Vector2i(0, 12)
+8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.8023, -12, 10.162, -12, 9.94303, -1.97714, -10.0003, -2.03445)
 9:5/0 = 0
 7:4/size_in_atlas = Vector2i(1, 2)
 7:4/0 = 0
@@ -180,14 +181,19 @@ texture_region_size = Vector2i(24, 24)
 19:1/0 = 0
 19:1/0/texture_origin = Vector2i(12, 24)
 22:0/0 = 0
+22:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, 2.06837, -12, -2.06838, 12, -1.88852, 12, 1.88852)
 23:0/0 = 0
+23:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, 2.06837, -12, -2.06838, 2.06837, -2.06838, 2.06837, 12, -2.06837, 12, -2.06837, 2.06837)
 23:1/0 = 0
+23:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.06837, -12, 2.24823, -12, 2.06837, 12, -2.06837, 12)
 23:2/0 = 0
+23:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, 3.6871, 12, 3.6871, 12, 12, -12, 12)
 22:2/0 = 0
 22:2/0/texture_origin = Vector2i(12, 0)
 20:1/size_in_atlas = Vector2i(2, 2)
 20:1/0 = 0
 20:1/0/texture_origin = Vector2i(12, 12)
+20:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-36.0617, -11.9606, 12, -12, 12, 12, -36.2415, 12.3203)
 
 [resource]
 tile_size = Vector2i(24, 24)

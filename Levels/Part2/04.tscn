@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://kaiv4m7e4ftt"]
+[gd_scene load_steps=25 format=4 uid="uid://kaiv4m7e4ftt"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_1negt"]
 [ext_resource type="AudioStream" uid="uid://bg0omm6hpjbsi" path="res://Levels/music/dream sequence bgm.mp3" id="2_1b4t0"]
@@ -17,8 +17,10 @@
 [ext_resource type="Script" uid="uid://b8kxiife71bd1" path="res://Interactables/dialog/scripts/dialog_choice.gd" id="15_k3n85"]
 [ext_resource type="Script" uid="uid://cm6c0rnohy8s1" path="res://Interactables/dialog/scripts/dialog_branch.gd" id="16_1p580"]
 [ext_resource type="Script" uid="uid://cpgbhw0gipvs7" path="res://Interactables/dialog/scripts/debate_text.gd" id="17_1p580"]
+[ext_resource type="Script" uid="uid://dst30i4jr8cmt" path="res://Interactables/dialog/scripts/dialog_sfx.gd" id="17_gvce5"]
 [ext_resource type="Script" uid="uid://cfslpprw6tope" path="res://Interactables/dialog/scripts/debate_choice.gd" id="17_k3n85"]
 [ext_resource type="Resource" uid="uid://db6m3p8sr6mxj" path="res://npc/00_npcs/lowkey_np.tres" id="18_87m88"]
+[ext_resource type="AudioStream" uid="uid://dwf1vpjwlp858" path="res://Audio/debate system music.mp3" id="18_bslpj"]
 [ext_resource type="Resource" uid="uid://q5twg4buxc41" path="res://npc/00_npcs/amelia_np.tres" id="20_opt2k"]
 [ext_resource type="Script" uid="uid://btkhhyqen270v" path="res://Interactables/dialog/scripts/debate_branch.gd" id="21_74ku1"]
 [ext_resource type="Resource" uid="uid://b125yid6rqvrs" path="res://npc/00_npcs/eris_np.tres" id="21_opt2k"]
@@ -471,6 +473,12 @@ text = "“Okay then, here we go.”"
 npc_info = ExtResource("11_i6i35")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
+[node name="DialogSFX" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("17_gvce5")
+sfx = ExtResource("18_bslpj")
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
 [node name="DebateText" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("17_1p580")
 text = "“What exactly are you planning to do in there that you can’t do with us?”"
@@ -777,6 +785,11 @@ text = "“Well then I’m not convinced.\""
 npc_info = ExtResource("21_opt2k")
 metadata/_custom_type_script = "uid://cpgbhw0gipvs7"
 
+[node name="DialogSFX2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("17_gvce5")
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
 [node name="DialogText2" type="Node" parent="NPC/DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("7_xevt3")
 text = "“…”"
@@ -839,6 +852,11 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DebateFail" type="Node" parent="NPC/DialogInteraction"]
 
+[node name="DialogSFX" type="Node" parent="NPC/DialogInteraction/DebateFail"]
+script = ExtResource("17_gvce5")
+npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
 [node name="DialogText" type="Node" parent="NPC/DialogInteraction/DebateFail"]
 script = ExtResource("7_xevt3")
 text = "(Crap…)"
@@ -897,4 +915,204 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 script = ExtResource("7_xevt3")
 text = "“Alright, then.”"
 npc_info = ExtResource("11_i6i35")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Bench" parent="." instance=ExtResource("14_i6i35")]
+position = Vector2(252, 264)
+size = Vector2(96, 24)
+
+[node name="DialogText" type="Node" parent="Bench"]
+script = ExtResource("7_xevt3")
+text = "A sturdy looking bench made out of wood."
+npc_info = ExtResource("12_k3n85")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Bench"]
+script = ExtResource("7_xevt3")
+text = "It doesn’t appear to be wet, but slightly moist from the steam."
+npc_info = ExtResource("12_k3n85")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Bench"]
+script = ExtResource("7_xevt3")
+text = "(How long has the steam been here to make it this moist?)"
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Bench2" parent="." instance=ExtResource("14_i6i35")]
+position = Vector2(408, 144)
+size = Vector2(24, 96)
+
+[node name="DialogText" type="Node" parent="Bench2"]
+script = ExtResource("7_xevt3")
+text = "A sturdy looking bench made out of wood."
+npc_info = ExtResource("12_k3n85")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Bench2"]
+script = ExtResource("7_xevt3")
+text = "It doesn’t appear to be wet, but slightly moist from the steam."
+npc_info = ExtResource("12_k3n85")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Bench2"]
+script = ExtResource("7_xevt3")
+text = "(How long has the steam been here to make it this moist?)"
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Bench3" parent="." instance=ExtResource("14_i6i35")]
+position = Vector2(228, 72)
+size = Vector2(48, 24)
+
+[node name="DialogText" type="Node" parent="Bench3"]
+script = ExtResource("7_xevt3")
+text = "A small wooden bench sits against the wall."
+npc_info = ExtResource("12_k3n85")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Bench3"]
+script = ExtResource("7_xevt3")
+text = "It doesn’t look to have been used at all."
+npc_info = ExtResource("12_k3n85")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Bench3"]
+script = ExtResource("7_xevt3")
+text = "(It looks moist like the others…)"
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Shower" parent="." instance=ExtResource("14_i6i35")]
+position = Vector2(180, 180)
+
+[node name="DialogText" type="Node" parent="Shower"]
+script = ExtResource("7_xevt3")
+text = "The shower is still running."
+npc_info = ExtResource("12_k3n85")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Shower"]
+script = ExtResource("7_xevt3")
+text = "The knob has been maxxed out to the hottest level."
+npc_info = ExtResource("12_k3n85")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Shower"]
+script = ExtResource("7_xevt3")
+text = "(So this is where all the steam is coming from…)"
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Shower2" parent="." instance=ExtResource("14_i6i35")]
+position = Vector2(252, 180)
+
+[node name="DialogText" type="Node" parent="Shower2"]
+script = ExtResource("7_xevt3")
+text = "The shower is still running."
+npc_info = ExtResource("12_k3n85")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Shower2"]
+script = ExtResource("7_xevt3")
+text = "The knob has been maxxed out to the hottest level."
+npc_info = ExtResource("12_k3n85")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Shower2"]
+script = ExtResource("7_xevt3")
+text = "(So this is where all the steam is coming from…)"
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Shower3" parent="." instance=ExtResource("14_i6i35")]
+position = Vector2(324, 180)
+
+[node name="DialogText" type="Node" parent="Shower3"]
+script = ExtResource("7_xevt3")
+text = "The shower is still running."
+npc_info = ExtResource("12_k3n85")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Shower3"]
+script = ExtResource("7_xevt3")
+text = "The knob has been maxxed out to the hottest level..."
+npc_info = ExtResource("12_k3n85")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Shower3"]
+script = ExtResource("7_xevt3")
+text = "(Hold on…)"
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="Shower3"]
+script = ExtResource("7_xevt3")
+text = "(…!)"
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="Shower3"]
+script = ExtResource("7_xevt3")
+text = "(There’s faint traces of blood!)"
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="Shower3"]
+script = ExtResource("7_xevt3")
+text = "(It looks smeared and a little dried.)"
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="Shower3"]
+script = ExtResource("7_xevt3")
+text = "“…”"
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Exit" parent="." instance=ExtResource("14_i6i35")]
+position = Vector2(15, 373)
+
+[node name="DialogText" type="Node" parent="Exit"]
+script = ExtResource("7_xevt3")
+text = "The exit to the community center."
+npc_info = ExtResource("12_k3n85")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Exit"]
+script = ExtResource("7_xevt3")
+text = "(I have to solve this case first.)"
+npc_info = ExtResource("8_jhc5q")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Lockers" parent="." instance=ExtResource("14_i6i35")]
+position = Vector2(108, 60)
+size = Vector2(168, 24)
+
+[node name="DialogText" type="Node" parent="Lockers"]
+script = ExtResource("7_xevt3")
+text = "A tall metal locker for storing things."
+npc_info = ExtResource("12_k3n85")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Lockers"]
+script = ExtResource("7_xevt3")
+text = "(I have to wait for the others before opening it…)"
+npc_info = ExtResource("12_k3n85")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Lockers2" parent="." instance=ExtResource("14_i6i35")]
+position = Vector2(360, 60)
+size = Vector2(192, 24)
+
+[node name="DialogText" type="Node" parent="Lockers2"]
+script = ExtResource("7_xevt3")
+text = "A tall metal locker for storing things."
+npc_info = ExtResource("12_k3n85")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Lockers2"]
+script = ExtResource("7_xevt3")
+text = "(I have to wait for the others before opening it…)"
+npc_info = ExtResource("12_k3n85")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"

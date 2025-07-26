@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8aioc0t88r3l"
+path="res://.godot/imported/drawer open SFX.mp3-6d5fd9ddfa1e43d16b3159061ce013fc.mp3str"
+
+[deps]
+
+source_file="res://Interactables/Cabinet/drawer open SFX.mp3"
+dest_files=["res://.godot/imported/drawer open SFX.mp3-6d5fd9ddfa1e43d16b3159061ce013fc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

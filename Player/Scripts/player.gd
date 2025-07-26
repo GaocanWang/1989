@@ -42,6 +42,11 @@ func _process( _delta : float ) -> void:
 		direction = direction_to_vector[direction_history[direction_history.size() - 1]]
 	else:
 		direction = Vector2.ZERO
+	
+	if ( direction != Vector2.ZERO ):
+		PlayerManager.past_positions.push_front( self.position )
+		PlayerManager.past_positions.pop_back()
+	
 	pass
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://c1ei0hjvfb0yb"]
+[gd_scene load_steps=17 format=4 uid="uid://c1ei0hjvfb0yb"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_n7hlk"]
 [ext_resource type="AudioStream" uid="uid://bg0omm6hpjbsi" path="res://Levels/music/dream sequence bgm.mp3" id="2_y1dao"]
@@ -13,7 +13,9 @@
 [ext_resource type="Resource" uid="uid://c2w2tyjg78bol" path="res://npc/00_npcs/amelia.tres" id="11_iv8hn"]
 [ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="12_iv8hn"]
 [ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/box.tres" id="13_g7cit"]
+[ext_resource type="Script" uid="uid://dst30i4jr8cmt" path="res://Interactables/dialog/scripts/dialog_sfx.gd" id="14_745q1"]
 [ext_resource type="PackedScene" uid="uid://byu8d21qbdi0r" path="res://Interactables/Bulletin/bulletin.tscn" id="14_g7cit"]
+[ext_resource type="AudioStream" uid="uid://chivdrddwt8ah" path="res://SFX/fridge open sfx.mp3" id="15_17eog"]
 
 [node name="06" type="Node2D"]
 script = ExtResource("1_n7hlk")
@@ -149,10 +151,19 @@ script = ExtResource("7_q4xlc")
 text = "“Worth a check.”"
 npc_info = ExtResource("9_5gb84")
 
+[node name="DialogSFX" type="Node" parent="Fridge"]
+script = ExtResource("14_745q1")
+sfx = ExtResource("15_17eog")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
 [node name="DialogText7" type="Node" parent="Fridge"]
 script = ExtResource("7_q4xlc")
 text = "“Some fizzy drinks and that’s it.”"
 npc_info = ExtResource("10_j788d")
+
+[node name="DialogSFX2" type="Node" parent="Fridge"]
+script = ExtResource("14_745q1")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
 
 [node name="DialogText8" type="Node" parent="Fridge"]
 script = ExtResource("7_q4xlc")

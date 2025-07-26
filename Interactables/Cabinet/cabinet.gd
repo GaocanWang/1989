@@ -1,5 +1,8 @@
 class_name Cabinet extends Area2D
 
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var audio_player_2: AudioStreamPlayer2D = $AudioStreamPlayer2D2
+
 var dialog_items : Array[ DialogItem ]
 var dialog_items_2 : Array[ DialogItem ]
 var dialog_items_3 : Array[ DialogItem ]
@@ -41,14 +44,19 @@ func player_interact() -> void:
 	DialogSystem.show_dialog( dialog_items )
 	await DialogSystem.finished
 	get_tree().paused = true
+	audio_player.play()
 	await get_tree().create_timer( 1.0 ).timeout
 	DialogSystem.show_dialog( dialog_items_2 )
 	await DialogSystem.finished
 	get_tree().paused = true
+	audio_player.play()
 	await get_tree().create_timer( 1.0 ).timeout
 	DialogSystem.show_dialog( dialog_items_3 )
 	await DialogSystem.finished
 	get_tree().paused = true
+	audio_player.play()
+	await audio_player.finished
+	audio_player_2.play()
 	await get_tree().create_timer( 1.0 ).timeout
 	DialogSystem.show_dialog( dialog_items_4 )
 	pass

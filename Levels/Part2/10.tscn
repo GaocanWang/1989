@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bdsd0lgj3ywc2"]
+[gd_scene load_steps=17 format=4 uid="uid://bdsd0lgj3ywc2"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_xllnh"]
 [ext_resource type="AudioStream" uid="uid://bg0omm6hpjbsi" path="res://Levels/music/dream sequence bgm.mp3" id="2_5r4hx"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="12_trw21"]
 [ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/box.tres" id="13_ek7bd"]
 [ext_resource type="PackedScene" uid="uid://bilml01wjryfn" path="res://Interactables/ValveSystem/valve_system.tscn" id="14_ek7bd"]
+[ext_resource type="Script" uid="uid://dst30i4jr8cmt" path="res://Interactables/dialog/scripts/dialog_sfx.gd" id="14_jjkcr"]
+[ext_resource type="AudioStream" uid="uid://cy6skrvywkmm7" path="res://Interactables/Cabinet/evidence or important thing sfx.mp3" id="15_pra55"]
 
 [node name="10" type="Node2D"]
 script = ExtResource("1_xllnh")
@@ -288,11 +290,20 @@ text = "“If we could raise the water level…”"
 npc_info = ExtResource("10_ek7bd")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
+[node name="DialogSFX" type="Node" parent="Drain"]
+script = ExtResource("14_jjkcr")
+sfx = ExtResource("15_pra55")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
 [node name="DialogText23" type="Node" parent="Drain"]
 script = ExtResource("7_5lixq")
 text = "“…It might float to the top!”"
 npc_info = ExtResource("8_mgodn")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX2" type="Node" parent="Drain"]
+script = ExtResource("14_jjkcr")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
 
 [node name="DialogText24" type="Node" parent="Drain"]
 script = ExtResource("7_5lixq")
@@ -374,4 +385,162 @@ text = "(We need to increase the water pressure and float it up.)"
 npc_info = ExtResource("8_mgodn")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
+[node name="Pipes" parent="." instance=ExtResource("12_trw21")]
+position = Vector2(209, 161)
+size = Vector2(60, 12)
+
+[node name="DialogText" type="Node" parent="Pipes"]
+script = ExtResource("7_5lixq")
+text = "A slightly rusted pipe among many others."
+npc_info = ExtResource("13_ek7bd")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Pipes"]
+script = ExtResource("7_5lixq")
+text = "The noise doesn’t appear to be coming from inside these pipes."
+npc_info = ExtResource("13_ek7bd")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Pipes"]
+script = ExtResource("7_5lixq")
+text = "(Not here…)"
+npc_info = ExtResource("8_mgodn")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="PoolFilter" parent="." instance=ExtResource("12_trw21")]
+position = Vector2(132, 84)
+
+[node name="DialogText" type="Node" parent="PoolFilter"]
+script = ExtResource("7_5lixq")
+text = "A large cylindrical tank stands here."
+npc_info = ExtResource("13_ek7bd")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="PoolFilter"]
+script = ExtResource("7_5lixq")
+text = "It appears to be the pool filter."
+npc_info = ExtResource("13_ek7bd")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="PoolFilter"]
+script = ExtResource("7_5lixq")
+text = "“These capture small things in the pool, right?”"
+npc_info = ExtResource("9_trw21")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="PoolFilter"]
+script = ExtResource("7_5lixq")
+text = "“Yeah, but the keys wouldn’t be here.”"
+npc_info = ExtResource("10_ek7bd")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="PoolFilter"]
+script = ExtResource("7_5lixq")
+text = "“These only capture small debris that float in the water.”"
+npc_info = ExtResource("10_ek7bd")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="PoolFilter"]
+script = ExtResource("7_5lixq")
+text = "“The keys would sink.”"
+npc_info = ExtResource("10_ek7bd")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Chlorinator" parent="." instance=ExtResource("12_trw21")]
+position = Vector2(252, 156)
+
+[node name="DialogText" type="Node" parent="Chlorinator"]
+script = ExtResource("7_5lixq")
+text = "A compact machine connected to the pipes."
+npc_info = ExtResource("13_ek7bd")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Chlorinator"]
+script = ExtResource("7_5lixq")
+text = "A label reads ‘Chlorinator’ in faded text."
+npc_info = ExtResource("13_ek7bd")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Chlorinator"]
+script = ExtResource("7_5lixq")
+text = "“We won’t find the keys here either.”"
+npc_info = ExtResource("11_i1rcq")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="Chlorinator"]
+script = ExtResource("7_5lixq")
+text = "“It only releases chlorine at set levels.”"
+npc_info = ExtResource("11_i1rcq")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="Chlorinator"]
+script = ExtResource("7_5lixq")
+text = "“…”"
+npc_info = ExtResource("8_mgodn")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="Chlorinator"]
+script = ExtResource("7_5lixq")
+text = "“What’s it set to right now?”"
+npc_info = ExtResource("8_mgodn")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="Chlorinator"]
+script = ExtResource("7_5lixq")
+text = "“Right now?”"
+npc_info = ExtResource("9_trw21")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="Chlorinator"]
+script = ExtResource("7_5lixq")
+text = "“Well they don’t change these often I think.”"
+npc_info = ExtResource("9_trw21")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="Chlorinator"]
+script = ExtResource("7_5lixq")
+text = "“It’s set to normal.”"
+npc_info = ExtResource("9_trw21")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="Chlorinator"]
+script = ExtResource("7_5lixq")
+text = "(It’s only set to normal?)"
+npc_info = ExtResource("8_mgodn")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="Chlorinator"]
+script = ExtResource("7_5lixq")
+text = "(Then why does…?)"
+npc_info = ExtResource("8_mgodn")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="ValveInstructions" parent="." instance=ExtResource("12_trw21")]
+position = Vector2(168, 60)
+
+[node name="DialogText" type="Node" parent="ValveInstructions"]
+script = ExtResource("7_5lixq")
+text = "A laminated instruction sheet hangs beside the valve system."
+npc_info = ExtResource("13_ek7bd")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="ValveInstructions"]
+script = ExtResource("7_5lixq")
+text = "Read the instructions?"
+npc_info = ExtResource("13_ek7bd")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="ValveInstructions"]
+script = ExtResource("7_5lixq")
+text = "“Pretty sure all the meters over there are for the valve system.”"
+npc_info = ExtResource("10_ek7bd")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="ValveInstructions"]
+script = ExtResource("7_5lixq")
+text = "“We should try maxxing out the drainage system while keeping the others to a minimum.”"
+npc_info = ExtResource("10_ek7bd")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
 [node name="ValveSystem" parent="." instance=ExtResource("14_ek7bd")]
+visible = false

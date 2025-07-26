@@ -474,21 +474,6 @@ _data = {
 &"portrait_disappear_right": SubResource("Animation_bcrdf")
 }
 
-[sub_resource type="Animation" id="Animation_vyuf5"]
-resource_name = "fade_in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_mvguq"]
 length = 0.001
 tracks/0/type = "value"
@@ -514,6 +499,21 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vyuf5"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_esnjv"]
@@ -761,3 +761,5 @@ value = 5.0
 show_percentage = false
 
 [node name="Timer2" type="Timer" parent="DialogUI"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="DialogUI"]

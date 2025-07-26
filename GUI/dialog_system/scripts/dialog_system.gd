@@ -38,6 +38,7 @@ var debate_fails : int = 0
 @onready var background: TextureRect = $DialogUI/TextureRect
 @onready var progress_bar: ProgressBar = $DialogUI/ProgressBar
 @onready var timer_2: Timer = $DialogUI/Timer2
+@onready var audio_player: AudioStreamPlayer2D = $DialogUI/AudioStreamPlayer2D
 
 
 
@@ -74,6 +75,11 @@ func _unhandled_input( _event: InputEvent ) -> void:
 		if text_in_progress == true:
 			content.visible_characters = text_length
 			timer.stop()
+			if ( dialog_item_index < dialog_items.size() - 1 ):
+				if ( dialog_items[ dialog_item_index ] is DebateText && dialog_items[ dialog_item_index + 1 ] is DebateChoice ):
+					dialog_item_index += 1
+					start_dialog()
+					return
 			text_in_progress = false
 			show_dialog_button_indicator( true )
 			return
@@ -154,6 +160,8 @@ func start_dialog() -> void:
 		set_dialog_choice( _d as DebateChoice )
 	elif _d is DialogBackground:
 		set_dialog_background( _d as DialogBackground )
+	elif _d is DialogSFX:
+		set_dialog_sfx( _d as DialogSFX )
 	
 	pass
 
@@ -267,12 +275,28 @@ func set_dialog_background( _d : DialogBackground ):
 
 
 
+func set_dialog_sfx( _d : DialogSFX ):
+	if ( _d.sfx != null ):
+		AudioManager.play_music( _d.sfx )
+	else:
+		AudioManager.play_music( get_tree().current_scene.music )
+	dialog_item_index += 1
+	start_dialog()
+	pass
+
+
+
 func _on_timer_timeout() -> void:
 	content.visible_characters += 1
 	if content.visible_characters <= text_length:
 		letter_added.emit( plain_text[ content.visible_characters - 1 ] )
 		start_timer()
 	else:
+		if ( dialog_item_index < dialog_items.size() - 1 ):
+			if ( dialog_items[ dialog_item_index ] is DebateText && dialog_items[ dialog_item_index + 1 ] is DebateChoice ):
+				dialog_item_index += 1
+				start_dialog()
+				return
 		show_dialog_button_indicator( true )
 		text_in_progress = false
 	pass
