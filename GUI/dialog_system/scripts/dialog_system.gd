@@ -103,7 +103,6 @@ func show_dialog( _items : Array[ DialogItem ] ) -> void:
 	dialog_item_index = 0
 	get_tree().paused = true
 	PlayerManager.player.state_machine.change_state( PlayerManager.player.state_machine.states[0] )
-	print(dialog_item_index)
 	await get_tree().process_frame
 	start_dialog()
 	dialog_ui.visible = true

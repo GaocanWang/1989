@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="NPCResource" load_steps=5 format=3 uid="uid://cx8yq3fk58aei"]
 
 [ext_resource type="Texture2D" uid="uid://brdu7em2trasc" path="res://FullScreenArt/debate lowkey talking.png" id="1_8ovke"]
-[ext_resource type="Texture2D" uid="uid://dcnyxxy8dmr2m" path="res://npc/sprites/portraits/X FULL SPRITESHEET.png" id="2_8ovke"]
+[ext_resource type="Texture2D" uid="uid://b6crs2r0c856m" path="res://npc/sprites/portraits/roza 4 rows.png" id="2_8ovke"]
 [ext_resource type="Script" uid="uid://cg8c1j6taerih" path="res://npc/scripts/npc_resource.gd" id="2_urxqa"]
 [ext_resource type="Texture2D" uid="uid://cnr378d1u8r1o" path="res://npc/sprites/x.png" id="3_dmv68"]
 

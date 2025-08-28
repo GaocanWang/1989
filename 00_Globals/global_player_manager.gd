@@ -17,6 +17,8 @@ var size = 100
 func _ready() -> void:
 	past_positions.resize( size )
 	
+	LevelManager.level_load_started.connect( reset_positions )
+	
 	add_player_instance()
 	await get_tree().create_timer(0.2).timeout
 	player_spawned = true
@@ -56,3 +58,9 @@ func interact() -> void:
 
 func shake_camera( trauma : float = 1 ) -> void:
 	camera_shook.emit( trauma )
+
+
+
+func reset_positions() -> void:
+	past_positions = []
+	past_positions.resize( size )

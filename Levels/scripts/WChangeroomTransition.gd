@@ -27,10 +27,7 @@ enum SIDE { LEFT, RIGHT, TOP, BOTTOM }
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 var dialog_items : Array[ DialogItem ]
-var dialog_items_2 : Array[ DialogItem ]
 var dialog_items_unlock : Array[ DialogItem ]
-var repeat : Array[ DialogItem ]
-var first_time : bool = true
 var unlocked : bool = false
 
 
@@ -56,12 +53,6 @@ func _ready() -> void:
 		if c.name == "1":
 			for d in c.get_children():
 				dialog_items.append( d )
-		elif c.name == "2":
-			for d in c.get_children():
-				dialog_items_2.append( d )
-		elif c.name == "Repeat":
-			for d in c.get_children():
-				repeat.append( d )
 		elif c.name == "Unlock":
 			for d in c.get_children():
 				dialog_items_unlock.append( d )
@@ -72,22 +63,15 @@ func _ready() -> void:
 func _player_entered( _p : Node2D ) -> void:
 	if ( unlocked ):
 		LevelManager.load_new_level( level, target_transition_area, get_offset() )
-	elif ( true ):
+	elif ( false ):
 		# Door opening sfx
+		await get_tree().process_frame
 		DialogSystem.show_dialog( dialog_items_unlock )
 		await DialogSystem.finished
 		LevelManager.load_new_level( level, target_transition_area, get_offset() )
 	else:
-		if ( first_time ):
-			first_time = false
-			DialogSystem.show_dialog( dialog_items )
-			await DialogSystem.finished
-			get_tree().paused = true
-			await get_tree().create_timer(1.0).timeout
-			get_tree().paused = false
-			DialogSystem.show_dialog( dialog_items_2 )
-		else:
-			DialogSystem.show_dialog( repeat )
+		await get_tree().process_frame
+		DialogSystem.show_dialog( dialog_items )
 	pass
 
 

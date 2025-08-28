@@ -1,0 +1,681 @@
+[gd_scene load_steps=22 format=4 uid="uid://gnpcxfob8e0u"]
+
+[ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_j50uj"]
+[ext_resource type="AudioStream" uid="uid://0aojls0cgt76" path="res://Levels/music/searching.mp3" id="2_etm6n"]
+[ext_resource type="TileSet" uid="uid://k4sa1rxa7ww0" path="res://Tile Maps/Tile Sets/pool.tres" id="3_uapy5"]
+[ext_resource type="Script" uid="uid://2hobeot03u4v" path="res://Tile Maps/level_tile_map.gd" id="4_6vsrt"]
+[ext_resource type="PackedScene" uid="uid://uqut3xy8f7mb" path="res://Levels/player_spawn.tscn" id="5_d0si0"]
+[ext_resource type="PackedScene" uid="uid://bt4r7451gfkr5" path="res://Levels/level_transition.tscn" id="6_g2x1t"]
+[ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="7_eu548"]
+[ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="8_h0g8t"]
+[ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/box.tres" id="9_hmhfp"]
+[ext_resource type="Resource" uid="uid://di457jgt256ub" path="res://npc/00_npcs/teresa.tres" id="10_vuj6g"]
+[ext_resource type="PackedScene" uid="uid://bhu6ijoxy18b7" path="res://Follower/follower.tscn" id="11_wh4r2"]
+[ext_resource type="Texture2D" uid="uid://ciqf11ur00q3q" path="res://npc/sprites/teresa.png" id="12_7qwxs"]
+[ext_resource type="PackedScene" uid="uid://bvh47q63fjv8d" path="res://Interactables/XY/XY.tscn" id="13_rqkb0"]
+[ext_resource type="Resource" uid="uid://ctbf7x8e37pym" path="res://npc/00_npcs/eris.tres" id="14_mpbpe"]
+[ext_resource type="Resource" uid="uid://cx8yq3fk58aei" path="res://npc/00_npcs/lowkey.tres" id="15_ejbni"]
+[ext_resource type="Script" uid="uid://6cyylp4dfkoi" path="res://Interactables/dialog/scripts/dialog_background.gd" id="16_3fb7m"]
+[ext_resource type="Texture2D" uid="uid://lif6ysy0jebs" path="res://FullScreenArt/1920x1080-black-solid-color-background.jpg" id="17_a67ln"]
+[ext_resource type="Resource" uid="uid://q5twg4buxc41" path="res://npc/00_npcs/amelia_np.tres" id="18_2tuea"]
+[ext_resource type="Resource" uid="uid://db6m3p8sr6mxj" path="res://npc/00_npcs/lowkey_np.tres" id="19_16k4m"]
+[ext_resource type="Texture2D" uid="uid://cmw0gxfi72b2a" path="res://FullScreenArt/lifeguard going in changeroom fs.png" id="20_xk2uk"]
+[ext_resource type="Texture2D" uid="uid://dog5te6oyhvvf" path="res://FullScreenArt/lifeguard already inside changeroom fs.png" id="21_jso0t"]
+
+[node name="12" type="Node2D"]
+script = ExtResource("1_j50uj")
+music = ExtResource("2_etm6n")
+
+[node name="Floor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAEAAQAAAAQAAAAAAAIAAQAAAAQAAAAAAAMAAQAAAAQAAAAAAAQAAQAAAAQAAAAAAAUAAQAAAAQAAAAAAAYAAQAAAAQAAAAAAAcAAQAAAAQAAAAAAAgAAQAAAAQAAAAAAAkAAQAAAAQAAAAAAAoAAQAAAAQAAAAAAAsAAQAAAAQAAAAAAAwAAQAAAAQAAAAAAA0AAQAAAAQAAAAAAA4AAQAAAAQAAAAAAA8AAQAAAAQAAAABAAEAAQAAAAQAAAABAAIAAQAAAAQAAAABAAMAAQAAAAQAAAABAAQAAQAAAAQAAAABAAUAAQAAAAQAAAABAAYAAQAAAAQAAAABAAcAAQAAAAQAAAABAAgAAQAAAAQAAAABAAkAAQAAAAQAAAABAAoAAQAAAAQAAAABAAsAAQAAAAQAAAABAAwAAQAAAAQAAAABAA0AAQAAAAQAAAABAA4AAQAAAAQAAAABAA8AAQABAAQAAFACAAEAAQAAAAQAAAACAAIAAQAAAAQAAAACAAMAAQAAAAQAAAACAAQAAQAAAAAAAAACAAUAAQAAAAAAAAACAAYAAQAAAAAAAAACAAcAAQAAAAAAAAACAAgAAQAAAAAAAAACAAkAAQAAAAAAAAACAAoAAQAAAAAAAAACAAsAAQAAAAAAAAACAAwAAQAAAAAAAAACAA0AAQAAAAAAAAACAA4AAQAAAAAAAAADAAEAAQAAAAQAAAADAAIAAQAAAAQAAAADAAMAAQAAAAQAAAADAAQAAQAAAAAAAAADAAUAAQAAAAAAAAADAAYAAQAAAAAAAAADAAcAAQAAAAAAAAADAAgAAQAAAAAAAAADAAkAAQAAAAAAAAADAAoAAQAAAAAAAAADAAsAAQAAAAAAAAADAAwAAQAAAAAAAAADAA0AAQAAAAAAAAADAA4AAQAAAAAAAAAEAAEAAQAAAAQAAAAEAAIAAQAAAAQAAAAEAAMAAQAAAAQAAAAEAAQAAQAAAAAAAAAEAAUAAQAAAAAAAAAEAAYAAQAAAAAAAAAEAAcAAQAAAAAAAAAEAAgAAQAAAAAAAAAEAAkAAQAAAAAAAAAEAAoAAQAAAAAAAAAEAAsAAQAAAAAAAAAEAAwAAQAAAAAAAAAEAA0AAQAAAAAAAAAEAA4AAQAAAAMAAAAFAAEAAQAAAAQAAAAFAAIAAQAAAAQAAAAFAAMAAQAAAAQAAAAFAAQAAQAAAAAAAAAFAAUAAQAAAAAAAAAFAAYAAQAAAAAAAAAFAAcAAQAAAAAAAAAFAAgAAQAIAAEAAAAFAAkAAQAIAAMAAAAFAAoAAQAIAAMAAAAFAAsAAQAIAAMAAAAFAAwAAQAIAAMAAAAFAA0AAQAIAAMAAAAFAA4AAQAIAAIAAAAGAAEAAQAAAAQAAAAGAAIAAQAAAAQAAAAGAAMAAQAAAAQAAAAGAAQAAQAAAAAAAAAGAAUAAQAAAAAAAAAGAAYAAQAAAAAAAAAGAAcAAQAAAAAAAAAGAAgAAQAIAAEAAAAGAAkAAQAIAAMAAAAGAAoAAQAIAAMAAAAGAAsAAQAIAAMAAAAGAAwAAQAIAAMAAAAGAA0AAQAIAAMAAAAGAA4AAQAIAAMAAAAHAAEAAQAAAAQAAAAHAAIAAQAAAAQAAAAHAAMAAQAAAAQAAAAHAAQAAQAAAAAAAAAHAAUAAQAAAAAAAAAHAAYAAQAAAAAAAAAHAAcAAQAAAAAAAAAHAAgAAQAIAAEAAAAHAAkAAQAIAAMAAAAHAAoAAQAIAAMAAAAHAAsAAQAIAAMAAAAHAAwAAQAIAAMAAAAHAA0AAQAIAAMAAAAHAA4AAQAIAAMAAAAIAAEAAQAAAAQAAAAIAAIAAQAAAAQAAAAIAAMAAQAAAAQAAAAIAAQAAQAAAAAAAAAIAAUAAQAAAAAAAAAIAAYAAQAAAAAAAAAIAAcAAQAAAAAAAAAIAAgAAQAIAAEAAAAIAAkAAQAIAAMAAAAIAAoAAQAIAAMAAAAIAAsAAQAIAAMAAAAIAAwAAQAIAAMAAAAIAA0AAQAIAAMAAAAIAA4AAQAIAAMAAAAJAAEAAQAAAAQAAAAJAAIAAQAAAAQAAAAJAAMAAQAAAAQAAAAJAAQAAQAAAAAAAAAJAAUAAQAAAAAAAAAJAAYAAQAAAAAAAAAJAAcAAQAAAAAAAAAJAAgAAQAIAAEAAAAJAAkAAQAIAAMAAAAJAAoAAQAIAAMAAAAJAAsAAQAIAAMAAAAJAAwAAQAIAAMAAAAJAA0AAQAAAAUAAAAKAAEAAQAAAAQAAAAKAAIAAQAAAAQAAAAKAAMAAQAAAAQAAAAKAAQAAQAAAAAAAAAKAAUAAQAAAAAAAAAKAAYAAQAAAAAAAAAKAAcAAQAAAAAAAAAKAAgAAQAIAAEAAAAKAAkAAQAIAAMAAAAKAAoAAQAIAAMAAAAKAAsAAQAIAAMAAAAKAAwAAQAIAAMAAAAKAA0AAQAAAAAAAAAKAA4AAQAAAAAAAAALAAEAAQAAAAQAAAALAAIAAQAAAAQAAAALAAMAAQAAAAQAAAALAAQAAQAAAAAAAAALAAUAAQAAAAAAAAALAAYAAQAAAAAAAAALAAcAAQAAAAAAAAALAAgAAQAIAAEAAAALAAkAAQAIAAMAAAALAAoAAQAIAAMAAAALAAsAAQAIAAMAAAALAAwAAQAIAAMAAAALAA0AAQAAAAAAAAALAA4AAQAAAAAAAAAMAAEAAQAAAAQAAAAMAAIAAQAAAAQAAAAMAAMAAQAAAAQAAAAMAAQAAQAAAAAAAAAMAAUAAQAAAAAAAAAMAAYAAQAAAAAAAAAMAAcAAQAAAAAAAAAMAAgAAQAIAAEAAAAMAAkAAQAIAAMAAAAMAAoAAQAIAAMAAAAMAAsAAQAIAAMAAAAMAAwAAQAIAAMAAAAMAA0AAQAAAAAAAAAMAA4AAQAAAAAAAAANAAEAAQAAAAQAAAANAAIAAQAAAAQAAAANAAMAAQAAAAQAAAANAAQAAQAAAAAAAAANAAUAAQAAAAAAAAANAAYAAQAAAAAAAAANAAcAAQAAAAAAAAANAAgAAQAIAAEAAAANAAkAAQAIAAMAAAANAAoAAQAIAAMAAAANAAsAAQAIAAMAAAANAAwAAQAIAAMAAAANAA0AAQAAAAAAAAANAA4AAQAAAAAAAAAOAAEAAQAAAAQAAAAOAAIAAQAAAAQAAAAOAAMAAQAAAAQAAAAOAAQAAQAAAAAAAAAOAAUAAQAAAAAAAAAOAAYAAQAAAAAAAAAOAAcAAQAAAAAAAAAOAAgAAQAIAAEAAAAOAAkAAQAIAAMAAAAOAAoAAQAIAAMAAAAOAAsAAQAIAAMAAAAOAAwAAQAIAAMAAAAOAA0AAQAAAAAAAAAOAA4AAQAAAAAAAAAPAAEAAQAAAAQAAAAPAAIAAQAAAAQAAAAPAAMAAQAAAAQAAAAPAAQAAQAAAAAAAAAPAAUAAQAAAAAAAAAPAAYAAQAAAAAAAAAPAAcAAQAAAAAAAAAPAAgAAQAIAAEAAAAPAAkAAQAIAAMAAAAPAAoAAQAIAAMAAAAPAAsAAQAIAAMAAAAPAAwAAQAIAAMAAAAPAA0AAQAAAAAAAAAPAA4AAQAAAAAAAAAQAAEAAQAAAAQAAAAQAAIAAQAAAAQAAAAQAAMAAQAAAAQAAAAQAAQAAQAAAAAAAAAQAAUAAQAAAAAAAAAQAAYAAQAAAAAAAAAQAAcAAQAAAAAAAAAQAAgAAQAIAAEAAAAQAAkAAQAIAAMAAAAQAAoAAQAIAAMAAAAQAAsAAQAIAAMAAAAQAAwAAQAIAAMAAAAQAA0AAQAAAAAAAAAQAA4AAQAAAAAAAAARAAEAAQAAAAQAAAARAAIAAQAAAAQAAAARAAMAAQAAAAQAAAARAAQAAQAAAAAAAAARAAUAAQAAAAAAAAARAAYAAQAAAAAAAAARAAcAAQAAAAMAAAARAAgAAQAIAAEAAAARAAkAAQAIAAMAAAARAAoAAQAIAAMAAAARAAsAAQAIAAMAAAARAAwAAQAIAAMAAAARAA0AAQAAAAAAAAARAA4AAQAAAAAAAAASAAEAAQAAAAQAAAASAAIAAQAAAAQAAAASAAMAAQAAAAQAAAASAAQAAQAAAAAAAAASAAUAAQAAAAAAAAASAAYAAQAIAAEAAAASAAcAAQAIAAIAAAASAAgAAQAIAAMAAAASAAkAAQAIAAMAAAASAAoAAQAIAAMAAAASAAsAAQAIAAMAAAASAAwAAQAIAAMAAAASAA0AAQAAAAAAAAASAA4AAQAAAAAAAAATAAEAAQAAAAQAAAATAAIAAQAAAAQAAAATAAMAAQAAAAQAAAATAAQAAQAAAAAAAAATAAUAAQAAAAAAAAATAAYAAQAIAAEAAAATAAcAAQAIAAMAAAATAAgAAQAIAAMAAAATAAkAAQAIAAMAAAATAAoAAQAIAAMAAAATAAsAAQAIAAMAAAATAAwAAQAIAAMAAAATAA0AAQAAAAAAAAATAA4AAQAAAAAAAAAUAAEAAQAAAAQAAAAUAAIAAQAAAAQAAAAUAAMAAQAAAAQAAAAUAAQAAQAAAAAAAAAUAAUAAQAAAAAAAAAUAAYAAQAIAAEAAAAUAAcAAQAIAAMAAAAUAAgAAQAIAAMAAAAUAAkAAQAIAAMAAAAUAAoAAQAIAAMAAAAUAAsAAQAIAAMAAAAUAAwAAQAIAAMAAAAUAA0AAQAAAAAAAAAUAA4AAQAAAAAAAAAVAAEAAQAAAAQAAAAVAAIAAQAAAAQAAAAVAAMAAQAAAAQAAAAVAAQAAQAAAAAAAAAVAAUAAQAAAAAAAAAVAAYAAQAIAAEAAAAVAAcAAQAIAAMAAAAVAAgAAQAIAAMAAAAVAAkAAQAIAAMAAAAVAAoAAQAIAAMAAAAVAAsAAQAIAAMAAAAVAAwAAQAIAAMAAAAVAA0AAQAAAAAAAAAVAA4AAQAAAAAAAAAWAAEAAQAAAAQAAAAWAAIAAQAAAAQAAAAWAAMAAQAAAAQAAAAWAAQAAQAAAAAAAAAWAAUAAQAAAAAAAAAWAAYAAQAAAAAAAAAWAAcAAQAAAAAAAAAWAAgAAQAAAAAAAAAWAAkAAQAAAAAAAAAWAAoAAQAAAAAAAAAWAAsAAQAAAAAAAAAWAAwAAQAAAAAAAAAWAA0AAQAAAAAAAAAWAA4AAQAAAAAAAAAWAA8AAQAAAAAAAAAXAAEAAQAAAAQAAAAXAAIAAQAAAAQAAAAXAAMAAQAAAAQAAAAXAAQAAQAAAAAAAAAXAAUAAQAAAAAAAAAXAAYAAQAAAAAAAAAXAAcAAQAAAAAAAAAXAAgAAQAAAAAAAAAXAAkAAQAAAAAAAAAXAAoAAQAAAAAAAAAXAAsAAQAAAAAAAAAXAAwAAQAAAAAAAAAXAA0AAQAAAAAAAAAXAA4AAQAAAAAAAAAXAA8AAQAAAAAAAAAAABAAAQAAAAQAAAABABAAAQABAAQAAFAWABAAAQAAAAAAAAAXABAAAQAAAAAAAAAAAAAAAQAAAAQAAAABAAAAAQAAAAQAAAACAAAAAQAAAAQAAAADAAAAAQAAAAQAAAAEAAAAAQAAAAQAAAAFAAAAAQAAAAQAAAAGAAAAAQAAAAQAAAAHAAAAAQAAAAQAAAAIAAAAAQAAAAQAAAAJAAAAAQAAAAQAAAAKAAAAAQAAAAQAAAALAAAAAQAAAAQAAAAMAAAAAQAAAAQAAAANAAAAAQAAAAQAAAAOAAAAAQAAAAQAAAAPAAAAAQAAAAQAAAAQAAAAAQAAAAQAAAARAAAAAQAAAAQAAAASAAAAAQAAAAQAAAATAAAAAQAAAAQAAAAUAAAAAQAAAAQAAAAVAAAAAQAAAAQAAAAWAAAAAQAAAAQAAAAXAAAAAQAAAAQAAAAAABEAAQAAAAQAAAAAABIAAQAAAAQAAAAAABMAAQAAAAQAAAAAABQAAQAAAAQAAAAAABUAAQAAAAQAAAAAABYAAQAAAAQAAAAAABcAAQAAAAQAAAAAABgAAQAAAAQAAAAAABkAAQAAAAQAAAAAABoAAQAAAAQAAAAAABsAAQAAAAQAAAAAABwAAQAAAAQAAAAAAB0AAQAAAAQAAAABABEAAQAAAAQAAAABABIAAQAAAAQAAAABABMAAQAAAAQAAAABABQAAQAAAAQAAAABABUAAQAAAAQAAAABABYAAQAAAAQAAAABABcAAQAAAAQAAAABABgAAQABAAQAAFABABkAAQABAAQAAFABABoAAQAAAAQAAAABABsAAQAAAAQAAAABABwAAQAAAAQAAAABAB0AAQAAAAQAAAACAB0AAQAAAAQAAAADAB0AAQAAAAQAAAAEAB0AAQAAAAQAAAAFAB0AAQAAAAQAAAAGAB0AAQAAAAQAAAAHAB0AAQAAAAQAAAAIAB0AAQAAAAQAAAAJAB0AAQAAAAQAAAAKAB0AAQAAAAQAAAALAB0AAQAAAAQAAAAMAB0AAQAAAAQAAAANAB0AAQAAAAQAAAAOAB0AAQAAAAQAAAAPAB0AAQAAAAQAAAAQAB0AAQAAAAQAAAARAB0AAQAAAAQAAAASAB0AAQAAAAQAAAATAB0AAQAAAAQAAAAUAB0AAQAAAAQAAAAVAB0AAQAAAAQAAAAWAB0AAQAAAAQAAAAXAB0AAQAAAAQAAAAWABEAAQAAAAAAAAAWABIAAQAAAAAAAAAWABMAAQAAAAAAAAAWABQAAQAAAAAAAAAWABUAAQAAAAAAAAAWABYAAQAAAAAAAAAWABcAAQAAAAAAAAAWABgAAQAAAAAAAAAWABkAAQAAAAAAAAAWABoAAQAAAAAAAAAWABsAAQAAAAAAAAAWABwAAQAAAAQAAAAXABEAAQAAAAAAAAAXABIAAQAAAAAAAAAXABMAAQAAAAAAAAAXABQAAQAAAAAAAAAXABUAAQAAAAAAAAAXABYAAQAAAAAAAAAXABcAAQAAAAAAAAAXABgAAQAAAAAAAAAXABkAAQAAAAAAAAAXABoAAQAAAAAAAAAXABsAAQAAAAAAAAAXABwAAQAAAAQAAAACABwAAQAAAAQAAAADABwAAQAAAAQAAAAEABwAAQAAAAQAAAAFABwAAQAAAAQAAAAGABwAAQAAAAQAAAAHABwAAQAAAAQAAAAIABwAAQAAAAQAAAAJABwAAQAAAAQAAAAKABwAAQAAAAQAAAALABwAAQAAAAQAAAAMABwAAQAAAAQAAAANABwAAQAAAAQAAAAQABwAAQAAAAQAAAARABwAAQAAAAQAAAASABwAAQAAAAQAAAATABwAAQAAAAQAAAAUABwAAQAAAAQAAAAVABwAAQAAAAQAAAACAA8AAQAAAAAAAAACABAAAQAAAAAAAAACABEAAQAAAAAAAAACABIAAQAAAAAAAAACABMAAQAAAAAAAAACABQAAQAAAAAAAAACABUAAQAAAAAAAAACABYAAQAAAAAAAAACABcAAQAAAAAAAAACABgAAQAAAAAAAAACABkAAQAAAAAAAAACABoAAQAAAAAAAAACABsAAQAAAAAAAAADAA8AAQAAAAAAAAADABAAAQAAAAAAAAADABEAAQAAAAAAAAADABIAAQAAAAAAAAADABMAAQAAAAAAAAADABQAAQAAAAAAAAADABUAAQAAAAAAAAADABYAAQAAAAAAAAADABcAAQAAAAAAAAADABgAAQAAAAAAAAADABkAAQAAAAAAAAADABoAAQAAAAAAAAADABsAAQAAAAAAAAAEAA8AAQAAAAAAAAAEABAAAQAAAAAAAAAEABEAAQAAAAAAAAAEABIAAQAAAAAAAAAEABMAAQAAAAAAAAAEABQAAQAAAAAAAAAEABUAAQAAAAAAAAAEABYAAQAAAAAAAAAEABcAAQAAAAAAAAAEABgAAQAAAAAAAAAEABkAAQAAAAAAAAAEABoAAQAAAAAAAAAEABsAAQAAAAAAAAAFAA8AAQAAAAAAAAAFABAAAQAAAAAAAAAFABEAAQAAAAAAAAAFABIAAQAAAAAAAAAFABMAAQAAAAAAAAAFABQAAQAAAAAAAAAFABUAAQAAAAAAAAAFABYAAQAAAAMAAAAFABcAAQAAAAAAAAAFABgAAQAAAAAAAAAFABkAAQAAAAAAAAAFABoAAQAAAAAAAAAFABsAAQAAAAAAAAAGAA8AAQAAAAAAAAAGABAAAQAAAAAAAAAGABEAAQAAAAAAAAAGABIAAQAAAAAAAAAGABMAAQAIAAEAAAAGABQAAQAIAAMAAAAGABUAAQAIAAMAAAAGABYAAQAIAAIAAAAGABcAAQAAAAAAAAAGABgAAQAAAAAAAAAGABkAAQAAAAAAAAAGABoAAQAAAAAAAAAGABsAAQAAAAAAAAAHAA8AAQAAAAAAAAAHABAAAQAAAAAAAAAHABEAAQAAAAAAAAAHABIAAQAAAAAAAAAHABMAAQAIAAEAAAAHABQAAQAIAAMAAAAHABUAAQAIAAMAAAAHABYAAQAIAAMAAAAHABcAAQAAAAAAAAAHABgAAQAAAAAAAAAHABkAAQAAAAAAAAAHABoAAQAAAAAAAAAHABsAAQAAAAAAAAAIAA8AAQAAAAAAAAAIABAAAQAAAAAAAAAIABEAAQAAAAAAAAAIABIAAQAAAAAAAAAIABMAAQAIAAEAAAAIABQAAQAIAAMAAAAIABUAAQAIAAMAAAAIABYAAQAIAAMAAAAIABcAAQAAAAUAAAAIABgAAQAAAAAAAAAIABkAAQAAAAMAAAAIABoAAQAAAAAAAAAIABsAAQAAAAAAAAAJAA8AAQAAAAAAAAAJABAAAQAAAAAAAAAJABEAAQAAAAAAAAAJABIAAQAAAAAAAAAJABMAAQAIAAEAAAAJABQAAQAIAAMAAAAJABUAAQAIAAMAAAAJABYAAQAIAAMAAAAJABcAAQAIAAMAAAAJABgAAQAIAAMAAAAJABkAAQAIAAIAAAAJABoAAQAAAAAAAAAJABsAAQAAAAAAAAAKABMAAQAIAAEAAAAKABQAAQAIAAMAAAAKABUAAQAIAAMAAAAKABYAAQAIAAMAAAAKABcAAQAIAAMAAAAKABgAAQAIAAMAAAAKABkAAQAIAAMAAAAKABoAAQAAAAAAAAAKABsAAQAAAAAAAAALABAAAQAIAAIAAAALABEAAQAIAAMAAAALABIAAQAIAAQAAAALABMAAQAIAAMAAAALABQAAQAIAAMAAAALABUAAQAIAAMAAAALABYAAQAIAAMAAAALABcAAQAIAAMAAAALABgAAQAIAAMAAAALABkAAQAIAAMAAAALABoAAQAAAAAAAAALABsAAQAAAAAAAAAMABAAAQAIAAAAAAAMABEAAQAIAAMAAAAMABIAAQAIAAQAAAAMABMAAQAIAAMAAAAMABQAAQAIAAMAAAAMABUAAQAIAAMAAAAMABYAAQAIAAMAAAAMABcAAQAIAAMAAAAMABgAAQAIAAMAAAAMABkAAQAIAAMAAAAMABoAAQAAAAAAAAAMABsAAQAAAAAAAAANABAAAQAIAAMAAAANABEAAQAIAAMAAAANABIAAQAIAAQAAAANABMAAQAIAAMAAAANABQAAQAIAAMAAAANABUAAQAIAAMAAAANABYAAQAIAAMAAAANABcAAQAIAAMAAAANABgAAQAIAAMAAAANABkAAQAIAAMAAAANABoAAQAAAAAAAAANABsAAQAAAAAAAAAOAA8AAQAIAAEAAAAOABAAAQAIAAMAAAAOABEAAQAIAAAAAAAOABIAAQAIAAQAAAAOABMAAQAIAAMAAAAOABQAAQAIAAMAAAAOABUAAQAIAAMAAAAOABYAAQAIAAMAAAAOABcAAQAIAAMAAAAOABgAAQAIAAMAAAAOABkAAQAIAAMAAAAOABoAAQAAAAAAAAAOABsAAQAAAAAAAAAPAA8AAQAIAAEAAAAPABAAAQAIAAMAAAAPABEAAQAIAAMAAAAPABIAAQAIAAQAAAAPABMAAQAIAAMAAAAPABQAAQAIAAMAAAAPABUAAQAIAAMAAAAPABYAAQAIAAMAAAAPABcAAQAIAAMAAAAPABgAAQAIAAMAAAAPABkAAQAIAAMAAAAPABoAAQAAAAAAAAAPABsAAQAAAAAAAAAQAA8AAQAAAAAAAAAQABAAAQAAAAAAAAAQABEAAQAAAAAAAAAQABIAAQAAAAAAAAAQABMAAQAAAAUAAAAQABQAAQAIAAEAAAAQABUAAQAIAAMAAAAQABYAAQAIAAMAAAAQABcAAQAIAAMAAAAQABgAAQAIAAMAAAAQABkAAQAIAAMAAAAQABoAAQAAAAAAAAAQABsAAQAAAAAAAAARAA8AAQAAAAAAAAARABAAAQAAAAAAAAARABEAAQAAAAAAAAARABIAAQAAAAAAAAARABMAAQAAAAAAAAARABQAAQAIAAEAAAARABUAAQAIAAMAAAARABYAAQAIAAMAAAARABcAAQAIAAMAAAARABgAAQAIAAMAAAARABkAAQAIAAMAAAARABoAAQAAAAAAAAARABsAAQAAAAAAAAASAA8AAQAAAAAAAAASABAAAQAAAAAAAAASABEAAQAAAAAAAAASABIAAQAAAAAAAAASABMAAQAAAAAAAAASABQAAQAIAAEAAAASABUAAQAIAAMAAAASABYAAQAIAAMAAAASABcAAQAIAAMAAAASABgAAQAIAAMAAAASABkAAQAIAAMAAAASABoAAQAAAAAAAAASABsAAQAAAAAAAAATAA8AAQAAAAAAAAATABAAAQAAAAAAAAATABEAAQAAAAAAAAATABIAAQAAAAAAAAATABMAAQAAAAAAAAATABQAAQAIAAEAAAATABUAAQAIAAMAAAATABYAAQAIAAMAAAATABcAAQAIAAMAAAATABgAAQAIAAMAAAATABkAAQAIAAMAAAATABoAAQAAAAAAAAATABsAAQAAAAAAAAAUAA8AAQAAAAAAAAAUABAAAQAAAAAAAAAUABEAAQAAAAAAAAAUABIAAQAAAAAAAAAUABMAAQAAAAAAAAAUABQAAQAIAAEAAAAUABUAAQAIAAMAAAAUABYAAQAIAAMAAAAUABcAAQAIAAMAAAAUABgAAQAIAAMAAAAUABkAAQAIAAMAAAAUABoAAQAAAAAAAAAUABsAAQAAAAAAAAAVAA8AAQAAAAAAAAAVABAAAQAAAAAAAAAVABEAAQAAAAAAAAAVABIAAQAAAAAAAAAVABMAAQAAAAAAAAAVABQAAQAAAAAAAAAVABUAAQAAAAAAAAAVABYAAQAAAAAAAAAVABcAAQAAAAAAAAAVABgAAQAAAAAAAAAVABkAAQAAAAAAAAAVABoAAQAAAAAAAAAVABsAAQAAAAAAAAAYAAAAAQAAAAQAAAAYAAEAAQAAAAQAAAAYAAIAAQAAAAQAAAAYAAMAAQAAAAQAAAAYAAQAAQAAAAAAAAAYAAUAAQAAAAAAAAAYAAYAAQAAAAAAAAAYAAcAAQAAAAAAAAAYAAgAAQAAAAAAAAAYAAkAAQAAAAAAAAAYAAoAAQAAAAAAAAAYAAsAAQAAAAAAAAAYAAwAAQAAAAAAAAAYAA0AAQAAAAAAAAAYAA4AAQAAAAAAAAAYAA8AAQAAAAAAAAAYABAAAQAAAAAAAAAYABEAAQAAAAAAAAAYABIAAQAAAAAAAAAYABMAAQAAAAAAAAAYABQAAQAAAAAAAAAYABUAAQAAAAAAAAAYABYAAQAAAAAAAAAYABcAAQAAAAAAAAAYABgAAQAAAAAAAAAYABkAAQAAAAAAAAAYABoAAQAAAAAAAAAYABsAAQAAAAAAAAAYABwAAQAAAAQAAAAYAB0AAQAAAAQAAAAZAAAAAQAAAAQAAAAZAAEAAQAAAAQAAAAZAAIAAQAAAAQAAAAZAAMAAQAAAAQAAAAZAAQAAQAAAAQAAAAZAAUAAQAAAAQAAAAZAAYAAQAAAAQAAAAZAAcAAQAAAAQAAAAZAAgAAQAAAAQAAAAZAAkAAQAAAAQAAAAZAAoAAQAAAAQAAAAZAAsAAQABAAQAAGAZAAwAAQABAAQAAGAZAA0AAQAAAAQAAAAZAA4AAQAAAAQAAAAZAA8AAQAAAAQAAAAZABAAAQAAAAQAAAAZABEAAQAAAAQAAAAZABIAAQAAAAQAAAAZABMAAQABAAQAAGAZABQAAQABAAQAAGAZABUAAQAAAAQAAAAZABYAAQAAAAQAAAAZABcAAQAAAAQAAAAZABgAAQAAAAQAAAAZABkAAQAAAAQAAAAZABoAAQAAAAQAAAAZABsAAQAAAAQAAAAZABwAAQAAAAQAAAAZAB0AAQAAAAQAAAALAA8AAQAIAAEAAAAMAA8AAQAIAAEAAAANAA8AAQAIAAEAAAAKAA8AAQAAAAAAAAAKABAAAQAAAAMAAAAKABEAAQAAAAAAAAAKABIAAQAAAAUAAAAaAAAAAQAAAAQAAAAaAAEAAQAAAAQAAAAaAAIAAQAAAAQAAAAaAAMAAQAAAAQAAAAaAAQAAQAAAAQAAAAaAAUAAQAAAAQAAAAaAAYAAQAAAAQAAAAaAAcAAQAAAAQAAAAaAAgAAQAAAAQAAAAaAAkAAQAAAAQAAAAaAAoAAQAAAAQAAAAaAAsAAQAAAAQAAAAaAAwAAQAAAAQAAAAaAA0AAQAAAAQAAAAaAA4AAQAAAAQAAAAaAA8AAQAAAAQAAAAaABAAAQAAAAQAAAAaABEAAQAAAAQAAAAaABIAAQAAAAQAAAAaABMAAQAAAAQAAAAaABQAAQAAAAQAAAAaABUAAQAAAAQAAAAaABYAAQAAAAQAAAAaABcAAQAAAAQAAAAaABgAAQAAAAQAAAAaABkAAQAAAAQAAAAaABoAAQAAAAQAAAAaABsAAQAAAAQAAAAaABwAAQAAAAQAAAAaAB0AAQAAAAQAAAAJAA4AAQAAAAAAAAAPABwAAQABAAQAAAAOABwAAQABAAQAAAA=")
+tile_set = ExtResource("3_uapy5")
+rendering_quadrant_size = 24
+script = ExtResource("4_6vsrt")
+
+[node name="Wall" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAJAAEAAQABAAEAAAAJAAIAAQABAAEAAAAKAAEAAQABAAEAAAAKAAIAAQABAAEAAAALAAEAAQABAAEAAAALAAIAAQABAAEAAAAMAAEAAQABAAEAAAAMAAIAAQABAAEAAAANAAEAAQABAAEAAAANAAIAAQABAAEAAAAOAAEAAQABAAEAAAAOAAIAAQABAAEAAAAPAAEAAQABAAEAAAAPAAIAAQABAAEAAAAQAAEAAQABAAEAAAAQAAIAAQABAAEAAAARAAEAAQABAAEAAAARAAIAAQABAAEAAAASAAEAAQABAAEAAAASAAIAAQABAAEAAAATAAEAAQABAAEAAAATAAIAAQABAAEAAAAUAAEAAQABAAEAAAAUAAIAAQABAAEAAAAVAAEAAQABAAEAAAAVAAIAAQABAAEAAAACAAEAAQABAAEAAAADAAEAAQABAAEAAAAEAAEAAQABAAEAAAAFAAEAAQABAAEAAAAGAAEAAQABAAEAAAAHAAEAAQABAAEAAAAIAAEAAQABAAEAAAAJAAMAAQABAAEAAAAKAAMAAQABAAEAAAALAAMAAQABAAEAAAAMAAMAAQABAAEAAAANAAMAAQABAAEAAAAOAAMAAQABAAEAAAAPAAMAAQABAAEAAAAQAAMAAQABAAEAAAARAAMAAQABAAEAAAASAAMAAQABAAEAAAATAAMAAQABAAEAAAAUAAMAAQABAAEAAAAVAAMAAQABAAEAAAAHAAIAAQABAAEAAAACAAIAAQABAAEAAAADAAIAAQABAAEAAAAFAAIAAQABAAEAAAAGAAIAAQABAAEAAAAIAAIAAQABAAEAAAAIAAMAAQABAAEAAAAGAAMAAQABAAEAAAAFAAMAAQABAAEAAAADAAMAAQABAAEAAAACAAMAAQABAAEAAAAEAAMAAQABAAEAAAAHAAMAAQABAAEAAAAEAAIAAQABAAEAAAAWAAMAAQABAAEAAAAWAAEAAQABAAEAAAAXAAMAAQABAAEAAAAYAAMAAQABAAEAAAAXAAIAAQABAAEAAAAYAAIAAQABAAEAAAAXAAEAAQABAAEAAAAYAAEAAQABAAEAAAAWAAIAAQABAAEAAAA=")
+tile_set = ExtResource("3_uapy5")
+rendering_quadrant_size = 24
+
+[node name="Other" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAABAAIAAQAEAAEAADABAAMAAQAEAAEAADABAAQAAQAEAAEAADABAAUAAQAEAAEAADABAAYAAQAEAAEAADABAAcAAQAEAAEAADABAAsAAQAEAAEAADABAAwAAQAEAAEAADABAA0AAQAEAAEAADABAAgAAQAEAAEAADABAAEAAQAEAAEAADACAAAAAQAEAAEAAGADAAAAAQAEAAEAAGAEAAAAAQAEAAEAAGAFAAAAAQAEAAEAAGAGAAAAAQAEAAEAAGAHAAAAAQAEAAEAAGAIAAAAAQAEAAEAAGAJAAAAAQAEAAEAAGAKAAAAAQAEAAEAAGALAAAAAQAEAAEAAGAMAAAAAQAEAAEAAGANAAAAAQAEAAEAAGAOAAAAAQAEAAEAAGAPAAAAAQAEAAEAAGAQAAAAAQAEAAEAAGARAAAAAQAEAAEAAGASAAAAAQAEAAEAAGATAAAAAQAEAAEAAGAUAAAAAQAEAAEAAGAVAAAAAQAEAAEAAGABAAAAAQAEAAAAADAWAAAAAQAEAAEAAGAXAAAAAQAEAAEAAGAYAAAAAQAEAAEAAGAZAAAAAQAEAAAAAGAZAAEAAQAEAAEAAAAZAAIAAQAEAAEAAAAZAAMAAQAEAAEAAAAZAAQAAQAEAAEAAAAZAAUAAQAEAAEAAAAZAAYAAQAEAAEAAAAZAAcAAQAEAAEAAAAZAAgAAQAEAAEAAAAZAAkAAQAEAAEAAAAZAAoAAQAEAAEAAAAZAA0AAQAEAAEAAAAZAA4AAQAEAAEAAAAZAA8AAQAEAAEAAAAZABAAAQAEAAEAAAAZABEAAQAEAAEAAAAZABIAAQAEAAEAAAAZABUAAQAEAAEAAAAZABYAAQAEAAEAAAAZABcAAQAEAAEAAAAZABgAAQAEAAEAAAAZABkAAQAEAAEAAAAZABoAAQAEAAEAAAAZABsAAQAEAAEAAAAZABwAAQAEAAAAAAAYABwAAQAEAAEAAFACABwAAQAEAAEAAFADABwAAQAEAAEAAFAEABwAAQAEAAEAAFAFABwAAQAEAAEAAFAGABwAAQAEAAEAAFAHABwAAQAEAAEAAFAIABwAAQAEAAEAAFAJABwAAQAEAAEAAFAKABwAAQAEAAEAAFALABwAAQAEAAEAAFAMABwAAQAEAAEAAFANABwAAQAEAAEAAFAQABwAAQAEAAEAAFARABwAAQAEAAEAAFASABwAAQAEAAEAAFAWABwAAQAEAAEAAFAXABwAAQAEAAEAAFABABwAAQAEAAAAAFABABsAAQAEAAEAADABABoAAQAEAAEAADABABEAAQAEAAEAADABABIAAQAEAAEAADABABMAAQAEAAEAADABABQAAQAEAAEAADABABUAAQAEAAEAADABAA4AAQAEAAEAADANAAMAAQADAAMAAAARABIAAQACAAMAAAAEAAoAAQAAAAcAAAAOAAoAAQAAAAcAABAOAAIAAQAAAAEAAAAQAAYAAQACAAMAAAAVABwAAQAEAAEAAFATABwAAQAEAAEAAFAUABwAAQAEAAEAAFABAAkAAQAEAAEAADABAAoAAQAEAAEAADABABYAAQAEAAEAADABABcAAQAEAAEAADAMAAQAAQADAAIAAAADAAIAAQAXAAQAAAA=")
+tile_set = ExtResource("3_uapy5")
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("5_d0si0")]
+position = Vector2(325, 154)
+
+[node name="LevelTransition" parent="." instance=ExtResource("6_g2x1t")]
+process_mode = 4
+position = Vector2(36, 600)
+level = "uid://obu8sxcupoxb"
+target_transition_area = "LevelTransition2"
+
+[node name="Pool1" parent="." instance=ExtResource("7_eu548")]
+position = Vector2(324, 420)
+size = Vector2(120, 120)
+
+[node name="DialogText" type="Node" parent="Pool1"]
+script = ExtResource("8_h0g8t")
+text = "A large pool."
+npc_info = ExtResource("9_hmhfp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Pool1"]
+script = ExtResource("8_h0g8t")
+text = "“You tryna go for a swim now?”"
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Pool1"]
+script = ExtResource("8_h0g8t")
+text = "“Let’s keep moving.”"
+frame = 1
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Repeat" type="Node" parent="Pool1"]
+
+[node name="DialogText" type="Node" parent="Pool1/Repeat"]
+script = ExtResource("8_h0g8t")
+text = "A large pool."
+npc_info = ExtResource("9_hmhfp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Pool12" parent="." instance=ExtResource("7_eu548")]
+position = Vector2(204, 504)
+size = Vector2(120, 96)
+
+[node name="DialogText" type="Node" parent="Pool12"]
+script = ExtResource("8_h0g8t")
+text = "A large pool."
+npc_info = ExtResource("9_hmhfp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Pool12"]
+script = ExtResource("8_h0g8t")
+text = "“You tryna go for a swim now?”"
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Pool12"]
+script = ExtResource("8_h0g8t")
+text = "“Let’s keep moving.”"
+frame = 1
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Repeat" type="Node" parent="Pool12"]
+
+[node name="DialogText" type="Node" parent="Pool12/Repeat"]
+script = ExtResource("8_h0g8t")
+text = "A large pool."
+npc_info = ExtResource("9_hmhfp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Pool13" parent="." instance=ExtResource("7_eu548")]
+position = Vector2(360, 552)
+size = Vector2(288, 144)
+
+[node name="DialogText" type="Node" parent="Pool13"]
+script = ExtResource("8_h0g8t")
+text = "A large pool."
+npc_info = ExtResource("9_hmhfp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Pool13"]
+script = ExtResource("8_h0g8t")
+text = "“You tryna go for a swim now?”"
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Pool13"]
+script = ExtResource("8_h0g8t")
+text = "“Let’s keep moving.”"
+frame = 1
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Repeat" type="Node" parent="Pool13"]
+
+[node name="DialogText" type="Node" parent="Pool13/Repeat"]
+script = ExtResource("8_h0g8t")
+text = "A large pool."
+npc_info = ExtResource("9_hmhfp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Pool2" parent="." instance=ExtResource("7_eu548")]
+position = Vector2(168, 336)
+size = Vector2(96, 48)
+
+[node name="DialogText" type="Node" parent="Pool2"]
+script = ExtResource("8_h0g8t")
+text = "A large pool."
+npc_info = ExtResource("9_hmhfp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Pool2"]
+script = ExtResource("8_h0g8t")
+text = "“You tryna go for a swim now?”"
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Pool2"]
+script = ExtResource("8_h0g8t")
+text = "“Let’s keep moving.”"
+frame = 1
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Repeat" type="Node" parent="Pool2"]
+
+[node name="DialogText" type="Node" parent="Pool2/Repeat"]
+script = ExtResource("8_h0g8t")
+text = "A large pool."
+npc_info = ExtResource("9_hmhfp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Pool22" parent="." instance=ExtResource("7_eu548")]
+position = Vector2(480, 168)
+size = Vector2(96, 48)
+
+[node name="DialogText" type="Node" parent="Pool22"]
+script = ExtResource("8_h0g8t")
+text = "A large pool."
+npc_info = ExtResource("9_hmhfp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Pool22"]
+script = ExtResource("8_h0g8t")
+text = "“You tryna go for a swim now?”"
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Pool22"]
+script = ExtResource("8_h0g8t")
+text = "“Let’s keep moving.”"
+frame = 1
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Repeat" type="Node" parent="Pool22"]
+
+[node name="DialogText" type="Node" parent="Pool22/Repeat"]
+script = ExtResource("8_h0g8t")
+text = "A large pool."
+npc_info = ExtResource("9_hmhfp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Pool23" parent="." instance=ExtResource("7_eu548")]
+position = Vector2(324, 252)
+size = Vector2(408, 120)
+
+[node name="DialogText" type="Node" parent="Pool23"]
+script = ExtResource("8_h0g8t")
+text = "A large pool."
+npc_info = ExtResource("9_hmhfp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Pool23"]
+script = ExtResource("8_h0g8t")
+text = "“You tryna go for a swim now?”"
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Pool23"]
+script = ExtResource("8_h0g8t")
+text = "“Let’s keep moving.”"
+frame = 1
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Repeat" type="Node" parent="Pool23"]
+
+[node name="DialogText" type="Node" parent="Pool23/Repeat"]
+script = ExtResource("8_h0g8t")
+text = "A large pool."
+npc_info = ExtResource("9_hmhfp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Follower" parent="." instance=ExtResource("11_wh4r2")]
+position = Vector2(72, 576)
+spritesheet = ExtResource("12_7qwxs")
+distance = 20
+
+[node name="Door" parent="." instance=ExtResource("7_eu548")]
+position = Vector2(24, 384)
+size = Vector2(24, 48)
+
+[node name="DialogText" type="Node" parent="Door"]
+script = ExtResource("8_h0g8t")
+text = "“The other officers are waiting at the women’s changeroom.”"
+frame = 19
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Door"]
+script = ExtResource("8_h0g8t")
+text = "“We can explore later.”"
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Door2" parent="." instance=ExtResource("7_eu548")]
+position = Vector2(624, 288)
+size = Vector2(24, 48)
+
+[node name="DialogText" type="Node" parent="Door2"]
+script = ExtResource("8_h0g8t")
+text = "“The other officers are waiting at the women’s changeroom.”"
+frame = 19
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Door2"]
+script = ExtResource("8_h0g8t")
+text = "“We can explore later.”"
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Door3" parent="." instance=ExtResource("7_eu548")]
+position = Vector2(624, 480)
+size = Vector2(24, 48)
+
+[node name="DialogText" type="Node" parent="Door3"]
+script = ExtResource("8_h0g8t")
+text = "“The other officers are waiting at the women’s changeroom.”"
+frame = 19
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Door3"]
+script = ExtResource("8_h0g8t")
+text = "“We can explore later.”"
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Door4" parent="." instance=ExtResource("7_eu548")]
+position = Vector2(360, 696)
+size = Vector2(48, 24)
+
+[node name="DialogText" type="Node" parent="Door4"]
+script = ExtResource("8_h0g8t")
+text = "“The other officers are waiting at the women’s changeroom.”"
+frame = 19
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Door4"]
+script = ExtResource("8_h0g8t")
+text = "“We can explore later.”"
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Door5" parent="." instance=ExtResource("7_eu548")]
+position = Vector2(24, 600)
+size = Vector2(24, 48)
+
+[node name="DialogText" type="Node" parent="Door5"]
+script = ExtResource("8_h0g8t")
+text = "“The other officers are waiting at the women’s changeroom.”"
+frame = 19
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Door5"]
+script = ExtResource("8_h0g8t")
+text = "“We can explore later.”"
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="XY" parent="." instance=ExtResource("13_rqkb0")]
+position = Vector2(324, 95)
+
+[node name="1" type="Node" parent="XY"]
+
+[node name="DialogText" type="Node" parent="XY/1"]
+script = ExtResource("8_h0g8t")
+text = "“Maybe if you tried turning it left?”"
+npc_info = ExtResource("14_mpbpe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="XY/1"]
+script = ExtResource("8_h0g8t")
+text = "“Actually no, turn it the other way.”"
+frame = 9
+npc_info = ExtResource("14_mpbpe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="XY/1"]
+script = ExtResource("8_h0g8t")
+text = "“The other way.”"
+frame = 4
+npc_info = ExtResource("14_mpbpe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="XY/1"]
+script = ExtResource("8_h0g8t")
+text = "\"...\""
+npc_info = ExtResource("15_ejbni")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="XY/1"]
+script = ExtResource("8_h0g8t")
+text = "“Are you sure you’re doing it right?”"
+frame = 30
+npc_info = ExtResource("14_mpbpe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="XY/1"]
+script = ExtResource("8_h0g8t")
+text = "“Yes.”"
+frame = 15
+npc_info = ExtResource("15_ejbni")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="XY/1"]
+script = ExtResource("8_h0g8t")
+text = "“Well it doesn’t look like it’s working.”"
+frame = 19
+npc_info = ExtResource("14_mpbpe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="XY/1"]
+script = ExtResource("8_h0g8t")
+text = "“Did you try sliding the pick at an angle?”"
+frame = 30
+npc_info = ExtResource("14_mpbpe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="XY/1"]
+script = ExtResource("8_h0g8t")
+text = "“Because some doors open that way-”"
+frame = 29
+npc_info = ExtResource("14_mpbpe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="XY/1"]
+script = ExtResource("8_h0g8t")
+text = "“I tried that already!”"
+frame = 8
+npc_info = ExtResource("15_ejbni")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="XY/1"]
+script = ExtResource("8_h0g8t")
+text = "“It’s just locked shut.”"
+frame = 15
+npc_info = ExtResource("15_ejbni")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="XY/1"]
+script = ExtResource("8_h0g8t")
+text = "“The door probably gets locked from the inside.”"
+frame = 9
+npc_info = ExtResource("15_ejbni")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText13" type="Node" parent="XY/1"]
+script = ExtResource("8_h0g8t")
+text = "“Hmmm….”"
+frame = 28
+npc_info = ExtResource("14_mpbpe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="XY/1"]
+script = ExtResource("8_h0g8t")
+text = "“Oh! Teresa’s here!”"
+frame = 30
+npc_info = ExtResource("14_mpbpe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="XY/1"]
+script = ExtResource("8_h0g8t")
+text = "“Hi…”"
+frame = 2
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="XY/1"]
+script = ExtResource("8_h0g8t")
+text = "“Sorry if we’re interrupting something…?”"
+frame = 3
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="XY/1"]
+script = ExtResource("8_h0g8t")
+text = "“Not at all.”"
+npc_info = ExtResource("15_ejbni")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText18" type="Node" parent="XY/1"]
+script = ExtResource("8_h0g8t")
+text = "“I’m glad to see Amelia’s here now.”"
+frame = 6
+npc_info = ExtResource("15_ejbni")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText19" type="Node" parent="XY/1"]
+script = ExtResource("8_h0g8t")
+text = "“Feeling any better?”"
+frame = 5
+npc_info = ExtResource("15_ejbni")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground" type="Node" parent="XY/1"]
+script = ExtResource("16_3fb7m")
+background = ExtResource("17_a67ln")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogText20" type="Node" parent="XY/1"]
+script = ExtResource("8_h0g8t")
+text = "\"...\""
+npc_info = ExtResource("18_2tuea")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="2" type="Node" parent="XY"]
+
+[node name="DialogText" type="Node" parent="XY/2"]
+script = ExtResource("8_h0g8t")
+text = "“Yeah.”"
+npc_info = ExtResource("18_2tuea")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="XY/2"]
+script = ExtResource("8_h0g8t")
+text = "“I’m feeling better.”"
+npc_info = ExtResource("18_2tuea")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="XY/2"]
+script = ExtResource("8_h0g8t")
+text = "“Sorry for getting a bit lost back there.”"
+npc_info = ExtResource("18_2tuea")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="XY/2"]
+script = ExtResource("8_h0g8t")
+text = "“My head was in the wrong space.”"
+npc_info = ExtResource("18_2tuea")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="XY/2"]
+script = ExtResource("8_h0g8t")
+text = "“Mind filling me in on the details one more time?”"
+npc_info = ExtResource("18_2tuea")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="3" type="Node" parent="XY"]
+
+[node name="DialogText" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“Right.”"
+npc_info = ExtResource("15_ejbni")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“Let’s start from the beginning.”"
+frame = 10
+npc_info = ExtResource("15_ejbni")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground" type="Node" parent="XY/3"]
+script = ExtResource("16_3fb7m")
+background = ExtResource("17_a67ln")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogText3" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“We all got on our shifts at 7 PM, and we got a call around 7:50.”"
+npc_info = ExtResource("19_16k4m")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“The lifeguard from this community center was the one who called emergency telecommunicators.”"
+npc_info = ExtResource("19_16k4m")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“This was around 5 PM, give or take.”"
+npc_info = ExtResource("19_16k4m")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“I recall his name being Jason or the like.”"
+npc_info = ExtResource("19_16k4m")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground2" type="Node" parent="XY/3"]
+script = ExtResource("16_3fb7m")
+background = ExtResource("20_xk2uk")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogText7" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“Jason said his shift partner went inside to check the women’s changeroom to check something.”"
+npc_info = ExtResource("19_16k4m")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“Apparently there was a dangerous leak inside.”"
+npc_info = ExtResource("19_16k4m")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“He locked the door to inspect it safely, so no one else would get hurt.”"
+npc_info = ExtResource("19_16k4m")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground3" type="Node" parent="XY/3"]
+script = ExtResource("16_3fb7m")
+background = ExtResource("21_jso0t")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogText10" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“But he never came out.”"
+npc_info = ExtResource("19_16k4m")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“So Jason called us after 2 hours with no sign of his shift partner.”"
+npc_info = ExtResource("19_16k4m")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“He couldn’t open it because his partner was the one with the keys.”"
+npc_info = ExtResource("19_16k4m")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground4" type="Node" parent="XY/3"]
+script = ExtResource("16_3fb7m")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogText13" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“This Jason guy couldn’t get any extra keys either.”"
+npc_info = ExtResource("14_mpbpe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“Front desk doesn’t hold copies.”"
+frame = 19
+npc_info = ExtResource("14_mpbpe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“The guy probably got knocked out trying to fix the leak.”"
+frame = 19
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“I bet he’s still inside, just unconscious.”"
+frame = 20
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“Door’s locked though, hon.”"
+npc_info = ExtResource("14_mpbpe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText18" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“We’ll have to go look for some way to open it.”"
+frame = 19
+npc_info = ExtResource("14_mpbpe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText19" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“Maybe a spare key?”"
+frame = 30
+npc_info = ExtResource("14_mpbpe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText20" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“Then let’s start searching this place.”"
+frame = 10
+npc_info = ExtResource("15_ejbni")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText21" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“We’ll leave you to it, Amelia.”"
+frame = 6
+npc_info = ExtResource("15_ejbni")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText22" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“Teresa said you work better alone on these kinds of cases.”"
+frame = 5
+npc_info = ExtResource("15_ejbni")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText23" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“Come find us if you need anything!”"
+frame = 1
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText24" type="Node" parent="XY/3"]
+script = ExtResource("8_h0g8t")
+text = "“Now let’s find a way to open this door.”"
+npc_info = ExtResource("10_vuj6g")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
