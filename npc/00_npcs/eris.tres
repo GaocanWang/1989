@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="NPCResource" load_steps=5 format=3 uid="uid://ctbf7x8e37pym"]
 
-[ext_resource type="Texture2D" uid="uid://enrdumhu7k2e" path="res://npc/sprites/portraits/GAME SIZE officer y placeholder sprite.png" id="1_6acr4"]
 [ext_resource type="Texture2D" uid="uid://dykoc6tspwxgs" path="res://FullScreenArt/debate eris talking.png" id="1_hmeyp"]
 [ext_resource type="Script" uid="uid://cg8c1j6taerih" path="res://npc/scripts/npc_resource.gd" id="1_p0pt8"]
+[ext_resource type="Texture2D" uid="uid://b6f5ynd5tphr" path="res://npc/sprites/portraits/OFFICER Y FULL SPRITESHEET.png" id="2_hmeyp"]
 [ext_resource type="Texture2D" uid="uid://cht6lgnfn4ay2" path="res://npc/sprites/y.png" id="3_ckrfj"]
 
 [resource]
 script = ExtResource("1_p0pt8")
-npc_name = "Eris"
+npc_name = "Daisy"
 sprite = ExtResource("3_ckrfj")
-portrait = ExtResource("1_6acr4")
+portrait = ExtResource("2_hmeyp")
 background = ExtResource("1_hmeyp")
 dialog_audio_pitch = 1.38

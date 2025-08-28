@@ -5,6 +5,7 @@ class_name DialogText extends DialogItem
 @export_multiline var text : String = "Placeholder text" : set = _set_text
 
 @export var slow : bool = false
+@export var frame: int = 0
 
 
 

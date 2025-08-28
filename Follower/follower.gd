@@ -14,6 +14,7 @@ var prev_direction_name : String = ""
 
 func _ready() -> void:
 	sprite.texture = spritesheet
+	update_animation()
 	pass
 
 
@@ -30,7 +31,7 @@ func _process(delta: float) -> void:
 		if ( direction_name != prev_direction_name ):
 			prev_direction_name = direction_name
 			update_animation()
-		global_position = PlayerManager.past_positions[ distance ]
+		global_position = global_position.move_toward(PlayerManager.past_positions[ distance ], 80.0 * delta)
 	pass
 
 

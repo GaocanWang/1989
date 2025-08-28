@@ -103,19 +103,14 @@ func show_dialog( _items : Array[ DialogItem ] ) -> void:
 	dialog_item_index = 0
 	get_tree().paused = true
 	PlayerManager.player.state_machine.change_state( PlayerManager.player.state_machine.states[0] )
+	print(dialog_item_index)
 	await get_tree().process_frame
 	start_dialog()
 	dialog_ui.visible = true
 	textbox_animation_player.play("textbox_rise")
 	if (portrait_sprite.texture == null ):
 		portrait_animation_player.play("portrait_appear_left")
-	elif (portrait_sprite.texture.resource_path == "res://npc/sprites/portraits/trial spritesheet.png"):
-		portrait_sprite.hframes = 3
-		portrait_animation_player.play("portrait_appear_left")
-		await portrait_animation_player.animation_finished
-		portrait_animation_player.play("portrait_animation")
 	else:
-		portrait_sprite.hframes = 1
 		portrait_animation_player.play("portrait_appear_right")
 	pass
 
@@ -192,23 +187,15 @@ func set_dialog_text( _d ) -> void:
 	if portrait_sprite.texture != _d.npc_info.portrait:
 		if (portrait_sprite.texture == null):
 			pass
-		elif (portrait_sprite.texture.resource_path == "res://npc/sprites/portraits/trial spritesheet.png"):
-			portrait_animation_player.play("portrait_disappear_left")
-			await portrait_animation_player.animation_finished
 		else:
 			portrait_animation_player.play("portrait_disappear_right")
 			await portrait_animation_player.animation_finished
 		portrait_sprite.texture = _d.npc_info.portrait
 		if (portrait_sprite.texture == null ):
 			pass
-		elif (portrait_sprite.texture.resource_path == "res://npc/sprites/portraits/trial spritesheet.png"):
-			portrait_sprite.hframes = 3
-			portrait_animation_player.play("portrait_appear_left")
-			await portrait_animation_player.animation_finished
-			portrait_animation_player.play("portrait_animation")
 		else:
-			portrait_sprite.hframes = 1
 			portrait_animation_player.play("portrait_appear_right")
+	portrait_sprite.frame = _d.frame
 	pass
 
 

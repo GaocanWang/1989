@@ -168,13 +168,11 @@ func _on_yes() -> void:
 	DialogSystem.show_dialog( dialog_items_3 )
 	await DialogSystem.finished
 	art.show()
-	SceneTransition.fade_in()
 	animation_player.play("lower_art")
 	await animation_player.animation_finished
 	DialogSystem.show_dialog( dialog_items_4 )
 	await DialogSystem.finished
 	art.texture = load( "res://FullScreenArt/1920x1080-black-solid-color-background.jpg" )
-	get_tree().paused = false
 	LevelManager.load_new_part( "res://Levels/Part2/01.tscn", "LevelTransition", get_offset() )
 	pass
 

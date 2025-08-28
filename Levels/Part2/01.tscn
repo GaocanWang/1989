@@ -1,17 +1,18 @@
-[gd_scene load_steps=13 format=4 uid="uid://ct5se6suijt5w"]
+[gd_scene load_steps=14 format=4 uid="uid://ct5se6suijt5w"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_l8wmu"]
-[ext_resource type="AudioStream" uid="uid://csqenyhi7hb5g" path="res://Levels/music/teresa dialogue music.mp3" id="2_6c266"]
+[ext_resource type="AudioStream" uid="uid://0aojls0cgt76" path="res://Levels/music/searching.mp3" id="2_6c266"]
 [ext_resource type="TileSet" uid="uid://k4sa1rxa7ww0" path="res://Tile Maps/Tile Sets/pool.tres" id="3_qw5bp"]
 [ext_resource type="Script" uid="uid://2hobeot03u4v" path="res://Tile Maps/level_tile_map.gd" id="4_h7b0v"]
 [ext_resource type="PackedScene" uid="uid://uqut3xy8f7mb" path="res://Levels/player_spawn.tscn" id="5_1giyw"]
 [ext_resource type="PackedScene" uid="uid://bt4r7451gfkr5" path="res://Levels/level_transition.tscn" id="6_ekd8h"]
 [ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="7_761wi"]
-[ext_resource type="Resource" uid="uid://c2w2tyjg78bol" path="res://npc/00_npcs/amelia.tres" id="8_ml4fq"]
 [ext_resource type="Resource" uid="uid://di457jgt256ub" path="res://npc/00_npcs/teresa.tres" id="9_6c266"]
 [ext_resource type="Resource" uid="uid://cx8yq3fk58aei" path="res://npc/00_npcs/lowkey.tres" id="9_ml4fq"]
-[ext_resource type="PackedScene" uid="uid://dm15w3ux3txs4" path="res://npc/npc.tscn" id="10_fvy66"]
 [ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="11_iqqml"]
+[ext_resource type="PackedScene" uid="uid://bhu6ijoxy18b7" path="res://Follower/follower.tscn" id="12_6c266"]
+[ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/box.tres" id="13_6c266"]
+[ext_resource type="Texture2D" uid="uid://ciqf11ur00q3q" path="res://npc/sprites/teresa.png" id="13_fvy66"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_l8wmu")
@@ -34,7 +35,7 @@ tile_map_data = PackedByteArray("AAATAAEAAQAEAAEAAAATAAIAAQAEAAEAAAATAAMAAQAEAAE
 tile_set = ExtResource("3_qw5bp")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_1giyw")]
-position = Vector2(447, 131)
+position = Vector2(417, 130)
 
 [node name="LevelTransition" parent="." instance=ExtResource("6_ekd8h")]
 process_mode = 4
@@ -73,21 +74,6 @@ text = "“Let’s hurry back before we run out of time.”"
 npc_info = ExtResource("9_ml4fq")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="NPC" parent="." instance=ExtResource("10_fvy66")]
-position = Vector2(60, 216)
-
-[node name="DialogInteraction" parent="NPC" instance=ExtResource("11_iqqml")]
-
-[node name="DialogText" type="Node" parent="NPC/DialogInteraction"]
-script = ExtResource("7_761wi")
-text = "\"We should get moving now.\""
-npc_info = ExtResource("9_6c266")
-
-[node name="DialogText1" type="Node" parent="NPC/DialogInteraction"]
-script = ExtResource("7_761wi")
-text = "\"The others are waiting.\""
-npc_info = ExtResource("9_6c266")
-
 [node name="DialogInteraction2" parent="." instance=ExtResource("11_iqqml")]
 position = Vector2(48, 264)
 size = Vector2(48, 24)
@@ -95,56 +81,39 @@ size = Vector2(48, 24)
 [node name="DialogText" type="Node" parent="DialogInteraction2"]
 script = ExtResource("7_761wi")
 text = "\"Where are you going?\""
+frame = 20
 npc_info = ExtResource("9_6c266")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText2" type="Node" parent="DialogInteraction2"]
 script = ExtResource("7_761wi")
 text = "\"The pool entrance is the other way.\""
+frame = 1
 npc_info = ExtResource("9_6c266")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText" type="Node" parent="."]
 script = ExtResource("7_761wi")
-text = "\"Sorry for getting distracted, Teresa.\""
-npc_info = ExtResource("8_ml4fq")
+text = "“Let’s head to the pool now.”"
+npc_info = ExtResource("9_6c266")
 
 [node name="DialogText2" type="Node" parent="."]
 script = ExtResource("7_761wi")
-text = "\"You're right.\""
-npc_info = ExtResource("8_ml4fq")
-
-[node name="DialogText3" type="Node" parent="."]
-script = ExtResource("7_761wi")
-text = "\"We have to act quick if we want to find the missing lifeguard.\""
-npc_info = ExtResource("8_ml4fq")
-
-[node name="DialogText4" type="Node" parent="."]
-script = ExtResource("7_761wi")
-text = "\"Where are the others?\""
-npc_info = ExtResource("8_ml4fq")
-
-[node name="DialogText5" type="Node" parent="."]
-script = ExtResource("7_761wi")
-text = "\"Officer Eris and Detective Lowkey are in the pool room already.\""
+text = "“This place closes soon.”"
+frame = 1
 npc_info = ExtResource("9_6c266")
 
-[node name="DialogText6" type="Node" parent="."]
-script = ExtResource("7_761wi")
-text = "\"The dispatch request said that the lifeguard was last seen in the pool area, but they didn't see where they went after.\""
-npc_info = ExtResource("9_6c266")
+[node name="Follower" parent="." instance=ExtResource("12_6c266")]
+position = Vector2(60, 237)
+spritesheet = ExtResource("13_fvy66")
+distance = 15
 
-[node name="DialogText7" type="Node" parent="."]
-script = ExtResource("7_761wi")
-text = "\"Everyone was evacuated after a while. The other lifeguard seemed to have called the police after his partner went missing.\""
-npc_info = ExtResource("9_6c266")
+[node name="DialogInteraction" parent="." instance=ExtResource("11_iqqml")]
+position = Vector2(144, 84)
+size = Vector2(96, 24)
 
-[node name="DialogText8" type="Node" parent="."]
+[node name="DialogText" type="Node" parent="DialogInteraction"]
 script = ExtResource("7_761wi")
-text = "\"We should get moving now.\""
-npc_info = ExtResource("9_6c266")
-
-[node name="DialogText9" type="Node" parent="."]
-script = ExtResource("7_761wi")
-text = "\"The others are waiting.\""
-npc_info = ExtResource("9_6c266")
+text = "Various flyers are scattered on the bulletin board."
+npc_info = ExtResource("13_6c266")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"

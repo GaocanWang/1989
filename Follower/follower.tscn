@@ -162,6 +162,7 @@ _data = {
 }
 
 [node name="Follower" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_my337")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
