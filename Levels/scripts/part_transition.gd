@@ -33,8 +33,6 @@ var dialog_items_1 : Array[ DialogItem ]
 var dialog_items_2 : Array[ DialogItem ]
 var dialog_items_3 : Array[ DialogItem ]
 var dialog_items_4 : Array[ DialogItem ]
-var dialog_items_5 : Array[ DialogItem ]
-
 var first_interaction : bool = true
 
 
@@ -71,8 +69,6 @@ func _ready() -> void:
 				dialog_items_3.append( d )
 			elif c.name == "4":
 				dialog_items_4.append( d )
-			elif c.name == "5":
-				dialog_items_5.append( d )
 	pass
 
 
@@ -177,9 +173,7 @@ func _on_yes() -> void:
 	await animation_player.animation_finished
 	DialogSystem.show_dialog( dialog_items_4 )
 	await DialogSystem.finished
-	AudioManager.play_music( music )
-	DialogSystem.show_dialog( dialog_items_5 )
-	await DialogSystem.finished
+	art.texture = load( "res://FullScreenArt/1920x1080-black-solid-color-background.jpg" )
 	get_tree().paused = false
 	LevelManager.load_new_part( "res://Levels/Part2/01.tscn", "LevelTransition", get_offset() )
 	pass

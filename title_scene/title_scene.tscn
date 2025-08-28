@@ -218,78 +218,78 @@ max_polyphony = 4
 
 [node name="DialogText" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
-text = "I never asked for this."
+text = "\"I never asked for this.\""
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText2" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
-text = "Not really, anyway."
+text = "\"Not really, anyway.\""
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText3" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
-text = "But then again, thats always the problem with me."
+text = "\"But then again, that's always the problem with me.\""
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText4" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
-text = "I never ask for anything."
+text = "\"I never ask for anything.\""
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText5" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
-text = "It's not like i have all the answers."
+text = "\"It's not like I have all the answers.\""
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText6" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
-text = "I...just don't feel like i need them."
+text = "\"I...just don't feel like I need them.\""
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText7" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
-text = "So why?"
+text = "\"So why?\""
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText8" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
-text = "Why am I still looking?"
+text = "\"Why am I still looking?\""
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText9" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
-text = "What truths am I trying to find?"
+text = "\"What truths am I trying to find?\""
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText10" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
-text = "Every choice I've made in my life..."
+text = "\"Every choice I've made in my life...\""
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText11" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
-text = "All the choices I'm about to make..."
+text = "\"All the choices I'm about to make...\""
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText12" type="Node" parent="1"]
 script = ExtResource("7_qv0fu")
-text = "...everyhing is about to change."
+text = "\"...everything is about to change.\""
 npc_info = ExtResource("8_iscpo")
 
 [node name="2" type="Node" parent="."]
 
 [node name="DialogText13" type="Node" parent="2"]
 script = ExtResource("7_qv0fu")
-text = "I'm not one to believe in fate or destiny but..."
+text = "\"I'm not one to believe in fate or destiny but...\""
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText14" type="Node" parent="2"]
 script = ExtResource("7_qv0fu")
-text = "This time , it feels different."
+text = "\"This time, it feels different.\""
 npc_info = ExtResource("8_iscpo")
 
 [node name="DialogText15" type="Node" parent="2"]
 script = ExtResource("7_qv0fu")
-text = "And for once, I can't predict what will happen next."
+text = "\"And for once, I can't predict what will happen next.\""
 slow = true
 npc_info = ExtResource("8_iscpo")

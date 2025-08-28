@@ -109,9 +109,13 @@ func show_dialog( _items : Array[ DialogItem ] ) -> void:
 	textbox_animation_player.play("textbox_rise")
 	if (portrait_sprite.texture == null ):
 		portrait_animation_player.play("portrait_appear_left")
-	elif (portrait_sprite.texture.resource_path == "res://Player/Sprites/GAME SIZE amelia placeholder sprite.png"):
+	elif (portrait_sprite.texture.resource_path == "res://npc/sprites/portraits/trial spritesheet.png"):
+		portrait_sprite.hframes = 3
 		portrait_animation_player.play("portrait_appear_left")
+		await portrait_animation_player.animation_finished
+		portrait_animation_player.play("portrait_animation")
 	else:
+		portrait_sprite.hframes = 1
 		portrait_animation_player.play("portrait_appear_right")
 	pass
 
@@ -122,7 +126,7 @@ func hide_dialog() -> void:
 	textbox_animation_player.play("textbox_drop")
 	if (portrait_sprite.texture == null):
 		portrait_animation_player.play("portrait_disappear_left")
-	elif (portrait_sprite.texture.resource_path == "res://Player/Sprites/GAME SIZE amelia placeholder sprite.png"):
+	elif (portrait_sprite.texture.resource_path == "res://npc/sprites/portraits/trial spritesheet.png"):
 		portrait_animation_player.play("portrait_disappear_left")
 	else:
 		portrait_animation_player.play("portrait_disappear_right")
@@ -188,7 +192,7 @@ func set_dialog_text( _d ) -> void:
 	if portrait_sprite.texture != _d.npc_info.portrait:
 		if (portrait_sprite.texture == null):
 			pass
-		elif (portrait_sprite.texture.resource_path == "res://Player/Sprites/GAME SIZE amelia placeholder sprite.png"):
+		elif (portrait_sprite.texture.resource_path == "res://npc/sprites/portraits/trial spritesheet.png"):
 			portrait_animation_player.play("portrait_disappear_left")
 			await portrait_animation_player.animation_finished
 		else:
@@ -197,9 +201,13 @@ func set_dialog_text( _d ) -> void:
 		portrait_sprite.texture = _d.npc_info.portrait
 		if (portrait_sprite.texture == null ):
 			pass
-		elif (portrait_sprite.texture.resource_path == "res://Player/Sprites/GAME SIZE amelia placeholder sprite.png"):
+		elif (portrait_sprite.texture.resource_path == "res://npc/sprites/portraits/trial spritesheet.png"):
+			portrait_sprite.hframes = 3
 			portrait_animation_player.play("portrait_appear_left")
+			await portrait_animation_player.animation_finished
+			portrait_animation_player.play("portrait_animation")
 		else:
+			portrait_sprite.hframes = 1
 			portrait_animation_player.play("portrait_appear_right")
 	pass
 
@@ -271,6 +279,10 @@ func set_dialog_background( _d : DialogBackground ):
 		background_animation_player.play( "final_fade_out" )
 		await background_animation_player.animation_finished
 		background.texture = null
+	
+	dialog_item_index += 1
+	start_dialog()
+	
 	pass
 
 

@@ -19,3 +19,9 @@ func long_fade_in() -> bool:
 	animation_player.play("long_fade_in")
 	await animation_player.animation_finished
 	return true
+
+
+func instant_fade_out() -> bool:
+	animation_player.play("instant_fade_out")
+	await animation_player.animation_finished
+	return true

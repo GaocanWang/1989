@@ -72,7 +72,7 @@ func load_new_part(
 	target_transition = _target_transition
 	position_offset = _position_offset
 	
-	await SceneTransition.fade_out()
+	await SceneTransition.instant_fade_out()
 	
 	level_load_started.emit()
 	
