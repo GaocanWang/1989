@@ -10,6 +10,8 @@ var target_transition : String
 var position_offset : Vector2
 var levels_explored : Array[ String ]
 
+var locker_interacted : bool = false
+
 
 func _ready() -> void:
 	await get_tree().process_frame

@@ -21,6 +21,7 @@ var dialog_item_index : int = 0
 var slow : bool = false
 var debate : bool = false
 var debate_fails : int = 0
+var previous_dialog_text : DialogItem = null
 
 @onready var dialog_ui: Control = $DialogUI
 @onready var content: RichTextLabel = $DialogUI/PanelContainer/RichTextLabel
@@ -107,10 +108,6 @@ func show_dialog( _items : Array[ DialogItem ] ) -> void:
 	start_dialog()
 	dialog_ui.visible = true
 	textbox_animation_player.play("textbox_rise")
-	if (portrait_sprite.texture == null ):
-		portrait_animation_player.play("portrait_appear_left")
-	else:
-		portrait_animation_player.play("portrait_appear_right")
 	pass
 
 
@@ -118,9 +115,7 @@ func show_dialog( _items : Array[ DialogItem ] ) -> void:
 ## Hide Dialog System UI
 func hide_dialog() -> void:
 	textbox_animation_player.play("textbox_drop")
-	if (portrait_sprite.texture == null):
-		portrait_animation_player.play("portrait_disappear_left")
-	elif (portrait_sprite.texture.resource_path == "res://npc/sprites/portraits/trial spritesheet.png"):
+	if (previous_dialog_text.npc_info.npc_name == "Amelia"):
 		portrait_animation_player.play("portrait_disappear_left")
 	else:
 		portrait_animation_player.play("portrait_disappear_right")
@@ -131,6 +126,7 @@ func hide_dialog() -> void:
 	dialog_ui.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	content.text = ""
+	portrait_sprite.texture = null
 	background.texture = null
 	background.hide()
 	progress_bar.hide()
@@ -184,17 +180,20 @@ func set_dialog_text( _d ) -> void:
 	text_in_progress = true
 	start_timer()
 	if portrait_sprite.texture != _d.npc_info.portrait:
-		if (portrait_sprite.texture == null):
-			pass
-		else:
-			portrait_animation_player.play("portrait_disappear_right")
+		if (portrait_sprite.texture != null):
+			if (previous_dialog_text.npc_info.npc_name == "Amelia"):
+				portrait_animation_player.play("portrait_disappear_left")
+			else:
+				portrait_animation_player.play("portrait_disappear_right")
 			await portrait_animation_player.animation_finished
 		portrait_sprite.texture = _d.npc_info.portrait
-		if (portrait_sprite.texture == null ):
-			pass
+		if (_d.npc_info.npc_name == "Amelia"):
+			portrait_animation_player.play("portrait_appear_left")
 		else:
 			portrait_animation_player.play("portrait_appear_right")
 	portrait_sprite.frame = _d.frame
+	
+	previous_dialog_text = _d
 	pass
 
 
