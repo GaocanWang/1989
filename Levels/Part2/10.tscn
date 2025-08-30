@@ -1,7 +1,6 @@
-[gd_scene load_steps=17 format=4 uid="uid://bdsd0lgj3ywc2"]
+[gd_scene load_steps=14 format=4 uid="uid://bdsd0lgj3ywc2"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_xllnh"]
-[ext_resource type="AudioStream" uid="uid://bg0omm6hpjbsi" path="res://Levels/music/dream sequence bgm.mp3" id="2_5r4hx"]
 [ext_resource type="TileSet" uid="uid://k4sa1rxa7ww0" path="res://Tile Maps/Tile Sets/pool.tres" id="3_2xyrx"]
 [ext_resource type="Script" uid="uid://2hobeot03u4v" path="res://Tile Maps/level_tile_map.gd" id="4_2xghu"]
 [ext_resource type="PackedScene" uid="uid://uqut3xy8f7mb" path="res://Levels/player_spawn.tscn" id="5_muvec"]
@@ -14,12 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="12_trw21"]
 [ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/box.tres" id="13_ek7bd"]
 [ext_resource type="PackedScene" uid="uid://bilml01wjryfn" path="res://Interactables/ValveSystem/valve_system.tscn" id="14_ek7bd"]
-[ext_resource type="Script" uid="uid://dst30i4jr8cmt" path="res://Interactables/dialog/scripts/dialog_sfx.gd" id="14_jjkcr"]
-[ext_resource type="AudioStream" uid="uid://cy6skrvywkmm7" path="res://Interactables/Cabinet/evidence or important thing sfx.mp3" id="15_pra55"]
 
 [node name="10" type="Node2D"]
 script = ExtResource("1_xllnh")
-music = ExtResource("2_5r4hx")
 
 [node name="Floor" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAADAAAAAQAAAAQAAAADAAIAAQAAAAQAAAADAAMAAQAAAAQAAAADAAQAAQAAAAQAAAADAAUAAQAAAAQAAAADAAYAAQAAAAQAAAADAAcAAQAAAAQAAAAEAAAAAQAAAAQAAAAEAAIAAQAAAAQAAAAEAAMAAQAAAAQAAAAEAAQAAQAAAAQAAAAEAAUAAQAAAAQAAAAEAAYAAQAAAAQAAAAEAAcAAQAAAAQAAAAFAAAAAQAAAAQAAAAGAAAAAQAAAAQAAAAHAAAAAQAAAAQAAAAIAAAAAQAAAAQAAAAJAAAAAQAAAAQAAAAKAAAAAQAAAAQAAAALAAAAAQAAAAQAAAAAAAEAAQAAAAQAAAAAAAIAAQAAAAQAAAABAAMAAQAAAAQAAAABAAQAAQAAAAQAAAABAAUAAQAAAAQAAAABAAYAAQAAAAQAAAABAAcAAQAAAAQAAAAAAAMAAQAAAAQAAAAAAAQAAQAAAAQAAAAAAAUAAQAAAAQAAAAAAAYAAQAAAAQAAAAAAAcAAQAAAAQAAAABAAAAAQAAAAQAAAABAAEAAQAAAAQAAAABAAIAAQAAAAQAAAACAAAAAQAAAAQAAAACAAEAAQAAAAQAAAACAAIAAQAAAAQAAAACAAMAAQAAAAQAAAACAAQAAQAAAAQAAAACAAUAAQAAAAQAAAACAAYAAQAAAAQAAAACAAcAAQAAAAQAAAAMAAAAAQAAAAQAAAAMAAIAAQAAAAQAAAAMAAMAAQAAAAQAAAAMAAQAAQAAAAQAAAAMAAUAAQAAAAQAAAAMAAYAAQAAAAQAAAAMAAcAAQAAAAQAAAANAAAAAQAAAAQAAAANAAIAAQAAAAQAAAANAAMAAQAAAAQAAAANAAQAAQAAAAQAAAANAAUAAQAAAAQAAAANAAYAAQAAAAQAAAANAAcAAQAAAAQAAAAOAAAAAQAAAAQAAAAOAAEAAQAAAAQAAAAOAAIAAQAAAAQAAAAOAAMAAQAAAAQAAAAOAAQAAQAAAAQAAAAOAAUAAQAAAAQAAAAOAAYAAQAAAAQAAAAOAAcAAQAAAAQAAAAAAAAAAQAAAAQAAAAPAAAAAQAAAAQAAAAPAAEAAQAAAAQAAAAPAAIAAQAAAAQAAAAPAAMAAQAAAAQAAAAPAAQAAQAAAAQAAAAPAAUAAQAAAAQAAAAPAAYAAQAAAAQAAAAPAAcAAQAAAAQAAAADAAEAAQAAAAQAAAAEAAEAAQAAAAQAAAAFAAEAAQAAAAQAAAAGAAEAAQAAAAQAAAAHAAEAAQAAAAQAAAAIAAEAAQAAAAQAAAAJAAEAAQAAAAQAAAAKAAEAAQAAAAQAAAALAAEAAQAAAAQAAAAMAAEAAQAAAAQAAAANAAEAAQAAAAQAAAAFAAIAAQAAAAQAAAAFAAMAAQAKAAAAAAAFAAQAAQAQAAAAAAAFAAUAAQAKAAAAAAAFAAYAAQAKAAAAAAAGAAIAAQAAAAQAAAAGAAMAAQAKAAAAAAAGAAQAAQAQAAAAAAAGAAUAAQAKAAAAAAAGAAYAAQAKAAAAAAAHAAIAAQAAAAQAAAAHAAMAAQAKAAAAAAAHAAQAAQAQAAAAAAAHAAUAAQAKAAAAAAAHAAYAAQAKAAAAAAAIAAIAAQAAAAQAAAAIAAMAAQAKAAAAAAAJAAIAAQAAAAQAAAAJAAMAAQAKAAAAAAAJAAQAAQAQAAAAAAAJAAUAAQAKAAAAAAAJAAYAAQAKAAAAAAAKAAIAAQAAAAQAAAAKAAMAAQAKAAAAAAAKAAQAAQAQAAAAAAAKAAUAAQAKAAAAAAAKAAYAAQAKAAAAAAALAAIAAQAAAAQAAAALAAMAAQAAAAQAAAALAAQAAQAAAAQAAAALAAUAAQAAAAQAAAALAAYAAQAAAAQAAAALAAcAAQAAAAQAAAAIAAQAAQAQAAAAAAAIAAUAAQAMAAAAAAAIAAYAAQAKAAAAAAAFAAcAAQAAAAQAAAAGAAcAAQAAAAQAAAAHAAcAAQAAAAQAAAAIAAcAAQAAAAQAAAAJAAcAAQAAAAQAAAAKAAcAAQAAAAQAAAAAAAgAAQAAAAQAAAABAAgAAQAAAAQAAAACAAgAAQAAAAQAAAADAAgAAQAAAAQAAAAEAAgAAQAAAAQAAAAFAAgAAQAAAAQAAAAGAAgAAQAAAAQAAAAHAAgAAQAAAAQAAAAIAAgAAQAAAAQAAAAJAAgAAQAAAAQAAAAKAAgAAQAAAAQAAAALAAgAAQAAAAQAAAAMAAgAAQAAAAQAAAANAAgAAQAAAAQAAAAOAAgAAQAAAAQAAAAPAAgAAQAAAAQAAAA=")
@@ -49,109 +45,70 @@ size = 1
 
 [node name="DialogText" type="Node" parent="."]
 script = ExtResource("7_5lixq")
-text = "“…”"
-npc_info = ExtResource("8_mgodn")
+text = "“You hear it too, don’t you?”"
+frame = 15
+npc_info = ExtResource("10_ek7bd")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText2" type="Node" parent="."]
 script = ExtResource("7_5lixq")
-text = "“Do you hear that?”"
-npc_info = ExtResource("8_mgodn")
+text = "“It’s kind of obnoxious.”"
+frame = 37
+npc_info = ExtResource("11_i1rcq")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText3" type="Node" parent="."]
 script = ExtResource("7_5lixq")
-text = "“Yeah.”"
-npc_info = ExtResource("9_trw21")
+text = "“I wouldn’t last ten minutes working in here.”"
+frame = 4
+npc_info = ExtResource("11_i1rcq")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText4" type="Node" parent="."]
 script = ExtResource("7_5lixq")
-text = "“It sounds like something rattling inside the walls.”"
-npc_info = ExtResource("9_trw21")
+text = "“…”"
+frame = 17
+npc_info = ExtResource("8_mgodn")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText5" type="Node" parent="."]
 script = ExtResource("7_5lixq")
-text = "“All these pipes, valves, and pressure systems… the noise could be coming from anywhere.”"
-npc_info = ExtResource("10_ek7bd")
+text = "“It’s rhythmic…”"
+frame = 19
+npc_info = ExtResource("8_mgodn")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText6" type="Node" parent="."]
 script = ExtResource("7_5lixq")
-text = "“This must be the maintenance room.”"
-npc_info = ExtResource("10_ek7bd")
+text = "“Do you think it’s caught in the drain?”"
+frame = 19
+npc_info = ExtResource("9_trw21")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText7" type="Node" parent="."]
 script = ExtResource("7_5lixq")
-text = "“It’s kind of obnoxious.”"
-npc_info = ExtResource("11_i1rcq")
+text = "“Could be.”"
+frame = 12
+npc_info = ExtResource("10_ek7bd")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText8" type="Node" parent="."]
 script = ExtResource("7_5lixq")
-text = "“I wouldn’t last ten minutes working in here.”"
-npc_info = ExtResource("11_i1rcq")
+text = "“We won’t know until we check.”"
+frame = 10
+npc_info = ExtResource("10_ek7bd")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText9" type="Node" parent="."]
-script = ExtResource("7_5lixq")
-text = "“…”"
-npc_info = ExtResource("8_mgodn")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText10" type="Node" parent="."]
-script = ExtResource("7_5lixq")
-text = "“It’s rhythmic…”"
-npc_info = ExtResource("8_mgodn")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText11" type="Node" parent="."]
-script = ExtResource("7_5lixq")
-text = "“Whatever’s making that sound…it’s moving with the flow of the water.”"
-npc_info = ExtResource("8_mgodn")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText12" type="Node" parent="."]
-script = ExtResource("7_5lixq")
-text = "“Like it’s caught in the system.”"
-npc_info = ExtResource("8_mgodn")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText13" type="Node" parent="."]
-script = ExtResource("7_5lixq")
-text = "“Do you think it could be the key?”"
-npc_info = ExtResource("9_trw21")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText14" type="Node" parent="."]
-script = ExtResource("7_5lixq")
-text = "“Could be.”"
-npc_info = ExtResource("10_ek7bd")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText15" type="Node" parent="."]
-script = ExtResource("7_5lixq")
-text = "“But how a key lands inside the draining system is beyond me.”"
-npc_info = ExtResource("10_ek7bd")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText16" type="Node" parent="."]
-script = ExtResource("7_5lixq")
-text = "“Either way, we won’t know until we check.”"
-npc_info = ExtResource("8_mgodn")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText17" type="Node" parent="."]
 script = ExtResource("7_5lixq")
 text = "“Let’s search the room then.”"
 npc_info = ExtResource("9_trw21")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText18" type="Node" parent="."]
+[node name="DialogText10" type="Node" parent="."]
 script = ExtResource("7_5lixq")
-text = "“Let’s figure out what’s making that noise.”"
+text = "“Figure out what’s making that noise.”"
+frame = 1
 npc_info = ExtResource("9_trw21")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
@@ -172,191 +129,58 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText3" type="Node" parent="Drain"]
 script = ExtResource("7_5lixq")
-text = "“Hold on…”"
+text = "“There’s something down there.”"
+frame = 15
 npc_info = ExtResource("8_mgodn")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText4" type="Node" parent="Drain"]
 script = ExtResource("7_5lixq")
-text = "“There’s something down there.”"
-npc_info = ExtResource("8_mgodn")
+text = "“It’s stuck under the mesh…just beneath the grate.”"
+frame = 10
+npc_info = ExtResource("10_ek7bd")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText5" type="Node" parent="Drain"]
 script = ExtResource("7_5lixq")
-text = "”Hold on a sec…that’s the key!”"
-npc_info = ExtResource("9_trw21")
+text = "“Can you reach it?”"
+frame = 30
+npc_info = ExtResource("11_i1rcq")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText6" type="Node" parent="Drain"]
 script = ExtResource("7_5lixq")
-text = "“You’re right.”"
-npc_info = ExtResource("10_ek7bd")
+text = "“Not at all.”"
+frame = 18
+npc_info = ExtResource("8_mgodn")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText7" type="Node" parent="Drain"]
 script = ExtResource("7_5lixq")
-text = "“It’s stuck under the mesh…just beneath the grate.”"
-npc_info = ExtResource("10_ek7bd")
+text = "“Whatever it is, it’s near the bottom.”"
+frame = 17
+npc_info = ExtResource("8_mgodn")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText8" type="Node" parent="Drain"]
 script = ExtResource("7_5lixq")
-text = "“Can you reach it?”"
-npc_info = ExtResource("11_i1rcq")
+text = "“It looks a little bit like a key.”"
+frame = 19
+npc_info = ExtResource("9_trw21")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText9" type="Node" parent="Drain"]
 script = ExtResource("7_5lixq")
-text = "“Not at all.”"
+text = "If it was just a little closer to the top…”"
+frame = 16
 npc_info = ExtResource("8_mgodn")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText10" type="Node" parent="Drain"]
 script = ExtResource("7_5lixq")
-text = "“The grate’s screwed down tight, and I don’t have anything thin enough to pry it open.”"
-npc_info = ExtResource("8_mgodn")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText11" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
-text = "“There’s a small keyhole in the grate.”"
-npc_info = ExtResource("11_i1rcq")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText12" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
-text = "“If only we had the key…”"
-npc_info = ExtResource("11_i1rcq")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText13" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
-text = "“…But then we wouldn’t need to open the grate.\""
-npc_info = ExtResource("11_i1rcq")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText14" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
-text = "“We were so close!”"
-npc_info = ExtResource("9_trw21")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText15" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
-text = "“Is there no way we can get the key?”"
-npc_info = ExtResource("9_trw21")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText16" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
-text = "“If only it was just a little closer…”"
-npc_info = ExtResource("8_mgodn")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText17" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
 text = "“I’d probably be able to fish it out.”"
+frame = 15
 npc_info = ExtResource("8_mgodn")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText18" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
-text = "“…”"
-npc_info = ExtResource("10_ek7bd")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText19" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
-text = "“What if we pushed the key up?”"
-npc_info = ExtResource("10_ek7bd")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText20" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
-text = "“Push it up?”"
-npc_info = ExtResource("8_mgodn")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText21" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
-text = "“The key’s just sitting there, right?”"
-npc_info = ExtResource("10_ek7bd")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText22" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
-text = "“If we could raise the water level…”"
-npc_info = ExtResource("10_ek7bd")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogSFX" type="Node" parent="Drain"]
-script = ExtResource("14_jjkcr")
-sfx = ExtResource("15_pra55")
-metadata/_custom_type_script = "uid://dst30i4jr8cmt"
-
-[node name="DialogText23" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
-text = "“…It might float to the top!”"
-npc_info = ExtResource("8_mgodn")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogSFX2" type="Node" parent="Drain"]
-script = ExtResource("14_jjkcr")
-metadata/_custom_type_script = "uid://dst30i4jr8cmt"
-
-[node name="DialogText24" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
-text = "“That might just work.”"
-npc_info = ExtResource("11_i1rcq")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText25" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
-text = "“But are we really about to flood the maintenance room?”"
-npc_info = ExtResource("11_i1rcq")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText26" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
-text = "“Only just enough to bring the key within reach.”"
-npc_info = ExtResource("10_ek7bd")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText27" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
-text = "“I saw some valves in the back!”"
-npc_info = ExtResource("9_trw21")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText28" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
-text = "“We might be able to control the water flow with them.”"
-npc_info = ExtResource("9_trw21")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText29" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
-text = "“If we redirect the water pressure into this section of the pipes…”"
-npc_info = ExtResource("8_mgodn")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText30" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
-text = "“…We could raise the water level inside the drain!”"
-npc_info = ExtResource("9_trw21")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText31" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
-text = "“It’s settled.”"
-npc_info = ExtResource("10_ek7bd")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText32" type="Node" parent="Drain"]
-script = ExtResource("7_5lixq")
-text = "“We need to go check the meters.”"
-npc_info = ExtResource("10_ek7bd")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="Repeat" type="Node" parent="Drain"]
@@ -369,19 +193,21 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText2" type="Node" parent="Drain/Repeat"]
 script = ExtResource("7_5lixq")
-text = "Through the mesh grate, the key faintly glints beneath the water."
+text = "Through the mesh grate, something faintly glints beneath the water."
 npc_info = ExtResource("13_ek7bd")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText3" type="Node" parent="Drain/Repeat"]
 script = ExtResource("7_5lixq")
-text = "(It’s still out of reach.)"
+text = "If it was just a little closer to the top…”"
+frame = 16
 npc_info = ExtResource("8_mgodn")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText4" type="Node" parent="Drain/Repeat"]
 script = ExtResource("7_5lixq")
-text = "(We need to increase the water pressure and float it up.)"
+text = "“I’d probably be able to fish it out.”"
+frame = 15
 npc_info = ExtResource("8_mgodn")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
@@ -401,12 +227,6 @@ text = "The noise doesn’t appear to be coming from inside these pipes."
 npc_info = ExtResource("13_ek7bd")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText3" type="Node" parent="Pipes"]
-script = ExtResource("7_5lixq")
-text = "(Not here…)"
-npc_info = ExtResource("8_mgodn")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
 [node name="PoolFilter" parent="." instance=ExtResource("12_trw21")]
 position = Vector2(132, 84)
 
@@ -420,30 +240,6 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 script = ExtResource("7_5lixq")
 text = "It appears to be the pool filter."
 npc_info = ExtResource("13_ek7bd")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText3" type="Node" parent="PoolFilter"]
-script = ExtResource("7_5lixq")
-text = "“These capture small things in the pool, right?”"
-npc_info = ExtResource("9_trw21")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText4" type="Node" parent="PoolFilter"]
-script = ExtResource("7_5lixq")
-text = "“Yeah, but the keys wouldn’t be here.”"
-npc_info = ExtResource("10_ek7bd")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText5" type="Node" parent="PoolFilter"]
-script = ExtResource("7_5lixq")
-text = "“These only capture small debris that float in the water.”"
-npc_info = ExtResource("10_ek7bd")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText6" type="Node" parent="PoolFilter"]
-script = ExtResource("7_5lixq")
-text = "“The keys would sink.”"
-npc_info = ExtResource("10_ek7bd")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="Chlorinator" parent="." instance=ExtResource("12_trw21")]
@@ -463,56 +259,71 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText3" type="Node" parent="Chlorinator"]
 script = ExtResource("7_5lixq")
-text = "“We won’t find the keys here either.”"
-npc_info = ExtResource("11_i1rcq")
+text = "“Not here.”"
+frame = 10
+npc_info = ExtResource("10_ek7bd")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText4" type="Node" parent="Chlorinator"]
 script = ExtResource("7_5lixq")
-text = "“It only releases chlorine at set levels.”"
-npc_info = ExtResource("11_i1rcq")
+text = "“This only releases chlorine at set levels.”"
+frame = 4
+npc_info = ExtResource("10_ek7bd")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText5" type="Node" parent="Chlorinator"]
 script = ExtResource("7_5lixq")
-text = "“…”"
+text = "“What’s it set to right now?\""
+frame = 9
 npc_info = ExtResource("8_mgodn")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText6" type="Node" parent="Chlorinator"]
 script = ExtResource("7_5lixq")
-text = "“What’s it set to right now?”"
-npc_info = ExtResource("8_mgodn")
+text = "“Right now?”"
+frame = 20
+npc_info = ExtResource("9_trw21")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText7" type="Node" parent="Chlorinator"]
 script = ExtResource("7_5lixq")
-text = "“Right now?”"
+text = "“Well they don’t change these often I think.”"
+frame = 5
 npc_info = ExtResource("9_trw21")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText8" type="Node" parent="Chlorinator"]
 script = ExtResource("7_5lixq")
-text = "“Well they don’t change these often I think.”"
+text = "“It’s set to normal.”"
 npc_info = ExtResource("9_trw21")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText9" type="Node" parent="Chlorinator"]
 script = ExtResource("7_5lixq")
-text = "“It’s set to normal.”"
-npc_info = ExtResource("9_trw21")
+text = "(Then why is the smell so strong?)"
+frame = 10
+npc_info = ExtResource("8_mgodn")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText10" type="Node" parent="Chlorinator"]
 script = ExtResource("7_5lixq")
-text = "(It’s only set to normal?)"
+text = "(I smelled chloramines while talking with X and Y earlier…)"
+frame = 16
 npc_info = ExtResource("8_mgodn")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText11" type="Node" parent="Chlorinator"]
+[node name="Repeat" type="Node" parent="Chlorinator"]
+
+[node name="DialogText" type="Node" parent="Chlorinator/Repeat"]
 script = ExtResource("7_5lixq")
-text = "(Then why does…?)"
-npc_info = ExtResource("8_mgodn")
+text = "A compact machine connected to the pipes."
+npc_info = ExtResource("13_ek7bd")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Chlorinator/Repeat"]
+script = ExtResource("7_5lixq")
+text = "A label reads ‘Chlorinator’ in faded text."
+npc_info = ExtResource("13_ek7bd")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="ValveInstructions" parent="." instance=ExtResource("12_trw21")]
@@ -522,24 +333,6 @@ position = Vector2(168, 60)
 script = ExtResource("7_5lixq")
 text = "A laminated instruction sheet hangs beside the valve system."
 npc_info = ExtResource("13_ek7bd")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText2" type="Node" parent="ValveInstructions"]
-script = ExtResource("7_5lixq")
-text = "Read the instructions?"
-npc_info = ExtResource("13_ek7bd")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText3" type="Node" parent="ValveInstructions"]
-script = ExtResource("7_5lixq")
-text = "“Pretty sure all the meters over there are for the valve system.”"
-npc_info = ExtResource("10_ek7bd")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText4" type="Node" parent="ValveInstructions"]
-script = ExtResource("7_5lixq")
-text = "“We should try maxxing out the drainage system while keeping the others to a minimum.”"
-npc_info = ExtResource("10_ek7bd")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="ValveSystem" parent="." instance=ExtResource("14_ek7bd")]

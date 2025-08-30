@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cay22lvl0gutu"
+path="res://.godot/imported/error sfx.mp3-cc3f5c23cf385f768a607d5a48e1ff7e.mp3str"
+
+[deps]
+
+source_file="res://GUI/dialog_system/audio/error sfx.mp3"
+dest_files=["res://.godot/imported/error sfx.mp3-cc3f5c23cf385f768a607d5a48e1ff7e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

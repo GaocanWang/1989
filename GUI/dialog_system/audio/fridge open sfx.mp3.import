@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5f84mj51iufm"
+path="res://.godot/imported/fridge open sfx.mp3-4088a4a0829fbe6cc4e4d45f858f629d.mp3str"
+
+[deps]
+
+source_file="res://GUI/dialog_system/audio/fridge open sfx.mp3"
+dest_files=["res://.godot/imported/fridge open sfx.mp3-4088a4a0829fbe6cc4e4d45f858f629d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

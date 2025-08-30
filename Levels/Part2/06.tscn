@@ -1,25 +1,25 @@
 [gd_scene load_steps=17 format=4 uid="uid://c1ei0hjvfb0yb"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_n7hlk"]
-[ext_resource type="AudioStream" uid="uid://bg0omm6hpjbsi" path="res://Levels/music/dream sequence bgm.mp3" id="2_y1dao"]
+[ext_resource type="AudioStream" uid="uid://0aojls0cgt76" path="res://Levels/music/searching.mp3" id="2_sl37w"]
 [ext_resource type="TileSet" uid="uid://k4sa1rxa7ww0" path="res://Tile Maps/Tile Sets/pool.tres" id="3_q4xlc"]
 [ext_resource type="Script" uid="uid://2hobeot03u4v" path="res://Tile Maps/level_tile_map.gd" id="4_w1tfd"]
 [ext_resource type="PackedScene" uid="uid://uqut3xy8f7mb" path="res://Levels/player_spawn.tscn" id="5_70eui"]
 [ext_resource type="PackedScene" uid="uid://bt4r7451gfkr5" path="res://Levels/level_transition.tscn" id="6_5gb84"]
 [ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="7_q4xlc"]
-[ext_resource type="Resource" uid="uid://di457jgt256ub" path="res://npc/00_npcs/teresa.tres" id="8_q4xlc"]
-[ext_resource type="Resource" uid="uid://cx8yq3fk58aei" path="res://npc/00_npcs/lowkey.tres" id="9_5gb84"]
-[ext_resource type="Resource" uid="uid://ctbf7x8e37pym" path="res://npc/00_npcs/eris.tres" id="10_j788d"]
+[ext_resource type="Script" uid="uid://b8kxiife71bd1" path="res://Interactables/dialog/scripts/dialog_choice.gd" id="10_k8kbp"]
 [ext_resource type="Resource" uid="uid://c2w2tyjg78bol" path="res://npc/00_npcs/amelia.tres" id="11_iv8hn"]
+[ext_resource type="Script" uid="uid://cm6c0rnohy8s1" path="res://Interactables/dialog/scripts/dialog_branch.gd" id="11_rei0g"]
 [ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="12_iv8hn"]
+[ext_resource type="AudioStream" uid="uid://c5f84mj51iufm" path="res://GUI/dialog_system/audio/fridge open sfx.mp3" id="13_cxfa0"]
 [ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/box.tres" id="13_g7cit"]
+[ext_resource type="AudioStream" uid="uid://bashwf7whk7uh" path="res://GUI/dialog_system/audio/fridge close sfx.mp3" id="14_1xlkm"]
 [ext_resource type="Script" uid="uid://dst30i4jr8cmt" path="res://Interactables/dialog/scripts/dialog_sfx.gd" id="14_745q1"]
 [ext_resource type="PackedScene" uid="uid://byu8d21qbdi0r" path="res://Interactables/Bulletin/bulletin.tscn" id="14_g7cit"]
-[ext_resource type="AudioStream" uid="uid://chivdrddwt8ah" path="res://SFX/fridge open sfx.mp3" id="15_17eog"]
 
 [node name="06" type="Node2D"]
 script = ExtResource("1_n7hlk")
-music = ExtResource("2_y1dao")
+music = ExtResource("2_sl37w")
 
 [node name="Floor" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAABAAAAAQAAAAQAAAABAAEAAQAAAAQAAAABAAIAAQAAAAQAAAABAAMAAQAAAAQAAAABAAQAAQAAAAQAAAABAAUAAQAAAAQAAAABAAYAAQAAAAQAAAABAAcAAQAAAAQAAAABAAgAAQAAAAQAAAACAAAAAQAAAAQAAAACAAEAAQAAAAQAAAACAAIAAQAAAAQAAAACAAMAAQAAAAQAAAACAAQAAQAAAAQAAAACAAUAAQAAAAQAAAACAAYAAQAAAAQAAAACAAcAAQAAAAQAAAACAAgAAQAAAAQAAAADAAAAAQAAAAQAAAADAAEAAQAAAAQAAAADAAIAAQAAAAQAAAADAAMAAQAAAAQAAAADAAQAAQAAAAQAAAADAAUAAQAAAAQAAAADAAYAAQAAAAQAAAADAAcAAQAAAAQAAAADAAgAAQAAAAQAAAAEAAAAAQAAAAQAAAAEAAEAAQAAAAQAAAAEAAIAAQAAAAQAAAAEAAMAAQAAAAQAAAAEAAQAAQAAAAAAAAAEAAUAAQAAAAAAAAAEAAYAAQAAAAAAAAAEAAcAAQAAAAQAAAAEAAgAAQAAAAQAAAAFAAAAAQAAAAQAAAAFAAEAAQAAAAQAAAAFAAIAAQAAAAQAAAAFAAMAAQAAAAQAAAAFAAQAAQAAAAAAAAAFAAUAAQAAAAAAAAAFAAYAAQAAAAAAAAAFAAcAAQAAAAQAAAAFAAgAAQAAAAQAAAAGAAAAAQAAAAQAAAAGAAEAAQAAAAQAAAAGAAIAAQAAAAQAAAAGAAMAAQAAAAQAAAAGAAQAAQAAAAAAAAAGAAUAAQAAAAAAAAAGAAYAAQAAAAAAAAAGAAcAAQAAAAQAAAAHAAAAAQAAAAQAAAAHAAEAAQAAAAQAAAAHAAIAAQAAAAQAAAAHAAMAAQAAAAQAAAAHAAQAAQAAAAAAAAAHAAUAAQAAAAAAAAAHAAYAAQAAAAAAAAAHAAcAAQAAAAQAAAAIAAAAAQAAAAQAAAAIAAEAAQAAAAQAAAAIAAIAAQAAAAQAAAAIAAMAAQAAAAQAAAAIAAQAAQAAAAAAAAAIAAUAAQAAAAAAAAAIAAYAAQAAAAAAAAAIAAcAAQAAAAQAAAAJAAAAAQAAAAQAAAAJAAEAAQAAAAQAAAAJAAIAAQAAAAQAAAAJAAMAAQAAAAQAAAAJAAQAAQAAAAAAAAAJAAUAAQAAAAAAAAAJAAYAAQAAAAAAAAAJAAcAAQAAAAQAAAAJAAgAAQAAAAQAAAAKAAAAAQAAAAQAAAAKAAEAAQAAAAQAAAAKAAIAAQAAAAQAAAAKAAMAAQAAAAQAAAAKAAQAAQAAAAAAAAAKAAUAAQAAAAAAAAAKAAYAAQAAAAAAAAAKAAcAAQAAAAQAAAAKAAgAAQAAAAQAAAALAAAAAQAAAAQAAAALAAEAAQAAAAQAAAALAAIAAQAAAAQAAAALAAMAAQAAAAQAAAALAAQAAQAAAAAAAAALAAUAAQAAAAAAAAALAAYAAQAAAAAAAAALAAcAAQAAAAQAAAALAAgAAQAAAAQAAAAMAAAAAQAAAAQAAAAMAAEAAQAAAAQAAAAMAAIAAQAAAAQAAAAMAAMAAQAAAAQAAAAMAAQAAQAAAAQAAAAMAAUAAQAAAAQAAAAMAAYAAQAAAAQAAAAMAAcAAQAAAAQAAAAMAAgAAQAAAAQAAAANAAAAAQAAAAQAAAANAAEAAQAAAAQAAAANAAIAAQAAAAQAAAANAAMAAQAAAAQAAAANAAQAAQAAAAQAAAANAAUAAQAAAAQAAAANAAYAAQAAAAQAAAANAAcAAQAAAAQAAAANAAgAAQAAAAQAAAAOAAAAAQAAAAQAAAAOAAEAAQAAAAQAAAAOAAIAAQAAAAQAAAAOAAMAAQAAAAQAAAAOAAQAAQAAAAQAAAAOAAUAAQAAAAQAAAAOAAYAAQAAAAQAAAAOAAcAAQAAAAQAAAAOAAgAAQAAAAQAAAAAAAAAAQAAAAQAAAAAAAEAAQAAAAQAAAAAAAIAAQAAAAQAAAAAAAMAAQAAAAQAAAAAAAQAAQAAAAQAAAAAAAUAAQAAAAQAAAAAAAYAAQAAAAQAAAAAAAcAAQAAAAQAAAAAAAgAAQAAAAQAAAAPAAAAAQAAAAQAAAAPAAEAAQAAAAQAAAAPAAIAAQAAAAQAAAAPAAMAAQAAAAQAAAAPAAQAAQAAAAQAAAAPAAUAAQAAAAQAAAAPAAYAAQAAAAQAAAAPAAcAAQAAAAQAAAAPAAgAAQAAAAQAAAAGAAgAAQAAAAQAAAAHAAgAAQAAAAQAAAAIAAgAAQAAAAQAAAA=")
@@ -47,48 +47,6 @@ target_transition_area = "LevelTransition2"
 door = true
 size = 1
 side = 2
-
-[node name="DialogText" type="Node" parent="."]
-script = ExtResource("7_q4xlc")
-text = "”Whoa, this looks like the staff lounge.”"
-npc_info = ExtResource("8_q4xlc")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText2" type="Node" parent="."]
-script = ExtResource("7_q4xlc")
-text = "“You’ve got cushions and couches.”"
-npc_info = ExtResource("8_q4xlc")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText3" type="Node" parent="."]
-script = ExtResource("7_q4xlc")
-text = "“There's quite a few places in here we can check for the key.”"
-npc_info = ExtResource("9_5gb84")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText4" type="Node" parent="."]
-script = ExtResource("7_q4xlc")
-text = "“I can’t imagine any other place to lose a key.”"
-npc_info = ExtResource("9_5gb84")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText5" type="Node" parent="."]
-script = ExtResource("7_q4xlc")
-text = "“It’s got to be in here.”"
-npc_info = ExtResource("10_j788d")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText6" type="Node" parent="."]
-script = ExtResource("7_q4xlc")
-text = "“Then let’s start looking.”"
-npc_info = ExtResource("8_q4xlc")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
-[node name="DialogText7" type="Node" parent="."]
-script = ExtResource("7_q4xlc")
-text = "“…”"
-npc_info = ExtResource("11_iv8hn")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="Chair" parent="." instance=ExtResource("12_iv8hn")]
 position = Vector2(180, 127)
@@ -133,47 +91,44 @@ npc_info = ExtResource("13_g7cit")
 
 [node name="DialogText3" type="Node" parent="Fridge"]
 script = ExtResource("7_q4xlc")
-text = "\"This fridge is so boring.\""
-npc_info = ExtResource("8_q4xlc")
+text = "Open it?"
+npc_info = ExtResource("13_g7cit")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText4" type="Node" parent="Fridge"]
-script = ExtResource("7_q4xlc")
-text = "“No magnets, no notes, and no photos.”"
-npc_info = ExtResource("8_q4xlc")
+[node name="DialogChoice" type="Node" parent="Fridge"]
+script = ExtResource("10_k8kbp")
+npc_info = ExtResource("13_g7cit")
+metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
-[node name="DialogText5" type="Node" parent="Fridge"]
-script = ExtResource("7_q4xlc")
-text = "“Do they even use it at all?”"
-npc_info = ExtResource("8_q4xlc")
+[node name="DialogBranch" type="Node" parent="Fridge/DialogChoice"]
+script = ExtResource("11_rei0g")
+text = "Yes"
+npc_info = ExtResource("13_g7cit")
+metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
-[node name="DialogText6" type="Node" parent="Fridge"]
-script = ExtResource("7_q4xlc")
-text = "“Worth a check.”"
-npc_info = ExtResource("9_5gb84")
-
-[node name="DialogSFX" type="Node" parent="Fridge"]
+[node name="DialogSFX" type="Node" parent="Fridge/DialogChoice/DialogBranch"]
 script = ExtResource("14_745q1")
-sfx = ExtResource("15_17eog")
+sfx = ExtResource("13_cxfa0")
+npc_info = ExtResource("13_g7cit")
 metadata/_custom_type_script = "uid://dst30i4jr8cmt"
 
-[node name="DialogText7" type="Node" parent="Fridge"]
+[node name="DialogText" type="Node" parent="Fridge/DialogChoice/DialogBranch"]
 script = ExtResource("7_q4xlc")
-text = "“Some fizzy drinks and that’s it.”"
-npc_info = ExtResource("10_j788d")
+text = "A few fizzy drinks sit inside."
+npc_info = ExtResource("13_g7cit")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogSFX2" type="Node" parent="Fridge"]
+[node name="DialogSFX2" type="Node" parent="Fridge/DialogChoice/DialogBranch"]
 script = ExtResource("14_745q1")
+sfx = ExtResource("14_1xlkm")
+npc_info = ExtResource("13_g7cit")
 metadata/_custom_type_script = "uid://dst30i4jr8cmt"
 
-[node name="DialogText8" type="Node" parent="Fridge"]
-script = ExtResource("7_q4xlc")
-text = "“Nothing worth of note then.”"
-npc_info = ExtResource("11_iv8hn")
-
-[node name="DialogText9" type="Node" parent="Fridge"]
-script = ExtResource("7_q4xlc")
-text = "“Let’s keep checking.”"
-npc_info = ExtResource("11_iv8hn")
+[node name="DialogBranch2" type="Node" parent="Fridge/DialogChoice"]
+script = ExtResource("11_rei0g")
+text = "No"
+npc_info = ExtResource("13_g7cit")
+metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="Microwave" parent="." instance=ExtResource("12_iv8hn")]
 position = Vector2(252, 96)
@@ -191,11 +146,13 @@ npc_info = ExtResource("13_g7cit")
 [node name="DialogText3" type="Node" parent="Microwave"]
 script = ExtResource("7_q4xlc")
 text = "(Nothing but dust on the top as well…)"
+frame = 10
 npc_info = ExtResource("11_iv8hn")
 
 [node name="DialogText4" type="Node" parent="Microwave"]
 script = ExtResource("7_q4xlc")
 text = "(Doesn’t look like it’s used often.)"
+frame = 9
 npc_info = ExtResource("11_iv8hn")
 
 [node name="Sink" parent="." instance=ExtResource("12_iv8hn")]
@@ -214,6 +171,7 @@ npc_info = ExtResource("13_g7cit")
 [node name="DialogText3" type="Node" parent="Sink"]
 script = ExtResource("7_q4xlc")
 text = "(Nothing of note here.)"
+frame = 9
 npc_info = ExtResource("11_iv8hn")
 
 [node name="GarbageCan" parent="." instance=ExtResource("12_iv8hn")]
@@ -222,27 +180,13 @@ size = Vector2(12, 12)
 
 [node name="DialogText" type="Node" parent="GarbageCan"]
 script = ExtResource("7_q4xlc")
-text = "A garbage can sits quietly in the corner, backed against the wall."
+text = "A garbage can sits quietly in the corner."
 npc_info = ExtResource("13_g7cit")
 
 [node name="DialogText2" type="Node" parent="GarbageCan"]
 script = ExtResource("7_q4xlc")
-text = "Crushed papers peek out from the top."
-npc_info = ExtResource("13_g7cit")
-
-[node name="DialogText3" type="Node" parent="GarbageCan"]
-script = ExtResource("7_q4xlc")
-text = "“Don’t tell me we’re gonna go dumpster diving.”"
-npc_info = ExtResource("10_j788d")
-
-[node name="DialogText4" type="Node" parent="GarbageCan"]
-script = ExtResource("7_q4xlc")
-text = "“There’s no way the key will be inside there, hon.”"
-npc_info = ExtResource("10_j788d")
-
-[node name="DialogText5" type="Node" parent="GarbageCan"]
-script = ExtResource("7_q4xlc")
-text = "“Just checking.”"
+text = "(I’m NOT sticking my hand in there.)"
+frame = 18
 npc_info = ExtResource("11_iv8hn")
 
 [node name="Table" parent="." instance=ExtResource("12_iv8hn")]
@@ -259,46 +203,10 @@ script = ExtResource("7_q4xlc")
 text = "Its plastic surface is scratched and stained from years of use."
 npc_info = ExtResource("13_g7cit")
 
-[node name="DialogText3" type="Node" parent="Table"]
-script = ExtResource("7_q4xlc")
-text = "“Guess this is where they hang out between shifts.”"
-npc_info = ExtResource("8_q4xlc")
-
-[node name="DialogText4" type="Node" parent="Table"]
-script = ExtResource("7_q4xlc")
-text = "“Not much of a break room if you ask me.”"
-npc_info = ExtResource("9_5gb84")
-
-[node name="DialogText5" type="Node" parent="Table"]
-script = ExtResource("7_q4xlc")
-text = "“And there’s no key on here either.”"
-npc_info = ExtResource("9_5gb84")
-
-[node name="DialogText6" type="Node" parent="Table"]
-script = ExtResource("7_q4xlc")
-text = "“At least they have a fridge.”"
-npc_info = ExtResource("10_j788d")
-
-[node name="DialogText7" type="Node" parent="Table"]
-script = ExtResource("7_q4xlc")
-text = "(…)"
-npc_info = ExtResource("11_iv8hn")
-
-[node name="DialogText8" type="Node" parent="Table"]
-script = ExtResource("7_q4xlc")
-text = "(Is the key even in this room?)"
-npc_info = ExtResource("11_iv8hn")
-
 [node name="Bulletin" parent="." instance=ExtResource("14_g7cit")]
 position = Vector2(144, 84)
 
 [node name="1" type="Node" parent="Bulletin"]
-
-[node name="pmo" type="Node" parent="Bulletin/1"]
-script = ExtResource("7_q4xlc")
-text = "pmo"
-npc_info = ExtResource("13_g7cit")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText" type="Node" parent="Bulletin/1"]
 script = ExtResource("7_q4xlc")
@@ -313,66 +221,41 @@ npc_info = ExtResource("13_g7cit")
 [node name="DialogText3" type="Node" parent="Bulletin/1"]
 script = ExtResource("7_q4xlc")
 text = "“Wait a minute…”"
+frame = 10
 npc_info = ExtResource("11_iv8hn")
 
 [node name="DialogText4" type="Node" parent="Bulletin/1"]
 script = ExtResource("7_q4xlc")
-text = "“This is the checkout log we were looking for earlier.”"
+text = "“This is the checkout log.”"
 npc_info = ExtResource("11_iv8hn")
 
 [node name="DialogText5" type="Node" parent="Bulletin/1"]
 script = ExtResource("7_q4xlc")
 text = "“For the pool equipment.”"
+frame = 15
 npc_info = ExtResource("11_iv8hn")
 
 [node name="2" type="Node" parent="Bulletin"]
 
-[node name="DialogText6" type="Node" parent="Bulletin/2"]
+[node name="DialogText" type="Node" parent="Bulletin/2"]
 script = ExtResource("7_q4xlc")
-text = "“They track everything on there?”"
-npc_info = ExtResource("8_q4xlc")
-
-[node name="DialogText7" type="Node" parent="Bulletin/2"]
-script = ExtResource("7_q4xlc")
-text = "“Only the community center’s equipment.”"
-npc_info = ExtResource("9_5gb84")
-
-[node name="DialogText8" type="Node" parent="Bulletin/2"]
-script = ExtResource("7_q4xlc")
-text = "“If a lifeguard needs to grab something for a swimmer, they’re supposed to log it.”"
-npc_info = ExtResource("9_5gb84")
-
-[node name="DialogText9" type="Node" parent="Bulletin/2"]
-script = ExtResource("7_q4xlc")
-text = "“That makes sense…”"
-npc_info = ExtResource("8_q4xlc")
-
-[node name="DialogText10" type="Node" parent="Bulletin/2"]
-script = ExtResource("7_q4xlc")
-text = "“So if piece of equipment went missing, they’d know who was last responsible.”"
-npc_info = ExtResource("8_q4xlc")
-
-[node name="DialogText11" type="Node" parent="Bulletin/2"]
-script = ExtResource("7_q4xlc")
-text = "“Is there anything about the keys?”"
-npc_info = ExtResource("10_j788d")
-
-[node name="DialogText12" type="Node" parent="Bulletin/2"]
-script = ExtResource("7_q4xlc")
-text = "“Nope.”"
+text = "(Looks like all the pool’s equipment is logged here.)"
+frame = 14
 npc_info = ExtResource("11_iv8hn")
 
-[node name="DialogText13" type="Node" parent="Bulletin/2"]
+[node name="DialogText2" type="Node" parent="Bulletin/2"]
 script = ExtResource("7_q4xlc")
-text = "“I’m starting to doubt the keys are in this room.”"
+text = "(If a lifeguard needs to grab something for a swimmer, it’s written in here.)"
+frame = 16
 npc_info = ExtResource("11_iv8hn")
 
-[node name="DialogText14" type="Node" parent="Bulletin/2"]
+[node name="DialogText3" type="Node" parent="Bulletin/2"]
 script = ExtResource("7_q4xlc")
-text = "“I’ll hang onto it just in case though.”"
+text = "(Could be useful later.)"
+frame = 2
 npc_info = ExtResource("11_iv8hn")
 
-[node name="DialogText15" type="Node" parent="Bulletin/2"]
+[node name="DialogText4" type="Node" parent="Bulletin/2"]
 script = ExtResource("7_q4xlc")
 text = "“YOU OBTAINED: [color=red]EQUIPMENT CHECKOUT LOG”[/color]"
 npc_info = ExtResource("13_g7cit")

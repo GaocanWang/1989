@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dwf1vpjwlp858"
+path="res://.godot/imported/debate system music.mp3-bfc1154097cadf39fa6bb1578dc2ac97.mp3str"
+
+[deps]
+
+source_file="res://GUI/dialog_system/audio/debate system music.mp3"
+dest_files=["res://.godot/imported/debate system music.mp3-bfc1154097cadf39fa6bb1578dc2ac97.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

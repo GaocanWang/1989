@@ -43,6 +43,7 @@ func _on_area_exit( _a : Area2D ) -> void:
 
 
 func player_interact() -> void:
+	await get_tree().process_frame
 	DialogSystem.show_dialog( dialog_items )
 	await DialogSystem.finished
 	get_tree().paused = true

@@ -277,8 +277,12 @@ func set_dialog_sfx( _d : DialogSFX ):
 		AudioManager.play_music( _d.sfx )
 	else:
 		AudioManager.play_music( get_tree().current_scene.music )
-	dialog_item_index += 1
-	start_dialog()
+	
+	if ( dialog_item_index < dialog_items.size() - 1 ):
+		dialog_item_index += 1
+		start_dialog()
+	else:
+		hide_dialog()
 	pass
 
 
