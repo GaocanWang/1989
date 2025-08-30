@@ -162,17 +162,18 @@ func _snap_to_grid() -> void:
 func _on_yes() -> void:
 	area.process_mode = Node.PROCESS_MODE_DISABLED
 	buttons.hide()
-	await SceneTransition.fade_out()
+	SceneTransition.fade_out()
 	await get_tree().create_timer(1).timeout
 	#play door opening sound
 	DialogSystem.show_dialog( dialog_items_3 )
 	await DialogSystem.finished
 	art.show()
 	animation_player.play("lower_art")
+	SceneTransition.fade_in()
 	await animation_player.animation_finished
 	DialogSystem.show_dialog( dialog_items_4 )
 	await DialogSystem.finished
-	art.texture = load( "res://FullScreenArt/1920x1080-black-solid-color-background.jpg" )
+	art.texture = load("res://FullScreenArt/1920x1080-black-solid-color-background.jpg")
 	LevelManager.load_new_part( "res://Levels/Part2/01.tscn", "LevelTransition", get_offset() )
 	pass
 

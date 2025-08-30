@@ -1,56 +1,66 @@
-[gd_scene load_steps=6 format=3 uid="uid://bilml01wjryfn"]
+[gd_scene load_steps=6 format=3 uid="uid://ytf2wkbvya7h"]
 
 [ext_resource type="Script" uid="uid://314hmdvu2w30" path="res://Interactables/ValveSystem/valve_system.gd" id="1_8qtk5"]
-[ext_resource type="Texture2D" uid="uid://c24pnq5f0ynsd" path="res://Interactables/ValveSystem/valve control system ui.png" id="2_nsbdn"]
-[ext_resource type="Texture2D" uid="uid://4tumr6wv6e7o" path="res://Interactables/ValveSystem/VALVE UI.png" id="3_bhotv"]
-[ext_resource type="Texture2D" uid="uid://pltpb5s7xo0p" path="res://Interactables/ValveSystem/METER LEVEL POINTER FOR SEMI CIRCLE METER.png" id="4_bhotv"]
-[ext_resource type="Texture2D" uid="uid://xccup2s5ygb1" path="res://Interactables/ValveSystem/METER LEVEL INDICATOR HORIZONTAL.png" id="5_0g0af"]
+[ext_resource type="Texture2D" uid="uid://dbav34husl5ao" path="res://Interactables/ValveSystem/puzzle1.png" id="2_8qtk5"]
+[ext_resource type="PackedScene" uid="uid://b53ecj84ionh4" path="res://Interactables/ValveSystem/valve_container.tscn" id="3_8qtk5"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qtk5"]
+size = Vector2(48, 48)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qtk5"]
+bg_color = Color(0.187176, 0.187176, 0.187176, 1)
+
+[node name="ValveSystem" type="Area2D"]
+process_mode = 3
 script = ExtResource("1_8qtk5")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8qtk5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_nsbdn")
+texture = ExtResource("2_8qtk5")
 
-[node name="Valve1" type="Sprite2D" parent="."]
-position = Vector2(642, 614)
-texture = ExtResource("3_bhotv")
+[node name="ValveContainer" parent="CanvasLayer/TextureRect" instance=ExtResource("3_8qtk5")]
+position = Vector2(981, 299)
 
-[node name="Valve2" type="Sprite2D" parent="."]
-position = Vector2(860, 624)
-texture = ExtResource("3_bhotv")
+[node name="ValveContainer2" parent="CanvasLayer/TextureRect" instance=ExtResource("3_8qtk5")]
+position = Vector2(1250, 519)
 
-[node name="Valve3" type="Sprite2D" parent="."]
-position = Vector2(1093, 620)
-texture = ExtResource("3_bhotv")
+[node name="ValveContainer3" parent="CanvasLayer/TextureRect" instance=ExtResource("3_8qtk5")]
+position = Vector2(981, 752)
 
-[node name="Valve4" type="Sprite2D" parent="."]
-position = Vector2(1312, 630)
-texture = ExtResource("3_bhotv")
+[node name="ValveContainer4" parent="CanvasLayer/TextureRect" instance=ExtResource("3_8qtk5")]
+position = Vector2(688, 514)
 
-[node name="LeftArrow" type="Sprite2D" parent="."]
-position = Vector2(821, 275)
-rotation = 2.0944
-texture = ExtResource("4_bhotv")
-centered = false
-offset = Vector2(-30, -15)
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.5
+offset_top = -39.0
+offset_right = 148.5
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="RightArrow" type="Sprite2D" parent="."]
-position = Vector2(1125, 272)
-rotation = 3.14159
-texture = ExtResource("4_bhotv")
-centered = false
-offset = Vector2(-30, -15)
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_8qtk5")
+text = "Adjust the valve system?"
 
-[node name="TopBar" type="Sprite2D" parent="."]
-position = Vector2(950, 350)
-texture = ExtResource("5_0g0af")
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Yes"
 
-[node name="BottomBar" type="Sprite2D" parent="."]
-position = Vector2(800, 430)
-texture = ExtResource("5_0g0af")
+[node name="Button2" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "No"

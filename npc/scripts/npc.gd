@@ -38,6 +38,11 @@ func gather_interactables() -> void:
 
 
 func _on_player_interacted() -> void:
+	if npc_resource.npc_name == "Lowkey":
+		LevelManager.x_interacted = true
+	elif npc_resource.npc_name == "Eris":
+		LevelManager.y_interacted = true
+	
 	update_direction( PlayerManager.player.global_position )
 	state = "idle"
 	velocity = Vector2.ZERO

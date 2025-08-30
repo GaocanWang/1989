@@ -11,7 +11,9 @@ var position_offset : Vector2
 var levels_explored : Array[ String ]
 
 var locker_interacted : bool = false
-
+var x_interacted : bool = false
+var y_interacted : bool = false
+var puzzle_solved : bool = false
 
 func _ready() -> void:
 	await get_tree().process_frame
@@ -32,6 +34,9 @@ func load_new_level(
 	get_tree().paused = true
 	target_transition = _target_transition
 	position_offset = _position_offset
+	
+	if ResourceUID.get_id_path(ResourceUID.text_to_id(level_path)) == "res://Levels/Part2/10.tscn" && !(x_interacted && y_interacted):
+		level_path = "res://Levels/Part2/13.tscn"
 	
 	await SceneTransition.fade_out()
 	
@@ -84,6 +89,7 @@ func load_new_part(
 	
 	if level_path == "res://Levels/Part2/01.tscn":
 		part2.emit()
+		print(level_path)
 	
 	await SceneTransition.long_fade_in()
 	

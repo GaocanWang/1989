@@ -1,47 +1,105 @@
-class_name ValveSystem extends CanvasLayer
+class_name ValveSystem extends Area2D
 
-var valve_1_rotation : int = 0
-var valve_2_rotation : int = 0
-var valve_3_rotation : int = 0
-var valve_4_rotation : int = 0
+@onready var GUI: TextureRect = $CanvasLayer/TextureRect
+@onready var top: ValveContainer = $CanvasLayer/TextureRect/ValveContainer
+@onready var right: ValveContainer = $CanvasLayer/TextureRect/ValveContainer2
+@onready var bottom: ValveContainer = $CanvasLayer/TextureRect/ValveContainer3
+@onready var left: ValveContainer = $CanvasLayer/TextureRect/ValveContainer4
+@onready var buttons: VBoxContainer = $CanvasLayer/VBoxContainer
+@onready var yes: Button = $CanvasLayer/VBoxContainer/Button
+@onready var no: Button = $CanvasLayer/VBoxContainer/Button2
 
-var left_arrow_rotation : int = 120
-var right_arrow_rotation : int = 180
-
-var top_bar_position : int = 950
-var bottom_bar_position : int = 800
+var dialog_items_1 : Array[ DialogItem ]
+var dialog_items_2 : Array[ DialogItem ]
+var dialog_items_3 : Array[ DialogItem ]
 
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_up"):
-		valve_1_rotation += 45
-		left_arrow_rotation += 60
-		top_bar_position += 150
-		var tween = get_tree().create_tween()
-		tween.tween_property($Valve1, "rotation_degrees", valve_1_rotation, 0.3)
-		tween.parallel().tween_property($LeftArrow, "rotation_degrees", left_arrow_rotation, 0.3)
-		tween.parallel().tween_property($TopBar, "position", Vector2( top_bar_position, 350 ), 0.3)
-	elif event.is_action_pressed("ui_left"):
-		valve_2_rotation += 45
-		left_arrow_rotation -= 60
-		top_bar_position += 150
-		var tween = get_tree().create_tween()
-		tween.tween_property($Valve2, "rotation_degrees", valve_2_rotation, 0.3)
-		tween.parallel().tween_property($LeftArrow, "rotation_degrees", left_arrow_rotation, 0.3)
-		tween.parallel().tween_property($TopBar, "position", Vector2( top_bar_position, 350 ), 0.3)
-	elif event.is_action_pressed("ui_right"):
-		valve_3_rotation += 45
-		right_arrow_rotation += 60
-		bottom_bar_position += 150
-		var tween = get_tree().create_tween()
-		tween.tween_property($Valve3, "rotation_degrees", valve_3_rotation, 0.3)
-		tween.parallel().tween_property($RightArrow, "rotation_degrees", right_arrow_rotation, 0.3)
-		tween.parallel().tween_property($BottomBar, "position", Vector2( bottom_bar_position, 430 ), 0.3)
-	elif event.is_action_pressed("ui_down"):
-		valve_4_rotation += 45
-		left_arrow_rotation -= 60
-		right_arrow_rotation -= 60
-		var tween = get_tree().create_tween()
-		tween.tween_property($Valve4, "rotation_degrees", valve_4_rotation, 0.3)
-		tween.parallel().tween_property($LeftArrow, "rotation_degrees", left_arrow_rotation, 0.3)
-		tween.parallel().tween_property($RightArrow, "rotation_degrees", right_arrow_rotation, 0.3)
+func _ready() -> void:
+	GUI.hide()
+	buttons.hide()
+	
+	area_entered.connect( _on_area_enter )
+	area_exited.connect( _on_area_exit )
+	
+	yes.pressed.connect( _on_yes )
+	no.pressed.connect( _on_no )
+	
+	for c in get_children():
+		for d in c.get_children():
+			if c.name == "1":
+				dialog_items_1.append( d )
+			elif c.name == "2":
+				dialog_items_2.append( d )
+			elif c.name == "3":
+				dialog_items_3.append( d )
+	
+	pass
+
+
+func _on_area_enter( _a : Area2D ) -> void:
+	PlayerManager.interact_pressed.connect( player_interact )
+	pass
+
+
+func _on_area_exit( _a : Area2D ) -> void:
+	PlayerManager.interact_pressed.disconnect( player_interact )
+	pass
+
+
+func player_interact() -> void:
+	if ( !LevelManager.puzzle_solved ):
+		if true:
+			get_tree().paused = true
+			buttons.show()
+			yes.grab_focus()
+		else:
+			DialogSystem.show_dialog( dialog_items_1 )
+	pass
+
+
+func _on_yes() -> void:
+	buttons.hide()
+	DialogSystem.show_dialog( dialog_items_2 )
+	await DialogSystem.finished
+	get_tree().paused = true
+	GUI.show()
+	stage1()
+	pass
+
+
+func _on_no() -> void:
+	buttons.hide()	
+	get_tree().paused = false
+	pass
+
+
+func stage1() -> void:
+	GUI.texture = load( "res://Interactables/ValveSystem/puzzle1.png" )
+	top.set_container( 3, 4, [ right, bottom, left ] )
+	right.set_container( 0, 2, [ top ] )
+	bottom.set_container( 0, 2, [ top, left ] )
+	left.set_container( 1, 2, [ top, bottom ] )
+	await bottom.full
+	stage2()
+
+
+func stage2() -> void:
+	GUI.texture = load( "res://Interactables/ValveSystem/puzzle2.png" )
+	top.set_container( 1, 1, [ right ] )
+	right.set_container( 0, 2, [ top, bottom, left ] )
+	bottom.set_container( 0, 2, [ right, left ] )
+	left.set_container( 2, 4, [ right, bottom ] )
+	await bottom.full
+	stage3()
+
+
+func stage3() -> void:
+	GUI.texture = load( "res://Interactables/ValveSystem/puzzle3.png" )
+	top.set_container( 2, 4, [ right, bottom, left ] )
+	right.set_container( 0, 2, [ top, bottom ] )
+	bottom.set_container( 0, 2, [ top, right, left ] )
+	left.set_container( 2, 2, [ top, bottom ] )
+	await bottom.full
+	GUI.hide()
+	LevelManager.puzzle_solved = true
+	DialogSystem.show_dialog( dialog_items_3 )
