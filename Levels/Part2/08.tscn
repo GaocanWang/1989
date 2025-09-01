@@ -48,6 +48,7 @@ side = 2
 
 [node name="NPC" parent="." instance=ExtResource("7_f20wc")]
 position = Vector2(131.903, 180)
+npc_resource = ExtResource("10_d1f0s")
 
 [node name="DialogInteraction" parent="NPC" instance=ExtResource("8_aq41s")]
 

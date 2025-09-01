@@ -40,7 +40,7 @@ func gather_interactables() -> void:
 func _on_player_interacted() -> void:
 	if npc_resource.npc_name == "Lowkey":
 		LevelManager.x_interacted = true
-	elif npc_resource.npc_name == "Eris":
+	elif npc_resource.npc_name == "Daisy":
 		LevelManager.y_interacted = true
 	
 	update_direction( PlayerManager.player.global_position )
