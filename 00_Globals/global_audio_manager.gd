@@ -8,6 +8,8 @@ var music_bus : String = "Music"
 
 var music_fade_duration : float = 0.5
 
+var sfx_player : AudioStreamPlayer
+
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -17,6 +19,9 @@ func _ready() -> void:
 		player.bus = music_bus
 		music_players.append( player )
 		player.volume_db = -40
+	
+	sfx_player = AudioStreamPlayer.new()
+	add_child( sfx_player )
 
 
 func play_music( _audio : AudioStream ) -> void:
@@ -51,3 +56,8 @@ func fade_out_and_stop( player : AudioStreamPlayer) -> void:
 	await tween.finished
 	player.stop()
 	pass
+
+
+func play_sfx( sfx : AudioStream ) -> void:
+	sfx_player.stream = sfx
+	sfx_player.play()

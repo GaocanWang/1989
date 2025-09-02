@@ -1,25 +1,49 @@
-[gd_scene load_steps=8 format=3 uid="uid://htdi1kinagxb"]
+[gd_scene load_steps=13 format=3 uid="uid://htdi1kinagxb"]
 
 [ext_resource type="Script" uid="uid://x78vi5klflde" path="res://GUI/pause_menu/pause_menu.gd" id="1_mx0dx"]
-[ext_resource type="Texture2D" uid="uid://bvn57mrniu8yc" path="res://Items/sprites/items.png" id="2_f782u"]
+[ext_resource type="Texture2D" uid="uid://b36gssclnfr83" path="res://GUI/pause_menu/inventory/hotbar.png" id="2_ewgu5"]
 [ext_resource type="Script" uid="uid://bh4r5hkwojb78" path="res://GUI/pause_menu/inventory/scripts/inventory_ui.gd" id="3_8i8i4"]
 [ext_resource type="PackedScene" uid="uid://b2dj4j8eh8825" path="res://GUI/pause_menu/inventory/inventory_slot.tscn" id="3_tntq5"]
 [ext_resource type="Resource" uid="uid://cnhencemob3qg" path="res://GUI/pause_menu/inventory/player_inventory.tres" id="4_op3ac"]
+[ext_resource type="Texture2D" uid="uid://q686oajhvqg5" path="res://GUI/pause_menu/inventory/selector2.png" id="6_8rjl7"]
+[ext_resource type="Texture2D" uid="uid://dgytnp1qjg42h" path="res://GUI/pause_menu/inventory/chopped.png" id="8_dvxeg"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lx33k"]
-atlas = ExtResource("2_f782u")
-region = Rect2(96, 0, 32, 32)
+[sub_resource type="Gradient" id="Gradient_8rjl7"]
+offsets = PackedFloat32Array(0, 0.27027, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.501961, 0, 0, 0, 0.501961)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dvxeg"]
+gradient = SubResource("Gradient_8rjl7")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t0g1u"]
-content_margin_left = 10.0
-content_margin_top = 10.0
-content_margin_right = 10.0
-content_margin_bottom = 10.0
-texture = SubResource("AtlasTexture_lx33k")
-texture_margin_left = 14.0
-texture_margin_top = 14.0
-texture_margin_right = 14.0
-texture_margin_bottom = 14.0
+content_margin_left = 24.0
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
+texture = ExtResource("2_ewgu5")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iqcer"]
+content_margin_left = 16.0
+texture = ExtResource("6_8rjl7")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8rjl7"]
+content_margin_left = 32.0
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
+texture = ExtResource("8_dvxeg")
+texture_margin_left = 440.0
+texture_margin_top = 130.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -33,89 +57,214 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+max_polyphony = 4
+
+[node name="Background" type="TextureRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.141176, 0.141176, 0.141176, 0.831373)
+texture = SubResource("GradientTexture1D_dvxeg")
 
-[node name="Label" type="Label" parent="Control"]
-modulate = Color(1, 1, 1, 0.643137)
+[node name="PauseMenu" type="VBoxContainer" parent="Control"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -471.0
-offset_top = -268.0
-offset_right = -395.0
-offset_bottom = -245.0
+offset_top = -160.0
+offset_right = 203.0
+offset_bottom = 160.0
+grow_vertical = 2
+theme_override_constants/separation = 24
+
+[node name="Continue" type="Button" parent="Control/PauseMenu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "continue"
+alignment = 0
+
+[node name="Inventory" type="Button" parent="Control/PauseMenu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "inventory"
+alignment = 0
+
+[node name="Settings" type="Button" parent="Control/PauseMenu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "settings"
+alignment = 0
+
+[node name="Quit" type="Button" parent="Control/PauseMenu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "quit"
+alignment = 0
+
+[node name="Inventory" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "[ paused ]"
 
-[node name="ItemDescription" type="Label" parent="Control"]
-modulate = Color(1, 1, 1, 0.643137)
+[node name="Slots" type="PanelContainer" parent="Control/Inventory"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -478.0
-offset_top = -116.0
-offset_right = -307.0
-offset_bottom = -93.0
+offset_left = -436.0
+offset_top = 96.0
+offset_right = 892.0
+offset_bottom = 272.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 10
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="Control"]
-layout_mode = 0
-offset_left = 93.0
-offset_top = 116.0
-offset_right = 289.0
-offset_bottom = 204.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_t0g1u")
 
-[node name="GridContainer" type="GridContainer" parent="Control/PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Inventory/Slots"]
 layout_mode = 2
-columns = 5
+theme_override_constants/separation = 64
 script = ExtResource("3_8i8i4")
 data = ExtResource("4_op3ac")
 
-[node name="InventorySlot" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_tntq5")]
+[node name="InventorySlot" parent="Control/Inventory/Slots/HBoxContainer" instance=ExtResource("3_tntq5")]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+[node name="InventorySlot2" parent="Control/Inventory/Slots/HBoxContainer" instance=ExtResource("3_tntq5")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="Control/Inventory/Slots/HBoxContainer" instance=ExtResource("3_tntq5")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="Control/Inventory/Slots/HBoxContainer" instance=ExtResource("3_tntq5")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="Control/Inventory/Slots/HBoxContainer" instance=ExtResource("3_tntq5")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="Control/Inventory/Slots/HBoxContainer" instance=ExtResource("3_tntq5")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="Control/Inventory/Slots/HBoxContainer" instance=ExtResource("3_tntq5")]
+layout_mode = 2
+
+[node name="Image" type="PanelContainer" parent="Control/Inventory"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -480.0
-offset_top = 200.0
-offset_right = -188.0
-offset_bottom = 264.0
+offset_left = -436.0
+offset_top = -240.0
+offset_right = 436.0
+offset_bottom = 416.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_iqcer")
+
+[node name="ItemImage" type="TextureRect" parent="Control/Inventory/Image"]
+layout_mode = 2
+
+[node name="Description" type="PanelContainer" parent="Control/Inventory"]
+layout_mode = 0
+offset_left = 1396.0
+offset_top = 298.0
+offset_right = 1852.0
+offset_bottom = 958.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_8rjl7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Inventory/Description"]
+layout_mode = 2
+
+[node name="ItemName" type="Label" parent="Control/Inventory/Description/VBoxContainer"]
+custom_minimum_size = Vector2(400, 108)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 36
+autowrap_mode = 3
+
+[node name="ItemDescription" type="Label" parent="Control/Inventory/Description/VBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 3
+
+[node name="Settings" type="Control" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button_Save" type="Button" parent="Control/HBoxContainer"]
-custom_minimum_size = Vector2(144, 0)
-layout_mode = 2
-text = "Save"
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -61.0
+offset_right = 20.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Button_Load" type="Button" parent="Control/HBoxContainer"]
-custom_minimum_size = Vector2(144, 0)
+[node name="Label" type="Label" parent="Control/Settings/VBoxContainer"]
 layout_mode = 2
-text = "Load"
+text = "Master"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
-max_polyphony = 4
+[node name="HSlider" type="HSlider" parent="Control/Settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Control/Settings/VBoxContainer"]
+layout_mode = 2
+text = "Music"
+
+[node name="HSlider2" type="HSlider" parent="Control/Settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="Control/Settings/VBoxContainer"]
+layout_mode = 2
+text = "SFX"
+
+[node name="HSlider3" type="HSlider" parent="Control/Settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Quit" type="Control" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Quit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -28.0
+offset_right = 64.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Control/Quit/VBoxContainer"]
+layout_mode = 2
+text = "quit to main menu"
+
+[node name="Button2" type="Button" parent="Control/Quit/VBoxContainer"]
+layout_mode = 2
+text = "quit to desktop"

@@ -28,11 +28,15 @@ func item_focused() -> void:
 	if slot_data != null:
 		if slot_data.item_data != null:
 			PauseMenu.update_item_description( slot_data.item_data.description )
+			PauseMenu.update_item_name( slot_data.item_data.name )
+			PauseMenu.update_item_image( slot_data.item_data.image )
 	pass
 
 
 func item_unfocused() -> void:
+	PauseMenu.update_item_name( "" )
 	PauseMenu.update_item_description( "" )
+	PauseMenu.update_item_image( null )
 	pass
 
 
@@ -42,5 +46,5 @@ func item_pressed() -> void:
 			var was_used = slot_data.item_data.use()
 			if was_used == false:
 				return
-			slot_data.quantity -= 1
+			#slot_data.quantity -= 1
 			label.text = str( slot_data.quantity )

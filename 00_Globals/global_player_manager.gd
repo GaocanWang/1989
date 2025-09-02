@@ -5,6 +5,7 @@ const INVENTORY_DATA : InventoryData = preload("res://GUI/pause_menu/inventory/p
 
 signal camera_shook( trauma : float )
 signal interact_pressed
+signal key_pressed
 
 var interact_handled : bool = true
 var player : Player
@@ -22,7 +23,6 @@ func _ready() -> void:
 	add_player_instance()
 	await get_tree().create_timer(0.2).timeout
 	player_spawned = true
-
 
 
 func add_player_instance() -> void:

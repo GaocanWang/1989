@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cs7m47k2qc3w8"
+path="res://.godot/imported/SFX paper.mp3-2f77a26ce66d435abe96d082f1fdac42.mp3str"
+
+[deps]
+
+source_file="res://Interactables/MapHolder/SFX paper.mp3"
+dest_files=["res://.godot/imported/SFX paper.mp3-2f77a26ce66d435abe96d082f1fdac42.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

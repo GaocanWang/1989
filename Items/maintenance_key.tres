@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://ha0564senyen"]
+
+[ext_resource type="Script" uid="uid://cl8qm5rgyfo55" path="res://Items/item_effects/item_effect.gd" id="1_la7hg"]
+[ext_resource type="Texture2D" uid="uid://b3jpkt2tl57ic" path="res://Items/sprites/afafawdfawvtearyysbry.png" id="2_0uyep"]
+[ext_resource type="Script" uid="uid://c3smnx41rr0au" path="res://Items/scripts/item_data.gd" id="3_qrts1"]
+[ext_resource type="Texture2D" uid="uid://dw3wx8k2gbx3o" path="res://Items/sprites/checkoutlogicon.png" id="4_n0pfn"]
+
+[resource]
+script = ExtResource("3_qrts1")
+name = "Equipment Checkout Log"
+description = "A log for pool equipment taken from the storage room."
+texture = ExtResource("4_n0pfn")
+image = ExtResource("2_0uyep")
+effects = Array[ExtResource("1_la7hg")]([])
+metadata/_custom_type_script = "uid://c3smnx41rr0au"

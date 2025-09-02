@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://ct5se6suijt5w"]
+[gd_scene load_steps=14 format=4 uid="uid://ct5se6suijt5w"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_l8wmu"]
 [ext_resource type="AudioStream" uid="uid://0aojls0cgt76" path="res://Levels/music/searching.mp3" id="2_6c266"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bhu6ijoxy18b7" path="res://Follower/follower.tscn" id="12_6c266"]
 [ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/box.tres" id="13_6c266"]
 [ext_resource type="Texture2D" uid="uid://ciqf11ur00q3q" path="res://npc/sprites/teresa.png" id="13_fvy66"]
+[ext_resource type="PackedScene" uid="uid://rrx4qouu6nfd" path="res://Interactables/MapHolder/map_holder.tscn" id="13_iqqml"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_l8wmu")
@@ -34,7 +35,7 @@ tile_map_data = PackedByteArray("AAATAAEAAQAEAAEAAAATAAIAAQAEAAEAAAATAAMAAQAEAAE
 tile_set = ExtResource("3_qw5bp")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_1giyw")]
-position = Vector2(417, 130)
+position = Vector2(416, 121)
 
 [node name="LevelTransition" parent="." instance=ExtResource("6_ekd8h")]
 process_mode = 4
@@ -92,3 +93,20 @@ npc_info = ExtResource("9_6c266")
 position = Vector2(60, 237)
 spritesheet = ExtResource("13_fvy66")
 distance = 15
+
+[node name="MapHolder" parent="." instance=ExtResource("13_iqqml")]
+position = Vector2(228, 96)
+
+[node name="DialogText" type="Node" parent="MapHolder"]
+script = ExtResource("7_761wi")
+text = "A compartment on the wall for map handouts."
+npc_info = ExtResource("13_6c266")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Repeat" type="Node" parent="MapHolder"]
+
+[node name="DialogText" type="Node" parent="MapHolder/Repeat"]
+script = ExtResource("7_761wi")
+text = "A compartment on the wall for map handouts."
+npc_info = ExtResource("13_6c266")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
