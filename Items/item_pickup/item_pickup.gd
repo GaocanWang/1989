@@ -8,24 +8,43 @@ class_name ItemPickup extends Node2D
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
+var dialog_items : Array[ DialogItem ]
+
 
 func _ready() -> void:
 	_update_texture()
 	if Engine.is_editor_hint():
 		return
-	area_2d.body_entered.connect( _on_body_entered )
+	area_2d.area_entered.connect( _on_area_enter )
+	area_2d.area_exited.connect( _on_area_exit )
+	
+	for c in get_children():
+		if c is DialogItem:
+			dialog_items.append( c )
+	pass
 
 
-func _on_body_entered( b ) -> void:
-	if b is Player:
-		if item_data:
-			if PlayerManager.INVENTORY_DATA.add_item( item_data ) == true:
-				item_picked_up()
+func _on_area_enter( _a : Area2D ) -> void:
+	PlayerManager.interact_pressed.connect( player_interact )
+	pass
+
+
+func _on_area_exit( _a : Area2D ) -> void:
+	PlayerManager.interact_pressed.disconnect( player_interact )
+	pass
+
+
+func player_interact() -> void:
+	await get_tree().process_frame
+	if item_data:
+		if PlayerManager.INVENTORY_DATA.add_item( item_data ) == true:
+			DialogSystem.show_dialog( dialog_items )
+			await DialogSystem.finished
+			item_picked_up()
 	pass
 
 
 func item_picked_up() -> void:
-	area_2d.body_entered.disconnect( _on_body_entered )
 	audio_stream_player_2d.play()
 	visible = false
 	await audio_stream_player_2d.finished

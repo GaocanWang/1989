@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do5evnxlefaen"
-path="res://.godot/imported/equipment checkout log.png-17a80d48dc5d8c1419d7613d161f756a.ctex"
+uid="uid://brc14e53624ek"
+path="res://.godot/imported/cc map picture.png-7c6fdab4d4be301d49d2ac1641ba2abe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Interactables/Bulletin/equipment checkout log.png"
-dest_files=["res://.godot/imported/equipment checkout log.png-17a80d48dc5d8c1419d7613d161f756a.ctex"]
+source_file="res://Items/sprites/cc map picture.png"
+dest_files=["res://.godot/imported/cc map picture.png-7c6fdab4d4be301d49d2ac1641ba2abe.ctex"]
 
 [params]
 

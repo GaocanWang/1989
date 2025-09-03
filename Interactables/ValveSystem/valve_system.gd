@@ -38,17 +38,19 @@ func _ready() -> void:
 
 func _on_area_enter( _a : Area2D ) -> void:
 	PlayerManager.interact_pressed.connect( player_interact )
+	LevelManager.near_valve = true
 	pass
 
 
 func _on_area_exit( _a : Area2D ) -> void:
 	PlayerManager.interact_pressed.disconnect( player_interact )
+	LevelManager.near_valve = false
 	pass
 
 
 func player_interact() -> void:
 	if ( !LevelManager.puzzle_solved ):
-		if true:
+		if LevelManager.valve_unlocked:
 			get_tree().paused = true
 			buttons.show()
 			yes.grab_focus()

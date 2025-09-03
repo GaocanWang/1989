@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://c1ei0hjvfb0yb"]
+[gd_scene load_steps=19 format=4 uid="uid://c1ei0hjvfb0yb"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_n7hlk"]
 [ext_resource type="AudioStream" uid="uid://0aojls0cgt76" path="res://Levels/music/searching.mp3" id="2_sl37w"]
@@ -16,6 +16,8 @@
 [ext_resource type="AudioStream" uid="uid://bashwf7whk7uh" path="res://GUI/dialog_system/audio/fridge close sfx.mp3" id="14_1xlkm"]
 [ext_resource type="Script" uid="uid://dst30i4jr8cmt" path="res://Interactables/dialog/scripts/dialog_sfx.gd" id="14_745q1"]
 [ext_resource type="PackedScene" uid="uid://byu8d21qbdi0r" path="res://Interactables/Bulletin/bulletin.tscn" id="14_g7cit"]
+[ext_resource type="PackedScene" uid="uid://ch53nwrfc0688" path="res://Items/item_pickup/item_pickup.tscn" id="17_ewsx3"]
+[ext_resource type="Resource" uid="uid://ha0564senyen" path="res://Items/maintenance_key.tres" id="18_sl37w"]
 
 [node name="06" type="Node2D"]
 script = ExtResource("1_n7hlk")
@@ -38,7 +40,7 @@ tile_map_data = PackedByteArray("AAADAAEAAQAEAAAAADADAAMAAQAEAAEAADADAAcAAQAEAAA
 tile_set = ExtResource("3_q4xlc")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_70eui")]
-position = Vector2(162, 129)
+position = Vector2(137, 124)
 
 [node name="LevelTransition" parent="." instance=ExtResource("6_5gb84")]
 position = Vector2(204, 96)
@@ -49,8 +51,8 @@ size = 1
 side = 2
 
 [node name="Chair" parent="." instance=ExtResource("12_iv8hn")]
-position = Vector2(180, 127)
-size = Vector2(12, 12)
+position = Vector2(182, 127)
+size = Vector2(6, 10)
 
 [node name="DialogText" type="Node" parent="Chair"]
 script = ExtResource("7_q4xlc")
@@ -64,7 +66,7 @@ npc_info = ExtResource("13_g7cit")
 
 [node name="Chair2" parent="." instance=ExtResource("12_iv8hn")]
 position = Vector2(204, 127)
-size = Vector2(12, 12)
+size = Vector2(10, 10)
 
 [node name="DialogText" type="Node" parent="Chair2"]
 script = ExtResource("7_q4xlc")
@@ -190,8 +192,8 @@ frame = 18
 npc_info = ExtResource("11_iv8hn")
 
 [node name="Table" parent="." instance=ExtResource("12_iv8hn")]
-position = Vector2(192, 144)
-size = Vector2(48, 24)
+position = Vector2(198, 144)
+size = Vector2(36, 24)
 
 [node name="DialogText" type="Node" parent="Table"]
 script = ExtResource("7_q4xlc")
@@ -199,6 +201,20 @@ text = "A rectangular table sits at the center of the lounge."
 npc_info = ExtResource("13_g7cit")
 
 [node name="DialogText2" type="Node" parent="Table"]
+script = ExtResource("7_q4xlc")
+text = "Its plastic surface is scratched and stained from years of use."
+npc_info = ExtResource("13_g7cit")
+
+[node name="Table2" parent="." instance=ExtResource("12_iv8hn")]
+position = Vector2(192, 150)
+size = Vector2(48, 12)
+
+[node name="DialogText" type="Node" parent="Table2"]
+script = ExtResource("7_q4xlc")
+text = "A rectangular table sits at the center of the lounge."
+npc_info = ExtResource("13_g7cit")
+
+[node name="DialogText2" type="Node" parent="Table2"]
 script = ExtResource("7_q4xlc")
 text = "Its plastic surface is scratched and stained from years of use."
 npc_info = ExtResource("13_g7cit")
@@ -259,3 +275,34 @@ npc_info = ExtResource("11_iv8hn")
 script = ExtResource("7_q4xlc")
 text = "“YOU OBTAINED: [color=red]EQUIPMENT CHECKOUT LOG”[/color]"
 npc_info = ExtResource("13_g7cit")
+
+[node name="Repeat" type="Node" parent="Bulletin"]
+
+[node name="DialogText" type="Node" parent="Bulletin/Repeat"]
+script = ExtResource("7_q4xlc")
+text = "A faded bulletin board hangs on the wall."
+npc_info = ExtResource("13_g7cit")
+
+[node name="DialogText2" type="Node" parent="Bulletin/Repeat"]
+script = ExtResource("7_q4xlc")
+text = "Most of the papers are outdated event flyers or sun-bleached schedules."
+npc_info = ExtResource("13_g7cit")
+
+[node name="ItemPickup" parent="." instance=ExtResource("17_ewsx3")]
+z_index = 1
+position = Vector2(171, 135)
+item_data = ExtResource("18_sl37w")
+
+[node name="DialogText" type="Node" parent="ItemPickup"]
+script = ExtResource("7_q4xlc")
+text = "(Doesn’t look like the changeroom key…)"
+frame = 16
+npc_info = ExtResource("11_iv8hn")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="ItemPickup"]
+script = ExtResource("7_q4xlc")
+text = "OBTAINED: MAINTENANCE SYSTEM KEY"
+frame = 16
+npc_info = ExtResource("13_g7cit")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"

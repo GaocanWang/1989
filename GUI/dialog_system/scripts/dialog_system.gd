@@ -23,6 +23,8 @@ var debate : bool = false
 var debate_fails : int = 0
 var previous_dialog_text : DialogItem = null
 
+var current_dialog_text : String = ""
+
 @onready var dialog_ui: Control = $DialogUI
 @onready var content: RichTextLabel = $DialogUI/PanelContainer/RichTextLabel
 @onready var name_label: Label = $DialogUI/NameLabel
@@ -58,7 +60,7 @@ func _ready() -> void:
 
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if ( debate ):
 		progress_bar.value = timer_2.time_left
 	pass
@@ -166,8 +168,13 @@ func start_dialog() -> void:
 func set_dialog_text( _d ) -> void:
 	if ( _d is DebateText ):
 		background.texture = _d.npc_info.background
+		background_animation_player.play("show")
 		background.show()
 		progress_bar.show()
+	else:
+		portrait_sprite.frame = _d.frame
+	
+	current_dialog_text = _d.text
 	
 	slow = _d.slow
 	content.text = _d.text
@@ -191,7 +198,6 @@ func set_dialog_text( _d ) -> void:
 			portrait_animation_player.play("portrait_appear_left")
 		else:
 			portrait_animation_player.play("portrait_appear_right")
-	portrait_sprite.frame = _d.frame
 	
 	previous_dialog_text = _d
 	pass

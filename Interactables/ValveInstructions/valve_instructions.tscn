@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://by804n0iyvcjt"]
+
+[ext_resource type="Script" uid="uid://dg06r0s6svj0g" path="res://Interactables/ValveInstructions/valve_instructions.gd" id="1_r84lh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rg64l"]
+
+[node name="ValveInstructions" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_r84lh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rg64l")

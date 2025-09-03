@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://bvfjkb5brwyy0"]
 
 [ext_resource type="Script" uid="uid://cl8qm5rgyfo55" path="res://Items/item_effects/item_effect.gd" id="1_i4kue"]
-[ext_resource type="Texture2D" uid="uid://b3jpkt2tl57ic" path="res://Items/sprites/afafawdfawvtearyysbry.png" id="2_oxgxb"]
+[ext_resource type="Texture2D" uid="uid://dkrq5e18fqwua" path="res://Items/sprites/bloodied sink fragment picture.png" id="2_i4kue"]
 [ext_resource type="Script" uid="uid://c3smnx41rr0au" path="res://Items/scripts/item_data.gd" id="3_t0b7v"]
 [ext_resource type="Texture2D" uid="uid://bciq6jb1iwbfe" path="res://Items/sprites/shardicon.png" id="4_i4kue"]
 
@@ -10,6 +10,6 @@ script = ExtResource("3_t0b7v")
 name = "Bloody Sink Piece"
 description = "A small shard collected from the broken sink. Visible but dried blood stains the porcelain."
 texture = ExtResource("4_i4kue")
-image = ExtResource("2_oxgxb")
+image = ExtResource("2_i4kue")
 effects = Array[ExtResource("1_i4kue")]([])
 metadata/_custom_type_script = "uid://c3smnx41rr0au"

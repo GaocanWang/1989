@@ -28,7 +28,6 @@ enum SIDE { LEFT, RIGHT, TOP, BOTTOM }
 
 var dialog_items : Array[ DialogItem ]
 var dialog_items_unlock : Array[ DialogItem ]
-var unlocked : bool = false
 
 
 func _ready() -> void:
@@ -49,6 +48,8 @@ func _ready() -> void:
 	else:
 		body_entered.connect( _player_entered )
 	
+	LevelManager.changeroom_unlocked.connect( _changeroom_unlocked )
+	
 	for c in get_children():
 		if c.name == "1":
 			for d in c.get_children():
@@ -61,13 +62,7 @@ func _ready() -> void:
 
 
 func _player_entered( _p : Node2D ) -> void:
-	if ( unlocked ):
-		LevelManager.load_new_level( level, target_transition_area, get_offset() )
-	elif ( false ):
-		# Door opening sfx
-		await get_tree().process_frame
-		DialogSystem.show_dialog( dialog_items_unlock )
-		await DialogSystem.finished
+	if ( LevelManager.changeroom_open ):
 		LevelManager.load_new_level( level, target_transition_area, get_offset() )
 	else:
 		await get_tree().process_frame
@@ -129,9 +124,20 @@ func _snap_to_grid() -> void:
 
 func _on_area_enter( _a : Area2D ) -> void:
 	PlayerManager.interact_pressed.connect( _player_entered.bind( _a ) )
+	LevelManager.near_changeroom = true
 	pass
 
 
 func _on_area_exit( _a : Area2D ) -> void:
 	PlayerManager.interact_pressed.disconnect( _player_entered.bind( _a ) )
+	LevelManager.near_changeroom = false
+	pass
+
+
+func _changeroom_unlocked() -> void:
+	await get_tree().process_frame
+	LevelManager.changeroom_open = true
+	DialogSystem.show_dialog( dialog_items_unlock )
+	await DialogSystem.finished
+	LevelManager.load_new_level( level, target_transition_area, get_offset() )
 	pass

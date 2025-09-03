@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://cvw13l8rfqgke"]
+[gd_scene load_steps=12 format=4 uid="uid://cvw13l8rfqgke"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_sheyd"]
 [ext_resource type="TileSet" uid="uid://k4sa1rxa7ww0" path="res://Tile Maps/Tile Sets/pool.tres" id="2_h7lxs"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bt4r7451gfkr5" path="res://Levels/level_transition.tscn" id="5_idsfb"]
 [ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="6_1i7o8"]
 [ext_resource type="Resource" uid="uid://c2w2tyjg78bol" path="res://npc/00_npcs/amelia.tres" id="7_og48a"]
+[ext_resource type="PackedScene" uid="uid://by804n0iyvcjt" path="res://Interactables/ValveInstructions/valve_instructions.tscn" id="10_qleb4"]
 [ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="11_wlaoj"]
 [ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/box.tres" id="12_q3qj7"]
 
@@ -105,15 +106,6 @@ text = "A label reads ‘Chlorinator’ in faded text."
 npc_info = ExtResource("12_q3qj7")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="ValveInstructions" parent="." instance=ExtResource("11_wlaoj")]
-position = Vector2(168, 60)
-
-[node name="DialogText" type="Node" parent="ValveInstructions"]
-script = ExtResource("6_1i7o8")
-text = "A laminated instruction sheet hangs beside the valve system."
-npc_info = ExtResource("12_q3qj7")
-metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
-
 [node name="ValveSystem" parent="." instance=ExtResource("11_wlaoj")]
 position = Vector2(216, 72)
 size = Vector2(48, 48)
@@ -135,4 +127,13 @@ script = ExtResource("6_1i7o8")
 text = "“I should talk to the others before trying anything.”"
 frame = 16
 npc_info = ExtResource("7_og48a")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="ValveInstructions" parent="." instance=ExtResource("10_qleb4")]
+position = Vector2(168, 60)
+
+[node name="DialogText" type="Node" parent="ValveInstructions"]
+script = ExtResource("6_1i7o8")
+text = "A laminated instruction sheet hangs beside the valve system."
+npc_info = ExtResource("12_q3qj7")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"

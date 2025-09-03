@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://np2826ya085l"]
+[gd_scene load_steps=32 format=3 uid="uid://np2826ya085l"]
 
 [ext_resource type="Script" uid="uid://bmxl7n5om7mck" path="res://GUI/dialog_system/scripts/dialog_system.gd" id="1_xj1h2"]
 [ext_resource type="Texture2D" uid="uid://d1bj7nb4613y6" path="res://GUI/dialog_system/sprites/text-bubble.png" id="2_vac1q"]
@@ -615,13 +615,41 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_grg33"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_14mum"]
 _data = {
 &"RESET": SubResource("Animation_mvguq"),
 &"fade_in": SubResource("Animation_vyuf5"),
 &"fade_out": SubResource("Animation_esnjv"),
 &"final_fade_out": SubResource("Animation_s6crg"),
-&"initial_fade_in": SubResource("Animation_s56pv")
+&"initial_fade_in": SubResource("Animation_s56pv"),
+&"show": SubResource("Animation_grg33")
 }
 
 [node name="DialogSystem" type="CanvasLayer"]

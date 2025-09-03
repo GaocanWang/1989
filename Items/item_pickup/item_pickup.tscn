@@ -5,17 +5,20 @@
 [ext_resource type="Texture2D" uid="uid://wu611ckvawba" path="res://Items/sprites/maintenancekeyicon.png" id="2_xobfa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_je3go"]
+radius = 4.0
 
 [node name="ItemPickup" type="Node2D"]
 script = ExtResource("1_a5py7")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_je3go")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_xobfa")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

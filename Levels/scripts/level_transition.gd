@@ -47,6 +47,8 @@ func _ready() -> void:
 	else:
 		body_entered.connect( _player_entered )
 	
+	LevelManager.part3.connect( _on_part_3 )
+	
 	for c in get_children():
 		dialog_items.append( c )
 	
@@ -54,7 +56,10 @@ func _ready() -> void:
 
 
 func _player_entered( _p : Node2D ) -> void:
-	LevelManager.load_new_level( level, target_transition_area, get_offset() )
+	if get_tree().current_scene.name == "18" && level == "uid://co4f0ibd8t1gp":
+		LevelManager.load_new_level( "res://Levels/Part2/20.tscn", target_transition_area, get_offset() )
+	else:
+		LevelManager.load_new_level( level, target_transition_area, get_offset() )
 	pass
 
 
@@ -118,3 +123,8 @@ func _on_area_enter( _a : Area2D ) -> void:
 func _on_area_exit( _a : Area2D ) -> void:
 	PlayerManager.interact_pressed.disconnect( _player_entered.bind( _a ) )
 	pass
+
+
+func _on_part_3() -> void:
+	if level == "uid://dfd4xxeb28efh":
+		level = "res://Levels/Part2/17.tscn"

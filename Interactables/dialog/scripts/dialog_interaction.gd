@@ -22,7 +22,11 @@ func _ready() -> void:
 	area_entered.connect( _on_area_enter )
 	area_exited.connect( _on_area_exit )
 	
-	DialogSystem.debate_failed.connect( _on_debate_fail )
+	if name == "Debate":
+		DialogSystem.debate_failed.connect( _on_debate_fail )
+		DialogSystem.finished.connect( _check_dialog )
+	elif name == "Check":
+		DialogSystem.finished.connect( _check_dialog )
 	
 	for c in get_children():
 		if c is DialogItem:
@@ -69,6 +73,16 @@ func _on_area_exit( _a : Area2D ) -> void:
 func _on_dialog_finished() -> void:
 	DialogSystem.finished.disconnect( _on_dialog_finished )
 	finished.emit()
+
+
+func _check_dialog() -> void:
+	if DialogSystem.current_dialog_text == "“Come back to us when you’re finished, okay?”":
+		LevelManager.load_new_level( "res://Levels/Part2/04.tscn", "", Vector2.ZERO )
+	elif DialogSystem.current_dialog_text == "“Now let [i]us[/i] do our thing.”":
+		LevelManager.load_new_level( "res://Levels/Part2/15.tscn", "", Vector2.ZERO )
+	elif DialogSystem.current_dialog_text == "“Which means he couldn’t have gotten knocked unconscious.”":
+		LevelManager.part3.emit()
+		LevelManager.part_3 = true
 
 
 func _on_debate_fail() -> void:

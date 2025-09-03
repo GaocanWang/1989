@@ -1,10 +1,10 @@
 class_name Bulletin extends Area2D
 
-@onready var sprite: Sprite2D = $Sprite2D
-
 var dialog_items : Array[ DialogItem ]
 var dialog_items_2 : Array[ DialogItem ]
+var dialog_items_repeat : Array[ DialogItem ]
 var showing : bool = false
+var first_time : bool = true
 
 
 
@@ -19,17 +19,11 @@ func _ready() -> void:
 		elif c.name == "2":
 			for d in c.get_children():
 				dialog_items_2.append ( d )
+		elif c.name == "Repeat":
+			for d in c.get_children():
+				dialog_items_repeat.append ( d )
 	
 	pass
-
-
-func _unhandled_input(event):
-	if event.is_action_pressed("ui_accept"):
-		if showing:
-			showing = false
-			sprite.hide()
-			get_tree().paused = false
-			DialogSystem.show_dialog( dialog_items_2 )
 
 
 func _on_area_enter( _a : Area2D ) -> void:
@@ -44,9 +38,15 @@ func _on_area_exit( _a : Area2D ) -> void:
 
 func player_interact() -> void:
 	await get_tree().process_frame
-	DialogSystem.show_dialog( dialog_items )
-	await DialogSystem.finished
-	get_tree().paused = true
-	sprite.show()
-	showing = true
+	if first_time:
+		first_time = false
+		DialogSystem.show_dialog( dialog_items )
+		await DialogSystem.finished
+		DocumentViewer.show_document(["Kickboards (14)\nNoodles (20)\nTowel (8)", "11:00 AM\nJ. Ji\n1 Kickboard taken", "2:00 PM\nY. Gurt\n2 Noodles taken", "2:35 PM\nK. Fern\n1 Noodle taken"])
+		await DocumentViewer.finished
+		DialogSystem.show_dialog( dialog_items_2 )
+		await DialogSystem.finished
+		PlayerManager.INVENTORY_DATA.add_item( load( "res://Items/equipment_log.tres" ) )
+	else:
+		DialogSystem.show_dialog( dialog_items_repeat )
 	pass

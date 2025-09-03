@@ -4,6 +4,9 @@ signal level_load_started
 signal level_loaded
 signal TileMapBoundsChanged( bounds : Array[ Vector2 ] )
 signal part2
+signal changeroom_unlocked
+signal part3
+signal extra_dialogue
 
 var current_tilemap_bounds : Array[ Vector2 ]
 var target_transition : String
@@ -14,6 +17,14 @@ var locker_interacted : bool = false
 var x_interacted : bool = false
 var y_interacted : bool = false
 var puzzle_solved : bool = false
+var valve_unlocked : bool = false
+var near_valve : bool = false
+var changeroom_open : bool = false
+var near_changeroom : bool = false
+var part_3 : bool = true
+var storage_open : bool = false
+var near_storage : bool = false
+
 
 func _ready() -> void:
 	await get_tree().process_frame

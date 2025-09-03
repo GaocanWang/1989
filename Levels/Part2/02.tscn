@@ -36,7 +36,7 @@ tile_map_data = PackedByteArray("AAABAAIAAQAEAAEAADABAAMAAQAEAAEAADABAAQAAQAEAAE
 tile_set = ExtResource("3_fkk6q")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_g4mln")]
-position = Vector2(559, 296)
+position = Vector2(328, 125)
 
 [node name="LevelTransition" parent="." instance=ExtResource("6_7afvj")]
 position = Vector2(36, 600)
@@ -51,7 +51,7 @@ side = 3
 [node name="WChangeroomTransition" parent="." instance=ExtResource("6_7afvj")]
 position = Vector2(324, 96)
 script = ExtResource("7_h8wce")
-level = "uid://kaiv4m7e4ftt"
+level = "uid://d4fo6454x1ptb"
 door = true
 size = 1
 side = 2
@@ -75,6 +75,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 [node name="DialogText2" type="Node" parent="WChangeroomTransition/Unlock"]
 script = ExtResource("7_566gx")
 text = "“…”"
+frame = 10
 npc_info = ExtResource("8_f06bb")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
@@ -87,24 +88,28 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 [node name="DialogText4" type="Node" parent="WChangeroomTransition/Unlock"]
 script = ExtResource("7_566gx")
 text = "“Whenever you guys are.”"
+frame = 1
 npc_info = ExtResource("11_4xy53")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText5" type="Node" parent="WChangeroomTransition/Unlock"]
 script = ExtResource("7_566gx")
 text = "“Can’t be too bad.”"
+frame = 14
 npc_info = ExtResource("9_yjrug")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText6" type="Node" parent="WChangeroomTransition/Unlock"]
 script = ExtResource("7_566gx")
 text = "“Yeah.”"
+frame = 12
 npc_info = ExtResource("10_h8wce")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText7" type="Node" parent="WChangeroomTransition/Unlock"]
 script = ExtResource("7_566gx")
 text = "“Let’s get this over with.\""
+frame = 2
 npc_info = ExtResource("10_h8wce")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 

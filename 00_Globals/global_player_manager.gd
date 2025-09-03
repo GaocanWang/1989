@@ -5,8 +5,6 @@ const INVENTORY_DATA : InventoryData = preload("res://GUI/pause_menu/inventory/p
 
 signal camera_shook( trauma : float )
 signal interact_pressed
-signal key_pressed
-
 var interact_handled : bool = true
 var player : Player
 var player_spawned : bool = false
@@ -64,3 +62,11 @@ func shake_camera( trauma : float = 1 ) -> void:
 func reset_positions() -> void:
 	past_positions = []
 	past_positions.resize( size )
+
+
+func has_item( item_name : String ) -> bool:
+	for slot in INVENTORY_DATA.slots:
+		if slot != null:
+			if slot.item_data.name == item_name:
+				return true
+	return false

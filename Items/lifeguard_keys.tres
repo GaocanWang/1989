@@ -1,15 +1,21 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://8ihew3dbmf66"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=7 format=3 uid="uid://8ihew3dbmf66"]
 
 [ext_resource type="Script" uid="uid://cl8qm5rgyfo55" path="res://Items/item_effects/item_effect.gd" id="1_uxqmf"]
-[ext_resource type="Texture2D" uid="uid://b3jpkt2tl57ic" path="res://Items/sprites/afafawdfawvtearyysbry.png" id="2_0ksrb"]
+[ext_resource type="Script" uid="uid://cd0ik0lkhqqkc" path="res://Items/item_effects/lifeguard_key_effect.gd" id="2_0ksrb"]
+[ext_resource type="Texture2D" uid="uid://dd6lteqka7utl" path="res://Items/sprites/lifeguard master keys picture.png" id="2_uxqmf"]
 [ext_resource type="Script" uid="uid://c3smnx41rr0au" path="res://Items/scripts/item_data.gd" id="3_15i3o"]
 [ext_resource type="Texture2D" uid="uid://blbil0ytbsvxn" path="res://Items/sprites/lifeguardkeyicon.png" id="4_uxqmf"]
+
+[sub_resource type="Resource" id="Resource_15i3o"]
+script = ExtResource("2_0ksrb")
+use_description = ""
+metadata/_custom_type_script = "uid://cd0ik0lkhqqkc"
 
 [resource]
 script = ExtResource("3_15i3o")
 name = "Lifeguard Master Keys"
 description = "A ring with keys that can open every room in the pool. Belongs to the lifeguards."
 texture = ExtResource("4_uxqmf")
-image = ExtResource("2_0ksrb")
-effects = Array[ExtResource("1_uxqmf")]([])
+image = ExtResource("2_uxqmf")
+effects = Array[ExtResource("1_uxqmf")]([SubResource("Resource_15i3o")])
 metadata/_custom_type_script = "uid://c3smnx41rr0au"
