@@ -29,13 +29,13 @@ rendering_quadrant_size = 24
 script = ExtResource("4_5qd76")
 
 [node name="Wall" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAEAAIAAQABAAEAAAAEAAMAAQABAAEAAAAFAAIAAQABAAEAAAAFAAMAAQADAAMAAAAFAAUAAQAAAAYAAAAGAAIAAQABAAEAAAAGAAMAAQABAAEAAAAHAAIAAQABAAUAAAAIAAIAAQABAAUAAAAJAAIAAQABAAUAAAAJAAUAAQAAAAYAAAAKAAIAAQABAAUAAAAKAAMAAQABAAUAAAAGAAUAAQAAAAYAAAAKAAUAAQAAAAYAAAALAAIAAQABAAEAAAALAAMAAQABAAEAAAAHAAMAAQABAAUAAAAIAAMAAQABAAUAAAAJAAMAAQABAAUAAAAIAAcAAQAEAAEAAFA=")
+tile_map_data = PackedByteArray("AAAEAAIAAQABAAEAAAAEAAMAAQABAAEAAAAFAAIAAQABAAEAAAAFAAMAAQADAAMAAAAFAAUAAQAAAAYAAAAGAAIAAQABAAEAAAAGAAMAAQABAAEAAAAJAAUAAQAAAAYAAAAGAAUAAQAAAAYAAAAKAAUAAQAAAAYAAAALAAIAAQABAAEAAAALAAMAAQABAAEAAAAIAAcAAQAEAAEAAFAHAAIAAQABAAEAAAAHAAMAAQABAAEAAAAIAAMAAQABAAEAAAAJAAMAAQABAAEAAAAKAAMAAQABAAEAAAAKAAIAAQABAAEAAAAJAAIAAQABAAEAAAAIAAIAAQABAAEAAAA=")
 tile_set = ExtResource("3_lbalv")
 rendering_quadrant_size = 24
 
 [node name="Other" type="TileMapLayer" parent="."]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAADAAEAAQAEAAAAADADAAMAAQAEAAEAADADAAcAAQAEAAAAAFAEAAEAAQAEAAEAAGAEAAcAAQAEAAEAAFAFAAEAAQAEAAEAAGAFAAcAAQAEAAEAAFAGAAEAAQAEAAEAAGAGAAQAAQAEAAUAAAAGAAcAAQAEAAEAAFAHAAEAAQAEAAEAAGAIAAEAAQAEAAEAAGAJAAEAAQAEAAEAAGAJAAcAAQAEAAEAAFAKAAEAAQAEAAEAAGAKAAcAAQAEAAEAAFALAAEAAQAEAAEAAGALAAMAAQAFAAMAAAALAAcAAQAEAAEAAFADAAIAAQAEAAEAADADAAQAAQAEAAEAADADAAUAAQAEAAEAADADAAYAAQAEAAEAADAEAAMAAQACAAYAAAAFAAYAAQACAAUAAAAGAAIAAQAAAAEAAAAJAAYAAQACAAUAAAAMAAEAAQAEAAAAAGAMAAIAAQAEAAEAAAAMAAMAAQAEAAEAAAAMAAQAAQAEAAEAAAAMAAUAAQAEAAEAAAAMAAYAAQAEAAEAAAAMAAcAAQAEAAAAAAAHAAQAAQACAAUAAAAIAAYAAQALAAEAAGAIAAcAAQAMAAEAAEAHAAcAAQAEAAEAAFA=")
+tile_map_data = PackedByteArray("AAADAAEAAQAEAAAAADADAAMAAQAEAAEAADADAAcAAQAEAAAAAFAEAAEAAQAEAAEAAGAEAAcAAQAEAAEAAFAFAAEAAQAEAAEAAGAFAAcAAQAEAAEAAFAGAAEAAQAEAAEAAGAGAAQAAQAEAAUAAAAGAAcAAQAEAAEAAFAHAAEAAQAEAAEAAGAIAAEAAQAEAAEAAGAJAAEAAQAEAAEAAGAJAAcAAQAEAAEAAFAKAAEAAQAEAAEAAGAKAAcAAQAEAAEAAFALAAEAAQAEAAEAAGALAAMAAQAFAAMAAAALAAcAAQAEAAEAAFADAAIAAQAEAAEAADADAAQAAQAEAAEAADADAAUAAQAEAAEAADADAAYAAQAEAAEAADAEAAMAAQACAAYAAAAFAAYAAQACAAUAAAAGAAIAAQAAAAEAAAAJAAYAAQACAAUAAAAMAAEAAQAEAAAAAGAMAAIAAQAEAAEAAAAMAAMAAQAEAAEAAAAMAAQAAQAEAAEAAAAMAAUAAQAEAAEAAAAMAAYAAQAEAAEAAAAMAAcAAQAEAAAAAAAHAAQAAQACAAUAAAAIAAYAAQALAAEAAGAIAAcAAQAMAAEAAEAHAAcAAQAEAAEAAFAHAAMAAQABAAUAAAAIAAMAAQABAAUAAAAJAAMAAQABAAUAAAAKAAMAAQABAAUAAAA=")
 tile_set = ExtResource("3_lbalv")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_56o6h")]
@@ -253,7 +253,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="2" type="Node" parent="Cabinet"]
 
-[node name="DialogText1" type="Node" parent="Cabinet/2"]
+[node name="DialogText" type="Node" parent="Cabinet/2"]
 script = ExtResource("7_t1jd6")
 text = "\"...\""
 frame = 10
@@ -299,11 +299,17 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText" type="Node" parent="Cabinet/3"]
 script = ExtResource("7_t1jd6")
+text = "OBTAINED: EMPLOYEE HANDBOOK"
+npc_info = ExtResource("13_4rxfg")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Cabinet/3"]
+script = ExtResource("7_t1jd6")
 text = "“Turns out it was useful after all.”"
 npc_info = ExtResource("8_8x0r1")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText2" type="Node" parent="Cabinet/3"]
+[node name="DialogText3" type="Node" parent="Cabinet/3"]
 script = ExtResource("7_t1jd6")
 text = "“One section caught my eye…”"
 frame = 15
@@ -358,6 +364,71 @@ metadata/_custom_type_script = "uid://dst30i4jr8cmt"
 script = ExtResource("7_t1jd6")
 text = "(That wasn’t it…!)"
 frame = 18
+npc_info = ExtResource("8_8x0r1")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogChoice" type="Node" parent="Cabinet/3/DialogChoice/DialogBranch"]
+script = ExtResource("16_4rxfg")
+npc_info = ExtResource("8_8x0r1")
+metadata/_custom_type_script = "uid://b8kxiife71bd1"
+
+[node name="DialogBranch2" type="Node" parent="Cabinet/3/DialogChoice/DialogBranch/DialogChoice"]
+script = ExtResource("17_3ggun")
+text = "emergency procedures"
+metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
+
+[node name="DialogText" type="Node" parent="Cabinet/3/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_t1jd6")
+text = "“…the emergency procedures.”"
+frame = 14
+npc_info = ExtResource("8_8x0r1")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Cabinet/3/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_t1jd6")
+text = "“It says here all leaks should be inspected.”"
+frame = 17
+npc_info = ExtResource("8_8x0r1")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Cabinet/3/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_t1jd6")
+text = "“But more serious and dangerous leaks require the lifeguard to bring their keys.”"
+frame = 16
+npc_info = ExtResource("8_8x0r1")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="Cabinet/3/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_t1jd6")
+text = "“Based on the sign outside the changeroom and how the keys are missing…”"
+frame = 10
+npc_info = ExtResource("8_8x0r1")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="Cabinet/3/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_t1jd6")
+text = "“The leak must have been pretty serious!”"
+frame = 21
+npc_info = ExtResource("9_mua4v")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="Cabinet/3/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_t1jd6")
+text = "“Do you think it was burst pipe?”"
+frame = 19
+npc_info = ExtResource("9_mua4v")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="Cabinet/3/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_t1jd6")
+text = "“All we know is it must have been dangerous.”"
+frame = 9
+npc_info = ExtResource("8_8x0r1")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="Cabinet/3/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_t1jd6")
+text = "“We better open that changeroom soon.”"
 npc_info = ExtResource("8_8x0r1")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 

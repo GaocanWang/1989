@@ -72,11 +72,11 @@ func load_new_level(
 		DialogSystem.show_dialog( get_tree().current_scene.dialog_items )
 		await DialogSystem.finished
 	else:
-		var node = get_tree().current_scene.get_node(target_transition)
-		if ( !node.dialog_items.is_empty() && node.name != "WChangeroomTransition" ):
-			DialogSystem.show_dialog( node.dialog_items )
-			await DialogSystem.finished
-	
+		if target_transition != "":
+			var node = get_tree().current_scene.get_node(target_transition)
+			if ( !node.dialog_items.is_empty() && node.name != "WChangeroomTransition" ):
+				DialogSystem.show_dialog( node.dialog_items )
+				await DialogSystem.finished
 	pass
 
 
@@ -116,5 +116,4 @@ func load_new_part(
 		levels_explored.append(level_path)
 		DialogSystem.show_dialog( get_tree().current_scene.dialog_items )
 		await DialogSystem.finished
-	
 	pass

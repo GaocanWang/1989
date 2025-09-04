@@ -1,9 +1,15 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://iw1gh7ggtjhm"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=7 format=3 uid="uid://iw1gh7ggtjhm"]
 
 [ext_resource type="Script" uid="uid://cl8qm5rgyfo55" path="res://Items/item_effects/item_effect.gd" id="1_3gdi6"]
 [ext_resource type="Texture2D" uid="uid://b3jpkt2tl57ic" path="res://Items/sprites/afafawdfawvtearyysbry.png" id="2_jpl3w"]
+[ext_resource type="Script" uid="uid://l5pyc3mj80jl" path="res://Items/item_effects/handbook_effect.gd" id="2_lgmov"]
 [ext_resource type="Script" uid="uid://c3smnx41rr0au" path="res://Items/scripts/item_data.gd" id="3_4hkpm"]
 [ext_resource type="Texture2D" uid="uid://cshdku5tnm8wd" path="res://Items/sprites/mapicon.png" id="4_hkls4"]
+
+[sub_resource type="Resource" id="Resource_81b04"]
+script = ExtResource("2_lgmov")
+use_description = ""
+metadata/_custom_type_script = "uid://l5pyc3mj80jl"
 
 [resource]
 script = ExtResource("3_4hkpm")
@@ -11,5 +17,5 @@ name = "Map Handout"
 description = "A map of the community center pool’s layout."
 texture = ExtResource("4_hkls4")
 image = ExtResource("2_jpl3w")
-effects = Array[ExtResource("1_3gdi6")]([])
+effects = Array[ExtResource("1_3gdi6")]([SubResource("Resource_81b04")])
 metadata/_custom_type_script = "uid://c3smnx41rr0au"

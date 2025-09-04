@@ -52,6 +52,12 @@ func player_interact() -> void:
 		await get_tree().create_timer( 1.0 ).timeout
 		DialogSystem.show_dialog( dialog_items_2 )
 		await DialogSystem.finished
+		DocumentViewer.show_document(["This handbook is intended for lifeguards in AECC and provides a brief overview of duties and general guidelines to follow.", 
+										"General rules\nAlways work in shifts\nMake sure one partner is always on deck\nImmediately aid anyone who requests assistance", 
+										"In the case a swimmer requests for equipment, open the storage room. Make sure to log down which equipment is taken and the quantity. ALWAYS make sure to write down who has requested which items and see that they are all returned at the end of the day.\nKeep the storage room locked whenever not in use.",
+										"In the case of emergencies, act accordingly:\nIf someone is drowning, immediately go to aid them.\nIn the case of a leak, tell your shift partner and go to investigate. Lock the door to the room if there is a burst pipe or worse and call maintenance.\nIn case of injury, aid them out of the pool (if they are swimming) and stay with them. If the first aid kit does not treat their injuries, call paramedics."])
+		await DocumentViewer.finished
+		PlayerManager.INVENTORY_DATA.add_item( load( "res://Items/handbook.tres" ) )
 		DialogSystem.show_dialog( dialog_items_3 )
 	else:
 		DialogSystem.show_dialog( dialog_items_repeat )
