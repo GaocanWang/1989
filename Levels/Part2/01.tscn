@@ -95,7 +95,7 @@ spritesheet = ExtResource("13_fvy66")
 distance = 15
 
 [node name="MapHolder" parent="." instance=ExtResource("13_iqqml")]
-position = Vector2(136, -89)
+position = Vector2(228, 96)
 
 [node name="DialogText" type="Node" parent="MapHolder"]
 script = ExtResource("7_761wi")
