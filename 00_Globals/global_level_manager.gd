@@ -21,7 +21,7 @@ var valve_unlocked : bool = false
 var near_valve : bool = false
 var changeroom_open : bool = false
 var near_changeroom : bool = false
-var part_3 : bool = true
+var part_3 : bool = false
 var storage_open : bool = false
 var near_storage : bool = false
 
