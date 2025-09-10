@@ -1,10 +1,13 @@
-extends Node
+extends CanvasLayer
 
 const SAVE_PATH = "user://"
 
-
 signal game_loaded
 signal game_saved
+
+@onready var button: Button = $Control/VBoxContainer/Button
+@onready var button_2: Button = $Control/VBoxContainer/Button2
+@onready var button_3: Button = $Control/VBoxContainer/Button3
 
 
 var current_save : Dictionary = {
@@ -19,27 +22,49 @@ var current_save : Dictionary = {
 }
 
 
+func _ready() -> void:
+	hide()
 
 
-func save_game() -> void:
+func show_save_menu( mode : String ) -> void:
+	get_tree().paused = true
+	
+	if mode == "save":
+		button.pressed.connect( save_game.bind("save.sav") )
+		button_2.pressed.connect( save_game.bind("save2.sav") )
+		button_3.pressed.connect( save_game.bind("save3.sav") )
+	elif mode == "load":
+		button.pressed.connect( load_game.bind("save.sav") )
+		button_2.pressed.connect( load_game.bind("save2.sav") )
+		button_3.pressed.connect( load_game.bind("save3.sav") )
+	
+	show()
+	button.grab_focus()
+
+
+func save_game( path : String ) -> void:
+	hide()
+	get_tree().paused = false
+	
 	update_player_data()
 	update_scene_path()
 	update_item_data()
-	var file := FileAccess.open( SAVE_PATH + "save.sav", FileAccess.WRITE )
+	var file := FileAccess.open( SAVE_PATH + path, FileAccess.WRITE )
 	var save_json = JSON.stringify( current_save )
 	file.store_line( save_json )
 	game_saved.emit()
 	pass
 
 
-
-func get_save_file() -> FileAccess:
-	return FileAccess.open( SAVE_PATH + "save.sav", FileAccess.READ )
-
+func get_save_file( path : String ) -> FileAccess:
+	return FileAccess.open( SAVE_PATH + path, FileAccess.READ )
 
 
-func load_game() -> void:
-	var file := get_save_file()
+func load_game( path : String ) -> void:
+	hide()
+	get_tree().paused = false
+	
+	var file := get_save_file( path )
 	var json := JSON.new()
 	json.parse( file.get_line() )
 	var save_dict : Dictionary = json.get_data() as Dictionary
@@ -55,7 +80,6 @@ func load_game() -> void:
 	await LevelManager.level_loaded
 	
 	game_loaded.emit()
-	
 	pass
 
 

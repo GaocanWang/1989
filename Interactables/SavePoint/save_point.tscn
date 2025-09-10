@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxp7c5dr0vq5c"]
+
+[ext_resource type="Script" uid="uid://d1ceg2ogu310m" path="res://Interactables/SavePoint/save_point.gd" id="1_y0s5b"]
+[ext_resource type="Texture2D" uid="uid://bj08g4m3d3w3t" path="res://Tile Maps/Sprites/pool.png" id="2_mn6v0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mn6v0"]
+
+[node name="SavePoint" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_y0s5b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mn6v0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mn6v0")
+hframes = 24
+vframes = 9
+frame = 119

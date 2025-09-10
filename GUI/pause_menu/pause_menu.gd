@@ -73,7 +73,7 @@ func hide_pause_menu() -> void:
 func _on_save_pressed() -> void:
 	if is_paused == false:
 		return
-	SaveManager.save_game()
+	#SaveMenu.save_game()
 	hide_pause_menu()
 	pass
 
@@ -81,7 +81,7 @@ func _on_save_pressed() -> void:
 func _on_load_pressed() -> void:
 	if is_paused == false:
 		return
-	SaveManager.load_game()
+	#SaveMenu.load_game()
 	await LevelManager.level_load_started
 	hide_pause_menu()
 	pass
