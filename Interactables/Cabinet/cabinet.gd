@@ -1,7 +1,5 @@
 class_name Cabinet extends Area2D
 
-@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
-
 var dialog_items : Array[ DialogItem ]
 var dialog_items_2 : Array[ DialogItem ]
 var dialog_items_3 : Array[ DialogItem ]
@@ -48,7 +46,7 @@ func player_interact() -> void:
 		DialogSystem.show_dialog( dialog_items )
 		await DialogSystem.finished
 		get_tree().paused = true
-		audio_player.play()
+		PauseMenu.play_audio( load( "res://Interactables/Cabinet/drawer open SFX.mp3" ) )
 		await get_tree().create_timer( 1.0 ).timeout
 		DialogSystem.show_dialog( dialog_items_2 )
 		await DialogSystem.finished

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://bv8i1vdw3nejj"]
+[gd_scene load_steps=33 format=4 uid="uid://bv8i1vdw3nejj"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_k78pf"]
 [ext_resource type="AudioStream" uid="uid://0aojls0cgt76" path="res://Levels/music/searching.mp3" id="2_fllej"]
@@ -21,12 +21,17 @@
 [ext_resource type="Texture2D" uid="uid://lif6ysy0jebs" path="res://FullScreenArt/1920x1080-black-solid-color-background.jpg" id="17_sndjb"]
 [ext_resource type="PackedScene" uid="uid://rjm0iajn7t01" path="res://Interactables/Locker/locker.tscn" id="18_k78pf"]
 [ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/box.tres" id="18_qxw37"]
+[ext_resource type="Texture2D" uid="uid://6s8yrx3ph7fh" path="res://Interactables/Locker/empty.png" id="19_hu7pt"]
 [ext_resource type="Resource" uid="uid://cx8yq3fk58aei" path="res://npc/00_npcs/lowkey.tres" id="19_ucg53"]
+[ext_resource type="Texture2D" uid="uid://bwvv86047r1vp" path="res://Interactables/Locker/bodywhy.png" id="20_54bkc"]
 [ext_resource type="Texture2D" uid="uid://bq0fjtggm5sb0" path="res://FullScreenArt/looking at dead body fs.png" id="21_o1ig8"]
 [ext_resource type="Resource" uid="uid://q5twg4buxc41" path="res://npc/00_npcs/amelia_np.tres" id="22_l3ha2"]
 [ext_resource type="Resource" uid="uid://db6m3p8sr6mxj" path="res://npc/00_npcs/lowkey_np.tres" id="23_nkp5v"]
 [ext_resource type="Resource" uid="uid://b125yid6rqvrs" path="res://npc/00_npcs/eris_np.tres" id="24_0hi2p"]
 [ext_resource type="AudioStream" uid="uid://b4lhh2f0f1pa6" path="res://GUI/dialog_system/audio/SFX plays.mp3" id="26_hu7pt"]
+[ext_resource type="PackedScene" uid="uid://bxp7c5dr0vq5c" path="res://Interactables/SavePoint/save_point.tscn" id="28_o1ig8"]
+[ext_resource type="Texture2D" uid="uid://bjxx7wdrsrx5n" path="res://Interactables/Locker/closed.png" id="31_sndjb"]
+[ext_resource type="Texture2D" uid="uid://bya8rds447k32" path="res://Interactables/Locker/towels.png" id="32_qxw37"]
 
 [node name="17" type="Node2D"]
 script = ExtResource("1_k78pf")
@@ -45,7 +50,7 @@ rendering_quadrant_size = 24
 
 [node name="Other" type="TileMapLayer" parent="."]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAIAAYAAQASAAQAAAAIAAcAAQASAAUAAAAIAAgAAQASAAYAAAAJAAsAAQANAAAAAAAKAAsAAQAOAAAAAAALAAYAAQASAAUAAAALAAcAAQASAAUAAAALAAgAAQASAAYAAAALAAsAAQAOAAAAAAAOAAYAAQASAAAAAAAOAAcAAQASAAAAAAAOAAgAAQASAAIAAAAOAAkAAQASAAMAAAASAAoAAQALAAIAADASAAsAAQALAAEAADAJAAYAAQASAAUAABAJAAcAAQASAAUAABAJAAgAAQASAAYAABAMAAYAAQASAAUAABAMAAcAAQASAAUAABAMAAgAAQASAAYAABAMAAsAAQAPAAAAAAAOAA0AAQAEAAAAAGAPAAYAAQASAAEAABAPAAcAAQASAAEAABAPAAgAAQASAAIAABAPAAkAAQASAAMAABARAAQAAQAKAAMAAAARAAUAAQAKAAQAAAARAAYAAQAKAAQAAAARAAcAAQAKAAUAAAATAAoAAQAMAAIAACATAAsAAQAMAAEAACALABEAAQAMAAEAAEAMABEAAQAMAAIAAEALABAAAQALAAEAAGAMABAAAQALAAIAAGAIAA0AAQAEAAEAAFAJAA0AAQAEAAEAAFAKAA0AAQAEAAEAAFALAA0AAQAEAAEAAFAMAA0AAQAEAAEAAFANAA0AAQAEAAEAAFABAA8AAQALAAEAAAAAAA8AAQAMAAEAABAAABAAAQAMAAIAABABABAAAQALAAIAAAABAAoAAQAXAAQAAAAHAAMAAQAPAAAAAAAGAAMAAQANAAAAAAA=")
+tile_map_data = PackedByteArray("AAAIAAYAAQASAAQAAAAIAAcAAQASAAUAAAAIAAgAAQASAAYAAAAJAAsAAQANAAAAAAAKAAsAAQAOAAAAAAALAAYAAQASAAUAAAALAAcAAQASAAUAAAALAAgAAQASAAYAAAALAAsAAQAOAAAAAAAOAAYAAQASAAAAAAAOAAcAAQASAAAAAAAOAAgAAQASAAIAAAAOAAkAAQASAAMAAAASAAoAAQALAAIAADASAAsAAQALAAEAADAJAAYAAQASAAUAABAJAAcAAQASAAUAABAJAAgAAQASAAYAABAMAAYAAQASAAUAABAMAAcAAQASAAUAABAMAAgAAQASAAYAABAMAAsAAQAPAAAAAAAOAA0AAQAEAAAAAGAPAAYAAQASAAEAABAPAAcAAQASAAEAABAPAAgAAQASAAIAABAPAAkAAQASAAMAABARAAQAAQAKAAMAAAARAAUAAQAKAAQAAAARAAYAAQAKAAQAAAARAAcAAQAKAAUAAAATAAoAAQAMAAIAACATAAsAAQAMAAEAACALABEAAQAMAAEAAEAMABEAAQAMAAIAAEALABAAAQALAAEAAGAMABAAAQALAAIAAGAIAA0AAQAEAAEAAFAJAA0AAQAEAAEAAFAKAA0AAQAEAAEAAFALAA0AAQAEAAEAAFAMAA0AAQAEAAEAAFANAA0AAQAEAAEAAFABAA8AAQALAAEAAAAAAA8AAQAMAAEAABAAABAAAQAMAAIAABABABAAAQALAAIAAAAHAAMAAQAPAAAAAAAGAAMAAQANAAAAAAA=")
 tile_set = ExtResource("3_d36rl")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_7i5rl")]
@@ -438,12 +443,15 @@ distance = 12
 
 [node name="Locker" parent="." instance=ExtResource("18_k78pf")]
 position = Vector2(36, 60)
+texture = ExtResource("19_hu7pt")
 
 [node name="Locker2" parent="." instance=ExtResource("18_k78pf")]
 position = Vector2(60, 60)
+texture = ExtResource("19_hu7pt")
 
 [node name="Locker3-Dead" parent="." instance=ExtResource("18_k78pf")]
 position = Vector2(84, 60)
+texture = ExtResource("20_54bkc")
 
 [node name="DialogText" type="Node" parent="Locker3-Dead"]
 script = ExtResource("10_ucg53")
@@ -1981,11 +1989,16 @@ frame = 4
 npc_info = ExtResource("14_0hi2p")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
+[node name="SavePoint" parent="Locker3-Dead" instance=ExtResource("28_o1ig8")]
+position = Vector2(-48, 194)
+
 [node name="Locker4" parent="." instance=ExtResource("18_k78pf")]
 position = Vector2(108, 60)
+texture = ExtResource("19_hu7pt")
 
 [node name="Locker5-Y" parent="." instance=ExtResource("18_k78pf")]
 position = Vector2(204, 60)
+texture = ExtResource("31_sndjb")
 
 [node name="DialogText" type="Node" parent="Locker5-Y"]
 script = ExtResource("10_ucg53")
@@ -2036,30 +2049,39 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="Locker6" parent="." instance=ExtResource("18_k78pf")]
 position = Vector2(228, 60)
+texture = ExtResource("19_hu7pt")
 
 [node name="Locker7" parent="." instance=ExtResource("18_k78pf")]
 position = Vector2(252, 60)
+texture = ExtResource("19_hu7pt")
 
 [node name="Locker8" parent="." instance=ExtResource("18_k78pf")]
 position = Vector2(276, 60)
+texture = ExtResource("19_hu7pt")
 
 [node name="Locker9" parent="." instance=ExtResource("18_k78pf")]
 position = Vector2(300, 60)
+texture = ExtResource("19_hu7pt")
 
 [node name="Locker10" parent="." instance=ExtResource("18_k78pf")]
 position = Vector2(324, 60)
+texture = ExtResource("19_hu7pt")
 
 [node name="Locker11" parent="." instance=ExtResource("18_k78pf")]
 position = Vector2(348, 60)
+texture = ExtResource("19_hu7pt")
 
 [node name="Locker12" parent="." instance=ExtResource("18_k78pf")]
 position = Vector2(372, 60)
+texture = ExtResource("19_hu7pt")
 
 [node name="Locker13" parent="." instance=ExtResource("18_k78pf")]
 position = Vector2(396, 60)
+texture = ExtResource("19_hu7pt")
 
 [node name="Locker14-Tote" parent="." instance=ExtResource("18_k78pf")]
 position = Vector2(420, 60)
+texture = ExtResource("32_qxw37")
 
 [node name="DialogText" type="Node" parent="Locker14-Tote"]
 script = ExtResource("10_ucg53")
@@ -2091,3 +2113,4 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="Locker15" parent="." instance=ExtResource("18_k78pf")]
 position = Vector2(444, 60)
+texture = ExtResource("19_hu7pt")

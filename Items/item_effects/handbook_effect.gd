@@ -1,4 +1,4 @@
-class_name Handbookffect extends ItemEffect
+class_name HandbookEffect extends ItemEffect
 
 var document : Array[String] = ["This handbook is intended for lifeguards in AECC and provides a brief overview of duties and general guidelines to follow.", 
 										"General rules\nAlways work in shifts\nMake sure one partner is always on deck\nImmediately aid anyone who requests assistance", 

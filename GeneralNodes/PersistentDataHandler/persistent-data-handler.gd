@@ -10,12 +10,12 @@ func _ready() -> void:
 
 
 func set_value() -> void:
-	SaveManager.add_persistent_value( _get_name() )
+	SaveMenu.add_persistent_value( _get_name() )
 	pass
 
 
 func get_value() -> void:
-	value = SaveManager.check_persistent_value( _get_name() )
+	value = SaveMenu.check_persistent_value( _get_name() )
 	data_loaded.emit()
 	pass
 

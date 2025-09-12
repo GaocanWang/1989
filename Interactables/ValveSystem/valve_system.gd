@@ -49,8 +49,8 @@ func _on_area_exit( _a : Area2D ) -> void:
 
 
 func player_interact() -> void:
-	if ( !LevelManager.puzzle_solved ):
-		if LevelManager.valve_unlocked:
+	if ( !LevelManager.flags.puzzle_solved ):
+		if LevelManager.flags.valve_unlocked:
 			get_tree().paused = true
 			buttons.show()
 			yes.grab_focus()
@@ -103,5 +103,5 @@ func stage3() -> void:
 	left.set_container( 2, 2, [ top, bottom ] )
 	await bottom.full
 	GUI.hide()
-	LevelManager.puzzle_solved = true
+	LevelManager.flags.puzzle_solved = true
 	DialogSystem.show_dialog( dialog_items_3 )

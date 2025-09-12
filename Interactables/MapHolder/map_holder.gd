@@ -3,7 +3,6 @@ class_name MapHolder extends Area2D
 @onready var buttons: VBoxContainer = $CanvasLayer/VBoxContainer
 @onready var yes: Button = $CanvasLayer/VBoxContainer/Button
 @onready var no: Button = $CanvasLayer/VBoxContainer/Button2
-@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var texture: TextureRect = $CanvasLayer/TextureRect
 
 var showing : bool = false
@@ -34,7 +33,7 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept") && showing == true:
 		texture.hide()
-		AudioManager.play_sfx( load( "res://Interactables/MapHolder/SFX paper.mp3" ) )
+		PauseMenu.play_audio( load( "res://Interactables/MapHolder/SFX paper.mp3" ) )
 		showing = false
 		get_tree().paused = false
 
@@ -54,7 +53,7 @@ func _on_yes() -> void:
 	first_time = false
 	buttons.hide()
 	PlayerManager.INVENTORY_DATA.add_item( load( "res://Items/map.tres" ) )
-	AudioManager.play_sfx( load( "res://Interactables/MapHolder/SFX paper.mp3" ) )
+	PauseMenu.play_audio( load( "res://Interactables/MapHolder/SFX paper.mp3" ) )
 	texture.show()
 	showing = true
 	pass

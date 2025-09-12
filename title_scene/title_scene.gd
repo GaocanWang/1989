@@ -8,6 +8,7 @@ const START_LEVEL : String = "res://Levels/Part1/01.tscn"
 
 @onready var button_new: Button = $CanvasLayer/Control/ButtonNew
 @onready var button_continue: Button = $CanvasLayer/Control/ButtonContinue
+@onready var button_options: Button = $CanvasLayer/Control/ButtonOptions
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var animation_player: AnimationPlayer = $CanvasLayer/AnimationPlayer
 
@@ -20,6 +21,8 @@ var dialog_items_2 : Array[ DialogItem ]
 func _ready() -> void:
 	get_tree().paused = true
 	PlayerManager.player.visible = false
+	
+	PauseMenu.is_title_scene_active = true
 	
 	$CanvasLayer/SplashScene.finished.connect( setup_title_screen )
 	
@@ -40,13 +43,10 @@ func setup_title_screen() -> void:
 	AudioManager.play_music( music )
 	button_new.pressed.connect( start_game )
 	button_continue.pressed.connect( load_game )
+	button_options.pressed.connect( open_options )
 	button_new.grab_focus()
-	
-	PauseMenu.process_mode = Node.PROCESS_MODE_DISABLED
-	
 	button_new.focus_entered.connect( play_audio.bind( button_focus_audio ) )
 	button_continue.focus_entered.connect( play_audio.bind( button_focus_audio ) )
-	
 	pass
 
 
@@ -89,10 +89,20 @@ func load_game() -> void:
 	pass
 
 
+func open_options() -> void:
+	PauseMenu.side_bar.hide()
+	PauseMenu.show()
+	PauseMenu.is_paused = true
+	PauseMenu.master_slider.grab_focus()
+	await PauseMenu.hidden
+	button_options.grab_focus()
+	PauseMenu.side_bar.show()
+	pass
+
 
 func exit_title_screen() -> void:
 	PlayerManager.player.visible = true
-	PauseMenu.process_mode = Node.PROCESS_MODE_ALWAYS
+	PauseMenu.is_title_scene_active = false
 	self.queue_free()
 	pass
 

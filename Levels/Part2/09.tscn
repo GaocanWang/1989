@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://clhqjnwycitrn"]
+[gd_scene load_steps=22 format=4 uid="uid://clhqjnwycitrn"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_5llay"]
 [ext_resource type="AudioStream" uid="uid://kt11sw5r0rs" path="res://Levels/music/next_steps.mp3" id="2_orrx0"]
@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://b4lhh2f0f1pa6" path="res://GUI/dialog_system/audio/SFX plays.mp3" id="17_25iej"]
 [ext_resource type="AudioStream" uid="uid://c0nvr1s0uv5m6" path="res://GUI/dialog_system/audio/pool chime sfx.mp3" id="18_25iej"]
 [ext_resource type="PackedScene" uid="uid://dm15w3ux3txs4" path="res://npc/npc.tscn" id="20_5qqp0"]
+[ext_resource type="PackedScene" uid="uid://bxp7c5dr0vq5c" path="res://Interactables/SavePoint/save_point.tscn" id="21_gerki"]
 
 [node name="09" type="Node2D"]
 script = ExtResource("1_5llay")
@@ -38,7 +39,7 @@ rendering_quadrant_size = 24
 
 [node name="Other" type="TileMapLayer" parent="."]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAJAAIAAQALAAYAAAAJAAMAAQANAAYAAAAHAAMAAQAIAAUAAAAGAAAAAQAEAAEAAGAHAAAAAQAEAAEAAGAIAAAAAQAEAAEAAGAJAAAAAQAEAAEAAGAKAAAAAQAEAAAAAGAKAAEAAQAEAAEAAAAKAAIAAQAEAAEAAAAKAAMAAQAEAAEAAAAKAAQAAQAEAAEAAAAKAAUAAQAEAAEAAAAKAAYAAQAEAAEAAAAKAAcAAQAEAAEAAAAFAAYAAQAMAAIAABAFAAUAAQAMAAEAABAFAAQAAQAEAAEAADAFAAMAAQAEAAEAADAFAAIAAQAEAAEAADAFAAEAAQAEAAEAADAFAAAAAQAEAAAAADAIAAIAAQALAAYAAAAGAAIAAQAHAAQAAAAKAAgAAQAEAAAAAAAFAAcAAQAEAAEAADAFAAgAAQAEAAAAAFAGAAcAAQAMAAYAAAAGAAgAAQAEAAEAAFAHAAcAAQAQAAEAAAAHAAgAAQAEAAEAAFAIAAcAAQACAAMAAAAIAAgAAQAEAAEAAFAJAAcAAQAJAAUAAAAJAAgAAQAEAAEAAFAGAAUAAQALAAEAAAAGAAYAAQALAAIAAAAHAAIAAQAXAAQAAAA=")
+tile_map_data = PackedByteArray("AAAJAAIAAQALAAYAAAAJAAMAAQANAAYAAAAHAAMAAQAIAAUAAAAGAAAAAQAEAAEAAGAHAAAAAQAEAAEAAGAIAAAAAQAEAAEAAGAJAAAAAQAEAAEAAGAKAAAAAQAEAAAAAGAKAAEAAQAEAAEAAAAKAAIAAQAEAAEAAAAKAAMAAQAEAAEAAAAKAAQAAQAEAAEAAAAKAAUAAQAEAAEAAAAKAAYAAQAEAAEAAAAKAAcAAQAEAAEAAAAFAAYAAQAMAAIAABAFAAUAAQAMAAEAABAFAAQAAQAEAAEAADAFAAMAAQAEAAEAADAFAAIAAQAEAAEAADAFAAEAAQAEAAEAADAFAAAAAQAEAAAAADAIAAIAAQALAAYAAAAGAAIAAQAHAAQAAAAKAAgAAQAEAAAAAAAFAAcAAQAEAAEAADAFAAgAAQAEAAAAAFAGAAcAAQAMAAYAAAAGAAgAAQAEAAEAAFAHAAcAAQAQAAEAAAAHAAgAAQAEAAEAAFAIAAcAAQACAAMAAAAIAAgAAQAEAAEAAFAJAAcAAQAJAAUAAAAJAAgAAQAEAAEAAFAGAAUAAQALAAEAAAAGAAYAAQALAAIAAAA=")
 tile_set = ExtResource("3_uf2si")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_orrx0")]
@@ -4645,3 +4646,6 @@ text = "(I need to step outside.)"
 frame = 18
 npc_info = ExtResource("9_0njso")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="SavePoint" parent="." instance=ExtResource("21_gerki")]
+position = Vector2(166, 62)

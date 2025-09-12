@@ -19,6 +19,10 @@ var current_save : Dictionary = {
 	items = [],
 	persistence = [],
 	quests = [],
+	levels = [],
+	interacted = [],
+	lockers = [],
+	flags = {}
 }
 
 
@@ -30,10 +34,16 @@ func show_save_menu( mode : String ) -> void:
 	get_tree().paused = true
 	
 	if mode == "save":
+		button.pressed.disconnect( load_game.bind("save.sav") )
+		button_2.pressed.disconnect( load_game.bind("save2.sav") )
+		button_3.pressed.disconnect( load_game.bind("save3.sav") )
 		button.pressed.connect( save_game.bind("save.sav") )
 		button_2.pressed.connect( save_game.bind("save2.sav") )
 		button_3.pressed.connect( save_game.bind("save3.sav") )
 	elif mode == "load":
+		button.pressed.disconnect( save_game.bind("save.sav") )
+		button_2.pressed.disconnect( save_game.bind("save2.sav") )
+		button_3.pressed.disconnect( save_game.bind("save3.sav") )
 		button.pressed.connect( load_game.bind("save.sav") )
 		button_2.pressed.connect( load_game.bind("save2.sav") )
 		button_3.pressed.connect( load_game.bind("save3.sav") )
@@ -77,6 +87,20 @@ func load_game( path : String ) -> void:
 	PlayerManager.set_player_position( Vector2( current_save.player.pos_x, current_save.player.pos_y ) )
 	PlayerManager.INVENTORY_DATA.parse_save_data( current_save.items )
 	
+	LevelManager.levels_explored.clear()
+	LevelManager.levels_explored.append_array(current_save.levels)
+	LevelManager.interacted.clear()
+	LevelManager.interacted.append_array(current_save.interacted)
+	LevelManager.lockers.clear()
+	LevelManager.lockers.append_array(current_save.lockers)
+	LevelManager.flags.clear()
+	LevelManager.flags = current_save.flags
+	
+	for level in LevelManager.levels_explored:
+		if level == "res://Levels/Part2/01.tscn":
+			LevelManager.part2.emit()
+			break
+	
 	await LevelManager.level_loaded
 	
 	game_loaded.emit()
@@ -87,6 +111,11 @@ func update_player_data() -> void:
 	var p : Player = PlayerManager.player
 	current_save.player.pos_x = p.global_position.x
 	current_save.player.pos_y = p.global_position.y
+	
+	current_save.levels = LevelManager.levels_explored
+	current_save.interacted = LevelManager.interacted
+	current_save.lockers = LevelManager.lockers
+	current_save.flags = LevelManager.flags
 
 
 func update_scene_path() -> void:

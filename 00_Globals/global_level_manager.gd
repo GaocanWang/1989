@@ -11,19 +11,25 @@ signal extra_dialogue
 var current_tilemap_bounds : Array[ Vector2 ]
 var target_transition : String
 var position_offset : Vector2
-var levels_explored : Array[ String ]
 
-var locker_interacted : bool = false
-var x_interacted : bool = false
-var y_interacted : bool = false
-var puzzle_solved : bool = false
-var valve_unlocked : bool = false
+var levels_explored : Array[ String ] = []
+var interacted : Array[ String ] = []
+var lockers : Array[ String ] = []
+
 var near_valve : bool = false
-var changeroom_open : bool = false
 var near_changeroom : bool = false
-var part_3 : bool = false
-var storage_open : bool = false
 var near_storage : bool = false
+
+var flags : Dictionary = {
+	locker_interacted = false,
+	x_interacted = false,
+	y_interacted = false,
+	puzzle_solved = false,
+	valve_unlocked = false,
+	changeroom_open = false,
+	part_3 = false,
+	storage_open = false
+}
 
 
 func _ready() -> void:
@@ -46,7 +52,10 @@ func load_new_level(
 	target_transition = _target_transition
 	position_offset = _position_offset
 	
-	if ResourceUID.get_id_path(ResourceUID.text_to_id(level_path)) == "res://Levels/Part2/10.tscn" && !(x_interacted && y_interacted):
+	if "uid://" in level_path:
+		level_path = ResourceUID.get_id_path(ResourceUID.text_to_id(level_path))
+	
+	if level_path == "res://Levels/Part2/10.tscn" && !(flags.x_interacted && flags.y_interacted):
 		level_path = "res://Levels/Part2/13.tscn"
 	
 	await SceneTransition.fade_out()
@@ -67,10 +76,10 @@ func load_new_level(
 	
 	level_loaded.emit()
 	
-	if ( !levels_explored.has(level_path) && !get_tree().current_scene.dialog_items.is_empty() ):
+	if ( !levels_explored.has(level_path) ):
 		levels_explored.append(level_path)
-		DialogSystem.show_dialog( get_tree().current_scene.dialog_items )
-		await DialogSystem.finished
+		if ( !get_tree().current_scene.dialog_items.is_empty() ):
+			DialogSystem.show_dialog( get_tree().current_scene.dialog_items )
 	else:
 		if target_transition != "":
 			var node = get_tree().current_scene.get_node(target_transition)
@@ -100,7 +109,6 @@ func load_new_part(
 	
 	if level_path == "res://Levels/Part2/01.tscn":
 		part2.emit()
-		print(level_path)
 	
 	await SceneTransition.long_fade_in()
 	

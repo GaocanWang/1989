@@ -32,7 +32,6 @@ var current_dialog_text : String = ""
 @onready var dialog_progress_indicator: PanelContainer = $DialogUI/DialogProgressIndicator
 @onready var dialog_progress_indicator_label: Label = $DialogUI/DialogProgressIndicator/Label
 @onready var timer: Timer = $DialogUI/Timer
-@onready var audio_stream_player: AudioStreamPlayer = $DialogUI/AudioStreamPlayer
 @onready var choice_options : VBoxContainer = $DialogUI/VBoxContainer
 @onready var content_container: PanelContainer = $DialogUI/PanelContainer
 @onready var textbox_animation_player: AnimationPlayer = $DialogUI/AnimationPlayer
@@ -41,8 +40,6 @@ var current_dialog_text : String = ""
 @onready var background: TextureRect = $DialogUI/TextureRect
 @onready var progress_bar: ProgressBar = $DialogUI/ProgressBar
 @onready var timer_2: Timer = $DialogUI/Timer2
-@onready var audio_player: AudioStreamPlayer2D = $DialogUI/AudioStreamPlayer2D
-
 
 
 

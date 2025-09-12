@@ -820,5 +820,3 @@ value = 5.0
 show_percentage = false
 
 [node name="Timer2" type="Timer" parent="DialogUI"]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="DialogUI"]

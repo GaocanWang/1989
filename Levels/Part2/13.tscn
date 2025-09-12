@@ -38,7 +38,7 @@ tile_set = ExtResource("2_h7lxs")
 position = Vector2(182, 120)
 
 [node name="LevelTransition" parent="." instance=ExtResource("5_idsfb")]
-position = Vector2(120, 132)
+position = Vector2(120, 108)
 level = "uid://co4f0ibd8t1gp"
 target_transition_area = "LevelTransition6"
 door = true

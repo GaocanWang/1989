@@ -59,6 +59,7 @@ grow_vertical = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
 max_polyphony = 4
+bus = &"SFX"
 
 [node name="Background" type="TextureRect" parent="Control"]
 layout_mode = 1
@@ -69,7 +70,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_dvxeg")
 
-[node name="PauseMenu" type="VBoxContainer" parent="Control"]
+[node name="SideBar" type="VBoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -80,31 +81,32 @@ offset_bottom = 160.0
 grow_vertical = 2
 theme_override_constants/separation = 24
 
-[node name="Continue" type="Button" parent="Control/PauseMenu"]
+[node name="Continue" type="Button" parent="Control/SideBar"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "continue"
 alignment = 0
 
-[node name="Inventory" type="Button" parent="Control/PauseMenu"]
+[node name="Inventory" type="Button" parent="Control/SideBar"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "inventory"
 alignment = 0
 
-[node name="Settings" type="Button" parent="Control/PauseMenu"]
+[node name="Settings" type="Button" parent="Control/SideBar"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "settings"
 alignment = 0
 
-[node name="Quit" type="Button" parent="Control/PauseMenu"]
+[node name="Quit" type="Button" parent="Control/SideBar"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "quit"
 alignment = 0
 
 [node name="Inventory" type="Control" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -195,7 +197,6 @@ theme_override_font_sizes/font_size = 24
 autowrap_mode = 3
 
 [node name="Settings" type="Control" parent="Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -221,22 +222,28 @@ grow_vertical = 2
 layout_mode = 2
 text = "Master"
 
-[node name="HSlider" type="HSlider" parent="Control/Settings/VBoxContainer"]
+[node name="MasterSlider" type="HSlider" parent="Control/Settings/VBoxContainer"]
 layout_mode = 2
+max_value = 1.0
+step = 0.01
 
 [node name="Label2" type="Label" parent="Control/Settings/VBoxContainer"]
 layout_mode = 2
 text = "Music"
 
-[node name="HSlider2" type="HSlider" parent="Control/Settings/VBoxContainer"]
+[node name="MusicSlider" type="HSlider" parent="Control/Settings/VBoxContainer"]
 layout_mode = 2
+max_value = 1.0
+step = 0.01
 
 [node name="Label3" type="Label" parent="Control/Settings/VBoxContainer"]
 layout_mode = 2
 text = "SFX"
 
-[node name="HSlider3" type="HSlider" parent="Control/Settings/VBoxContainer"]
+[node name="SFXSlider" type="HSlider" parent="Control/Settings/VBoxContainer"]
 layout_mode = 2
+max_value = 1.0
+step = 0.01
 
 [node name="Quit" type="Control" parent="Control"]
 visible = false
@@ -261,10 +268,10 @@ offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="Control/Quit/VBoxContainer"]
+[node name="QuitToMenuButton" type="Button" parent="Control/Quit/VBoxContainer"]
 layout_mode = 2
 text = "quit to main menu"
 
-[node name="Button2" type="Button" parent="Control/Quit/VBoxContainer"]
+[node name="QuitToDesktopButton" type="Button" parent="Control/Quit/VBoxContainer"]
 layout_mode = 2
 text = "quit to desktop"

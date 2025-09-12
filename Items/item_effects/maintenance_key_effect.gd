@@ -3,7 +3,7 @@ class_name MaintenanceKeyEffect extends ItemEffect
 var dialog_items : Array[DialogItem] = [DialogText.new(), DialogText.new(), DialogText.new()]
 
 func use() -> void:
-	if !LevelManager.valve_unlocked && LevelManager.near_valve:
+	if !LevelManager.flags.valve_unlocked && LevelManager.near_valve:
 		PauseMenu.hide_pause_menu()
 	
 		dialog_items[0].text = "“That should do it.”"
@@ -19,6 +19,6 @@ func use() -> void:
 		PauseMenu.play_audio( load( "res://GUI/dialog_system/audio/key turning sfx.mp3" ) )
 		await PauseMenu.tree().create_timer(1.0).timeout
 		DialogSystem.show_dialog( dialog_items )
-		LevelManager.valve_unlocked = true
+		LevelManager.flags.valve_unlocked = true
 	else:
 		PauseMenu.play_audio( load( "res://GUI/dialog_system/audio/error sfx.mp3" ) )

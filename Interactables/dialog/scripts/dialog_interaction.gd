@@ -10,7 +10,6 @@ signal finished
 
 var dialog_items : Array[ DialogItem ]
 var dialog_items_2 : Array[ DialogItem ]
-var first_time : bool = true
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -43,8 +42,8 @@ func player_interact() -> void:
 	player_interacted.emit()
 	await get_tree().process_frame
 	await get_tree().process_frame
-	if ( first_time ):
-		first_time = false
+	if ( !LevelManager.interacted.has( str( get_path() ) ) ):
+		LevelManager.interacted.append( str( get_path() ) )
 		DialogSystem.show_dialog( dialog_items )
 	else:
 		if ( !dialog_items_2.is_empty() ):
@@ -82,7 +81,7 @@ func _check_dialog() -> void:
 		LevelManager.load_new_level( "res://Levels/Part2/15.tscn", "", Vector2.ZERO )
 	elif DialogSystem.current_dialog_text == "“Which means he couldn’t have gotten knocked unconscious.”":
 		LevelManager.part3.emit()
-		LevelManager.part_3 = true
+		LevelManager.flags.part_3 = true
 
 
 func _on_debate_fail() -> void:

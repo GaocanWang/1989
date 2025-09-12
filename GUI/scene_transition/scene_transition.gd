@@ -14,7 +14,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if showing && event.is_action_pressed("ui_accept"):
 		showing = false
 		texture_rect.hide()
-		AudioManager.play_sfx( load("res://Interactables/MapHolder/SFX paper.mp3") )
+		PauseMenu.play_audio( load("res://Interactables/MapHolder/SFX paper.mp3") )
 		get_tree().paused = false
 
 

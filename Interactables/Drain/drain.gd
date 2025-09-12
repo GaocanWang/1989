@@ -48,7 +48,7 @@ func _on_area_exit( _a : Area2D ) -> void:
 
 func player_interact() -> void:
 	await get_tree().process_frame
-	if ( LevelManager.puzzle_solved ):
+	if ( LevelManager.flags.puzzle_solved ):
 		DialogSystem.show_dialog( dialog_items_2 )
 		await DialogSystem.finished
 		get_tree().paused = true

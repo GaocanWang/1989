@@ -7,17 +7,48 @@ signal hidden
 @onready var item_name: Label = $Control/Inventory/Description/VBoxContainer/ItemName
 @onready var item_description: Label = $Control/Inventory/Description/VBoxContainer/ItemDescription
 @onready var item_image: TextureRect = $Control/Inventory/Image/ItemImage
+@onready var side_bar: VBoxContainer = $Control/SideBar
+
+@onready var quit_to_menu: Button = $Control/Quit/VBoxContainer/QuitToMenuButton
+@onready var quit_to_desktop: Button = $Control/Quit/VBoxContainer/QuitToDesktopButton
+@onready var continue_button: Button = $Control/SideBar/Continue
+
+@onready var master_slider: HSlider = $Control/Settings/VBoxContainer/MasterSlider
+@onready var music_slider: HSlider = $Control/Settings/VBoxContainer/MusicSlider
+@onready var sfx_slider: HSlider = $Control/Settings/VBoxContainer/SFXSlider
 
 var is_paused : bool = false
+var is_title_scene_active : bool = false
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hide_pause_menu()
-	#button_save.pressed.connect( _on_save_pressed )
-	#button_load.pressed.connect( _on_load_pressed )
 	
-	for button in $Control/PauseMenu.get_children():
+	var config = ConfigFile.new()
+	var err = config.load("user://settings.cfg")
+	if err == OK:
+		master_slider.value = config.get_value("audio", "master", master_slider.value)
+		music_slider.value = config.get_value("audio", "music", music_slider.value)
+		sfx_slider.value = config.get_value("audio", "sfx", sfx_slider.value)
+		
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(master_slider.value))
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(music_slider.value))
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(sfx_slider.value))
+	else:
+		master_slider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")))
+		music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")))
+		sfx_slider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX")))
+	
+	continue_button.pressed.connect( hide_pause_menu )
+	quit_to_menu.pressed.connect( _quit_to_menu )
+	quit_to_desktop.pressed.connect( _quit_to_desktop )
+	
+	master_slider.value_changed.connect(_on_slider_value_changed.bind("Master"))
+	music_slider.value_changed.connect(_on_slider_value_changed.bind("Music"))
+	sfx_slider.value_changed.connect(_on_slider_value_changed.bind("SFX"))
+	
+	for button in side_bar.get_children():
 		button.connect("focus_entered", Callable(self, "_on_button_focus").bind(button))
 	
 	pass # Replace with function body.
@@ -46,7 +77,7 @@ func _on_button_focus(button: Button):
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		if is_paused == false:
-			if DialogSystem.is_active:
+			if DialogSystem.is_active || is_title_scene_active:
 				return
 			show_pause_menu()
 		else:
@@ -60,7 +91,7 @@ func show_pause_menu() -> void:
 	is_paused = true
 	shown.emit()
 	await get_tree().process_frame
-	$Control/PauseMenu/Continue.grab_focus()
+	continue_button.grab_focus()
 
 
 func hide_pause_menu() -> void:
@@ -70,21 +101,24 @@ func hide_pause_menu() -> void:
 	hidden.emit()
 
 
-func _on_save_pressed() -> void:
-	if is_paused == false:
-		return
-	#SaveMenu.save_game()
+func _quit_to_menu() -> void:
 	hide_pause_menu()
-	pass
+	get_tree().change_scene_to_file("res://title_scene/title_scene.tscn")
 
 
-func _on_load_pressed() -> void:
-	if is_paused == false:
-		return
-	#SaveMenu.load_game()
-	await LevelManager.level_load_started
-	hide_pause_menu()
-	pass
+func _quit_to_desktop() -> void:
+	get_tree().quit()
+
+
+func _on_slider_value_changed(value: float, bus: String) -> void:
+	var db = linear_to_db(value)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus), db)
+	
+	var config = ConfigFile.new()
+	config.set_value("audio", "master", master_slider.value)
+	config.set_value("audio", "music", music_slider.value)
+	config.set_value("audio", "sfx", sfx_slider.value)
+	config.save("user://settings.cfg")
 
 
 func update_item_name( new_text : String ) -> void: 

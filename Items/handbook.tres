@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b3jpkt2tl57ic" path="res://Items/sprites/afafawdfawvtearyysbry.png" id="2_jpl3w"]
 [ext_resource type="Script" uid="uid://l5pyc3mj80jl" path="res://Items/item_effects/handbook_effect.gd" id="2_lgmov"]
 [ext_resource type="Script" uid="uid://c3smnx41rr0au" path="res://Items/scripts/item_data.gd" id="3_4hkpm"]
-[ext_resource type="Texture2D" uid="uid://cshdku5tnm8wd" path="res://Items/sprites/mapicon.png" id="4_hkls4"]
+[ext_resource type="Texture2D" uid="uid://cup2ikf2tbgfx" path="res://Items/sprites/handbookicon.png" id="5_lgmov"]
 
 [sub_resource type="Resource" id="Resource_81b04"]
 script = ExtResource("2_lgmov")
@@ -13,9 +13,9 @@ metadata/_custom_type_script = "uid://l5pyc3mj80jl"
 
 [resource]
 script = ExtResource("3_4hkpm")
-name = "Map Handout"
-description = "A map of the community center pool’s layout."
-texture = ExtResource("4_hkls4")
+name = "Employee Handbook"
+description = "A handbook detailing general guidelines for lifeguards at the community center."
+texture = ExtResource("5_lgmov")
 image = ExtResource("2_jpl3w")
 effects = Array[ExtResource("1_3gdi6")]([SubResource("Resource_81b04")])
 metadata/_custom_type_script = "uid://c3smnx41rr0au"

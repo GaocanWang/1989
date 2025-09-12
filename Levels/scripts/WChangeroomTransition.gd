@@ -62,7 +62,7 @@ func _ready() -> void:
 
 
 func _player_entered( _p : Node2D ) -> void:
-	if ( LevelManager.changeroom_open ):
+	if ( LevelManager.flags.changeroom_open ):
 		LevelManager.load_new_level( level, target_transition_area, get_offset() )
 	else:
 		await get_tree().process_frame
@@ -136,7 +136,7 @@ func _on_area_exit( _a : Area2D ) -> void:
 
 func _changeroom_unlocked() -> void:
 	await get_tree().process_frame
-	LevelManager.changeroom_open = true
+	LevelManager.flags.changeroom_open = true
 	DialogSystem.show_dialog( dialog_items_unlock )
 	await DialogSystem.finished
 	LevelManager.load_new_level( level, target_transition_area, get_offset() )

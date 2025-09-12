@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://busm5ft2drjd"]
+[gd_scene load_steps=18 format=4 uid="uid://busm5ft2drjd"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_3yd6r"]
 [ext_resource type="TileSet" uid="uid://k4sa1rxa7ww0" path="res://Tile Maps/Tile Sets/pool.tres" id="3_n7u72"]
@@ -8,7 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="9_5pmwu"]
 [ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="10_newvb"]
 [ext_resource type="Resource" uid="uid://c2w2tyjg78bol" path="res://npc/00_npcs/amelia.tres" id="11_uig2u"]
+[ext_resource type="Texture2D" uid="uid://6s8yrx3ph7fh" path="res://Interactables/Locker/empty.png" id="13_fp42n"]
+[ext_resource type="PackedScene" uid="uid://bxp7c5dr0vq5c" path="res://Interactables/SavePoint/save_point.tscn" id="13_qqmuo"]
 [ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/box.tres" id="14_0iff2"]
+[ext_resource type="Texture2D" uid="uid://bwvv86047r1vp" path="res://Interactables/Locker/bodywhy.png" id="14_y626c"]
+[ext_resource type="Texture2D" uid="uid://bjxx7wdrsrx5n" path="res://Interactables/Locker/closed.png" id="15_17dye"]
+[ext_resource type="Texture2D" uid="uid://bya8rds447k32" path="res://Interactables/Locker/towels.png" id="16_ctwfa"]
 [ext_resource type="PackedScene" uid="uid://rjm0iajn7t01" path="res://Interactables/Locker/locker.tscn" id="18_t2h2d"]
 [ext_resource type="Script" uid="uid://dst30i4jr8cmt" path="res://Interactables/dialog/scripts/dialog_sfx.gd" id="25_dloy7"]
 [ext_resource type="AudioStream" uid="uid://b4lhh2f0f1pa6" path="res://GUI/dialog_system/audio/SFX plays.mp3" id="26_ovqw7"]
@@ -29,7 +34,7 @@ rendering_quadrant_size = 24
 
 [node name="Other" type="TileMapLayer" parent="."]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAIAAYAAQASAAQAAAAIAAcAAQASAAUAAAAIAAgAAQASAAYAAAAJAAsAAQANAAAAAAAKAAsAAQAOAAAAAAALAAYAAQASAAUAAAALAAcAAQASAAUAAAALAAgAAQASAAYAAAALAAsAAQAOAAAAAAAOAAYAAQASAAAAAAAOAAcAAQASAAAAAAAOAAgAAQASAAIAAAAOAAkAAQASAAMAAAASAAoAAQALAAIAADASAAsAAQALAAEAADAJAAYAAQASAAUAABAJAAcAAQASAAUAABAJAAgAAQASAAYAABAMAAYAAQASAAUAABAMAAcAAQASAAUAABAMAAgAAQASAAYAABAMAAsAAQAPAAAAAAAOAA0AAQAEAAAAAGAPAAYAAQASAAEAABAPAAcAAQASAAEAABAPAAgAAQASAAIAABAPAAkAAQASAAMAABARAAQAAQAKAAMAAAARAAUAAQAKAAQAAAARAAYAAQAKAAQAAAARAAcAAQAKAAUAAAATAAoAAQAMAAIAACATAAsAAQAMAAEAACALABEAAQAMAAEAAEAMABEAAQAMAAIAAEALABAAAQALAAEAAGAMABAAAQALAAIAAGAIAA0AAQAEAAEAAFAJAA0AAQAEAAEAAFAKAA0AAQAEAAEAAFALAA0AAQAEAAEAAFAMAA0AAQAEAAEAAFANAA0AAQAEAAEAAFABAA8AAQALAAEAAAAAAA8AAQAMAAEAABAAABAAAQAMAAIAABABABAAAQALAAIAAAABAAoAAQAXAAQAAAAHAAMAAQAPAAAAAAAGAAMAAQANAAAAAAA=")
+tile_map_data = PackedByteArray("AAAIAAYAAQASAAQAAAAIAAcAAQASAAUAAAAIAAgAAQASAAYAAAAJAAsAAQANAAAAAAAKAAsAAQAOAAAAAAALAAYAAQASAAUAAAALAAcAAQASAAUAAAALAAgAAQASAAYAAAALAAsAAQAOAAAAAAAOAAYAAQASAAAAAAAOAAcAAQASAAAAAAAOAAgAAQASAAIAAAAOAAkAAQASAAMAAAASAAoAAQALAAIAADASAAsAAQALAAEAADAJAAYAAQASAAUAABAJAAcAAQASAAUAABAJAAgAAQASAAYAABAMAAYAAQASAAUAABAMAAcAAQASAAUAABAMAAgAAQASAAYAABAMAAsAAQAPAAAAAAAOAA0AAQAEAAAAAGAPAAYAAQASAAEAABAPAAcAAQASAAEAABAPAAgAAQASAAIAABAPAAkAAQASAAMAABARAAQAAQAKAAMAAAARAAUAAQAKAAQAAAARAAYAAQAKAAQAAAARAAcAAQAKAAUAAAATAAoAAQAMAAIAACATAAsAAQAMAAEAACALABEAAQAMAAEAAEAMABEAAQAMAAIAAEALABAAAQALAAEAAGAMABAAAQALAAIAAGAIAA0AAQAEAAEAAFAJAA0AAQAEAAEAAFAKAA0AAQAEAAEAAFALAA0AAQAEAAEAAFAMAA0AAQAEAAEAAFANAA0AAQAEAAEAAFABAA8AAQALAAEAAAAAAA8AAQAMAAEAABAAABAAAQAMAAIAABABABAAAQALAAIAAAAHAAMAAQAPAAAAAAAGAAMAAQANAAAAAAA=")
 tile_set = ExtResource("3_n7u72")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_m7ufp")]
@@ -188,12 +193,15 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="Locker" parent="." instance=ExtResource("18_t2h2d")]
 position = Vector2(36, 60)
+texture = ExtResource("13_fp42n")
 
 [node name="Locker2" parent="." instance=ExtResource("18_t2h2d")]
 position = Vector2(60, 60)
+texture = ExtResource("13_fp42n")
 
 [node name="Locker3-Dead" parent="." instance=ExtResource("18_t2h2d")]
 position = Vector2(84, 60)
+texture = ExtResource("14_y626c")
 
 [node name="DialogText" type="Node" parent="Locker3-Dead"]
 script = ExtResource("10_newvb")
@@ -231,9 +239,11 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="Locker4" parent="." instance=ExtResource("18_t2h2d")]
 position = Vector2(108, 60)
+texture = ExtResource("13_fp42n")
 
 [node name="Locker5-Y" parent="." instance=ExtResource("18_t2h2d")]
 position = Vector2(204, 60)
+texture = ExtResource("15_17dye")
 
 [node name="DialogText" type="Node" parent="Locker5-Y"]
 script = ExtResource("10_newvb")
@@ -257,30 +267,43 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="Locker6" parent="." instance=ExtResource("18_t2h2d")]
 position = Vector2(228, 60)
+texture = ExtResource("13_fp42n")
 
 [node name="Locker7" parent="." instance=ExtResource("18_t2h2d")]
 position = Vector2(252, 60)
+texture = ExtResource("13_fp42n")
 
 [node name="Locker8" parent="." instance=ExtResource("18_t2h2d")]
 position = Vector2(276, 60)
+texture = ExtResource("13_fp42n")
 
 [node name="Locker9" parent="." instance=ExtResource("18_t2h2d")]
 position = Vector2(300, 60)
+texture = ExtResource("13_fp42n")
 
 [node name="Locker10" parent="." instance=ExtResource("18_t2h2d")]
 position = Vector2(324, 60)
+texture = ExtResource("13_fp42n")
 
 [node name="Locker11" parent="." instance=ExtResource("18_t2h2d")]
 position = Vector2(348, 60)
+texture = ExtResource("13_fp42n")
 
 [node name="Locker12" parent="." instance=ExtResource("18_t2h2d")]
 position = Vector2(372, 60)
+texture = ExtResource("13_fp42n")
 
 [node name="Locker13" parent="." instance=ExtResource("18_t2h2d")]
 position = Vector2(396, 60)
+texture = ExtResource("13_fp42n")
 
 [node name="Locker14-Tote" parent="." instance=ExtResource("18_t2h2d")]
 position = Vector2(420, 60)
+texture = ExtResource("16_ctwfa")
 
 [node name="Locker15" parent="." instance=ExtResource("18_t2h2d")]
 position = Vector2(444, 60)
+texture = ExtResource("13_fp42n")
+
+[node name="SavePoint" parent="." instance=ExtResource("13_qqmuo")]
+position = Vector2(36, 254)
