@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1601hygtttxv"]
+
+[ext_resource type="Script" uid="uid://d0mygvosn3t4t" path="res://Interactables/ThirdAct/third_act.gd" id="1_5sbjb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcetc"]
+size = Vector2(72, 24)
+
+[node name="ThirdAct" type="Area2D"]
+process_mode = 3
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_5sbjb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lcetc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.5
+offset_top = -39.0
+offset_right = 148.5
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Y" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Officer Y"
+
+[node name="X" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Officer X"
+
+[node name="Teresa" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Teresa"
+
+[node name="ShiftPartner" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Shift Partner"

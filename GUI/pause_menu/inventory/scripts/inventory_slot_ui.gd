@@ -40,6 +40,8 @@ func item_pressed() -> void:
 	if slot_data:
 		if slot_data.item_data:
 			var was_used = slot_data.item_data.use()
+			if PauseMenu.waiting_for_item_use:
+				PauseMenu.item_used.emit( slot_data.item_data.name )
 			if was_used == false:
 				return
 			#slot_data.quantity -= 1

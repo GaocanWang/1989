@@ -2,4 +2,4 @@
 @icon( "res://GUI/dialog_system/icons/chat_bubble.svg" )
 class_name DialogSFX extends DialogItem
 
-@export var sfx : AudioStreamMP3
+@export var sfx : AudioStream

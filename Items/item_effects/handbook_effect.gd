@@ -7,4 +7,5 @@ var document : Array[String] = ["This handbook is intended for lifeguards in AEC
 
 func use() -> void:
 	PauseMenu.hide_pause_menu()
-	DocumentViewer.show_document(document)
+	if !PauseMenu.waiting_for_item_use:
+		DocumentViewer.show_document(document)

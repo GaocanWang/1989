@@ -1,0 +1,101 @@
+class_name ThirdAct extends Area2D
+
+@onready var buttons: VBoxContainer = $CanvasLayer/VBoxContainer
+@onready var y: Button = $CanvasLayer/VBoxContainer/Y
+@onready var x: Button = $CanvasLayer/VBoxContainer/X
+@onready var teresa: Button = $CanvasLayer/VBoxContainer/Teresa
+@onready var shift_partner: Button = $CanvasLayer/VBoxContainer/ShiftPartner
+
+var dialog_items_1 : Array[ DialogItem ]
+var dialog_items_2 : Array[ DialogItem ]
+var dialog_items_x : Array[ DialogItem ]
+var dialog_items_teresa : Array[ DialogItem ]
+var dialog_items_wrong : Array[ DialogItem ]
+
+
+func _ready() -> void:
+	buttons.hide()
+	
+	area_entered.connect( _on_area_enter )
+	area_exited.connect( _on_area_exit )
+	
+	y.pressed.connect( _on_y )
+	x.pressed.connect( _on_x )
+	teresa.pressed.connect( _on_teresa )
+	shift_partner.pressed.connect( _on_shift_partner )
+	
+	for c in get_children():
+		if c.name == "1":
+			for d in c.get_children():
+				dialog_items_1.append( d )
+		elif c.name == "2":
+			for d in c.get_children():
+				dialog_items_2.append( d )
+		elif c.name == "X":
+			for d in c.get_children():
+				dialog_items_x.append( d )
+		elif c.name == "Teresa":
+			for d in c.get_children():
+				dialog_items_teresa.append( d )
+		elif c.name == "Wrong":
+			for d in c.get_children():
+				dialog_items_wrong.append( d )
+	pass
+
+
+func _on_area_enter( _a : Area2D ) -> void:
+	PlayerManager.interact_pressed.connect( player_interact )
+	pass
+
+
+func _on_area_exit( _a : Area2D ) -> void:
+	PlayerManager.interact_pressed.disconnect( player_interact )
+	pass
+
+
+func _on_y() -> void:
+	await get_tree().process_frame	
+	pass
+
+
+func _on_x() -> void:
+	await get_tree().process_frame
+	buttons.hide()
+	DialogSystem.show_dialog( dialog_items_x )
+	pass
+
+
+func _on_teresa() -> void:
+	await get_tree().process_frame
+	buttons.hide()
+	DialogSystem.show_dialog( dialog_items_teresa )
+	await DialogSystem.finished
+	buttons.show()
+	pass
+
+
+func _on_shift_partner() -> void:
+	await get_tree().process_frame
+	pass
+
+
+func player_interact() -> void:
+	await get_tree().process_frame
+	DialogSystem.show_dialog( dialog_items_1 )
+	await DialogSystem.finished
+	get_tree().paused = true
+	PauseMenu.waiting_for_item_use = true
+	while true:
+		if await PauseMenu.item_used == "Employee Handbook":
+			break
+		else:
+			DialogSystem.show_dialog( dialog_items_wrong )
+			await DialogSystem.finished
+			get_tree().paused = true
+	PauseMenu.waiting_for_item_use = false
+	DialogSystem.show_dialog( dialog_items_2 )
+	await DialogSystem.finished
+	get_tree().paused = true
+	buttons.show()
+	y.grab_focus()
+	pass

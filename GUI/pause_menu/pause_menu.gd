@@ -3,6 +3,8 @@ extends CanvasLayer
 signal shown
 signal hidden
 
+signal item_used
+
 @onready var audio_stream_player: AudioStreamPlayer = $Control/AudioStreamPlayer
 @onready var item_name: Label = $Control/Inventory/Description/VBoxContainer/ItemName
 @onready var item_description: Label = $Control/Inventory/Description/VBoxContainer/ItemDescription
@@ -19,6 +21,8 @@ signal hidden
 
 var is_paused : bool = false
 var is_title_scene_active : bool = false
+
+var waiting_for_item_use : bool = false
 
 
 # Called when the node enters the scene tree for the first time.
