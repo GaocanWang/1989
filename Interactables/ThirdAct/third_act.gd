@@ -9,8 +9,10 @@ class_name ThirdAct extends Area2D
 var dialog_items_1 : Array[ DialogItem ]
 var dialog_items_2 : Array[ DialogItem ]
 var dialog_items_x : Array[ DialogItem ]
+var dialog_items_x_2 : Array[ DialogItem ]
 var dialog_items_teresa : Array[ DialogItem ]
 var dialog_items_wrong : Array[ DialogItem ]
+var dialog_items_wrong_x : Array[ DialogItem ]
 
 
 func _ready() -> void:
@@ -34,12 +36,18 @@ func _ready() -> void:
 		elif c.name == "X":
 			for d in c.get_children():
 				dialog_items_x.append( d )
+		elif c.name == "X2":
+			for d in c.get_children():
+				dialog_items_x_2.append( d )
 		elif c.name == "Teresa":
 			for d in c.get_children():
 				dialog_items_teresa.append( d )
 		elif c.name == "Wrong":
 			for d in c.get_children():
 				dialog_items_wrong.append( d )
+		elif c.name == "WrongX":
+			for d in c.get_children():
+				dialog_items_wrong_x.append( d )
 	pass
 
 
@@ -62,6 +70,19 @@ func _on_x() -> void:
 	await get_tree().process_frame
 	buttons.hide()
 	DialogSystem.show_dialog( dialog_items_x )
+	await DialogSystem.finished
+	get_tree().paused = true
+	PauseMenu.waiting_for_item_use = true
+	while true:
+		if await PauseMenu.item_used == "Bloody Sink Piece":
+			break
+		else:
+			DialogSystem.show_dialog( dialog_items_wrong )
+			await DialogSystem.finished
+			get_tree().paused = true
+	PauseMenu.waiting_for_item_use = false
+	DialogSystem.show_dialog( dialog_items_x_2 )
+	await DialogSystem.finished
 	pass
 
 

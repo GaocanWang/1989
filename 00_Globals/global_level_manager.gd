@@ -24,6 +24,7 @@ var flags : Dictionary = {
 	locker_interacted = false,
 	x_interacted = false,
 	y_interacted = false,
+	teresa_interacted = false,
 	puzzle_solved = false,
 	valve_unlocked = false,
 	changeroom_open = false,
@@ -55,7 +56,7 @@ func load_new_level(
 	if "uid://" in level_path:
 		level_path = ResourceUID.get_id_path(ResourceUID.text_to_id(level_path))
 	
-	if level_path == "res://Levels/Part2/10.tscn" && !(flags.x_interacted && flags.y_interacted):
+	if level_path == "res://Levels/Part2/10.tscn" && !(flags.x_interacted && flags.y_interacted && flags.teresa_interacted):
 		level_path = "res://Levels/Part2/13.tscn"
 	
 	await SceneTransition.fade_out()

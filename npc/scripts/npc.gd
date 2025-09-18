@@ -42,6 +42,8 @@ func _on_player_interacted() -> void:
 		LevelManager.flags.x_interacted = true
 	elif npc_resource.npc_name == "Daisy":
 		LevelManager.flags.y_interacted = true
+	elif npc_resource.npc_name == "Teresa":
+		LevelManager.flags.teresa_interacted = true
 	
 	update_direction( PlayerManager.player.global_position )
 	state = "idle"
