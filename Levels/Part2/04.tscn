@@ -395,7 +395,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 script = ExtResource("7_xevt3")
 text = "(I have to wait for the others before opening it…)"
 frame = 17
-npc_info = ExtResource("12_k3n85")
+npc_info = ExtResource("8_jhc5q")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="Lockers2" parent="." instance=ExtResource("14_i6i35")]
@@ -412,7 +412,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 script = ExtResource("7_xevt3")
 text = "(I have to wait for the others before opening it…)"
 frame = 17
-npc_info = ExtResource("12_k3n85")
+npc_info = ExtResource("8_jhc5q")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="SavePoint" parent="." instance=ExtResource("17_k3n85")]

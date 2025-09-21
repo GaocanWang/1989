@@ -8,7 +8,6 @@
 
 [sub_resource type="Resource" id="Resource_t0b7v"]
 script = ExtResource("2_oxgxb")
-use_description = ""
 metadata/_custom_type_script = "uid://cwx2hxcfxlphe"
 
 [resource]

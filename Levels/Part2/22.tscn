@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://b5ja16y3gsouo"]
+[gd_scene load_steps=43 format=4 uid="uid://b5ja16y3gsouo"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_i8ytn"]
 [ext_resource type="TileSet" uid="uid://k4sa1rxa7ww0" path="res://Tile Maps/Tile Sets/pool.tres" id="2_dchl7"]
@@ -26,9 +26,22 @@
 [ext_resource type="Resource" uid="uid://q5twg4buxc41" path="res://npc/00_npcs/amelia_np.tres" id="23_xe3yp"]
 [ext_resource type="PackedScene" uid="uid://bxp7c5dr0vq5c" path="res://Interactables/SavePoint/save_point.tscn" id="24_ga3cx"]
 [ext_resource type="Texture2D" uid="uid://dipebsn8yh6yx" path="res://FullScreenArt/amelia pointing fs.png" id="26_8gm5l"]
+[ext_resource type="AudioStream" uid="uid://hvh22cohsyyx" path="res://Levels/music/this is it (1).ogg" id="27_ghsce"]
 [ext_resource type="AudioStream" uid="uid://nikwxerfmgnk" path="res://Levels/music/injustice.ogg" id="27_tb05q"]
+[ext_resource type="AudioStream" uid="uid://bmlfg4xv4g68d" path="res://Levels/music/confession.ogg" id="28_m0n8f"]
 [ext_resource type="AudioStream" uid="uid://cy6skrvywkmm7" path="res://Interactables/Cabinet/evidence or important thing sfx.mp3" id="28_p8fcn"]
 [ext_resource type="Texture2D" uid="uid://b6ja100wl3q4k" path="res://FullScreenArt/this is it fs.png" id="29_rdfit"]
+[ext_resource type="AudioStream" uid="uid://bssygquja7m1c" path="res://GUI/dialog_system/audio/mirror breaking sfx.wav" id="30_32dqc"]
+[ext_resource type="Texture2D" uid="uid://7e7vjdptlwkv" path="res://FullScreenArt/officer x showing hands.png" id="30_d2smt"]
+[ext_resource type="Resource" uid="uid://db6m3p8sr6mxj" path="res://npc/00_npcs/lowkey_np.tres" id="30_e6tdg"]
+[ext_resource type="AudioStream" uid="uid://cimn4s0yk1yh3" path="res://Levels/music/what_happened_here.mp3" id="31_d2smt"]
+[ext_resource type="Texture2D" uid="uid://bclrypqx8ay8w" path="res://FullScreenArt/broken bloody sink fs.png" id="31_e1rr2"]
+[ext_resource type="Resource" uid="uid://b125yid6rqvrs" path="res://npc/00_npcs/eris_np.tres" id="32_ghsce"]
+[ext_resource type="Texture2D" uid="uid://d3gcu5kpw7abf" path="res://FullScreenArt/tote bag and bloody towel fs.png" id="32_mj8al"]
+[ext_resource type="AudioStream" uid="uid://bl2ywi4ll8bvk" path="res://Levels/music/But then you found them.ogg" id="33_id8dk"]
+[ext_resource type="Texture2D" uid="uid://cw0lypdtvo61j" path="res://FullScreenArt/officer y storage room 1 fs.png" id="34_nwyan"]
+[ext_resource type="AudioStream" uid="uid://b5wgkato1okey" path="res://GUI/dialog_system/audio/lights turning off sfx 2.mp3" id="34_u73ex"]
+[ext_resource type="AudioStream" uid="uid://c5xpr1lexqrgd" path="res://GUI/dialog_system/audio/lights turning off sfx 4.mp3" id="35_d2smt"]
 
 [node name="22" type="Node2D"]
 script = ExtResource("1_i8ytn")
@@ -50,7 +63,7 @@ tile_map_data = PackedByteArray("AAAIAAYAAQASAAQAAAAIAAcAAQASAAUAAAAIAAgAAQASAAY
 tile_set = ExtResource("2_dchl7")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("4_pcidr")]
-position = Vector2(276, 396)
+position = Vector2(87, 135)
 
 [node name="LevelTransition" parent="." instance=ExtResource("5_nh4qi")]
 position = Vector2(276, 408)
@@ -303,21 +316,21 @@ position = Vector2(420, 60)
 position = Vector2(444, 60)
 
 [node name="NPC" parent="." instance=ExtResource("13_lpja6")]
-position = Vector2(300, 372)
+position = Vector2(84, 108)
 
 [node name="NPC2" parent="." instance=ExtResource("13_lpja6")]
-position = Vector2(276, 372)
+position = Vector2(60, 108)
 npc_resource = ExtResource("16_ax1uf")
 
 [node name="NPC3" parent="." instance=ExtResource("13_lpja6")]
-position = Vector2(324, 372)
+position = Vector2(108, 108)
 npc_resource = ExtResource("19_8gm5l")
 
 [node name="SavePoint" parent="." instance=ExtResource("24_ga3cx")]
 position = Vector2(36, 254)
 
 [node name="ThirdAct" parent="." instance=ExtResource("17_xe3yp")]
-position = Vector2(300, 372)
+position = Vector2(84, 108)
 
 [node name="1" type="Node" parent="ThirdAct"]
 
@@ -2292,6 +2305,2164 @@ text = "“The killer is…”"
 npc_info = ExtResource("23_xe3yp")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
+[node name="Y" type="Node" parent="ThirdAct"]
+
+[node name="DialogBackground" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("21_ax1uf")
+background = ExtResource("26_8gm5l")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogSFX" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("7_ig34w")
+text = "“The killer is you, Daisy!”"
+npc_info = ExtResource("23_xe3yp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX2" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("27_ghsce")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText2" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("7_ig34w")
+text = "“You came back here to retrieve the towel.”"
+npc_info = ExtResource("23_xe3yp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("7_ig34w")
+text = "“The last remaining piece of evidence that could be traced to your crime!”"
+npc_info = ExtResource("23_xe3yp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground2" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("21_ax1uf")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogText4" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("7_ig34w")
+text = "“What do you mean?!”"
+frame = 26
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("7_ig34w")
+text = "“How could the killer be me?!”"
+frame = 2
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("7_ig34w")
+text = "“What are you doing, Amelia?!”"
+frame = 5
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("7_ig34w")
+text = "“…”"
+frame = 3
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("7_ig34w")
+text = "“I’m sure of it.”"
+frame = 15
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("7_ig34w")
+text = "“You’re the one who lured the lifeguard into the changeroom and killed him.”"
+frame = 14
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("7_ig34w")
+text = "“You used to work in forensics.”"
+frame = 17
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("7_ig34w")
+text = "“Cleaning something like this would be easy for you.”"
+frame = 19
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("7_ig34w")
+text = "“But all of us have enough experience.”"
+frame = 12
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText13" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("7_ig34w")
+text = "“Why would it be Daisy?”"
+frame = 10
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("7_ig34w")
+text = "“Amelia, I’m sorry honey, but you’re wrong.”"
+frame = 18
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("7_ig34w")
+text = "“I’ve never even been to this pool.”"
+frame = 8
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("7_ig34w")
+text = "“How could I have murdered the lifeguard if I wasn’t here?”"
+frame = 14
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("7_ig34w")
+text = "“I actually think you [i]have[/i] been here before…”"
+frame = 1
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogChoice" type="Node" parent="ThirdAct/Y"]
+script = ExtResource("17_ga3cx")
+metadata/_custom_type_script = "uid://b8kxiife71bd1"
+
+[node name="DialogBranch" type="Node" parent="ThirdAct/Y/DialogChoice"]
+script = ExtResource("18_xe3yp")
+text = "You knew where the women’s changeroom was"
+metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
+
+[node name="DialogText" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch"]
+script = ExtResource("7_ig34w")
+text = "“You were able to follow us to the women’s changeroom despite never having been here.”"
+frame = 2
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch"]
+script = ExtResource("7_ig34w")
+text = "“But that doesn’t prove I’ve been here.”"
+frame = 30
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch"]
+script = ExtResource("7_ig34w")
+text = "“I was only following you and everyone else.”"
+frame = 19
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch"]
+script = ExtResource("7_ig34w")
+text = "“Even then…”"
+frame = 17
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch"]
+script = ExtResource("7_ig34w")
+text = "(There’s got to be something else…!)"
+frame = 18
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogChoice" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch"]
+script = ExtResource("17_ga3cx")
+metadata/_custom_type_script = "uid://b8kxiife71bd1"
+
+[node name="DialogBranch2" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice"]
+script = ExtResource("18_xe3yp")
+text = "You knew the closing chime"
+metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
+
+[node name="DialogText" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Earlier, you pointed out the closing chime!”"
+frame = 2
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“How could you have known what it was if you were never here?”"
+frame = 1
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“…!”"
+frame = 26
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“How did you know about that, DAISY?”"
+frame = 16
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Only because I’d heard a similar chime somewhere else!”"
+frame = 2
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“It was a different pool area.”"
+frame = 4
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Where else did you hear it?”"
+frame = 6
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“It wouldn’t matter.”"
+frame = 13
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Any center she names, we can check.”"
+frame = 12
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“We’ll find out it has a very different chime than the one here.”"
+frame = 2
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Okay, I just forgot I’ve been here before!”"
+frame = 37
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Teresa has also been to this pool.”"
+frame = 32
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText13" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "”She has plenty of experience with blood and murders too.”"
+frame = 9
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Hey, what are you saying?!”"
+frame = 7
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Hold on a second…Daisy is right.”"
+frame = 12
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Why not Teresa?”"
+frame = 3
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogChoice" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("17_ga3cx")
+metadata/_custom_type_script = "uid://b8kxiife71bd1"
+
+[node name="DialogBranch" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice"]
+script = ExtResource("18_xe3yp")
+text = "Teresa hasn’t worked forensics"
+metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
+
+[node name="DialogText" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("7_ig34w")
+text = "“Teresa hasn’t worked forensics.”"
+frame = 10
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("7_ig34w")
+text = "“That’s not her field.”"
+frame = 16
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("7_ig34w")
+text = "“Even if I worked forensics, everyone here has dealt with murders before!”"
+frame = 4
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("7_ig34w")
+text = "“You can’t prove something based on a small connection like that!”"
+frame = 37
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("20_tb05q")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText5" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("7_ig34w")
+text = "(She’s right…!)"
+frame = 18
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogChoice" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("17_ga3cx")
+metadata/_custom_type_script = "uid://b8kxiife71bd1"
+
+[node name="DialogBranch2" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice"]
+script = ExtResource("18_xe3yp")
+text = "Teresa has no gloves"
+metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
+
+[node name="DialogSFX" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Because Teresa isn’t wearing gloves.”"
+frame = 1
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Huh?!”"
+frame = 9
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“What does wearing gloves have to do with this?”"
+frame = 15
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Earlier in this case you mentioned you often wear gloves.”"
+frame = 15
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“But DAISY doesn’t wear them much, does she?”"
+frame = 14
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“…!”"
+frame = 26
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“What’s that got to do with it?”"
+frame = 19
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“She wouldn’t have a reason to wear gloves today at all…”"
+frame = 10
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX2" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText9" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Unless she injured herself while killing the lifeguard!”"
+frame = 15
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“That’s nonsense!”"
+frame = 2
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“I didn’t injure myself on anything.”"
+frame = 37
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“I only wore gloves because I felt like it!”"
+frame = 4
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX3" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText13" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Then why don’t you remove them for us, DAISY?”"
+frame = 2
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX4" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText14" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“…!”"
+frame = 24
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“DAISY…”"
+frame = 21
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“…did you actually injure your hand?”"
+frame = 17
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“No!”"
+frame = 2
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText18" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "(I’ve got to show evidence!)"
+frame = 6
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText19" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "(She’s just gonna keep denying it if I only use my words…)"
+frame = 18
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBranch2" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice"]
+script = ExtResource("18_xe3yp")
+text = "Teresa has no gloves"
+metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
+
+[node name="DialogSFX" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Because Teresa isn’t wearing gloves.”"
+frame = 1
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Huh?!”"
+frame = 9
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“What does wearing gloves have to do with this?”"
+frame = 15
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Earlier in this case you mentioned you often wear gloves.”"
+frame = 15
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“But DAISY doesn’t wear them much, does she?”"
+frame = 14
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“…!”"
+frame = 26
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“What’s that got to do with it?”"
+frame = 19
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“She wouldn’t have a reason to wear gloves today at all…”"
+frame = 10
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX2" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText9" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Unless she injured herself while killing the lifeguard!”"
+frame = 15
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“That’s nonsense!”"
+frame = 2
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“I didn’t injure myself on anything.”"
+frame = 37
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“I only wore gloves because I felt like it!”"
+frame = 4
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX3" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText13" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Then why don’t you remove them for us, DAISY?”"
+frame = 2
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX4" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText14" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“…!”"
+frame = 24
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“DAISY…”"
+frame = 21
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“…did you actually injure your hand?”"
+frame = 17
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“No!”"
+frame = 2
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText18" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "(I’ve got to show evidence!)"
+frame = 6
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText19" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "(She’s just gonna keep denying it if I only use my words…)"
+frame = 18
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBranch2" type="Node" parent="ThirdAct/Y/DialogChoice"]
+script = ExtResource("18_xe3yp")
+text = "You knew the closing chime"
+metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
+
+[node name="DialogText" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Earlier, you pointed out the closing chime!”"
+frame = 2
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“How could you have known what it was if you were never here?”"
+frame = 1
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“…!”"
+frame = 26
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“How did you know about that, DAISY?”"
+frame = 16
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Only because I’d heard a similar chime somewhere else!”"
+frame = 2
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“It was a different pool area.”"
+frame = 4
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Where else did you hear it?”"
+frame = 6
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“It wouldn’t matter.”"
+frame = 13
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Any center she names, we can check.”"
+frame = 12
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“We’ll find out it has a very different chime than the one here.”"
+frame = 2
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Okay, I just forgot I’ve been here before!”"
+frame = 37
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Teresa has also been to this pool.”"
+frame = 32
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText13" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "”She has plenty of experience with blood and murders too.”"
+frame = 9
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Hey, what are you saying?!”"
+frame = 7
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Hold on a second…Daisy is right.”"
+frame = 12
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Why not Teresa?”"
+frame = 3
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogChoice" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2"]
+script = ExtResource("17_ga3cx")
+metadata/_custom_type_script = "uid://b8kxiife71bd1"
+
+[node name="DialogBranch" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice"]
+script = ExtResource("18_xe3yp")
+text = "Teresa hasn’t worked forensics"
+metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
+
+[node name="DialogText" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("7_ig34w")
+text = "“Teresa hasn’t worked forensics.”"
+frame = 10
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("7_ig34w")
+text = "“That’s not her field.”"
+frame = 16
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("7_ig34w")
+text = "“Even if I worked forensics, everyone here has dealt with murders before!”"
+frame = 4
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("7_ig34w")
+text = "“You can’t prove something based on a small connection like that!”"
+frame = 37
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("20_tb05q")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText5" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("7_ig34w")
+text = "(She’s right…!)"
+frame = 18
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogChoice" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("17_ga3cx")
+metadata/_custom_type_script = "uid://b8kxiife71bd1"
+
+[node name="DialogBranch2" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice"]
+script = ExtResource("18_xe3yp")
+text = "Teresa has no gloves"
+metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
+
+[node name="DialogSFX" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Because Teresa isn’t wearing gloves.”"
+frame = 1
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Huh?!”"
+frame = 9
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“What does wearing gloves have to do with this?”"
+frame = 15
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Earlier in this case you mentioned you often wear gloves.”"
+frame = 15
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“But DAISY doesn’t wear them much, does she?”"
+frame = 14
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“…!”"
+frame = 26
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“What’s that got to do with it?”"
+frame = 19
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“She wouldn’t have a reason to wear gloves today at all…”"
+frame = 10
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX2" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText9" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Unless she injured herself while killing the lifeguard!”"
+frame = 15
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“That’s nonsense!”"
+frame = 2
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“I didn’t injure myself on anything.”"
+frame = 37
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“I only wore gloves because I felt like it!”"
+frame = 4
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX3" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText13" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Then why don’t you remove them for us, DAISY?”"
+frame = 2
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX4" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText14" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“…!”"
+frame = 24
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“DAISY…”"
+frame = 21
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“…did you actually injure your hand?”"
+frame = 17
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“No!”"
+frame = 2
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText18" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "(I’ve got to show evidence!)"
+frame = 6
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText19" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "(She’s just gonna keep denying it if I only use my words…)"
+frame = 18
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBranch2" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice"]
+script = ExtResource("18_xe3yp")
+text = "Teresa has no gloves"
+metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
+
+[node name="DialogSFX" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Because Teresa isn’t wearing gloves.”"
+frame = 1
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Huh?!”"
+frame = 9
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“What does wearing gloves have to do with this?”"
+frame = 15
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Earlier in this case you mentioned you often wear gloves.”"
+frame = 15
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“But DAISY doesn’t wear them much, does she?”"
+frame = 14
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“…!”"
+frame = 26
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“What’s that got to do with it?”"
+frame = 19
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“She wouldn’t have a reason to wear gloves today at all…”"
+frame = 10
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX2" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText9" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Unless she injured herself while killing the lifeguard!”"
+frame = 15
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“That’s nonsense!”"
+frame = 2
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“I didn’t injure myself on anything.”"
+frame = 37
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“I only wore gloves because I felt like it!”"
+frame = 4
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX3" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText13" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Then why don’t you remove them for us, DAISY?”"
+frame = 2
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX4" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText14" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“…!”"
+frame = 24
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“DAISY…”"
+frame = 21
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“…did you actually injure your hand?”"
+frame = 17
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“No!”"
+frame = 2
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText18" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "(I’ve got to show evidence!)"
+frame = 6
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText19" type="Node" parent="ThirdAct/Y/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "(She’s just gonna keep denying it if I only use my words…)"
+frame = 18
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Y2" type="Node" parent="ThirdAct"]
+
+[node name="DialogSFX" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogSFX2" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("27_ghsce")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("7_ig34w")
+text = "“You cut your hand on the sink fragment!”"
+frame = 15
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("7_ig34w")
+text = "“While killing the lifeguard, your hand got cut when the corner of the sink broke!”"
+frame = 14
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("7_ig34w")
+text = "“Not only that, but the mirror shards likely cut you too.”"
+frame = 1
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("7_ig34w")
+text = "“No…!”"
+frame = 24
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("7_ig34w")
+text = "“But that’s impossible…”"
+frame = 15
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("7_ig34w")
+text = "“DAISY was on time today to our shift.”"
+frame = 4
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("7_ig34w")
+text = "“I would have noticed if something was off!”"
+frame = 10
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("7_ig34w")
+text = "“And you did.”"
+frame = 12
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX3" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText9" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("7_ig34w")
+text = "“You mentioned earlier that the car ride smelled a bit like chlorine.”"
+frame = 13
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("7_ig34w")
+text = "“You…you’re right.”"
+frame = 3
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("7_ig34w")
+text = "“And…I noticed that Daisy wore strong perfume as well…”"
+frame = 17
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("7_ig34w")
+text = "“She wore it because she was worried she’d smell too much like chloramines!”"
+frame = 1
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText13" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("7_ig34w")
+text = "“That has nothing to do with this!”"
+frame = 4
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("7_ig34w")
+text = "[font_size=48][shake]“You’re lying, Amelia!!!”"
+frame = 2
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("7_ig34w")
+text = "“This can’t be all right!”"
+frame = 3
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("7_ig34w")
+text = "“Even if she has a hand injury, it could just be from something else…”"
+frame = 12
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("7_ig34w")
+text = "“We need definitive proof that DAISY is the killer.”"
+frame = 11
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText18" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("7_ig34w")
+text = "“And there is.”"
+frame = 2
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText19" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("7_ig34w")
+text = "“You’re lying!!!”"
+frame = 2
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText20" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("7_ig34w")
+text = "“Definitive proof?!”"
+frame = 21
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText21" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("7_ig34w")
+text = "“The only proof we need is already on her…”"
+frame = 15
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogChoice" type="Node" parent="ThirdAct/Y2"]
+script = ExtResource("17_ga3cx")
+metadata/_custom_type_script = "uid://b8kxiife71bd1"
+
+[node name="DialogBranch" type="Node" parent="ThirdAct/Y2/DialogChoice"]
+script = ExtResource("18_xe3yp")
+text = "Her gloves"
+metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
+
+[node name="DialogText" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch"]
+script = ExtResource("7_ig34w")
+text = "“It’s her gloves!”"
+frame = 14
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch"]
+script = ExtResource("7_ig34w")
+text = "“They have her blood on the inside.”"
+frame = 2
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch"]
+script = ExtResource("7_ig34w")
+text = "“But that only proves I have an injury!”"
+frame = 4
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch"]
+script = ExtResource("7_ig34w")
+text = "“I cut my hand earlier today!”"
+frame = 37
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch"]
+script = ExtResource("7_ig34w")
+text = "“It doesn’t tie me to this case at all!!”"
+frame = 32
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("20_tb05q")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText6" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch"]
+script = ExtResource("7_ig34w")
+text = "(She’s right…!)"
+frame = 18
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBranch2" type="Node" parent="ThirdAct/Y2/DialogChoice"]
+script = ExtResource("18_xe3yp")
+text = "The towel"
+metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
+
+[node name="DialogText" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“It’s the towel!”"
+frame = 1
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“She has the missing towel used at the crime scene on her.”"
+frame = 2
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Sorry to disappoint you, hon…”"
+frame = 14
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“See? Nothing.”"
+frame = 10
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX2" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("20_tb05q")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText5" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "(I was wrong…?!)"
+frame = 18
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBranch3" type="Node" parent="ThirdAct/Y2/DialogChoice"]
+script = ExtResource("18_xe3yp")
+text = "The locker keys"
+metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
+
+[node name="DialogSFX" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_r6ah7")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“It’s the locker keys!”"
+frame = 15
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX2" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText2" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“If you check her uniform, you’ll find a [color=orange]locker key.[/color]”"
+frame = 14
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“It matches with one of the lockers in the changeroom.”"
+frame = 1
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“No…!”"
+frame = 1
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“You mean the one we couldn’t open…!?”"
+frame = 5
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“The locker that’s been shut this whole time…”"
+frame = 12
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX3" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText7" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“…the one with the towel.”"
+frame = 11
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“Forensics will trace the blood on that towel to the lifeguard and to DAISY.”"
+frame = 12
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“She won’t be able to explain why she has those keys.”"
+frame = 13
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“If I’m so wrong, Y…”"
+frame = 2
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX4" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText11" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“…why don’t you let us search your pockets?”"
+frame = 1
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“…”"
+frame = 26
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText13" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“…..”"
+frame = 9
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“……”"
+frame = 34
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“………”"
+frame = 37
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“Ha…”"
+frame = 8
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“Hahahahaha……………”"
+frame = 10
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText18" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“So you really are as good as they say……”"
+frame = 4
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText19" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“Isn’t that right, Amelia?”"
+frame = 14
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText20" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“Why’d you do it, DAISY?!”"
+frame = 11
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText21" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“What’s wrong with you?!”"
+frame = 12
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText22" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“I trusted you.”"
+frame = 5
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText23" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“We [i]all[/i] trusted you.”"
+frame = 17
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText24" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“And that was your mistake.”"
+frame = 4
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX5" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("28_m0n8f")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogSFX6" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText25" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“The truth is……..I enjoyed it.”"
+frame = 14
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText26" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“Every second.”"
+frame = 18
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText27" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“The only thing I can’t figure out is the motive.”"
+frame = 15
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText28" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“Why’d you do it, Y?”"
+frame = 14
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText29" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“Not everything needs a motive, Amelia.”"
+frame = 4
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText30" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“Is it not wonderful to simply have fun sometimes?”"
+frame = 14
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("21_ax1uf")
+background = ExtResource("22_ga3cx")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogText31" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“I told him a pipe had burst in the washroom.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText32" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“Made him grab a towel and rush in there with the keys.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText33" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“He said he’d check it on his own, but I told him the leak was hidden.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText34" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“You know, I’m a very good actor.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText35" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“So he followed me.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText36" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“I locked the door as soon as we got in.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText37" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“And then I told him where I found the leak.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX7" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("30_32dqc")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText38" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“I smashed his head against the mirror.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText39" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“He fought back a little but he was so dizzy from the first hit.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText40" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“It was honestly so funny.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText41" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“Pieces of mirror were stuck all over his face.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText42" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“I rammed his head against the corner of the sink too.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText43" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“I don’t even know how many times.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground2" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("21_ax1uf")
+background = ExtResource("31_e1rr2")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogText44" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“Suddenly the sink broke.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText45" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“He was dead on the ground already.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText46" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“Somewhere in the process I cut my hand.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText47" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“My blood was already dripping onto the ground.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText48" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“I had to clean it up somehow.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText49" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“So I grabbed the community towel and let it soak up the mess.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground3" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("21_ax1uf")
+background = ExtResource("22_ga3cx")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogText50" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“I managed to drag his body to the locker.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText51" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“And turned on the showers to wash away the blood on me.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText52" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“Leaving was almost perfect.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText53" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“I left the showers on and changed back into my old clothes.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground4" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("21_ax1uf")
+background = ExtResource("32_mj8al")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogText54" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“But that damn community towel didn’t fit.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText55" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“I had no choice but to leave it in one of the lockers.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText56" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“I took the keys of the lifeguard and the locker and left.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground5" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("21_ax1uf")
+background = ExtResource("22_ga3cx")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogSFX8" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_r6ah7")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText57" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“It was a sloppy escape but I figured I’d come back later.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText58" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“I made sure everything was locked, anyway.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText59" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“The door to the community center was easily locked now that I had his keys.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText60" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“I threw the lifeguard keys down a nearby drain and left.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText61" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“I thought I was clear.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText62" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“I hoped the keys would flow through the sewers and never be found again.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText63" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“But then you found them under the drain.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX9" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("33_id8dk")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText64" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“You also found my blood on the shower knobs too.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText65" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“I had no choice but to clean it while you were gone.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText66" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“You’re quite observant, Amelia…I’ll give you that.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText67" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“But the downfall was my own.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText68" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“If I hadn’t slipped about that damn chime…”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground6" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("21_ax1uf")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogText69" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“…”"
+frame = 31
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText70" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“Your deduction was quite brilliant, hon.”"
+frame = 14
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText71" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“Give it up, DAISY.”"
+frame = 2
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText72" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“You’re a monster.”"
+frame = 14
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText73" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“I…I can’t believe it…”"
+frame = 12
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText74" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“…All this time…”"
+frame = 11
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText75" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“What changed in you?”"
+frame = 13
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText76" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“What happened to my old partner?”"
+frame = 14
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX10" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText77" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“There never was your old partner.”"
+frame = 5
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText78" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“It was always just me.”"
+frame = 36
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground7" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("21_ax1uf")
+background = ExtResource("22_ga3cx")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogSFX11" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText79" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“Amelia was just the first to catch me.”"
+frame = 15
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText80" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“…”"
+frame = 5
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText81" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“The first to catch you…?”"
+frame = 7
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText82" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“My my…”"
+frame = 17
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText83" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“Perhaps I was wrong about how smart you were.”"
+frame = 7
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText84" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“The lifeguard?”"
+frame = 33
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText85" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“Oh, Amelia, he was far from my first.”"
+frame = 15
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText86" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“This is just the first time I’ve been caught.”"
+frame = 12
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX12" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText87" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“But I’ve killed before.”"
+frame = 11
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText88" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“You make me sick.”"
+frame = 14
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText89" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“I’m calling in backup.”"
+frame = 6
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText90" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“We’re done here, DAISY.”"
+frame = 5
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText91" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“It’s over.”"
+frame = 15
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground8" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("21_ax1uf")
+background = ExtResource("34_nwyan")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogText92" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“You’re good, Amelia, I’ll give you that.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX13" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_r6ah7")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText93" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“I really didn’t expect you to solve the case.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText94" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“And honestly, it was quite fun playing along with your little detective game.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText95" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“But you forgot one thing, darling.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText96" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“It’s lights out at nine.”"
+slow = true
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
 [node name="X" type="Node" parent="ThirdAct"]
 
 [node name="DialogBackground" type="Node" parent="ThirdAct/X"]
@@ -2503,6 +4674,201 @@ metadata/_custom_type_script = "uid://dst30i4jr8cmt"
 script = ExtResource("7_ig34w")
 text = "(Drats…!)"
 frame = 18
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogChoice" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch"]
+script = ExtResource("17_ga3cx")
+metadata/_custom_type_script = "uid://b8kxiife71bd1"
+
+[node name="DialogBranch2" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice"]
+script = ExtResource("18_xe3yp")
+text = "You knew how to get the keys from the drain"
+metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
+
+[node name="DialogText" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“You knew how to get the keys from the drain!”"
+frame = 15
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“It was simple!”"
+frame = 7
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“The instructions were right next to the equalizer!”"
+frame = 15
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“But it only had instructions for equalizing.”"
+frame = 2
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Come to think of it, that’s true!”"
+frame = 21
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“How did you know the specific preset that would overflow the mesh?”"
+frame = 19
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“There was nothing on that, Lowkey.”"
+frame = 30
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“It’s just intuition!”"
+frame = 7
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“I’ve been working cases for years now.”"
+frame = 9
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“This isn’t the first time I’ve come across some kind of puzzle.”"
+frame = 12
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“But the specific knowledge to overflow the mesh in this pool?”"
+frame = 8
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“I doubt you’d learn that on the job.”"
+frame = 14
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText13" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“You’re a detective too, Amelia!”"
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“You should know it’s our job to build a sixth sense for these things.”"
+frame = 10
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“I have.”"
+frame = 15
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“It’s telling me that you’re the killer.”"
+frame = 2
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Why not Teresa?!”"
+frame = 7
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText18" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Why not Eris?!\""
+frame = 9
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText19" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Or you?!\""
+frame = 8
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText20" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“How could I even lure the lifeguard back to the women’s changeroom?”"
+frame = 15
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText21" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“But why are you suddenly accusing us?!”"
+frame = 5
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText22" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Just show us some proof you aren’t the killer.”"
+frame = 7
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText23" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Not until Amelia proves I’m the killer.”"
+frame = 15
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText24" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“You’re a detective, aren’t you?”"
+frame = 9
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText25" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "“Either present [color=orange]evidence[/color] that I’m the killer or stop talking.”"
+frame = 7
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText26" type="Node" parent="ThirdAct/X/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("7_ig34w")
+text = "(I can do it…)"
+frame = 14
 npc_info = ExtResource("9_lpja6")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
@@ -2754,6 +5120,318 @@ frame = 2
 npc_info = ExtResource("9_lpja6")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
+[node name="DialogText6" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“That did not happen!”"
+frame = 3
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“It all makes sense.”"
+frame = 26
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“Your demeanor acting like you’re all calculated…”"
+frame = 30
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“It’s because you are!”"
+frame = 4
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“You cut your hand while attacking the lifeguard.”"
+frame = 37
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“You’re dead wrong, Amelia.”"
+frame = 10
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX4" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText12" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“Take a look.”"
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground2" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("21_ax1uf")
+background = ExtResource("30_d2smt")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogSFX5" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("10_r6ah7")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText13" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“See?”"
+npc_info = ExtResource("30_e6tdg")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“No cuts.”"
+npc_info = ExtResource("30_e6tdg")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX6" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText15" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“You’ve proved nothing!”"
+npc_info = ExtResource("30_e6tdg")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX7" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("31_d2smt")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText16" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“Th-that can’t be right…!”"
+npc_info = ExtResource("23_xe3yp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“I don’t know what type of detective you are…”"
+npc_info = ExtResource("30_e6tdg")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText18" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“But you’re too full of ego.”"
+npc_info = ExtResource("30_e6tdg")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText19" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“Maybe think before you accuse others of being the killer.”"
+npc_info = ExtResource("30_e6tdg")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText20" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“Amelia…?”"
+frame = 16
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText21" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“No…I was wrong…?!”"
+npc_info = ExtResource("23_xe3yp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText22" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“But there was so much blood!”"
+npc_info = ExtResource("23_xe3yp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText23" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“The fact it was wiped meant the killer bled!”"
+npc_info = ExtResource("23_xe3yp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText24" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“Not sure if I believe you anymore…”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText25" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“It’s true!”"
+npc_info = ExtResource("23_xe3yp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText26" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“Why would the killer bother cleaning the victim’s blood?!”"
+npc_info = ExtResource("23_xe3yp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText27" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“It wouldn’t trace anything back to them.”"
+npc_info = ExtResource("23_xe3yp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText28" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“They had to have cut their hands or arm on the sink…”"
+npc_info = ExtResource("23_xe3yp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText29" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“I’ve already taken off my gloves.”"
+npc_info = ExtResource("30_e6tdg")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText30" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“The only one still wearing them is Eris.”"
+npc_info = ExtResource("30_e6tdg")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText31" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“…?”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText32" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“What are you saying?”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText33" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“You can’t be accusing me all of a sudden.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText34" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“I’m not.”"
+npc_info = ExtResource("30_e6tdg")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText35" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“I don’t throw around baseless accusations like Amelia.”"
+npc_info = ExtResource("30_e6tdg")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground3" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("21_ax1uf")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogText36" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "(No…I failed…)"
+frame = 5
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText37" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "(Who’s the killer?!)"
+frame = 7
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText38" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "(Have I already run out of time?!)"
+frame = 6
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX8" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("34_u73ex")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText39" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“It looks like the lights are shutting off.”"
+frame = 16
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText40" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“Let’s get out of here quick.”"
+frame = 4
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText41" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“W-wait!”"
+frame = 7
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText42" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“Take off your gloves, Eris!”"
+frame = 15
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText43" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“…”"
+frame = 35
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText44" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“…No.”"
+frame = 6
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText45" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“But…”"
+frame = 16
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX9" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("35_d2smt")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogBackground4" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("21_ax1uf")
+background = ExtResource("22_ga3cx")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogText46" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“…I’m sure you’d like that, Amelia.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText47" type="Node" parent="ThirdAct/X2"]
+script = ExtResource("7_ig34w")
+text = "“Wouldn’t you?”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
 [node name="Teresa" type="Node" parent="ThirdAct"]
 
 [node name="DialogSFX" type="Node" parent="ThirdAct/Teresa"]
@@ -2794,6 +5472,480 @@ frame = 16
 npc_info = ExtResource("9_lpja6")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
+[node name="Partner" type="Node" parent="ThirdAct"]
+
+[node name="DialogBackground" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("21_ax1uf")
+background = ExtResource("26_8gm5l")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogSFX" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“The killer was the lifeguard’s shift partner!”"
+npc_info = ExtResource("23_xe3yp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX2" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("27_tb05q")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText2" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“He’s going to come back for the keys!”"
+npc_info = ExtResource("23_xe3yp")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground2" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("21_ax1uf")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogText3" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“What?”"
+frame = 21
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“The killer is the one who had access to the equipment logs.”"
+frame = 12
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“Someone with authority to convince the lifeguard of an urgent leak.”"
+frame = 13
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“And someone who knew this place well.”"
+frame = 1
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX3" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText7" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“The only candidate is the other lifeguard!”"
+frame = 2
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“Oh my…how could that be?”"
+frame = 26
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "He was the one who called us!”"
+frame = 30
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“So you think he tried to disguise his crime by calling the police himself?”"
+frame = 10
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“Exactly so.”"
+frame = 2
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“That wouldn’t be the first time things like this happen.”"
+frame = 6
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText13" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“It’s a common tactic…\""
+frame = 5
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“But there’s something wrong with that theory.”"
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX4" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText15" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“How would he have forensics knowledge?”"
+frame = 10
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“We concluded it had to be an officer.”"
+frame = 1
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“Although the crime was sloppy, the cleanup was detailed.”"
+frame = 12
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText18" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“Rigor mortis isn’t confidential information though.”"
+frame = 8
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText19" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“He might read forensics books in his free time to plot his own crime.”"
+frame = 10
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText20" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“If the killer was an officer, the kill itself wouldn’t be so sloppy.”"
+frame = 16
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText21" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“I mean….”"
+frame = 2
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText22" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“…that’s kind of speculative, no?”"
+frame = 3
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText23" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“Any murder would be sloppy if you’re fighting a trained lifeguard.”"
+frame = 9
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText24" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“Especially in public.”"
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText25" type="Node" parent="ThirdAct/Partner"]
+script = ExtResource("7_ig34w")
+text = "“You’ve got to give [color=orange]evidence[/color], Amelia.”"
+frame = 10
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Partner2" type="Node" parent="ThirdAct"]
+
+[node name="DialogSFX" type="Node" parent="ThirdAct/Partner2"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText" type="Node" parent="ThirdAct/Partner2"]
+script = ExtResource("7_ig34w")
+text = "“These sink fragments prove he was the killer!”"
+frame = 15
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="ThirdAct/Partner2"]
+script = ExtResource("7_ig34w")
+text = "“An officer who planned a murder wouldn’t go around breaking things like this.”"
+frame = 14
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="ThirdAct/Partner2"]
+script = ExtResource("7_ig34w")
+text = "“But hold on…”"
+frame = 5
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="ThirdAct/Partner2"]
+script = ExtResource("7_ig34w")
+text = "“What about this case is planned?”"
+frame = 19
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="ThirdAct/Partner2"]
+script = ExtResource("7_ig34w")
+text = "“The public changeroom during busy hours is not a great place for a murder.”"
+frame = 37
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="ThirdAct/Partner2"]
+script = ExtResource("7_ig34w")
+text = "“Just saying.”"
+frame = 4
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="ThirdAct/Partner2"]
+script = ExtResource("7_ig34w")
+text = "“Exactly…this was a murder on impulse.”"
+frame = 8
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="ThirdAct/Partner2"]
+script = ExtResource("7_ig34w")
+text = "“It wasn’t planned.”"
+frame = 16
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="ThirdAct/Partner2"]
+script = ExtResource("7_ig34w")
+text = "“Not exactly sure what you’re saying…?”"
+frame = 12
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="ThirdAct/Partner2"]
+script = ExtResource("7_ig34w")
+text = "“I just…”"
+frame = 7
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="ThirdAct/Partner2"]
+script = ExtResource("7_ig34w")
+text = "“I have a strong feeling the lifeguard is the killer.”"
+frame = 18
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="ThirdAct/Partner2"]
+script = ExtResource("7_ig34w")
+text = "“Well good thing being a detective is based on feelings, hon.”"
+frame = 14
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText13" type="Node" parent="ThirdAct/Partner2"]
+script = ExtResource("7_ig34w")
+text = "“I just have a hunch for these things!”"
+frame = 6
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="ThirdAct/Partner2"]
+script = ExtResource("7_ig34w")
+text = "“It would make sense for only another lifeguard to come into the changeroom.”"
+frame = 7
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="ThirdAct/Partner2"]
+script = ExtResource("7_ig34w")
+text = "“But that can’t be right!”"
+frame = 21
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="ThirdAct/Partner2"]
+script = ExtResource("7_ig34w")
+text = "“That would leave the pool unattended.”"
+frame = 19
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="ThirdAct/Partner2"]
+script = ExtResource("7_ig34w")
+text = "“The victim wouldn’t have agreed!”"
+frame = 5
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText18" type="Node" parent="ThirdAct/Partner2"]
+script = ExtResource("7_ig34w")
+text = "“There has to be [color=orange]evidence[/color] we can check…”"
+frame = 19
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Partner3" type="Node" parent="ThirdAct"]
+
+[node name="DialogSFX" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("11_mw8eb")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("7_ig34w")
+text = "“Here!”"
+frame = 1
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("7_ig34w")
+text = "“It…”"
+frame = 7
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("7_ig34w")
+text = "“Looks like Teresa was right.”"
+frame = 9
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("7_ig34w")
+text = "“If there was a leak, only one lifeguard could go in.”"
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("7_ig34w")
+text = "“Even then, he could’ve been convinced…”"
+frame = 6
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("7_ig34w")
+text = "“Could have.”"
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("7_ig34w")
+text = "“It looks like we just don’t have enough information…”"
+npc_info = ExtResource("14_r6ah7")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("7_ig34w")
+text = "“The pool’s closing soon.”"
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("7_ig34w")
+text = "“We better get out.”"
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("7_ig34w")
+text = "“I…”"
+frame = 5
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("7_ig34w")
+text = "“I can prove it…”"
+frame = 6
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("7_ig34w")
+text = "“I swear I know the truth…”"
+frame = 7
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText13" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("7_ig34w")
+text = "“Maybe you do.”"
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("7_ig34w")
+text = "“But there’s no point in staying here anymore.”"
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("7_ig34w")
+text = "“Let’s go.”"
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("21_ax1uf")
+background = ExtResource("22_ga3cx")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogText16" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("7_ig34w")
+text = "(…)"
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("7_ig34w")
+text = "(I failed…)"
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText18" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("7_ig34w")
+text = "(I thought I had enough to solve this case…)"
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText19" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("7_ig34w")
+text = "(But in the end…)"
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText20" type="Node" parent="ThirdAct/Partner3"]
+script = ExtResource("7_ig34w")
+text = "(I wasn’t good enough.)"
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
 [node name="Wrong" type="Node" parent="ThirdAct"]
 
 [node name="DialogText" type="Node" parent="ThirdAct/Wrong"]
@@ -2818,6 +5970,22 @@ metadata/_custom_type_script = "uid://dst30i4jr8cmt"
 [node name="DialogText3" type="Node" parent="ThirdAct/Wrong"]
 script = ExtResource("7_ig34w")
 text = "(Not that one…!)"
+frame = 18
+npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="WrongY" type="Node" parent="ThirdAct"]
+
+[node name="DialogText" type="Node" parent="ThirdAct/WrongY"]
+script = ExtResource("7_ig34w")
+text = "“What does this prove?”"
+frame = 14
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="ThirdAct/WrongY"]
+script = ExtResource("7_ig34w")
+text = "(Wrong item!)"
 frame = 18
 npc_info = ExtResource("9_lpja6")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
@@ -2848,4 +6016,25 @@ script = ExtResource("7_ig34w")
 text = "(Darn it…!)"
 frame = 18
 npc_info = ExtResource("9_lpja6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="WrongPartner" type="Node" parent="ThirdAct"]
+
+[node name="DialogText" type="Node" parent="ThirdAct/WrongPartner"]
+script = ExtResource("7_ig34w")
+text = "“How does this prove anything?”"
+frame = 12
+npc_info = ExtResource("16_ax1uf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX" type="Node" parent="ThirdAct/WrongPartner"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("20_tb05q")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText2" type="Node" parent="ThirdAct/WrongPartner"]
+script = ExtResource("7_ig34w")
+text = "(Urgh…)"
+frame = 18
+npc_info = ExtResource("16_ax1uf")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"

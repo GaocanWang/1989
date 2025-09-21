@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b5wgkato1okey"
+path="res://.godot/imported/lights turning off sfx 2.mp3-a659e67ac875b6dca0bd8ed73613746d.mp3str"
+
+[deps]
+
+source_file="res://GUI/dialog_system/audio/lights turning off sfx 2.mp3"
+dest_files=["res://.godot/imported/lights turning off sfx 2.mp3-a659e67ac875b6dca0bd8ed73613746d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

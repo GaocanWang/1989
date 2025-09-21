@@ -8,7 +8,6 @@
 
 [sub_resource type="Resource" id="Resource_81b04"]
 script = ExtResource("2_lgmov")
-use_description = ""
 metadata/_custom_type_script = "uid://l5pyc3mj80jl"
 
 [resource]

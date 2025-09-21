@@ -8,11 +8,18 @@ class_name ThirdAct extends Area2D
 
 var dialog_items_1 : Array[ DialogItem ]
 var dialog_items_2 : Array[ DialogItem ]
+var dialog_items_y : Array[ DialogItem ]
+var dialog_items_y_2 : Array[ DialogItem ]
 var dialog_items_x : Array[ DialogItem ]
 var dialog_items_x_2 : Array[ DialogItem ]
 var dialog_items_teresa : Array[ DialogItem ]
+var dialog_items_partner : Array[ DialogItem ]
+var dialog_items_partner_2 : Array[ DialogItem ]
+var dialog_items_partner_3 : Array[ DialogItem ]
 var dialog_items_wrong : Array[ DialogItem ]
+var dialog_items_wrong_y : Array[ DialogItem ]
 var dialog_items_wrong_x : Array[ DialogItem ]
+var dialog_items_wrong_partner : Array[ DialogItem ]
 
 
 func _ready() -> void:
@@ -33,6 +40,12 @@ func _ready() -> void:
 		elif c.name == "2":
 			for d in c.get_children():
 				dialog_items_2.append( d )
+		elif c.name == "Y":
+			for d in c.get_children():
+				dialog_items_y.append( d )
+		elif c.name == "Y2":
+			for d in c.get_children():
+				dialog_items_y_2.append( d )
 		elif c.name == "X":
 			for d in c.get_children():
 				dialog_items_x.append( d )
@@ -42,12 +55,27 @@ func _ready() -> void:
 		elif c.name == "Teresa":
 			for d in c.get_children():
 				dialog_items_teresa.append( d )
+		elif c.name == "Partner":
+			for d in c.get_children():
+				dialog_items_partner.append( d )
+		elif c.name == "Partner2":
+			for d in c.get_children():
+				dialog_items_partner_2.append( d )
+		elif c.name == "Partner3":
+			for d in c.get_children():
+				dialog_items_partner_3.append( d )
 		elif c.name == "Wrong":
 			for d in c.get_children():
 				dialog_items_wrong.append( d )
+		elif c.name == "WrongY":
+			for d in c.get_children():
+				dialog_items_wrong_y.append( d )
 		elif c.name == "WrongX":
 			for d in c.get_children():
 				dialog_items_wrong_x.append( d )
+		elif c.name == "WrongPartner":
+			for d in c.get_children():
+				dialog_items_wrong_partner.append( d )
 	pass
 
 
@@ -63,6 +91,20 @@ func _on_area_exit( _a : Area2D ) -> void:
 
 func _on_y() -> void:
 	await get_tree().process_frame	
+	buttons.hide()
+	DialogSystem.show_dialog( dialog_items_y )
+	await DialogSystem.finished
+	get_tree().paused = true
+	PauseMenu.waiting_for_item_use = true
+	while true:
+		if await PauseMenu.item_used == "Bloody Sink Piece":
+			break
+		else:
+			DialogSystem.show_dialog( dialog_items_wrong_y )
+			await DialogSystem.finished
+			get_tree().paused = true
+	PauseMenu.waiting_for_item_use = false
+	DialogSystem.show_dialog( dialog_items_y_2 )
 	pass
 
 
@@ -77,12 +119,11 @@ func _on_x() -> void:
 		if await PauseMenu.item_used == "Bloody Sink Piece":
 			break
 		else:
-			DialogSystem.show_dialog( dialog_items_wrong )
+			DialogSystem.show_dialog( dialog_items_wrong_x )
 			await DialogSystem.finished
 			get_tree().paused = true
 	PauseMenu.waiting_for_item_use = false
 	DialogSystem.show_dialog( dialog_items_x_2 )
-	await DialogSystem.finished
 	pass
 
 
@@ -91,12 +132,40 @@ func _on_teresa() -> void:
 	buttons.hide()
 	DialogSystem.show_dialog( dialog_items_teresa )
 	await DialogSystem.finished
+	get_tree().paused = true
 	buttons.show()
+	y.grab_focus()
 	pass
 
 
 func _on_shift_partner() -> void:
 	await get_tree().process_frame
+	buttons.hide()
+	DialogSystem.show_dialog( dialog_items_partner )
+	await DialogSystem.finished
+	get_tree().paused = true
+	PauseMenu.waiting_for_item_use = true
+	while true:
+		if await PauseMenu.item_used == "Bloody Sink Piece":
+			break
+		else:
+			DialogSystem.show_dialog( dialog_items_wrong_partner )
+			await DialogSystem.finished
+			get_tree().paused = true
+	PauseMenu.waiting_for_item_use = false
+	DialogSystem.show_dialog( dialog_items_partner_2 )
+	await DialogSystem.finished
+	get_tree().paused = true
+	PauseMenu.waiting_for_item_use = true
+	while true:
+		if await PauseMenu.item_used == "Employee Handbook":
+			break
+		else:
+			DialogSystem.show_dialog( dialog_items_wrong_partner )
+			await DialogSystem.finished
+			get_tree().paused = true
+	PauseMenu.waiting_for_item_use = false
+	DialogSystem.show_dialog( dialog_items_partner_3 )
 	pass
 
 
