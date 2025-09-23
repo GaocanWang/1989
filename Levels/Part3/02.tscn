@@ -1,0 +1,133 @@
+[gd_scene load_steps=11 format=4 uid="uid://dmt5duyronqor"]
+
+[ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_y5o2i"]
+[ext_resource type="AudioStream" uid="uid://bvswah6ypkskk" path="res://Levels/music/dormitory.mp3" id="2_012tu"]
+[ext_resource type="TileSet" uid="uid://cdgdoc5i46fy3" path="res://Tile Maps/Tile Sets/hospital.tres" id="2_j06fo"]
+[ext_resource type="Script" uid="uid://2hobeot03u4v" path="res://Tile Maps/level_tile_map.gd" id="3_012tu"]
+[ext_resource type="PackedScene" uid="uid://uqut3xy8f7mb" path="res://Levels/player_spawn.tscn" id="4_voy3d"]
+[ext_resource type="PackedScene" uid="uid://bt4r7451gfkr5" path="res://Levels/level_transition.tscn" id="5_j06fo"]
+[ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="7_owrtr"]
+[ext_resource type="Resource" uid="uid://ctbf7x8e37pym" path="res://npc/00_npcs/eris.tres" id="8_5nbve"]
+[ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="9_vwufi"]
+[ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/box.tres" id="10_wyvgq"]
+
+[node name="02" type="Node2D"]
+script = ExtResource("1_y5o2i")
+music = ExtResource("2_012tu")
+
+[node name="Floor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAwAAAAEAAAABAAAAAwAAAAEAAAACAAAAAwAAAAEAAAADAAAAAwAAAAEAAAAEAAAAAwAAAAEAAAAFAAAAAwAAAAEAAAAGAAAAAwAAAAEAAAAHAAAAAwAAAAEAAAAIAAAAAwAAAAEAAAAJAAAAAwAAAAEAAAAKAAAAAwAAAAEAAAALAAAAAwAAAAEAAAAMAAAAAwAAAAEAAAANAAAAAwAAAAEAAAAOAAAAAwAAAAEAAAAPAAAAAwAAAAEAAAAAAAEAAwAAAAEAAAAAAAIAAwAAAAEAAAAAAAMAAwAAAAEAAAAAAAQAAwAAAAEAAAAAAAUAAwAAAAEAAAAAAAYAAwAAAAEAAAAAAAcAAwAAAAEAAAAAAAgAAwAAAAEAAAABAAEAAwAAAAEAAAABAAIAAwAAAAEAAAABAAMAAwAAAAEAAAABAAQAAwAAAAEAAAABAAUAAwAAAAEAAAABAAYAAwAAAAEAAAABAAcAAwAAAAEAAAABAAgAAwAAAAEAAAACAAEAAwAAAAEAAAACAAIAAwAAAAEAAAACAAMAAwAAAAEAAAACAAQAAwAAAAEAAAACAAUAAwAAAAEAAAACAAYAAwAAAAEAAAACAAcAAwAAAAEAAAACAAgAAwAAAAEAAAADAAEAAwAAAAEAAAADAAIAAwAAAAEAAAADAAMAAwAAAAEAAAADAAQAAwAAAAEAAAADAAUAAwAAAAEAAAADAAgAAwAAAAEAAAAEAAEAAwAAAAEAAAAEAAIAAwAAAAEAAAAEAAMAAwAAAAEAAAAEAAQAAwAAAAEAAAAEAAYAAwAAAAEAAAAEAAcAAwAAAAEAAAAEAAgAAwAAAAEAAAAFAAEAAwAAAAEAAAAFAAIAAwAAAAEAAAAFAAMAAwAAAAEAAAAFAAUAAwAAAAEAAAAFAAYAAwAAAAEAAAAFAAcAAwAAAAEAAAAFAAgAAwAAAAEAAAAGAAYAAwAAAAAAAAAGAAcAAwAAAAAAAAAGAAgAAwAAAAEAAAAHAAYAAwAAAAAAAAAHAAcAAwAAAAAAAAAHAAgAAwAAAAEAAAAIAAYAAwAAAAAAAAAIAAcAAwAAAAAAAAAIAAgAAwAAAAEAAAAJAAYAAwAAAAAAAAAJAAcAAwAAAAAAAAAJAAgAAwAAAAEAAAAKAAEAAwAAAAEAAAAKAAIAAwAAAAEAAAAKAAMAAwAAAAEAAAAKAAQAAwAAAAEAAAAKAAUAAwAAAAEAAAAKAAYAAwAAAAEAAAAKAAcAAwAAAAEAAAAKAAgAAwAAAAEAAAALAAEAAwAAAAEAAAALAAIAAwAAAAEAAAALAAMAAwAAAAEAAAALAAQAAwAAAAEAAAALAAUAAwAAAAEAAAALAAYAAwAAAAEAAAALAAcAAwAAAAEAAAALAAgAAwAAAAEAAAAMAAEAAwAAAAEAAAAMAAIAAwAAAAEAAAAMAAMAAwAAAAEAAAAMAAQAAwAAAAEAAAAMAAUAAwAAAAEAAAAMAAYAAwAAAAEAAAAMAAcAAwAAAAEAAAAMAAgAAwAAAAEAAAANAAEAAwAAAAEAAAANAAIAAwAAAAEAAAANAAMAAwAAAAEAAAANAAQAAwAAAAEAAAANAAUAAwAAAAEAAAANAAYAAwAAAAEAAAANAAcAAwAAAAEAAAANAAgAAwAAAAEAAAAOAAEAAwAAAAEAAAAOAAIAAwAAAAEAAAAOAAMAAwAAAAEAAAAOAAQAAwAAAAEAAAAOAAUAAwAAAAEAAAAOAAYAAwAAAAEAAAAOAAcAAwAAAAEAAAAOAAgAAwAAAAEAAAAPAAEAAwAAAAEAAAAPAAIAAwAAAAEAAAAPAAMAAwAAAAEAAAAPAAQAAwAAAAEAAAAPAAUAAwAAAAEAAAAPAAYAAwAAAAEAAAAPAAcAAwAAAAEAAAAPAAgAAwAAAAEAAAAGAAQAAwAAAAAAAAAGAAUAAwAAAAAAAAAHAAMAAwAAAAAAAAAHAAQAAwAAAAAAAAAHAAUAAwAAAAAAAAAIAAQAAwAAAAAAAAAIAAUAAwAAAAAAAAAJAAMAAwAAAAAAAAAJAAQAAwAAAAAAAAAJAAUAAwAAAAAAAAAIAAMAAwAAAAAAAAAGAAMAAwAAAAAAAAAFAAQAAwAAAAEAAAAEAAUAAwAAAAEAAAADAAYAAwAAAAEAAAADAAcAAwAAAAEAAAAJAAIAAwAAAAEAAAAIAAIAAwAAAAEAAAAHAAIAAwAAAAEAAAAGAAIAAwAAAAEAAAAGAAEAAwAAAAEAAAAHAAEAAwAAAAEAAAAIAAEAAwAAAAEAAAAJAAEAAwAAAAEAAAA=")
+tile_set = ExtResource("2_j06fo")
+rendering_quadrant_size = 24
+script = ExtResource("3_012tu")
+
+[node name="Wall" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAGAAEAAwABAAAAAAAHAAEAAwABAAAAAAAIAAEAAwABAAAAAAAJAAEAAwABAAAAAAAJAAIAAwABAAAAAAAIAAIAAwABAAAAAAAHAAIAAwABAAAAAAAGAAIAAwABAAAAAAA=")
+tile_set = ExtResource("2_j06fo")
+rendering_quadrant_size = 24
+
+[node name="Other" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAGAAcAAwAEAAEAAAAGAAYAAwAEAAEAAAAGAAUAAwAEAAEAAAAHAAMAAwAAAAQAAAAIAAcAAwADAAUAAFAJAAMAAwADAAUAAAAKAAcAAwADAAAAAFAKAAYAAwADAAAAAFAKAAUAAwADAAAAAFAKAAQAAwADAAAAAFAKAAMAAwADAAAAAFAKAAIAAwADAAAAAFAKAAEAAwADAAAAAFAJAAAAAwADAAAAAAAIAAAAAwADAAAAAAAHAAAAAwADAAAAAAAGAAAAAwADAAAAAAAFAAEAAwADAAAAAGAFAAIAAwADAAAAAGAFAAMAAwADAAAAAGAFAAQAAwADAAAAAGAFAAUAAwADAAAAAGAFAAYAAwADAAAAAGAFAAcAAwADAAAAAGAGAAgAAwADAAAAADAHAAgAAwADAAAAADAIAAgAAwADAAAAADAJAAgAAwADAAAAADAKAAAAAwAEAAAAAAAKAAgAAwAEAAAAAFAFAAgAAwAEAAAAADAFAAAAAwAEAAAAAGAGAAQAAwAAAAIAAAAIAAYAAwACAAEAAGAIAAUAAwADAAEAAGA=")
+tile_set = ExtResource("2_j06fo")
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("4_voy3d")]
+position = Vector2(228, 137)
+
+[node name="LevelTransition" parent="." instance=ExtResource("5_j06fo")]
+position = Vector2(204, 192)
+level = "uid://ddk164tv3vt5s"
+door = true
+size = 1
+side = 3
+
+[node name="LevelTransition2" parent="." instance=ExtResource("5_j06fo")]
+position = Vector2(240, 84)
+level = "uid://lvcn0alfraoq"
+door = true
+size = 1
+side = 1
+
+[node name="DialogText" type="Node" parent="."]
+script = ExtResource("7_owrtr")
+text = "“What the hell is this place…?”"
+frame = 26
+npc_info = ExtResource("8_5nbve")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="."]
+script = ExtResource("7_owrtr")
+text = "“Some sort of hospital?”"
+frame = 37
+npc_info = ExtResource("8_5nbve")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="."]
+script = ExtResource("7_owrtr")
+text = "“Where is everyone?”"
+frame = 4
+npc_info = ExtResource("8_5nbve")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Chair" parent="." instance=ExtResource("9_vwufi")]
+position = Vector2(156, 180)
+
+[node name="DialogText" type="Node" parent="Chair"]
+script = ExtResource("7_owrtr")
+text = "A chair for waiting."
+npc_info = ExtResource("10_wyvgq")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Chair2" parent="." instance=ExtResource("9_vwufi")]
+position = Vector2(156, 156)
+
+[node name="DialogText" type="Node" parent="Chair2"]
+script = ExtResource("7_owrtr")
+text = "A chair for waiting."
+npc_info = ExtResource("10_wyvgq")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Chair3" parent="." instance=ExtResource("9_vwufi")]
+position = Vector2(156, 132)
+
+[node name="DialogText" type="Node" parent="Chair3"]
+script = ExtResource("7_owrtr")
+text = "A chair for waiting."
+npc_info = ExtResource("10_wyvgq")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Plant" parent="." instance=ExtResource("9_vwufi")]
+position = Vector2(156, 114)
+size = Vector2(24, 12)
+
+[node name="DialogText" type="Node" parent="Plant"]
+script = ExtResource("7_owrtr")
+text = "A potted plant."
+npc_info = ExtResource("10_wyvgq")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Reception" parent="." instance=ExtResource("9_vwufi")]
+position = Vector2(192, 84)
+size = Vector2(48, 48)
+
+[node name="DialogText" type="Node" parent="Reception"]
+script = ExtResource("7_owrtr")
+text = "The front desk."
+npc_info = ExtResource("10_wyvgq")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Reception"]
+script = ExtResource("7_owrtr")
+text = "“Is anyone even here…?”"
+npc_info = ExtResource("8_5nbve")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Table" parent="." instance=ExtResource("9_vwufi")]
+position = Vector2(204, 144)
+size = Vector2(24, 48)
+
+[node name="DialogText" type="Node" parent="Table"]
+script = ExtResource("7_owrtr")
+text = "A table with magazines."
+npc_info = ExtResource("10_wyvgq")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"

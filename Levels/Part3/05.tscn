@@ -1,0 +1,285 @@
+[gd_scene load_steps=13 format=4 uid="uid://dyjdjqvqleevp"]
+
+[ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_s8fli"]
+[ext_resource type="TileSet" uid="uid://cdgdoc5i46fy3" path="res://Tile Maps/Tile Sets/hospital.tres" id="2_6wh45"]
+[ext_resource type="Script" uid="uid://2hobeot03u4v" path="res://Tile Maps/level_tile_map.gd" id="3_m2kml"]
+[ext_resource type="PackedScene" uid="uid://uqut3xy8f7mb" path="res://Levels/player_spawn.tscn" id="4_84seo"]
+[ext_resource type="PackedScene" uid="uid://bt4r7451gfkr5" path="res://Levels/level_transition.tscn" id="5_6wh45"]
+[ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="6_6d8x2"]
+[ext_resource type="Resource" uid="uid://ctbf7x8e37pym" path="res://npc/00_npcs/eris.tres" id="7_7aky0"]
+[ext_resource type="Resource" uid="uid://di457jgt256ub" path="res://npc/00_npcs/teresa.tres" id="8_y7rbc"]
+[ext_resource type="Texture2D" uid="uid://tr2vkjgyq8wl" path="res://Tile Maps/Sprites/hospital.png" id="9_whir3"]
+[ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="10_g0u06"]
+[ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/box.tres" id="11_7nvg6"]
+[ext_resource type="PackedScene" uid="uid://bu5pmaiy2xxm3" path="res://Interactables/Nightstand/nightstand.tscn" id="12_ma3xg"]
+
+[node name="05" type="Node2D"]
+script = ExtResource("1_s8fli")
+
+[node name="Floor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAwAAAAEAAAABAAAAAwAAAAEAAAACAAAAAwAAAAEAAAADAAAAAwAAAAEAAAAEAAAAAwAAAAEAAAAFAAAAAwAAAAEAAAAGAAAAAwAAAAEAAAAHAAAAAwAAAAEAAAAIAAAAAwAAAAEAAAAJAAAAAwAAAAEAAAAKAAAAAwAAAAEAAAALAAAAAwAAAAEAAAAMAAAAAwAAAAEAAAANAAAAAwAAAAEAAAAOAAAAAwAAAAEAAAAPAAAAAwAAAAEAAAAAAAEAAwAAAAEAAAAAAAIAAwAAAAEAAAAAAAMAAwAAAAEAAAAAAAQAAwAAAAEAAAAAAAUAAwAAAAEAAAAAAAYAAwAAAAEAAAAAAAcAAwAAAAEAAAAAAAgAAwAAAAEAAAABAAEAAwAAAAEAAAABAAIAAwAAAAEAAAABAAMAAwAAAAEAAAABAAQAAwAAAAEAAAABAAUAAwAAAAEAAAABAAYAAwAAAAEAAAABAAcAAwAAAAEAAAABAAgAAwAAAAEAAAACAAEAAwAAAAEAAAACAAIAAwAAAAEAAAACAAMAAwAAAAEAAAACAAQAAwAAAAEAAAACAAUAAwAAAAEAAAACAAYAAwAAAAEAAAACAAcAAwAAAAEAAAACAAgAAwAAAAEAAAADAAEAAwAAAAEAAAADAAIAAwAAAAEAAAADAAMAAwAAAAEAAAADAAQAAwAAAAEAAAADAAUAAwAAAAEAAAADAAYAAwAAAAEAAAADAAcAAwAAAAEAAAADAAgAAwAAAAEAAAAEAAEAAwAAAAEAAAAEAAIAAwAAAAEAAAAEAAMAAwAAAAEAAAAEAAQAAwAAAAEAAAAEAAUAAwAAAAEAAAAEAAYAAwAAAAEAAAAEAAcAAwAAAAEAAAAEAAgAAwAAAAEAAAAFAAEAAwAAAAEAAAAFAAIAAwAAAAEAAAAFAAMAAwAAAAEAAAAFAAQAAwAAAAEAAAAFAAUAAwAAAAEAAAAFAAYAAwAAAAEAAAAFAAcAAwAAAAEAAAAFAAgAAwAAAAEAAAAGAAYAAwAAAAAAAAAGAAcAAwAAAAEAAAAGAAgAAwAAAAEAAAAHAAYAAwAAAAAAAAAHAAcAAwAAAAEAAAAHAAgAAwAAAAEAAAAIAAYAAwAAAAAAAAAIAAcAAwAAAAEAAAAIAAgAAwAAAAEAAAAJAAYAAwAAAAAAAAAJAAcAAwAAAAEAAAAJAAgAAwAAAAEAAAAKAAEAAwAAAAEAAAAKAAIAAwAAAAEAAAAKAAMAAwAAAAEAAAAKAAQAAwAAAAEAAAAKAAUAAwAAAAEAAAAKAAYAAwAAAAEAAAAKAAcAAwAAAAEAAAAKAAgAAwAAAAEAAAALAAEAAwAAAAEAAAALAAIAAwAAAAEAAAALAAMAAwAAAAEAAAALAAQAAwAAAAEAAAALAAUAAwAAAAEAAAALAAYAAwAAAAEAAAALAAcAAwAAAAEAAAALAAgAAwAAAAEAAAAMAAEAAwAAAAEAAAAMAAIAAwAAAAEAAAAMAAMAAwAAAAEAAAAMAAQAAwAAAAEAAAAMAAUAAwAAAAEAAAAMAAYAAwAAAAEAAAAMAAcAAwAAAAEAAAAMAAgAAwAAAAEAAAANAAEAAwAAAAEAAAANAAIAAwAAAAEAAAANAAMAAwAAAAEAAAANAAQAAwAAAAEAAAANAAUAAwAAAAEAAAANAAYAAwAAAAEAAAANAAcAAwAAAAEAAAANAAgAAwAAAAEAAAAOAAEAAwAAAAEAAAAOAAIAAwAAAAEAAAAOAAMAAwAAAAEAAAAOAAQAAwAAAAEAAAAOAAUAAwAAAAEAAAAOAAYAAwAAAAEAAAAOAAcAAwAAAAEAAAAOAAgAAwAAAAEAAAAPAAEAAwAAAAEAAAAPAAIAAwAAAAEAAAAPAAMAAwAAAAEAAAAPAAQAAwAAAAEAAAAPAAUAAwAAAAEAAAAPAAYAAwAAAAEAAAAPAAcAAwAAAAEAAAAPAAgAAwAAAAEAAAAGAAIAAwAAAAEAAAAGAAMAAwAAAAEAAAAGAAQAAwAAAAAAAAAGAAUAAwAAAAAAAAAHAAIAAwAAAAEAAAAHAAMAAwAAAAEAAAAHAAQAAwAAAAAAAAAHAAUAAwAAAAAAAAAIAAIAAwAAAAEAAAAIAAQAAwAAAAAAAAAIAAUAAwAAAAAAAAAJAAIAAwAAAAEAAAAJAAMAAwAAAAEAAAAJAAQAAwAAAAAAAAAJAAUAAwAAAAAAAAAJAAEAAwAAAAEAAAAIAAEAAwAAAAEAAAAHAAEAAwAAAAEAAAAGAAEAAwAAAAEAAAAIAAMAAwAAAAEAAAA=")
+tile_set = ExtResource("2_6wh45")
+rendering_quadrant_size = 24
+script = ExtResource("3_m2kml")
+
+[node name="Wall" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAJAAMAAwABAAAAAAAIAAMAAwABAAAAAAAHAAMAAwABAAAAAAAGAAMAAwABAAAAAAAGAAIAAwABAAAAAAAHAAIAAwABAAAAAAAIAAIAAwABAAAAAAAJAAIAAwABAAAAAAA=")
+tile_set = ExtResource("2_6wh45")
+rendering_quadrant_size = 24
+
+[node name="Other" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAKAAEAAwAEAAAAAAAKAAIAAwADAAAAAFAKAAMAAwADAAAAAFAKAAQAAwADAAAAAFAKAAUAAwADAAAAAFAKAAYAAwADAAAAAFAGAAcAAwADAAAAADAHAAcAAwADAAAAADAIAAcAAwADAAAAADAJAAcAAwADAAAAADAFAAIAAwADAAAAAGAFAAMAAwADAAAAAGAFAAQAAwADAAAAAGAFAAUAAwADAAAAAGAFAAYAAwADAAAAAGAGAAEAAwADAAAAAAAHAAEAAwADAAAAAAAIAAEAAwADAAAAAAAJAAEAAwADAAAAAAAKAAcAAwAEAAAAAFAFAAcAAwAEAAAAADAFAAEAAwAEAAAAAGAHAAYAAwADAAUAAFAGAAUAAwAEAAEAAAAJAAUAAwAEAAIAAFAJAAQAAwADAAIAAAAJAAYAAwAFAAMAAFA=")
+tile_set = ExtResource("2_6wh45")
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("4_84seo")]
+position = Vector2(180, 109)
+
+[node name="LevelTransition" parent="." instance=ExtResource("5_6wh45")]
+position = Vector2(180, 168)
+level = "uid://lvcn0alfraoq"
+target_transition_area = "LevelTransition3"
+door = true
+size = 1
+side = 3
+
+[node name="DialogText" type="Node" parent="."]
+script = ExtResource("6_6d8x2")
+text = "“It’s you.”"
+frame = 26
+npc_info = ExtResource("7_7aky0")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="."]
+script = ExtResource("6_6d8x2")
+text = "“You’re her partner.”"
+frame = 19
+npc_info = ExtResource("7_7aky0")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="."]
+script = ExtResource("6_6d8x2")
+text = "“Not anymore…”"
+frame = 9
+npc_info = ExtResource("8_y7rbc")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="."]
+script = ExtResource("6_6d8x2")
+text = "“What…?”"
+frame = 30
+npc_info = ExtResource("7_7aky0")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="."]
+script = ExtResource("6_6d8x2")
+text = "(What is this girl talking about?)"
+frame = 37
+npc_info = ExtResource("7_7aky0")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Teresa" type="Sprite2D" parent="."]
+position = Vector2(204, 156)
+texture = ExtResource("9_whir3")
+hframes = 9
+vframes = 6
+frame = 24
+
+[node name="DialogInteraction" parent="Teresa" instance=ExtResource("10_g0u06")]
+
+[node name="DialogText" type="Node" parent="Teresa/DialogInteraction"]
+script = ExtResource("6_6d8x2")
+text = "“I couldn’t do it…”"
+frame = 9
+npc_info = ExtResource("8_y7rbc")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Teresa/DialogInteraction"]
+script = ExtResource("6_6d8x2")
+text = "“I tried so hard…”"
+frame = 8
+npc_info = ExtResource("8_y7rbc")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Teresa/DialogInteraction"]
+script = ExtResource("6_6d8x2")
+text = "“I…”"
+frame = 10
+npc_info = ExtResource("8_y7rbc")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="Teresa/DialogInteraction"]
+script = ExtResource("6_6d8x2")
+text = "“I warned her!”"
+frame = 7
+npc_info = ExtResource("8_y7rbc")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="Teresa/DialogInteraction"]
+script = ExtResource("6_6d8x2")
+text = "“Do you know where I am?”"
+npc_info = ExtResource("7_7aky0")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="Teresa/DialogInteraction"]
+script = ExtResource("6_6d8x2")
+text = "“Where exactly are we?”"
+frame = 19
+npc_info = ExtResource("7_7aky0")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="Teresa/DialogInteraction"]
+script = ExtResource("6_6d8x2")
+text = "“She almost died…”"
+frame = 7
+npc_info = ExtResource("8_y7rbc")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="Teresa/DialogInteraction"]
+script = ExtResource("6_6d8x2")
+text = "“H-how…how could I have not protected her?!”"
+frame = 8
+npc_info = ExtResource("8_y7rbc")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="Teresa/DialogInteraction"]
+script = ExtResource("6_6d8x2")
+text = "“And you…”"
+frame = 7
+npc_info = ExtResource("8_y7rbc")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="Teresa/DialogInteraction"]
+script = ExtResource("6_6d8x2")
+text = "“Why are you here?!”"
+frame = 15
+npc_info = ExtResource("8_y7rbc")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText11" type="Node" parent="Teresa/DialogInteraction"]
+script = ExtResource("6_6d8x2")
+text = "“I’m trying to figure that out.”"
+npc_info = ExtResource("7_7aky0")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="Teresa/DialogInteraction"]
+script = ExtResource("6_6d8x2")
+text = "“What happened exactly?”"
+frame = 4
+npc_info = ExtResource("7_7aky0")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText13" type="Node" parent="Teresa/DialogInteraction"]
+script = ExtResource("6_6d8x2")
+text = "“…”"
+frame = 7
+npc_info = ExtResource("8_y7rbc")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="Teresa/DialogInteraction"]
+script = ExtResource("6_6d8x2")
+text = "“You disgust me.”"
+frame = 15
+npc_info = ExtResource("8_y7rbc")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="Teresa/DialogInteraction"]
+script = ExtResource("6_6d8x2")
+text = "“I was supposed to look out for her!”"
+frame = 8
+npc_info = ExtResource("8_y7rbc")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="Teresa/DialogInteraction"]
+script = ExtResource("6_6d8x2")
+text = "“She always got reckless on cases!”"
+frame = 9
+npc_info = ExtResource("8_y7rbc")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="Teresa/DialogInteraction"]
+script = ExtResource("6_6d8x2")
+text = "“I told her to not work so hard…”"
+frame = 8
+npc_info = ExtResource("8_y7rbc")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText18" type="Node" parent="Teresa/DialogInteraction"]
+script = ExtResource("6_6d8x2")
+text = "“…but she didn’t listen!!!”"
+frame = 10
+npc_info = ExtResource("8_y7rbc")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText19" type="Node" parent="Teresa/DialogInteraction"]
+script = ExtResource("6_6d8x2")
+text = "“Why?!!!”"
+frame = 11
+npc_info = ExtResource("8_y7rbc")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText20" type="Node" parent="Teresa/DialogInteraction"]
+script = ExtResource("6_6d8x2")
+text = "“WHY DIDN’T SHE LISTEN???!!!”"
+frame = 12
+npc_info = ExtResource("8_y7rbc")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText21" type="Node" parent="Teresa/DialogInteraction"]
+script = ExtResource("6_6d8x2")
+text = "“…”"
+frame = 14
+npc_info = ExtResource("7_7aky0")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Repeat" type="Node" parent="Teresa/DialogInteraction"]
+
+[node name="DialogText" type="Node" parent="Teresa/DialogInteraction/Repeat"]
+script = ExtResource("6_6d8x2")
+text = "Teresa is silently sobbing."
+npc_info = ExtResource("11_7nvg6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Teresa/DialogInteraction/Repeat"]
+script = ExtResource("6_6d8x2")
+text = "You did this."
+npc_info = ExtResource("11_7nvg6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Stool" parent="." instance=ExtResource("10_g0u06")]
+position = Vector2(156, 132)
+
+[node name="DialogText" type="Node" parent="Stool"]
+script = ExtResource("6_6d8x2")
+text = "A stool."
+npc_info = ExtResource("11_7nvg6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Bed" parent="." instance=ExtResource("10_g0u06")]
+position = Vector2(222, 132)
+size = Vector2(36, 24)
+
+[node name="DialogText" type="Node" parent="Bed"]
+script = ExtResource("6_6d8x2")
+text = "A hospital bed for the ill."
+npc_info = ExtResource("11_7nvg6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DripStand" parent="." instance=ExtResource("10_g0u06")]
+position = Vector2(226, 108)
+size = Vector2(12, 24)
+
+[node name="DialogText" type="Node" parent="DripStand"]
+script = ExtResource("6_6d8x2")
+text = "A drip stand."
+npc_info = ExtResource("11_7nvg6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Nightstand" parent="." instance=ExtResource("12_ma3xg")]
+position = Vector2(228, 156)
+
+[node name="DialogText" type="Node" parent="Nightstand"]
+script = ExtResource("6_6d8x2")
+text = "A nightstand with a photo frame."
+npc_info = ExtResource("11_7nvg6")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"

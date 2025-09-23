@@ -10,6 +10,7 @@ var dialog_items_1 : Array[ DialogItem ]
 var dialog_items_2 : Array[ DialogItem ]
 var dialog_items_y : Array[ DialogItem ]
 var dialog_items_y_2 : Array[ DialogItem ]
+var dialog_items_y_3 : Array[ DialogItem ]
 var dialog_items_x : Array[ DialogItem ]
 var dialog_items_x_2 : Array[ DialogItem ]
 var dialog_items_teresa : Array[ DialogItem ]
@@ -46,6 +47,9 @@ func _ready() -> void:
 		elif c.name == "Y2":
 			for d in c.get_children():
 				dialog_items_y_2.append( d )
+		elif c.name == "Y3":
+			for d in c.get_children():
+				dialog_items_y_3.append( d )
 		elif c.name == "X":
 			for d in c.get_children():
 				dialog_items_x.append( d )
@@ -105,6 +109,12 @@ func _on_y() -> void:
 			get_tree().paused = true
 	PauseMenu.waiting_for_item_use = false
 	DialogSystem.show_dialog( dialog_items_y_2 )
+	await DialogSystem.finished
+	PlayerManager.player.sprite2.texture = load( "res://npc/sprites/y.png" )
+	PlayerManager.player.sprite.visible = false
+	PlayerManager.player.sprite2.visible = true
+	get_tree().change_scene_to_file( "res://Levels/Part3/01.tscn" )
+	DialogSystem.show_dialog( dialog_items_y_3 )
 	pass
 
 

@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu5pmaiy2xxm3"]
+
+[ext_resource type="Texture2D" uid="uid://d3fkcp88kdnsr" path="res://Interactables/Nightstand/1989 polaroid.png" id="1_f5k4x"]
+[ext_resource type="Script" uid="uid://bonnybg6x2shi" path="res://Interactables/Nightstand/nightstand.gd" id="1_nvu71"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkhl8"]
+size = Vector2(24, 24)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xt3c0"]
+bg_color = Color(0.187176, 0.187176, 0.187176, 1)
+
+[node name="Nightstand" type="Area2D"]
+process_mode = 3
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_nvu71")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dkhl8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_f5k4x")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.5
+offset_top = -39.0
+offset_right = 148.5
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xt3c0")
+text = "Look at the photo?"
+
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Yes"
+
+[node name="Button2" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "No"

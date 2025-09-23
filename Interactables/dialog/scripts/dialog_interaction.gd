@@ -82,6 +82,9 @@ func _check_dialog() -> void:
 	elif DialogSystem.current_dialog_text == "“Which means he couldn’t have gotten knocked unconscious.”":
 		LevelManager.part3.emit()
 		LevelManager.flags.part_3 = true
+	elif DialogSystem.current_dialog_text == "(I need to get out.)":
+		PlayerManager.shake_camera()
+		get_tree().change_scene_to_file( "res://Levels/Part3/08.tscn" )
 
 
 func _on_debate_fail() -> void:

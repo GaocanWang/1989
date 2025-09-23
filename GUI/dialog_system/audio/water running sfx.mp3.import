@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://rybrqi0bpm6g"
+path="res://.godot/imported/water running sfx.mp3-614340eac4eef1cfc4d5fcb0ff839a88.mp3str"
+
+[deps]
+
+source_file="res://GUI/dialog_system/audio/water running sfx.mp3"
+dest_files=["res://.godot/imported/water running sfx.mp3-614340eac4eef1cfc4d5fcb0ff839a88.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

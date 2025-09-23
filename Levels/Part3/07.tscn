@@ -1,0 +1,413 @@
+[gd_scene load_steps=20 format=4 uid="uid://blarcfxukewwr"]
+
+[ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_6j28b"]
+[ext_resource type="TileSet" uid="uid://cdgdoc5i46fy3" path="res://Tile Maps/Tile Sets/hospital.tres" id="2_sxuc3"]
+[ext_resource type="Script" uid="uid://2hobeot03u4v" path="res://Tile Maps/level_tile_map.gd" id="3_pyic0"]
+[ext_resource type="PackedScene" uid="uid://uqut3xy8f7mb" path="res://Levels/player_spawn.tscn" id="4_22iej"]
+[ext_resource type="PackedScene" uid="uid://bt4r7451gfkr5" path="res://Levels/level_transition.tscn" id="5_82jsk"]
+[ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="6_22iej"]
+[ext_resource type="Resource" uid="uid://ctbf7x8e37pym" path="res://npc/00_npcs/eris.tres" id="7_82jsk"]
+[ext_resource type="Resource" uid="uid://c2w2tyjg78bol" path="res://npc/00_npcs/amelia.tres" id="8_rw525"]
+[ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="9_82jsk"]
+[ext_resource type="Script" uid="uid://6cyylp4dfkoi" path="res://Interactables/dialog/scripts/dialog_background.gd" id="10_jt5el"]
+[ext_resource type="Texture2D" uid="uid://lif6ysy0jebs" path="res://FullScreenArt/1920x1080-black-solid-color-background.jpg" id="11_ehuje"]
+[ext_resource type="Script" uid="uid://dst30i4jr8cmt" path="res://Interactables/dialog/scripts/dialog_sfx.gd" id="12_51uwe"]
+[ext_resource type="AudioStream" uid="uid://c3b0au0qgyvxs" path="res://Levels/music/the_sailor.ogg" id="13_ehuje"]
+[ext_resource type="Resource" uid="uid://q5twg4buxc41" path="res://npc/00_npcs/amelia_np.tres" id="14_51uwe"]
+[ext_resource type="Resource" uid="uid://c8f2rv7i4g6bx" path="res://npc/00_npcs/box.tres" id="15_foabf"]
+[ext_resource type="AudioStream" uid="uid://b4lhh2f0f1pa6" path="res://GUI/dialog_system/audio/SFX plays.mp3" id="16_66hkk"]
+[ext_resource type="AudioStream" uid="uid://ddsuf5nybmid3" path="res://Levels/music/only-i-know.ogg" id="17_6812q"]
+[ext_resource type="AudioStream" uid="uid://bk1kt8v1khuhk" path="res://GUI/dialog_system/audio/nurse bell ringing SFX.wav" id="18_6812q"]
+[ext_resource type="Resource" uid="uid://b7cm0ls2m116w" path="res://npc/00_npcs/nurse.tres" id="19_1lxt2"]
+
+[node name="07" type="Node2D"]
+script = ExtResource("1_6j28b")
+
+[node name="Floor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAwAAAAEAAAABAAAAAwAAAAEAAAACAAAAAwAAAAEAAAADAAAAAwAAAAEAAAAEAAAAAwAAAAEAAAAFAAAAAwAAAAEAAAAGAAAAAwAAAAEAAAAHAAAAAwAAAAEAAAAIAAAAAwAAAAEAAAAJAAAAAwAAAAEAAAAKAAAAAwAAAAEAAAALAAAAAwAAAAEAAAAMAAAAAwAAAAEAAAANAAAAAwAAAAEAAAAOAAAAAwAAAAEAAAAPAAAAAwAAAAEAAAAAAAEAAwAAAAEAAAAAAAIAAwAAAAEAAAAAAAMAAwAAAAEAAAAAAAQAAwAAAAEAAAAAAAUAAwAAAAEAAAAAAAYAAwAAAAEAAAAAAAcAAwAAAAEAAAAAAAgAAwAAAAEAAAABAAEAAwAAAAEAAAABAAIAAwAAAAEAAAABAAMAAwAAAAEAAAABAAQAAwAAAAEAAAABAAUAAwAAAAEAAAABAAYAAwAAAAEAAAABAAcAAwAAAAEAAAABAAgAAwAAAAEAAAACAAEAAwAAAAEAAAACAAIAAwAAAAEAAAACAAMAAwAAAAEAAAACAAQAAwAAAAEAAAACAAUAAwAAAAEAAAACAAYAAwAAAAEAAAACAAcAAwAAAAEAAAACAAgAAwAAAAEAAAADAAEAAwAAAAEAAAADAAIAAwAAAAEAAAADAAMAAwAAAAEAAAADAAQAAwAAAAEAAAADAAUAAwAAAAEAAAADAAYAAwAAAAEAAAADAAcAAwAAAAEAAAADAAgAAwAAAAEAAAAEAAEAAwAAAAEAAAAEAAIAAwAAAAEAAAAEAAMAAwAAAAEAAAAEAAQAAwAAAAEAAAAEAAUAAwAAAAEAAAAEAAYAAwAAAAEAAAAEAAcAAwAAAAEAAAAEAAgAAwAAAAEAAAAFAAEAAwAAAAEAAAAFAAIAAwAAAAEAAAAFAAMAAwAAAAEAAAAFAAQAAwAAAAEAAAAFAAUAAwAAAAEAAAAFAAYAAwAAAAEAAAAFAAcAAwAAAAEAAAAFAAgAAwAAAAEAAAAGAAYAAwAAAAAAAAAGAAcAAwAAAAEAAAAGAAgAAwAAAAEAAAAHAAYAAwAAAAAAAAAHAAcAAwAAAAEAAAAHAAgAAwAAAAEAAAAIAAYAAwAAAAAAAAAIAAcAAwAAAAEAAAAIAAgAAwAAAAEAAAAJAAYAAwAAAAAAAAAJAAcAAwAAAAEAAAAJAAgAAwAAAAEAAAAKAAEAAwAAAAEAAAAKAAIAAwAAAAEAAAAKAAMAAwAAAAEAAAAKAAQAAwAAAAEAAAAKAAUAAwAAAAEAAAAKAAYAAwAAAAEAAAAKAAcAAwAAAAEAAAAKAAgAAwAAAAEAAAALAAEAAwAAAAEAAAALAAIAAwAAAAEAAAALAAMAAwAAAAEAAAALAAQAAwAAAAEAAAALAAUAAwAAAAEAAAALAAYAAwAAAAEAAAALAAcAAwAAAAEAAAALAAgAAwAAAAEAAAAMAAEAAwAAAAEAAAAMAAIAAwAAAAEAAAAMAAMAAwAAAAEAAAAMAAQAAwAAAAEAAAAMAAUAAwAAAAEAAAAMAAYAAwAAAAEAAAAMAAcAAwAAAAEAAAAMAAgAAwAAAAEAAAANAAEAAwAAAAEAAAANAAIAAwAAAAEAAAANAAMAAwAAAAEAAAANAAQAAwAAAAEAAAANAAUAAwAAAAEAAAANAAYAAwAAAAEAAAANAAcAAwAAAAEAAAANAAgAAwAAAAEAAAAOAAEAAwAAAAEAAAAOAAIAAwAAAAEAAAAOAAMAAwAAAAEAAAAOAAQAAwAAAAEAAAAOAAUAAwAAAAEAAAAOAAYAAwAAAAEAAAAOAAcAAwAAAAEAAAAOAAgAAwAAAAEAAAAPAAEAAwAAAAEAAAAPAAIAAwAAAAEAAAAPAAMAAwAAAAEAAAAPAAQAAwAAAAEAAAAPAAUAAwAAAAEAAAAPAAYAAwAAAAEAAAAPAAcAAwAAAAEAAAAPAAgAAwAAAAEAAAAGAAIAAwAAAAEAAAAGAAMAAwAAAAEAAAAGAAQAAwAAAAAAAAAGAAUAAwAAAAAAAAAHAAIAAwAAAAEAAAAHAAMAAwAAAAEAAAAHAAQAAwAAAAAAAAAHAAUAAwAAAAAAAAAIAAIAAwAAAAEAAAAIAAQAAwAAAAAAAAAIAAUAAwAAAAAAAAAJAAIAAwAAAAEAAAAJAAMAAwAAAAEAAAAJAAQAAwAAAAAAAAAJAAUAAwAAAAAAAAAJAAEAAwAAAAEAAAAIAAEAAwAAAAEAAAAHAAEAAwAAAAEAAAAGAAEAAwAAAAEAAAAIAAMAAwAAAAEAAAA=")
+tile_set = ExtResource("2_sxuc3")
+rendering_quadrant_size = 24
+script = ExtResource("3_pyic0")
+
+[node name="Wall" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAJAAMAAwABAAAAAAAIAAMAAwABAAAAAAAHAAMAAwABAAAAAAAGAAMAAwABAAAAAAAGAAIAAwABAAAAAAAHAAIAAwABAAAAAAAIAAIAAwABAAAAAAAJAAIAAwABAAAAAAA=")
+tile_set = ExtResource("2_sxuc3")
+rendering_quadrant_size = 24
+
+[node name="Other" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAKAAEAAwAEAAAAAAAKAAIAAwADAAAAAFAKAAMAAwADAAAAAFAKAAQAAwADAAAAAFAKAAUAAwADAAAAAFAKAAYAAwADAAAAAFAGAAcAAwADAAAAADAHAAcAAwADAAAAADAIAAcAAwADAAAAADAJAAcAAwADAAAAADAFAAIAAwADAAAAAGAFAAMAAwADAAAAAGAFAAQAAwADAAAAAGAFAAUAAwADAAAAAGAFAAYAAwADAAAAAGAGAAEAAwADAAAAAAAHAAEAAwADAAAAAAAIAAEAAwADAAAAAAAJAAEAAwADAAAAAAAKAAcAAwAEAAAAAFAFAAcAAwAEAAAAADAFAAEAAwAEAAAAAGAHAAYAAwADAAUAAFAJAAQAAwADAAIAAAAJAAYAAwAFAAMAAFAJAAUAAwAHAAQAAFAGAAMAAwABAAMAAAAHAAMAAwACAAMAAAA=")
+tile_set = ExtResource("2_sxuc3")
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("4_22iej")]
+position = Vector2(157, 112)
+
+[node name="LevelTransition" parent="." instance=ExtResource("5_82jsk")]
+position = Vector2(180, 168)
+level = "uid://lvcn0alfraoq"
+target_transition_area = "LevelTransition5"
+door = true
+size = 1
+side = 3
+
+[node name="DialogText" type="Node" parent="."]
+script = ExtResource("6_22iej")
+text = "“…!”"
+frame = 22
+npc_info = ExtResource("7_82jsk")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="."]
+script = ExtResource("6_22iej")
+text = "“It’s you…”"
+frame = 4
+npc_info = ExtResource("7_82jsk")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="."]
+script = ExtResource("6_22iej")
+text = "“No, it’s not.”"
+npc_info = ExtResource("8_rw525")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="."]
+script = ExtResource("6_22iej")
+text = "“Don’t confuse me for someone else.”"
+frame = 16
+npc_info = ExtResource("8_rw525")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="."]
+script = ExtResource("6_22iej")
+text = "(What…?)"
+frame = 19
+npc_info = ExtResource("7_82jsk")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Check" parent="." instance=ExtResource("9_82jsk")]
+position = Vector2(222, 132)
+size = Vector2(36, 24)
+
+[node name="DialogText" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“…”"
+npc_info = ExtResource("8_rw525")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“There’s a story about a sailor.”"
+frame = 15
+npc_info = ExtResource("8_rw525")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText3" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“Care to hear it?”"
+frame = 10
+npc_info = ExtResource("8_rw525")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText4" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“Where am I?”"
+frame = 4
+npc_info = ExtResource("7_82jsk")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText5" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“What did you do?”"
+frame = 37
+npc_info = ExtResource("7_82jsk")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText6" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“You know this one already.”"
+frame = 8
+npc_info = ExtResource("8_rw525")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText7" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“They say he left for all kinds of reasons.”"
+frame = 9
+npc_info = ExtResource("8_rw525")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText8" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“Maybe he wanted time alone. Maybe he was chasing something.”"
+frame = 10
+npc_info = ExtResource("8_rw525")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText9" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“But everyone remembered one thing…”"
+npc_info = ExtResource("8_rw525")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText10" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“…he promised to return with fish. Lots of them.”"
+frame = 15
+npc_info = ExtResource("8_rw525")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground" type="Node" parent="Check"]
+script = ExtResource("10_jt5el")
+background = ExtResource("11_ehuje")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogSFX" type="Node" parent="Check"]
+script = ExtResource("12_51uwe")
+sfx = ExtResource("13_ehuje")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText11" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“He brought every net he owned. Every harpoon.”"
+npc_info = ExtResource("14_51uwe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText12" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“The sailor insisted he wouldn’t come back until he’s killed every fish in the sea.”"
+npc_info = ExtResource("14_51uwe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText13" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“And so he left.”"
+npc_info = ExtResource("14_51uwe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText14" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“…”"
+slow = true
+npc_info = ExtResource("14_51uwe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText15" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“The sailor didn’t come back.”"
+npc_info = ExtResource("14_51uwe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText16" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“Years passed. People forgot his name.”"
+npc_info = ExtResource("14_51uwe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText17" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“Until one day, his body washed ashore.”"
+npc_info = ExtResource("14_51uwe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText18" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“…with a harpoon stuck in him.”"
+npc_info = ExtResource("14_51uwe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText19" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“It seemed like an accident.”"
+npc_info = ExtResource("14_51uwe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText20" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“But some argued he went mad.”"
+npc_info = ExtResource("14_51uwe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText21" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“That he turned the harpoon on himself when he realized the sea was too big.”"
+npc_info = ExtResource("14_51uwe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText22" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“Too deep.”"
+npc_info = ExtResource("14_51uwe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText23" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“Too full of fish he couldn’t kill.”"
+npc_info = ExtResource("14_51uwe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText24" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "..."
+slow = true
+npc_info = ExtResource("15_foabf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText25" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“No one knows for sure.”"
+npc_info = ExtResource("14_51uwe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText26" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“To this day, it remains a mystery.”"
+npc_info = ExtResource("14_51uwe")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground2" type="Node" parent="Check"]
+script = ExtResource("10_jt5el")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogText27" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“Then what’s the point of the story?”"
+npc_info = ExtResource("7_82jsk")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText28" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“The point, DAISY…”"
+frame = 14
+npc_info = ExtResource("8_rw525")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText29" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“…is that only the sailor knows the truth.”"
+frame = 1
+npc_info = ExtResource("8_rw525")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText30" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“Only he knew what he was running from.”"
+frame = 2
+npc_info = ExtResource("8_rw525")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText31" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“And only he knew why he never came back.”"
+frame = 15
+npc_info = ExtResource("8_rw525")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText32" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“That truth died with him.”"
+frame = 8
+npc_info = ExtResource("8_rw525")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX2" type="Node" parent="Check"]
+script = ExtResource("12_51uwe")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText33" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“And that is his burden to carry.”"
+slow = true
+frame = 1
+npc_info = ExtResource("8_rw525")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX3" type="Node" parent="Check"]
+script = ExtResource("12_51uwe")
+sfx = ExtResource("16_66hkk")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogSFX4" type="Node" parent="Check"]
+script = ExtResource("12_51uwe")
+sfx = ExtResource("17_6812q")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogSFX5" type="Node" parent="Check"]
+script = ExtResource("12_51uwe")
+sfx = ExtResource("18_6812q")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText34" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“…!”"
+frame = 25
+npc_info = ExtResource("7_82jsk")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText35" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“You’re not…”"
+frame = 23
+npc_info = ExtResource("7_82jsk")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText36" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“…who…are you?”"
+frame = 3
+npc_info = ExtResource("7_82jsk")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText37" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“I’m sorry, but you’ll have to leave now.”"
+frame = 3
+npc_info = ExtResource("19_1lxt2")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText38" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "“No visitors I’m afraid.”"
+frame = 3
+npc_info = ExtResource("19_1lxt2")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText39" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "(No…)"
+frame = 30
+npc_info = ExtResource("7_82jsk")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText40" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "(….Who is she?)"
+frame = 28
+npc_info = ExtResource("7_82jsk")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText41" type="Node" parent="Check"]
+script = ExtResource("6_22iej")
+text = "(I need to get out.)"
+frame = 1
+npc_info = ExtResource("7_82jsk")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Painting" parent="." instance=ExtResource("9_82jsk")]
+position = Vector2(168, 84)
+size = Vector2(48, 24)
+
+[node name="DialogText" type="Node" parent="Painting"]
+script = ExtResource("6_22iej")
+text = "A painting of a sailor on a shore."
+npc_info = ExtResource("15_foabf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Nightstand" parent="." instance=ExtResource("9_82jsk")]
+position = Vector2(168, 84)
+size = Vector2(48, 24)
+
+[node name="DialogText" type="Node" parent="Nightstand"]
+script = ExtResource("6_22iej")
+text = "There is nothing inside."
+npc_info = ExtResource("15_foabf")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"

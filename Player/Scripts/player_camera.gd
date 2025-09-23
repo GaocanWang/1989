@@ -18,7 +18,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if shake_trauma > 0:
-		shake_trauma = max( shake_trauma - shake_decay * delta, 0 )
+		#shake_trauma = max( shake_trauma - shake_decay * delta, 0 )
 		shake()
 
 

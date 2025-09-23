@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://b5ja16y3gsouo"]
+[gd_scene load_steps=50 format=4 uid="uid://b5ja16y3gsouo"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_i8ytn"]
 [ext_resource type="TileSet" uid="uid://k4sa1rxa7ww0" path="res://Tile Maps/Tile Sets/pool.tres" id="2_dchl7"]
@@ -41,7 +41,14 @@
 [ext_resource type="AudioStream" uid="uid://bl2ywi4ll8bvk" path="res://Levels/music/But then you found them.ogg" id="33_id8dk"]
 [ext_resource type="Texture2D" uid="uid://cw0lypdtvo61j" path="res://FullScreenArt/officer y storage room 1 fs.png" id="34_nwyan"]
 [ext_resource type="AudioStream" uid="uid://b5wgkato1okey" path="res://GUI/dialog_system/audio/lights turning off sfx 2.mp3" id="34_u73ex"]
+[ext_resource type="AudioStream" uid="uid://cg8a7ke62187i" path="res://GUI/dialog_system/audio/lights turning off sfx 1.mp3" id="35_7uhy2"]
 [ext_resource type="AudioStream" uid="uid://c5xpr1lexqrgd" path="res://GUI/dialog_system/audio/lights turning off sfx 4.mp3" id="35_d2smt"]
+[ext_resource type="Texture2D" uid="uid://piakhjugrcjo" path="res://FullScreenArt/officer y storage room 2 fs.png" id="36_7sdw2"]
+[ext_resource type="Texture2D" uid="uid://q8usoqlsyqac" path="res://FullScreenArt/officer y storage room 3 fs.png" id="38_sw02y"]
+[ext_resource type="AudioStream" uid="uid://cycrav2fhm6lh" path="res://GUI/dialog_system/audio/lights turning off sfx 3.mp3" id="39_4unji"]
+[ext_resource type="Texture2D" uid="uid://bkry4yvpj3nok" path="res://FullScreenArt/officer y storage room 4 fs.png" id="40_7rrtv"]
+[ext_resource type="Texture2D" uid="uid://bblssfk2317xo" path="res://FullScreenArt/officer y storage room 5 fs.png" id="42_ipq6q"]
+[ext_resource type="AudioStream" uid="uid://rybrqi0bpm6g" path="res://GUI/dialog_system/audio/water running sfx.mp3" id="43_7sdw2"]
 
 [node name="22" type="Node2D"]
 script = ExtResource("1_i8ytn")
@@ -4461,6 +4468,153 @@ script = ExtResource("7_ig34w")
 text = "“It’s lights out at nine.”"
 slow = true
 npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX14" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("35_7uhy2")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogBackground9" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("21_ax1uf")
+background = ExtResource("36_7sdw2")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogSFX15" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("34_u73ex")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogBackground10" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("21_ax1uf")
+background = ExtResource("38_sw02y")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogSFX16" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("39_4unji")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogBackground11" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("21_ax1uf")
+background = ExtResource("40_7rrtv")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogSFX17" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("35_d2smt")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogBackground12" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("21_ax1uf")
+background = ExtResource("42_ipq6q")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogText97" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“Too late, detective.”"
+npc_info = ExtResource("32_ghsce")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogBackground13" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("21_ax1uf")
+background = ExtResource("22_ga3cx")
+metadata/_custom_type_script = "uid://6cyylp4dfkoi"
+
+[node name="DialogSFX18" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_r6ah7")
+sfx = ExtResource("43_7sdw2")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="DialogText98" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“God damn it…”"
+npc_info = ExtResource("8_lni10")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText99" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“How did I mess up so easily…?”"
+npc_info = ExtResource("8_lni10")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText100" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“I never expected her to…”"
+npc_info = ExtResource("8_lni10")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText101" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“…”"
+npc_info = ExtResource("8_lni10")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText102" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“…it doesn’t matter.”"
+npc_info = ExtResource("8_lni10")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText103" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“He deserved it.”"
+npc_info = ExtResource("8_lni10")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText104" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("7_ig34w")
+text = "“If it wasn’t for that bitch, Amelia…”"
+npc_info = ExtResource("8_lni10")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX19" type="Node" parent="ThirdAct/Y2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_r6ah7")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
+
+[node name="Y3" type="Node" parent="ThirdAct"]
+
+[node name="DialogText105" type="Node" parent="ThirdAct/Y3"]
+script = ExtResource("7_ig34w")
+text = "“…I wouldn’t have gotten caught.”"
+slow = true
+frame = 37
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText106" type="Node" parent="ThirdAct/Y3"]
+script = ExtResource("7_ig34w")
+text = "“…”"
+frame = 32
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText107" type="Node" parent="ThirdAct/Y3"]
+script = ExtResource("7_ig34w")
+text = "“It doesn’t matter.”"
+frame = 28
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText108" type="Node" parent="ThirdAct/Y3"]
+script = ExtResource("7_ig34w")
+text = "“She’s not here anymore.”"
+frame = 9
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText109" type="Node" parent="ThirdAct/Y3"]
+script = ExtResource("7_ig34w")
+text = "“But…where am I?”"
+frame = 19
+npc_info = ExtResource("19_8gm5l")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText110" type="Node" parent="ThirdAct/Y3"]
+script = ExtResource("7_ig34w")
+text = "“I can’t remember what happened…”"
+frame = 37
+npc_info = ExtResource("19_8gm5l")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="X" type="Node" parent="ThirdAct"]
