@@ -47,3 +47,7 @@ func show_image( image : Texture2D ):
 	showing = true
 	texture_rect.texture = image
 	texture_rect.show()
+
+
+func flash():
+	animation_player.play( "flash" )

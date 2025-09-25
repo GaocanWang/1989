@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://da3xppsk1vibv"]
+[gd_scene load_steps=10 format=3 uid="uid://da3xppsk1vibv"]
 
 [ext_resource type="Script" uid="uid://bdv2y50lexw2b" path="res://GUI/scene_transition/scene_transition.gd" id="1_6er6g"]
 
@@ -64,6 +64,21 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_iv0u0"]
+resource_name = "flash"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(1, 1, 1, 1), Color(0, 0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_ju5is"]
 resource_name = "instant_fade_out"
 length = 0.2
@@ -102,12 +117,14 @@ _data = {
 &"default": SubResource("Animation_lclwb"),
 &"fade_in": SubResource("Animation_3prqe"),
 &"fade_out": SubResource("Animation_0a4qp"),
+&"flash": SubResource("Animation_iv0u0"),
 &"instant_fade_out": SubResource("Animation_ju5is"),
 &"long_fade_in": SubResource("Animation_g0eyb")
 }
 
 [node name="SceneTransition" type="CanvasLayer"]
 process_mode = 3
+layer = 10
 script = ExtResource("1_6er6g")
 
 [node name="Control" type="Control" parent="."]

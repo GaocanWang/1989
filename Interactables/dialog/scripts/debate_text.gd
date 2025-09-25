@@ -7,7 +7,6 @@ class_name DebateText extends DialogItem
 @export var slow : bool = false
 
 
-
 func _set_text( value : String ) -> void:
 	text = value
 	if Engine.is_editor_hint():

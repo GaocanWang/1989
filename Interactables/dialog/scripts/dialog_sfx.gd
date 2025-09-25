@@ -3,3 +3,4 @@
 class_name DialogSFX extends DialogItem
 
 @export var sfx : AudioStream
+@export var bgm : bool = false

@@ -163,6 +163,9 @@ func start_dialog() -> void:
 ## Set dialog and NPC variables, etc based on dialog item parameters.
 ## Once set, start text typing timer
 func set_dialog_text( _d ) -> void:
+	if _d.flash:
+		SceneTransition.flash()
+	
 	if ( _d is DebateText ):
 		background.texture = _d.npc_info.background
 		background_animation_player.play("show")
@@ -277,7 +280,10 @@ func set_dialog_background( _d : DialogBackground ):
 
 func set_dialog_sfx( _d : DialogSFX ):
 	if ( _d.sfx != null ):
-		AudioManager.play_music( _d.sfx )
+		if _d.bgm:
+			AudioManager.play_music( _d.sfx )
+		else:
+			PauseMenu.play_audio( _d.sfx )
 	else:
 		AudioManager.play_music( get_tree().current_scene.music )
 	

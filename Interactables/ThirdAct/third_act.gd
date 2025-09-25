@@ -193,6 +193,12 @@ func player_interact() -> void:
 			await DialogSystem.finished
 			get_tree().paused = true
 	PauseMenu.waiting_for_item_use = false
+	AudioManager.play_music( null )
+	PauseMenu.play_audio( load( "res://GUI/dialog_system/audio/evidence OR _THIS IS IT!_ SFX.mp3" ) )
+	SceneTransition.texture_rect.texture = load( "res://FullScreenArt/this is it fs.png" )
+	SceneTransition.texture_rect.show()
+	await get_tree().create_timer( 2.0 ).timeout
+	SceneTransition.texture_rect.hide()
 	DialogSystem.show_dialog( dialog_items_2 )
 	await DialogSystem.finished
 	get_tree().paused = true
