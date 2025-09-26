@@ -10,6 +10,7 @@ signal debate_failed
 var is_active : bool = false
 var text_in_progress : bool = false
 var waiting_for_choice : bool = false
+var watching_cutscene : bool = false
 
 var text_speed : float = 0.02
 var text_length : int = 0
@@ -66,7 +67,7 @@ func _process(_delta: float) -> void:
 
 ## Handle key presses, but only if Dialog System is active
 func _unhandled_input( _event: InputEvent ) -> void:
-	if is_active == false:
+	if is_active == false or watching_cutscene == true:
 		return
 	if(
 			_event.is_action_pressed("interact") or 
@@ -86,11 +87,16 @@ func _unhandled_input( _event: InputEvent ) -> void:
 		elif waiting_for_choice == true:
 			return
 		
-		dialog_item_index += 1
-		if dialog_item_index < dialog_items.size():
-			start_dialog()
-		else:
-			hide_dialog()
+		advance_dialog()
+	pass
+
+
+func advance_dialog() -> void:
+	dialog_item_index += 1
+	if dialog_item_index < dialog_items.size():
+		start_dialog()
+	else:
+		hide_dialog()
 	pass
 
 
@@ -98,6 +104,10 @@ func _unhandled_input( _event: InputEvent ) -> void:
 ## Show the dialog UI
 func show_dialog( _items : Array[ DialogItem ] ) -> void:
 	is_active = true
+	if _items[0] is DialogCutscene:
+		dialog_ui.visible = false
+	else:
+		dialog_ui.visible = true
 	dialog_ui.process_mode = Node.PROCESS_MODE_ALWAYS
 	dialog_items = _items
 	dialog_item_index = 0
@@ -105,7 +115,6 @@ func show_dialog( _items : Array[ DialogItem ] ) -> void:
 	PlayerManager.player.state_machine.change_state( PlayerManager.player.state_machine.states[0] )
 	await get_tree().process_frame
 	start_dialog()
-	dialog_ui.visible = true
 	textbox_animation_player.play("textbox_rise")
 	pass
 
@@ -155,9 +164,31 @@ func start_dialog() -> void:
 		set_dialog_background( _d as DialogBackground )
 	elif _d is DialogSFX:
 		set_dialog_sfx( _d as DialogSFX )
-	
+	elif _d is DialogCutscene:
+		start_dialog_cutscene( _d as DialogCutscene )
 	pass
 
+
+
+func start_dialog_cutscene( _d : DialogCutscene ) -> void:
+	watching_cutscene = true
+	_d.play()
+	textbox_animation_player.play("textbox_drop")
+	if (previous_dialog_text.npc_info.npc_name == "Amelia"):
+		portrait_animation_player.play("portrait_disappear_left")
+	else:
+		portrait_animation_player.play("portrait_disappear_right")
+	await portrait_animation_player.animation_finished
+	await _d.finished
+	watching_cutscene = false
+	textbox_animation_player.play("textbox_rise")
+	if (previous_dialog_text.npc_info.npc_name == "Amelia"):
+		portrait_animation_player.play("portrait_appear_left")
+	else:
+		portrait_animation_player.play("portrait_appear_right")
+	await portrait_animation_player.animation_finished
+	advance_dialog()
+	pass
 
 
 ## Set dialog and NPC variables, etc based on dialog item parameters.
