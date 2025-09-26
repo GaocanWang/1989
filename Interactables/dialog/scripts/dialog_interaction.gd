@@ -84,7 +84,7 @@ func _check_dialog() -> void:
 		LevelManager.flags.part_3 = true
 	elif DialogSystem.current_dialog_text == "(I need to get out.)":
 		PlayerManager.shake_camera()
-		get_tree().change_scene_to_file( "res://Levels/Part3/08.tscn" )
+		LevelManager.load_new_level( "res://Levels/Part3/08.tscn", "", Vector2.ZERO )
 
 
 func _on_debate_fail() -> void:

@@ -59,7 +59,8 @@ func load_new_level(
 	if level_path == "res://Levels/Part2/10.tscn" && !(flags.x_interacted && flags.y_interacted && flags.teresa_interacted):
 		level_path = "res://Levels/Part2/13.tscn"
 	
-	await SceneTransition.fade_out()
+	if _target_transition != "":
+		await SceneTransition.fade_out()
 	
 	level_load_started.emit()
 	
@@ -67,7 +68,8 @@ func load_new_level(
 	
 	get_tree().change_scene_to_file( level_path )
 	
-	await SceneTransition.fade_in()
+	if _target_transition != "":
+		await SceneTransition.fade_in()
 	
 	PlayerManager.player.check_pressed()
 	

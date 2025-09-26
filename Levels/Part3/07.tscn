@@ -331,11 +331,6 @@ script = ExtResource("12_51uwe")
 sfx = ExtResource("17_6812q")
 metadata/_custom_type_script = "uid://dst30i4jr8cmt"
 
-[node name="DialogSFX5" type="Node" parent="Check"]
-script = ExtResource("12_51uwe")
-sfx = ExtResource("18_6812q")
-metadata/_custom_type_script = "uid://dst30i4jr8cmt"
-
 [node name="DialogText34" type="Node" parent="Check"]
 script = ExtResource("6_22iej")
 text = "“…!”"
@@ -356,6 +351,11 @@ text = "“…who…are you?”"
 frame = 3
 npc_info = ExtResource("7_82jsk")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogSFX5" type="Node" parent="Check"]
+script = ExtResource("12_51uwe")
+sfx = ExtResource("18_6812q")
+metadata/_custom_type_script = "uid://dst30i4jr8cmt"
 
 [node name="DialogText37" type="Node" parent="Check"]
 script = ExtResource("6_22iej")
