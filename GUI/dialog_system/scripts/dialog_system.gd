@@ -181,13 +181,14 @@ func start_dialog_cutscene( _d : DialogCutscene ) -> void:
 	await portrait_animation_player.animation_finished
 	await _d.finished
 	watching_cutscene = false
-	textbox_animation_player.play("textbox_rise")
-	if (previous_dialog_text.npc_info.npc_name == "Amelia"):
-		portrait_animation_player.play("portrait_appear_left")
-	else:
-		portrait_animation_player.play("portrait_appear_right")
-	await portrait_animation_player.animation_finished
-	advance_dialog()
+	if ( dialog_item_index < dialog_items.size() - 1 ):
+		textbox_animation_player.play("textbox_rise")
+		if (previous_dialog_text.npc_info.npc_name == "Amelia"):
+			portrait_animation_player.play("portrait_appear_left")
+		else:
+			portrait_animation_player.play("portrait_appear_right")
+		await portrait_animation_player.animation_finished
+		advance_dialog()
 	pass
 
 

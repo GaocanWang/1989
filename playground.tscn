@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bknv4eiw0lgki"]
+[gd_scene load_steps=13 format=3 uid="uid://bknv4eiw0lgki"]
 
 [ext_resource type="PackedScene" uid="uid://dvqgh6lgjqqb0" path="res://Player/player.tscn" id="1_wdyme"]
 [ext_resource type="PackedScene" uid="uid://d1htu88kwjavm" path="res://Levels/Part1/01.tscn" id="2_s7ie6"]
@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="4_o00ia"]
 [ext_resource type="Script" uid="uid://ctfwlrgosp8ew" path="res://Interactables/dialog/scripts/dialog_cutscene.gd" id="5_4bqqs"]
 [ext_resource type="Script" uid="uid://dqrok5vg7oa3d" path="res://Interactables/dialog/scripts/dialog_text.gd" id="5_v7dth"]
-[ext_resource type="Script" uid="uid://52vu64828kub" path="res://Interactables/dialog/scripts/cutscene_action.gd" id="6_4bqqs"]
+[ext_resource type="Script" uid="uid://52vu64828kub" path="res://Interactables/dialog/scripts/cutscene_action_animation.gd" id="6_4bqqs"]
 [ext_resource type="Resource" uid="uid://di457jgt256ub" path="res://npc/00_npcs/teresa.tres" id="6_pi42a"]
+[ext_resource type="Script" uid="uid://bx2xjdy3eto6l" path="res://Interactables/dialog/scripts/cutscene_action_move.gd" id="9_pi42a"]
 
 [sub_resource type="Animation" id="Animation_v7dth"]
 length = 0.001
@@ -68,7 +69,14 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 script = ExtResource("5_4bqqs")
 metadata/_custom_type_script = "uid://ctfwlrgosp8ew"
 
-[node name="CutsceneActionAnimation" type="Node" parent="Dorm/NPC/DialogInteraction/DialogCutscene" node_paths=PackedStringArray("animation_player")]
+[node name="CutsceneActionMove" type="Node2D" parent="Dorm/NPC/DialogInteraction/DialogCutscene" node_paths=PackedStringArray("object_to_move")]
+position = Vector2(207, 171)
+script = ExtResource("9_pi42a")
+object_to_move = NodePath("../../..")
+metadata/_custom_type_script = "uid://bx2xjdy3eto6l"
+
+[node name="CutsceneActionAnimation" type="Node2D" parent="Dorm/NPC/DialogInteraction/DialogCutscene" node_paths=PackedStringArray("animation_player")]
+position = Vector2(210, 139)
 script = ExtResource("6_4bqqs")
 animation_player = NodePath("../../../../AnimationPlayer")
 animation_name = "disappear"
@@ -84,3 +92,6 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 libraries = {
 &"": SubResource("AnimationLibrary_pi42a")
 }
+
+[node name="NPC2" parent="Dorm" instance=ExtResource("3_m8u5f")]
+position = Vector2(252, 124)

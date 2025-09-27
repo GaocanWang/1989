@@ -1,16 +1,6 @@
-@icon( "res://GUI/dialog_system/icons/cutscene_animation.svg" )
-class_name CutsceneActionAnimation extends CutsceneAction
+class_name CutsceneAction extends Node2D
 
-@export var animation_player : AnimationPlayer
-@export var animation_name : String
-
-
+signal finished
 
 func play() -> void:
-	if animation_player:
-		if animation_name:
-			animation_player.process_mode = Node.PROCESS_MODE_ALWAYS
-			animation_player.play( animation_name )
-			await animation_player.animation_finished
-	finished.emit()
 	pass

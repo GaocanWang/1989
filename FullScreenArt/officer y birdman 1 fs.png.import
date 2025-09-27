@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciqf11ur00q3q"
-path="res://.godot/imported/teresa.png-f203d3ff065aa2b7598a916610887b0c.ctex"
+uid="uid://dlgmpfbhtcoeq"
+path="res://.godot/imported/officer y birdman 1 fs.png-3b5938f0d8e1bb229f056d14dfc09ebf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://npc/sprites/teresa.png"
-dest_files=["res://.godot/imported/teresa.png-f203d3ff065aa2b7598a916610887b0c.ctex"]
+source_file="res://FullScreenArt/officer y birdman 1 fs.png"
+dest_files=["res://.godot/imported/officer y birdman 1 fs.png-3b5938f0d8e1bb229f056d14dfc09ebf.ctex"]
 
 [params]
 

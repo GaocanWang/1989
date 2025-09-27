@@ -12,6 +12,8 @@ var actions_finished_count : int = 0
 
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
 	gather_actions()
 	pass
 

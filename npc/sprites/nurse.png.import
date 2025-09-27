@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciqf11ur00q3q"
-path="res://.godot/imported/teresa.png-f203d3ff065aa2b7598a916610887b0c.ctex"
+uid="uid://b6xheqssse2rd"
+path="res://.godot/imported/nurse.png-5329e5f64f06d425f3cb1a87328fa14f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://npc/sprites/teresa.png"
-dest_files=["res://.godot/imported/teresa.png-f203d3ff065aa2b7598a916610887b0c.ctex"]
+source_file="res://npc/sprites/nurse.png"
+dest_files=["res://.godot/imported/nurse.png-5329e5f64f06d425f3cb1a87328fa14f.ctex"]
 
 [params]
 

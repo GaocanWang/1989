@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://blarcfxukewwr"]
+[gd_scene load_steps=27 format=4 uid="uid://blarcfxukewwr"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_6j28b"]
 [ext_resource type="TileSet" uid="uid://cdgdoc5i46fy3" path="res://Tile Maps/Tile Sets/hospital.tres" id="2_sxuc3"]
@@ -19,6 +19,46 @@
 [ext_resource type="AudioStream" uid="uid://ddsuf5nybmid3" path="res://Levels/music/only-i-know.ogg" id="17_6812q"]
 [ext_resource type="AudioStream" uid="uid://bk1kt8v1khuhk" path="res://GUI/dialog_system/audio/nurse bell ringing SFX.wav" id="18_6812q"]
 [ext_resource type="Resource" uid="uid://b7cm0ls2m116w" path="res://npc/00_npcs/nurse.tres" id="19_1lxt2"]
+[ext_resource type="Script" uid="uid://ctfwlrgosp8ew" path="res://Interactables/dialog/scripts/dialog_cutscene.gd" id="19_x0lth"]
+[ext_resource type="Script" uid="uid://bx2xjdy3eto6l" path="res://Interactables/dialog/scripts/cutscene_action_move.gd" id="20_5pi1q"]
+[ext_resource type="Script" uid="uid://52vu64828kub" path="res://Interactables/dialog/scripts/cutscene_action_animation.gd" id="20_astau"]
+[ext_resource type="PackedScene" uid="uid://dm15w3ux3txs4" path="res://npc/npc.tscn" id="22_astau"]
+
+[sub_resource type="Animation" id="Animation_cvoqa"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_yitc6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ck6yx"]
+_data = {
+&"RESET": SubResource("Animation_yitc6"),
+&"show": SubResource("Animation_cvoqa")
+}
 
 [node name="07" type="Node2D"]
 script = ExtResource("1_6j28b")
@@ -329,6 +369,7 @@ metadata/_custom_type_script = "uid://dst30i4jr8cmt"
 [node name="DialogSFX4" type="Node" parent="Check"]
 script = ExtResource("12_51uwe")
 sfx = ExtResource("17_6812q")
+bgm = true
 metadata/_custom_type_script = "uid://dst30i4jr8cmt"
 
 [node name="DialogText34" type="Node" parent="Check"]
@@ -357,17 +398,52 @@ script = ExtResource("12_51uwe")
 sfx = ExtResource("18_6812q")
 metadata/_custom_type_script = "uid://dst30i4jr8cmt"
 
+[node name="DialogCutscene" type="Node" parent="Check"]
+script = ExtResource("19_x0lth")
+metadata/_custom_type_script = "uid://ctfwlrgosp8ew"
+
+[node name="CutsceneActionAnimation" type="Node2D" parent="Check/DialogCutscene" node_paths=PackedStringArray("animation_player")]
+script = ExtResource("20_astau")
+animation_player = NodePath("../../../NPC/AnimationPlayer2")
+animation_name = "show"
+metadata/_custom_type_script = "uid://52vu64828kub"
+
+[node name="CutsceneActionMove" type="Node2D" parent="Check/DialogCutscene" node_paths=PackedStringArray("object_to_move")]
+position = Vector2(180, 108)
+script = ExtResource("20_5pi1q")
+timing_method = 1
+object_to_move = NodePath("../../../NPC")
+move_duration = 1.0
+move_speed = 50.0
+metadata/_custom_type_script = "uid://bx2xjdy3eto6l"
+
+[node name="CutsceneActionMove2" type="Node2D" parent="Check/DialogCutscene" node_paths=PackedStringArray("object_to_move")]
+position = Vector2(204, 108)
+script = ExtResource("20_5pi1q")
+timing_method = 1
+object_to_move = NodePath("../../../NPC")
+move_duration = 1.0
+move_speed = 50.0
+metadata/_custom_type_script = "uid://bx2xjdy3eto6l"
+
+[node name="CutsceneActionMove3" type="Node2D" parent="Check/DialogCutscene" node_paths=PackedStringArray("object_to_move")]
+position = Vector2(204, 109)
+script = ExtResource("20_5pi1q")
+timing_method = 1
+object_to_move = NodePath("../../../NPC")
+move_duration = 1.0
+move_speed = 50.0
+metadata/_custom_type_script = "uid://bx2xjdy3eto6l"
+
 [node name="DialogText37" type="Node" parent="Check"]
 script = ExtResource("6_22iej")
 text = "“I’m sorry, but you’ll have to leave now.”"
-frame = 3
 npc_info = ExtResource("19_1lxt2")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogText38" type="Node" parent="Check"]
 script = ExtResource("6_22iej")
 text = "“No visitors I’m afraid.”"
-frame = 3
 npc_info = ExtResource("19_1lxt2")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
@@ -411,3 +487,14 @@ script = ExtResource("6_22iej")
 text = "There is nothing inside."
 npc_info = ExtResource("15_foabf")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="NPC" parent="." instance=ExtResource("22_astau")]
+visible = false
+position = Vector2(180, 186)
+collision_mask = 0
+npc_resource = ExtResource("19_1lxt2")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="NPC"]
+libraries = {
+&"": SubResource("AnimationLibrary_ck6yx")
+}

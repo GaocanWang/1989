@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="NPCResource" load_steps=2 format=3 uid="uid://b7cm0ls2m116w"]
+[gd_resource type="Resource" script_class="NPCResource" load_steps=3 format=3 uid="uid://b7cm0ls2m116w"]
 
 [ext_resource type="Script" uid="uid://cg8c1j6taerih" path="res://npc/scripts/npc_resource.gd" id="1_pdmut"]
+[ext_resource type="Texture2D" uid="uid://b6xheqssse2rd" path="res://npc/sprites/nurse.png" id="2_dgouo"]
 
 [resource]
 script = ExtResource("1_pdmut")
 npc_name = "Nurse"
+sprite = ExtResource("2_dgouo")
