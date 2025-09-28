@@ -41,9 +41,9 @@ func update_direction():
 	elif ( direction.y > 0.5 ):
 		direction_name = "down"
 	elif ( direction.x > 0.5):
-		direction_name = "right"
-	elif ( direction.x < -0.5 ):
 		direction_name = "left"
+	elif ( direction.x < -0.5 ):
+		direction_name = "right"
 
 
 func update_animation():

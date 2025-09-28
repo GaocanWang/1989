@@ -401,7 +401,6 @@ shape = SubResource("RectangleShape2D_dws7a")
 debug_color = Color(0, 1, 0, 0.419608)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-visible = false
 position = Vector2(0, -10)
 texture = SubResource("GradientTexture2D_00tjw")
 script = ExtResource("9_00tjw")
