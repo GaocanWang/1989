@@ -323,7 +323,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch" type="Node" parent="Cabinet/3/DialogChoice"]
 script = ExtResource("17_3ggun")
-text = "general rules"
+text = "General rules"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="Cabinet/3/DialogChoice/DialogBranch"]
@@ -374,7 +374,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch2" type="Node" parent="Cabinet/3/DialogChoice/DialogBranch/DialogChoice"]
 script = ExtResource("17_3ggun")
-text = "emergency procedures"
+text = "Emergency procedures"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="Cabinet/3/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
@@ -434,7 +434,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogBranch2" type="Node" parent="Cabinet/3/DialogChoice"]
 script = ExtResource("17_3ggun")
-text = "emergency procedures"
+text = "Emergency procedures"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="Cabinet/3/DialogChoice/DialogBranch2"]

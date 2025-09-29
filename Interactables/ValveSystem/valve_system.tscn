@@ -54,13 +54,16 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_8qtk5")
 text = "Adjust the valve system?"
 
 [node name="Button" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "Yes"
 
 [node name="Button2" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "No"

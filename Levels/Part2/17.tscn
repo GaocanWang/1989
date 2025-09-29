@@ -814,7 +814,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch" type="Node" parent="Locker3-Dead/DialogChoice"]
 script = ExtResource("13_nkp5v")
-text = "the showers."
+text = "The showers."
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="Locker3-Dead/DialogChoice/DialogBranch"]
@@ -1003,7 +1003,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogBranch2" type="Node" parent="Locker3-Dead/DialogChoice"]
 script = ExtResource("13_nkp5v")
-text = "the locker."
+text = "The locker."
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="Locker3-Dead/DialogChoice/DialogBranch2"]
@@ -1497,7 +1497,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogBranch3" type="Node" parent="Locker3-Dead/DialogChoice"]
 script = ExtResource("13_nkp5v")
-text = "a tool."
+text = "A tool."
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="Locker3-Dead/DialogChoice/DialogBranch3"]

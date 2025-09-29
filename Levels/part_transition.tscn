@@ -140,18 +140,23 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_ddmx8")
 text = "OPEN THE DOOR?"
+horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "Yes"
 
 [node name="Button2" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "No"
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control"]
+visible = false
 material = SubResource("ShaderMaterial_eoaue")
 position = Vector2(960, -20)
 texture = ExtResource("2_55yav")

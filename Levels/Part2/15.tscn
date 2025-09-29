@@ -124,7 +124,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch" type="Node" parent="NPC/DialogInteraction/DialogChoice"]
 script = ExtResource("15_hidwd")
-text = "temperature of shower"
+text = "Temperature of shower"
 npc_info = ExtResource("12_wng4e")
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
@@ -172,7 +172,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogBranch2" type="Node" parent="NPC/DialogInteraction/DialogChoice"]
 script = ExtResource("15_hidwd")
-text = "blood on the knob"
+text = "Blood on the knob"
 npc_info = ExtResource("12_wng4e")
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 

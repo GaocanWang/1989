@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b2spcandd4px5"]
 
 [ext_resource type="Script" uid="uid://rrsbcs6mgl6m" path="res://GeneralNodes/footstep_audio_2d/footstep_audio_2d.gd" id="1_4u1wu"]
-[ext_resource type="AudioStream" uid="uid://oo27bsnk3noc" path="res://GeneralNodes/footstep_audio_2d/footsteps.mp3" id="1_l4oj7"]
+[ext_resource type="AudioStream" uid="uid://mjto3jof3dwe" path="res://GeneralNodes/footstep_audio_2d/NEW footsteps.wav" id="1_l4oj7"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_l4oj7"]
 random_pitch = 1.13

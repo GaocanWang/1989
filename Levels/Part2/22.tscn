@@ -602,7 +602,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch" type="Node" parent="ThirdAct/1/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("18_xe3yp")
-text = "or they check with the front desk"
+text = "Or they check with the front desk"
 npc_info = ExtResource("14_r6ah7")
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
@@ -654,7 +654,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch2" type="Node" parent="ThirdAct/1/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice"]
 script = ExtResource("18_xe3yp")
-text = "or someone tells them about a leak"
+text = "Or someone tells them about a leak"
 npc_info = ExtResource("14_r6ah7")
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
@@ -840,7 +840,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogBranch2" type="Node" parent="ThirdAct/1/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("18_xe3yp")
-text = "or someone tells them about a leak"
+text = "Or someone tells them about a leak"
 npc_info = ExtResource("14_r6ah7")
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
@@ -1167,7 +1167,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch" type="Node" parent="ThirdAct/1/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("18_xe3yp")
-text = "or they check with the front desk"
+text = "Or they check with the front desk"
 npc_info = ExtResource("14_r6ah7")
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
@@ -1219,7 +1219,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch2" type="Node" parent="ThirdAct/1/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice"]
 script = ExtResource("18_xe3yp")
-text = "or someone tells them about a leak"
+text = "Or someone tells them about a leak"
 npc_info = ExtResource("14_r6ah7")
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
@@ -1405,7 +1405,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogBranch2" type="Node" parent="ThirdAct/1/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("18_xe3yp")
-text = "or someone tells them about a leak"
+text = "Or someone tells them about a leak"
 npc_info = ExtResource("14_r6ah7")
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 

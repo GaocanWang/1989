@@ -44,13 +44,16 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_xt3c0")
 text = "Take a map handout?"
 
 [node name="Button" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "Yes"
 
 [node name="Button2" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "No"

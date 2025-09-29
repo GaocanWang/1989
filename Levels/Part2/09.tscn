@@ -250,7 +250,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch" type="Node" parent="ExtraDialogue/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "the kickboards"
+text = "The kickboards"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch"]
@@ -308,7 +308,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch2" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "the towels"
+text = "The towels"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
@@ -485,7 +485,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "one of the lockers"
+text = "One of the lockers"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
@@ -750,7 +750,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogBranch2" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "the stall"
+text = "The stall"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
@@ -786,7 +786,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "one of the lockers"
+text = "One of the lockers"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
@@ -1051,7 +1051,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogBranch3" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "the pool noodles"
+text = "The pool noodles"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
@@ -1115,7 +1115,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch2" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch/DialogChoice/DialogBranch3/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "the towels"
+text = "The towels"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2"]
@@ -1292,7 +1292,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "one of the lockers"
+text = "One of the lockers"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
@@ -1557,7 +1557,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogBranch2" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "the stall"
+text = "The stall"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
@@ -1593,7 +1593,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "one of the lockers"
+text = "One of the lockers"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
@@ -1858,7 +1858,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogBranch2" type="Node" parent="ExtraDialogue/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "the towels"
+text = "The towels"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch2"]
@@ -2035,7 +2035,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "one of the lockers"
+text = "One of the lockers"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
@@ -2300,7 +2300,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogBranch2" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "the stall"
+text = "The stall"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
@@ -2336,7 +2336,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "one of the lockers"
+text = "One of the lockers"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
@@ -2601,7 +2601,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogBranch3" type="Node" parent="ExtraDialogue/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "the pool noodles"
+text = "The pool noodles"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch3"]
@@ -2665,7 +2665,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch3/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "the kickboards"
+text = "The kickboards"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
@@ -2723,7 +2723,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch2" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch3/DialogChoice/DialogBranch/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "the towels"
+text = "The towels"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch3/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
@@ -2900,7 +2900,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch3/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "one of the lockers"
+text = "One of the lockers"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch3/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
@@ -3165,7 +3165,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogBranch2" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch3/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "the stall"
+text = "The stall"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch3/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
@@ -3201,7 +3201,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch3/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "one of the lockers"
+text = "One of the lockers"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch3/DialogChoice/DialogBranch/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
@@ -3466,7 +3466,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogBranch2" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch3/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "the towels"
+text = "The towels"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2"]
@@ -3643,7 +3643,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "one of the lockers"
+text = "One of the lockers"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
@@ -4289,7 +4289,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogBranch2" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "the stall"
+text = "The stall"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
@@ -4325,7 +4325,7 @@ metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
 [node name="DialogBranch" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("15_giw8f")
-text = "one of the lockers"
+text = "One of the lockers"
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
 [node name="DialogText" type="Node" parent="ExtraDialogue/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
