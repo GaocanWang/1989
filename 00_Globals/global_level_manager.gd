@@ -29,7 +29,9 @@ var flags : Dictionary = {
 	valve_unlocked = false,
 	changeroom_open = false,
 	part_3 = false,
-	storage_open = false
+	storage_open = false,
+	x_hospital_interacted = false,
+	hospital = true
 }
 
 
@@ -81,7 +83,7 @@ func load_new_level(
 	
 	level_loaded.emit()
 	
-	if ( !levels_explored.has(level_path) ):
+	if ( !levels_explored.has(level_path) && level_path != "res://title_scene/title_scene.tscn"):
 		levels_explored.append(level_path)
 		if ( !get_tree().current_scene.dialog_items.is_empty() ):
 			DialogSystem.show_dialog( get_tree().current_scene.dialog_items )

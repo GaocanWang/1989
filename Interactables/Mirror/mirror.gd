@@ -16,6 +16,7 @@ func _ready() -> void:
 		if c is VideoStreamPlayer:
 			video_player = c
 	
+	video_player.hide()
 	pass
 
 
@@ -23,7 +24,9 @@ func _unhandled_input(event):
 	if event.is_action_pressed("ui_accept"):
 		if playing == true:
 			playing = false
+			PlayerManager.player.check_pressed()
 			video_player.stop()
+			video_player.hide()
 			AudioManager.play_music( music2 )
 			get_tree().paused = false
 
@@ -43,6 +46,7 @@ func player_interact() -> void:
 		get_tree().paused = true
 		await get_tree().process_frame
 		playing = true
+		video_player.show()
 		video_player.play()
 		AudioManager.play_music( music )
 	pass

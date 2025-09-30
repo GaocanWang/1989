@@ -55,7 +55,10 @@ func _ready() -> void:
 
 func _player_entered( _p : Node2D ) -> void:
 	if LevelManager.flags.storage_open:
-		LevelManager.load_new_level( level, target_transition_area, get_offset() )
+		if get_parent().name == "02":
+			DialogSystem.show_dialog( dialog_items )
+		else:
+			LevelManager.load_new_level( level, target_transition_area, get_offset() )
 	pass
 
 

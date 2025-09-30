@@ -270,8 +270,8 @@ grow_vertical = 2
 
 [node name="QuitToMenuButton" type="Button" parent="Control/Quit/VBoxContainer"]
 layout_mode = 2
-text = "quit to main menu"
+text = "Quit to main menu"
 
 [node name="QuitToDesktopButton" type="Button" parent="Control/Quit/VBoxContainer"]
 layout_mode = 2
-text = "quit to desktop"
+text = "Quit to desktop"

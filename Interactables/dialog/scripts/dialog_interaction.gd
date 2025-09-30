@@ -10,6 +10,7 @@ signal finished
 
 var dialog_items : Array[ DialogItem ]
 var dialog_items_2 : Array[ DialogItem ]
+var dialog_items_3 : Array[ DialogItem ]
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -37,7 +38,9 @@ func _ready() -> void:
 		elif c.name == "Repeat":
 			for d in c.get_children():
 				dialog_items_2.append( d )
-	
+		elif c.name == "Repeat2":
+			for d in c.get_children():
+				dialog_items_3.append( d )
 	pass
 
 
@@ -50,7 +53,11 @@ func player_interact() -> void:
 		if ( !LevelManager.interacted.has( str( get_path() ) ) ):
 			LevelManager.interacted.append( str( get_path() ) )
 			DialogSystem.show_dialog( dialog_items )
+		elif name == "XHospital" && LevelManager.flags.x_hospital_interacted:
+			DialogSystem.show_dialog( dialog_items_3 )
 		else:
+			if name == "XHospital":
+				LevelManager.flags.x_hospital_interacted = true
 			if ( !dialog_items_2.is_empty() ):
 				DialogSystem.show_dialog( dialog_items_2 )
 			else:

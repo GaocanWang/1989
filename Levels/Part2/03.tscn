@@ -500,245 +500,245 @@ text = "A cabinet sits against the wall."
 npc_info = ExtResource("13_4rxfg")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="NPC" parent="." instance=ExtResource("15_bsrl4")]
+[node name="Teresa-Staff" parent="." instance=ExtResource("15_bsrl4")]
 position = Vector2(276, 120)
 
-[node name="DialogInteraction" parent="NPC" instance=ExtResource("12_bsrl4")]
+[node name="DialogInteraction" parent="Teresa-Staff" instance=ExtResource("12_bsrl4")]
 
-[node name="DialogText" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText" type="Node" parent="Teresa-Staff/DialogInteraction"]
 script = ExtResource("7_t1jd6")
 text = "“Well if it isn’t the woman of the hour!”"
 frame = 1
 npc_info = ExtResource("9_mua4v")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText2" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText2" type="Node" parent="Teresa-Staff/DialogInteraction"]
 script = ExtResource("7_t1jd6")
 text = "“What brings you to my humble abode?”"
 frame = 23
 npc_info = ExtResource("9_mua4v")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText3" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText3" type="Node" parent="Teresa-Staff/DialogInteraction"]
 script = ExtResource("7_t1jd6")
 text = "“Teresa…”"
 frame = 2
 npc_info = ExtResource("8_8x0r1")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText4" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText4" type="Node" parent="Teresa-Staff/DialogInteraction"]
 script = ExtResource("7_t1jd6")
 text = "“You find anything useful?”"
 frame = 12
 npc_info = ExtResource("8_8x0r1")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText5" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText5" type="Node" parent="Teresa-Staff/DialogInteraction"]
 script = ExtResource("7_t1jd6")
 text = "“Ehhhh…define useful…”"
 frame = 13
 npc_info = ExtResource("9_mua4v")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText6" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText6" type="Node" parent="Teresa-Staff/DialogInteraction"]
 script = ExtResource("7_t1jd6")
 text = "“I didn’t find anything we could use to open the changeroom.”"
 frame = 20
 npc_info = ExtResource("9_mua4v")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText7" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText7" type="Node" parent="Teresa-Staff/DialogInteraction"]
 script = ExtResource("7_t1jd6")
 text = "“But I found a couple papers in the cabinet.”"
 frame = 19
 npc_info = ExtResource("9_mua4v")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText8" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText8" type="Node" parent="Teresa-Staff/DialogInteraction"]
 script = ExtResource("7_t1jd6")
 text = "“You can go check for yourself.”"
 npc_info = ExtResource("9_mua4v")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText9" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText9" type="Node" parent="Teresa-Staff/DialogInteraction"]
 script = ExtResource("7_t1jd6")
 text = "“Will do.”"
 frame = 13
 npc_info = ExtResource("8_8x0r1")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText10" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText10" type="Node" parent="Teresa-Staff/DialogInteraction"]
 script = ExtResource("7_t1jd6")
 text = "“Oh, and Amelia?”"
 frame = 20
 npc_info = ExtResource("9_mua4v")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText11" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText11" type="Node" parent="Teresa-Staff/DialogInteraction"]
 script = ExtResource("7_t1jd6")
 text = "“You talked to Y yet?”"
 frame = 19
 npc_info = ExtResource("9_mua4v")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText12" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText12" type="Node" parent="Teresa-Staff/DialogInteraction"]
 script = ExtResource("7_t1jd6")
 text = "“She wears some pretty strong perfume.”"
 frame = 2
 npc_info = ExtResource("9_mua4v")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText13" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText13" type="Node" parent="Teresa-Staff/DialogInteraction"]
 script = ExtResource("7_t1jd6")
 text = "“My nose gets a little twitchy from it.”"
 frame = 3
 npc_info = ExtResource("9_mua4v")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText14" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText14" type="Node" parent="Teresa-Staff/DialogInteraction"]
 script = ExtResource("7_t1jd6")
 text = "“I don’t seem to mind.”"
 frame = 10
 npc_info = ExtResource("8_8x0r1")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText15" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText15" type="Node" parent="Teresa-Staff/DialogInteraction"]
 script = ExtResource("7_t1jd6")
 text = "“But it is against protocol to wear perfume to a crime scene though.”"
 frame = 8
 npc_info = ExtResource("8_8x0r1")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText16" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText16" type="Node" parent="Teresa-Staff/DialogInteraction"]
 script = ExtResource("7_t1jd6")
 text = "“If I start sneezing soon, you’ll know why.”"
 frame = 1
 npc_info = ExtResource("9_mua4v")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="Repeat" type="Node" parent="NPC/DialogInteraction"]
+[node name="Repeat" type="Node" parent="Teresa-Staff/DialogInteraction"]
 
-[node name="DialogText" type="Node" parent="NPC/DialogInteraction/Repeat"]
+[node name="DialogText" type="Node" parent="Teresa-Staff/DialogInteraction/Repeat"]
 script = ExtResource("7_t1jd6")
 text = "“What’s up bestie?”"
 frame = 1
 npc_info = ExtResource("9_mua4v")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogChoice" type="Node" parent="NPC/DialogInteraction/Repeat"]
+[node name="DialogChoice" type="Node" parent="Teresa-Staff/DialogInteraction/Repeat"]
 script = ExtResource("16_4rxfg")
 npc_info = ExtResource("9_mua4v")
 metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
-[node name="DialogBranch" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice"]
+[node name="DialogBranch" type="Node" parent="Teresa-Staff/DialogInteraction/Repeat/DialogChoice"]
 script = ExtResource("17_3ggun")
 text = "About Daisy’s perfume"
 npc_info = ExtResource("8_8x0r1")
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
-[node name="DialogText" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
+[node name="DialogText" type="Node" parent="Teresa-Staff/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
 script = ExtResource("7_t1jd6")
 text = "“I want to talk about Y’s perfume.”"
 frame = 9
 npc_info = ExtResource("8_8x0r1")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText2" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
+[node name="DialogText2" type="Node" parent="Teresa-Staff/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
 script = ExtResource("7_t1jd6")
 text = "“Is it bothering you too much?”"
 frame = 8
 npc_info = ExtResource("8_8x0r1")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText3" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
+[node name="DialogText3" type="Node" parent="Teresa-Staff/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
 script = ExtResource("7_t1jd6")
 text = "“Only a little, but I’ll be fine.”"
 frame = 19
 npc_info = ExtResource("9_mua4v")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText4" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
+[node name="DialogText4" type="Node" parent="Teresa-Staff/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
 script = ExtResource("7_t1jd6")
 text = "“I guess this case isn’t quite a crime scene.”"
 frame = 22
 npc_info = ExtResource("9_mua4v")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText5" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
+[node name="DialogText5" type="Node" parent="Teresa-Staff/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
 script = ExtResource("7_t1jd6")
 text = "“So I don’t think the protocol applies in this scenario.”"
 npc_info = ExtResource("9_mua4v")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText6" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
+[node name="DialogText6" type="Node" parent="Teresa-Staff/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
 script = ExtResource("7_t1jd6")
 text = "“Still…”"
 frame = 16
 npc_info = ExtResource("8_8x0r1")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogBranch2" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice"]
+[node name="DialogBranch2" type="Node" parent="Teresa-Staff/DialogInteraction/Repeat/DialogChoice"]
 script = ExtResource("17_3ggun")
 text = "About you"
 npc_info = ExtResource("8_8x0r1")
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
-[node name="DialogText" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText" type="Node" parent="Teresa-Staff/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("7_t1jd6")
 text = "“I want to talk about you.”"
 frame = 10
 npc_info = ExtResource("8_8x0r1")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText2" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText2" type="Node" parent="Teresa-Staff/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("7_t1jd6")
 text = "“About me?”"
 frame = 19
 npc_info = ExtResource("9_mua4v")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText3" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText3" type="Node" parent="Teresa-Staff/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("7_t1jd6")
 text = "“You should be more worried about yourself, Amelia.”"
 frame = 16
 npc_info = ExtResource("9_mua4v")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText4" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText4" type="Node" parent="Teresa-Staff/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("7_t1jd6")
 text = "“Our last case was really exhausting on you.”"
 frame = 17
 npc_info = ExtResource("9_mua4v")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText5" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText5" type="Node" parent="Teresa-Staff/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("7_t1jd6")
 text = "“You seemed really out of it when we went out earlier today.”"
 frame = 18
 npc_info = ExtResource("9_mua4v")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText6" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText6" type="Node" parent="Teresa-Staff/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("7_t1jd6")
 text = "“Didn’t even finish your food.”"
 frame = 5
 npc_info = ExtResource("9_mua4v")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText7" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText7" type="Node" parent="Teresa-Staff/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("7_t1jd6")
 text = "“I’ll be fine, Teresa.”"
 npc_info = ExtResource("8_8x0r1")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText8" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText8" type="Node" parent="Teresa-Staff/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("7_t1jd6")
 text = "“Just make sure you’re alright too.”"
 frame = 16
 npc_info = ExtResource("8_8x0r1")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText9" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText9" type="Node" parent="Teresa-Staff/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("7_t1jd6")
 text = "“Thanks.”"
 frame = 4

@@ -112,7 +112,8 @@ func hide_pause_menu() -> void:
 
 func _quit_to_menu() -> void:
 	hide_pause_menu()
-	get_tree().change_scene_to_file("res://title_scene/title_scene.tscn")
+	AudioManager.play_music(null)
+	LevelManager.load_new_level("res://title_scene/title_scene.tscn", "", Vector2.ZERO)
 
 
 func _quit_to_desktop() -> void:
@@ -145,6 +146,12 @@ func update_item_image( new_image : Texture2D ) -> void:
 func play_audio( audio : AudioStream ) -> void:
 	audio_stream_player.stream = audio
 	audio_stream_player.play()
+
+
+func show_settings() -> void:
+	$Control/Settings.show()
+	$Control/Inventory.hide()
+	$Control/Quit.hide()
 
 
 func tree() -> SceneTree:

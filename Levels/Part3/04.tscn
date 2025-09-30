@@ -59,108 +59,117 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 position = Vector2(204, 108)
 npc_resource = ExtResource("8_g0u06")
 
-[node name="DialogInteraction" parent="NPC" instance=ExtResource("10_g0u06")]
+[node name="XHospital" parent="NPC" instance=ExtResource("10_g0u06")]
 
-[node name="DialogText" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText" type="Node" parent="NPC/XHospital"]
 script = ExtResource("6_6d8x2")
 text = "“Don’t act like you care, DAISY.”"
 frame = 9
 npc_info = ExtResource("8_g0u06")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText2" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText2" type="Node" parent="NPC/XHospital"]
 script = ExtResource("6_6d8x2")
 text = "“It’s all my fault.”"
 frame = 12
 npc_info = ExtResource("8_g0u06")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText3" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText3" type="Node" parent="NPC/XHospital"]
 script = ExtResource("6_6d8x2")
 text = "“Almost six years serving this department…”"
 npc_info = ExtResource("8_g0u06")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText4" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText4" type="Node" parent="NPC/XHospital"]
 script = ExtResource("6_6d8x2")
 text = "“Do you know what this job does to you?”"
 frame = 1
 npc_info = ExtResource("8_g0u06")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText5" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText5" type="Node" parent="NPC/XHospital"]
 script = ExtResource("6_6d8x2")
 text = "“To someone like me?”"
 frame = 10
 npc_info = ExtResource("8_g0u06")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText6" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText6" type="Node" parent="NPC/XHospital"]
 script = ExtResource("6_6d8x2")
 text = "“Tsch.”"
 frame = 15
 npc_info = ExtResource("8_g0u06")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText7" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText7" type="Node" parent="NPC/XHospital"]
 script = ExtResource("6_6d8x2")
 text = "“You wouldn’t understand.”"
 frame = 11
 npc_info = ExtResource("8_g0u06")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText8" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText8" type="Node" parent="NPC/XHospital"]
 script = ExtResource("6_6d8x2")
 text = "“I don’t.”"
 frame = 4
 npc_info = ExtResource("7_7aky0")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText9" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText9" type="Node" parent="NPC/XHospital"]
 script = ExtResource("6_6d8x2")
 text = "“If you’re expecting an apology, go cry somewhere else.”"
 frame = 37
 npc_info = ExtResource("7_7aky0")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText10" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText10" type="Node" parent="NPC/XHospital"]
 script = ExtResource("6_6d8x2")
 text = "“That’s not what I want.”"
 frame = 16
 npc_info = ExtResource("8_g0u06")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText11" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText11" type="Node" parent="NPC/XHospital"]
 script = ExtResource("6_6d8x2")
 text = "“Just leave, DAISY.”"
 frame = 15
 npc_info = ExtResource("8_g0u06")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText12" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText12" type="Node" parent="NPC/XHospital"]
 script = ExtResource("6_6d8x2")
 text = "“I thought I was good enough for this job.”"
 frame = 12
 npc_info = ExtResource("8_g0u06")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText13" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText13" type="Node" parent="NPC/XHospital"]
 script = ExtResource("6_6d8x2")
 text = "“But now I know I’ve been blind all along.”"
 frame = 11
 npc_info = ExtResource("8_g0u06")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText14" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText14" type="Node" parent="NPC/XHospital"]
 script = ExtResource("6_6d8x2")
 text = "“…”"
 frame = 37
 npc_info = ExtResource("7_7aky0")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="Repeat" type="Node" parent="NPC/DialogInteraction"]
+[node name="Repeat" type="Node" parent="NPC/XHospital"]
 
-[node name="DialogText" type="Node" parent="NPC/DialogInteraction/Repeat"]
+[node name="DialogText" type="Node" parent="NPC/XHospital/Repeat"]
+script = ExtResource("6_6d8x2")
+text = "“Just leave.”"
+frame = 11
+npc_info = ExtResource("8_g0u06")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="Repeat2" type="Node" parent="NPC/XHospital"]
+
+[node name="DialogText" type="Node" parent="NPC/XHospital/Repeat2"]
 script = ExtResource("6_6d8x2")
 text = "“…”"
 frame = 11

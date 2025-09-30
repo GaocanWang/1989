@@ -91,6 +91,7 @@ func load_game() -> void:
 
 func open_options() -> void:
 	PauseMenu.side_bar.hide()
+	PauseMenu.show_settings()
 	PauseMenu.show()
 	PauseMenu.is_paused = true
 	PauseMenu.master_slider.grab_focus()

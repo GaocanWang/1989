@@ -16,6 +16,10 @@ var do_behavior : bool = true
 
 
 func _ready() -> void:
+	if ((name == "Disappear" && LevelManager.flags.x_interacted && LevelManager.flags.y_interacted && LevelManager.flags.teresa_interacted) 
+		|| (name == "Teresa-Staff" && LevelManager.flags.x_interacted && LevelManager.flags.y_interacted && PlayerManager.has_item( "Maintenance System Key" ))):
+		queue_free()
+	
 	setup_npc()
 	if Engine.is_editor_hint():
 		return

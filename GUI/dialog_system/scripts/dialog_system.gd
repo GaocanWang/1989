@@ -124,7 +124,7 @@ func show_dialog( _items : Array[ DialogItem ] ) -> void:
 ## Hide Dialog System UI
 func hide_dialog() -> void:
 	textbox_animation_player.play("textbox_drop")
-	if (previous_dialog_text.npc_info.npc_name == "Amelia"):
+	if (previous_dialog_text.npc_info.npc_name == "Amelia" || LevelManager.flags.hospital && previous_dialog_text.npc_info.npc_name == "Daisy"):
 		portrait_animation_player.play("portrait_disappear_left")
 	else:
 		portrait_animation_player.play("portrait_disappear_right")
@@ -175,7 +175,7 @@ func start_dialog_cutscene( _d : DialogCutscene ) -> void:
 	watching_cutscene = true
 	_d.play()
 	textbox_animation_player.play("textbox_drop")
-	if (previous_dialog_text.npc_info.npc_name == "Amelia"):
+	if (previous_dialog_text.npc_info.npc_name == "Amelia" || LevelManager.flags.hospital && previous_dialog_text.npc_info.npc_name == "Daisy"):
 		portrait_animation_player.play("portrait_disappear_left")
 	else:
 		portrait_animation_player.play("portrait_disappear_right")
@@ -184,7 +184,7 @@ func start_dialog_cutscene( _d : DialogCutscene ) -> void:
 	watching_cutscene = false
 	if ( dialog_item_index < dialog_items.size() - 1 ):
 		textbox_animation_player.play("textbox_rise")
-		if (previous_dialog_text.npc_info.npc_name == "Amelia"):
+		if (previous_dialog_text.npc_info.npc_name == "Amelia" || LevelManager.flags.hospital && previous_dialog_text.npc_info.npc_name == "Daisy"):
 			portrait_animation_player.play("portrait_appear_left")
 		else:
 			portrait_animation_player.play("portrait_appear_right")
@@ -221,13 +221,13 @@ func set_dialog_text( _d ) -> void:
 	start_timer()
 	if portrait_sprite.texture != _d.npc_info.portrait:
 		if (portrait_sprite.texture != null):
-			if (previous_dialog_text.npc_info.npc_name == "Amelia"):
+			if (previous_dialog_text.npc_info.npc_name == "Amelia" || LevelManager.flags.hospital && previous_dialog_text.npc_info.npc_name == "Daisy"):
 				portrait_animation_player.play("portrait_disappear_left")
 			else:
 				portrait_animation_player.play("portrait_disappear_right")
 			await portrait_animation_player.animation_finished
 		portrait_sprite.texture = _d.npc_info.portrait
-		if (_d.npc_info.npc_name == "Amelia"):
+		if (_d.npc_info.npc_name == "Amelia" || LevelManager.flags.hospital && _d.npc_info.npc_name == "Daisy"):
 			portrait_animation_player.play("portrait_appear_left")
 		else:
 			portrait_animation_player.play("portrait_appear_right")

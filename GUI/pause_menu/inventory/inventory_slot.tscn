@@ -4,13 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://ci5obkxgtrrka" path="res://GUI/pause_menu/inventory/selector.png" id="1_fvlqd"]
 [ext_resource type="Texture2D" uid="uid://b6ai2wdbulxmw" path="res://Items/sprites/IDcardicon.png" id="3_fvlqd"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q6srx"]
-texture = ExtResource("1_fvlqd")
-expand_margin_left = 24.0
-expand_margin_top = 24.0
-expand_margin_right = 24.0
-expand_margin_bottom = 24.0
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvlqd"]
 bg_color = Color(0.87451, 0.894118, 0.960784, 1)
 corner_radius_top_left = 24
@@ -18,12 +11,19 @@ corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q6srx"]
+texture = ExtResource("1_fvlqd")
+expand_margin_left = 24.0
+expand_margin_top = 24.0
+expand_margin_right = 24.0
+expand_margin_bottom = 24.0
+
 [node name="InventorySlot" type="Button"]
 custom_minimum_size = Vector2(128, 128)
 offset_right = 128.0
 offset_bottom = 128.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_q6srx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_fvlqd")
+theme_override_styles/focus = SubResource("StyleBoxTexture_q6srx")
 script = ExtResource("1_1n7ea")
 
 [node name="TextureRect" type="TextureRect" parent="."]

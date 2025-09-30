@@ -1,10 +1,10 @@
 [gd_scene load_steps=21 format=3 uid="uid://c0ibw83vuq84m"]
 
-[ext_resource type="Texture2D" uid="uid://bw5lmfpl644r5" path="res://title_scene/sprites/concept_v1.4_20241112220924.png" id="1_07ceg"]
 [ext_resource type="Script" uid="uid://nholskpy0p5t" path="res://title_scene/title_scene.gd" id="1_osuia"]
 [ext_resource type="AudioStream" uid="uid://djclq4t5i5e7" path="res://Levels/music/1989 main menu music.mp3" id="2_svbj5"]
 [ext_resource type="AudioStream" uid="uid://c7qh6fiyncnv3" path="res://title_scene/audio/menu_focus.wav" id="3_841gw"]
 [ext_resource type="AudioStream" uid="uid://yiqu5xcbfeb" path="res://title_scene/audio/menu_select.wav" id="4_pslun"]
+[ext_resource type="Texture2D" uid="uid://cftiqmdpqc1h4" path="res://title_scene/sprites/the amelia thing idk.png" id="5_svbj5"]
 [ext_resource type="Texture2D" uid="uid://qudk730ce1fa" path="res://GUI/sprites/image (3).png" id="6_qy5iu"]
 [ext_resource type="PackedScene" uid="uid://cj0dch28synuo" path="res://title_scene/splash_scene.tscn" id="6_ys7o3"]
 [ext_resource type="Texture2D" uid="uid://dobuooyvb41qy" path="res://GUI/sprites/image (2).png" id="7_0unsn"]
@@ -164,37 +164,60 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control"]
+texture_filter = 2
 position = Vector2(960, 540)
-texture = ExtResource("1_07ceg")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_svbj5")
 
 [node name="ButtonNew" type="Button" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 1155.0
-offset_top = 545.0
-offset_right = 1355.0
-offset_bottom = 585.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -68.0
+offset_right = 100.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxTexture_bcwfp")
 theme_override_styles/focus = SubResource("StyleBoxTexture_sugrs")
 text = "NEW GAME"
 
 [node name="ButtonContinue" type="Button" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 1155.0
-offset_top = 615.0
-offset_right = 1355.0
-offset_bottom = 655.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -20.0
+offset_right = 100.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxTexture_bplvs")
 theme_override_styles/focus = SubResource("StyleBoxTexture_ofojg")
 text = "CONTINUE GAME"
 
 [node name="ButtonOptions" type="Button" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 1155.0
-offset_top = 744.0
-offset_right = 1355.0
-offset_bottom = 784.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 28.0
+offset_right = 100.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxTexture_bplvs")
 theme_override_styles/focus = SubResource("StyleBoxTexture_ofojg")

@@ -91,9 +91,6 @@ frame = 26
 npc_info = ExtResource("9_etbsa")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="SavePoint" parent="DialogText3" instance=ExtResource("10_tiff0")]
-position = Vector2(36, 254)
-
 [node name="DialogText4" type="Node" parent="."]
 script = ExtResource("7_cjict")
 text = "“Maybe that’s why.”"
@@ -983,3 +980,13 @@ text = "“Alright, then.”"
 frame = 1
 npc_info = ExtResource("11_0yrxr")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="SavePoint" parent="." instance=ExtResource("10_tiff0")]
+position = Vector2(36, 254)
+
+[node name="NPC2" parent="." instance=ExtResource("19_qcsqa")]
+position = Vector2(300, 372)
+
+[node name="NPC3" parent="." instance=ExtResource("19_qcsqa")]
+position = Vector2(324, 372)
+npc_resource = ExtResource("9_etbsa")

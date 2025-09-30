@@ -38,7 +38,7 @@ tile_map_data = PackedByteArray("AAABAAIAAQAEAAEAADABAAMAAQAEAAEAADABAAQAAQAEAAE
 tile_set = ExtResource("3_fkk6q")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_g4mln")]
-position = Vector2(50, 371)
+position = Vector2(577, 295)
 
 [node name="LevelTransition" parent="." instance=ExtResource("6_7afvj")]
 position = Vector2(36, 600)
@@ -124,6 +124,19 @@ position = Vector2(612, 480)
 script = ExtResource("14_h8wce")
 level = "uid://clhqjnwycitrn"
 side = 1
+
+[node name="DialogText" type="Node" parent="LevelTransition5"]
+script = ExtResource("7_566gx")
+text = "“Uh…Amelia?”"
+frame = 19
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
+
+[node name="DialogText2" type="Node" parent="LevelTransition5"]
+script = ExtResource("7_566gx")
+text = "“We’ve got to go investigate the changeroom first.”"
+npc_info = ExtResource("11_4xy53")
+metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="LevelTransition6" parent="." instance=ExtResource("6_7afvj")]
 position = Vector2(612, 288)

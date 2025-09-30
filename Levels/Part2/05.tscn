@@ -52,14 +52,14 @@ size = 1
 
 [node name="Mirror" parent="." instance=ExtResource("7_315hk")]
 z_index = 1
-position = Vector2(198, 90)
+position = Vector2(192, 90)
 music = ExtResource("8_6ewgb")
 music2 = SubResource("Resource_pgryn")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Mirror"]
-offset_left = -198.0
+offset_left = -192.00006
 offset_top = -90.0
-offset_right = 1722.0
+offset_right = 1728.0
 offset_bottom = 990.0
 scale = Vector2(0.2, 0.2)
 stream = ExtResource("8_wkwft")
@@ -68,14 +68,14 @@ loop = true
 
 [node name="Mirror2" parent="." instance=ExtResource("7_315hk")]
 z_index = 1
-position = Vector2(222, 90)
+position = Vector2(216, 90)
 music = ExtResource("8_6ewgb")
 music2 = SubResource("Resource_pgryn")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Mirror2"]
-offset_left = -222.0
+offset_left = -216.0
 offset_top = -90.0
-offset_right = 1698.0
+offset_right = 1704.0
 offset_bottom = 990.0
 scale = Vector2(0.2, 0.2)
 stream = ExtResource("8_wkwft")
@@ -133,8 +133,8 @@ npc_info = ExtResource("14_umolt")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="Sink" parent="." instance=ExtResource("15_qai5u")]
-position = Vector2(186, 90)
-size = Vector2(6, 12)
+position = Vector2(176, 90)
+size = Vector2(10, 12)
 
 [node name="DialogText" type="Node" parent="Sink"]
 script = ExtResource("10_wovir")
@@ -149,8 +149,8 @@ npc_info = ExtResource("14_umolt")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="Sink2" parent="." instance=ExtResource("15_qai5u")]
-position = Vector2(210, 90)
-size = Vector2(6, 12)
+position = Vector2(204, 90)
+size = Vector2(2, 12)
 
 [node name="DialogText" type="Node" parent="Sink2"]
 script = ExtResource("10_wovir")
@@ -165,8 +165,8 @@ npc_info = ExtResource("14_umolt")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="BrokenSink" parent="." instance=ExtResource("15_qai5u")]
-position = Vector2(234, 90)
-size = Vector2(6, 12)
+position = Vector2(232, 90)
+size = Vector2(10, 12)
 
 [node name="DialogText" type="Node" parent="BrokenSink"]
 script = ExtResource("10_wovir")

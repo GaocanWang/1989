@@ -46,281 +46,281 @@ door = true
 size = 1
 side = 2
 
-[node name="NPC" parent="." instance=ExtResource("7_f20wc")]
+[node name="Disappear" parent="." instance=ExtResource("7_f20wc")]
 position = Vector2(131.903, 180)
 npc_resource = ExtResource("10_d1f0s")
 
-[node name="DialogInteraction" parent="NPC" instance=ExtResource("8_aq41s")]
+[node name="DialogInteraction" parent="Disappear" instance=ExtResource("8_aq41s")]
 
-[node name="DialogText" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText" type="Node" parent="Disappear/DialogInteraction"]
 script = ExtResource("9_wvfgd")
 text = "“I’ve already checked everywhere, hon.”"
 frame = 30
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText2" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText2" type="Node" parent="Disappear/DialogInteraction"]
 script = ExtResource("9_wvfgd")
 text = "“Don’t think this place has anything we can use.\""
 frame = 19
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText3" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText3" type="Node" parent="Disappear/DialogInteraction"]
 script = ExtResource("9_wvfgd")
 text = "“Honestly, this place disgusts me.”"
 frame = 37
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText4" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText4" type="Node" parent="Disappear/DialogInteraction"]
 script = ExtResource("9_wvfgd")
 text = "“I’ve never been here before.”"
 frame = 4
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText5" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText5" type="Node" parent="Disappear/DialogInteraction"]
 script = ExtResource("9_wvfgd")
 text = "“To the bathroom?”"
 frame = 9
 npc_info = ExtResource("11_n0ty7")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText6" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText6" type="Node" parent="Disappear/DialogInteraction"]
 script = ExtResource("9_wvfgd")
 text = "“No, this community center.”"
 frame = 30
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText7" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText7" type="Node" parent="Disappear/DialogInteraction"]
 script = ExtResource("9_wvfgd")
 text = "“Everything about it is just plain creepy.”"
 frame = 28
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText8" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText8" type="Node" parent="Disappear/DialogInteraction"]
 script = ExtResource("9_wvfgd")
 text = "“Why are all the lights so dim?”"
 frame = 9
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText9" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText9" type="Node" parent="Disappear/DialogInteraction"]
 script = ExtResource("9_wvfgd")
 text = "“Bleugh…doesn’t matter to me.”"
 frame = 37
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText10" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText10" type="Node" parent="Disappear/DialogInteraction"]
 script = ExtResource("9_wvfgd")
 text = "“Feel free to check around if you want.”"
 frame = 14
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="Repeat" type="Node" parent="NPC/DialogInteraction"]
+[node name="Repeat" type="Node" parent="Disappear/DialogInteraction"]
 
-[node name="DialogText" type="Node" parent="NPC/DialogInteraction/Repeat"]
+[node name="DialogText" type="Node" parent="Disappear/DialogInteraction/Repeat"]
 script = ExtResource("9_wvfgd")
 text = "“What do you need, Amelia?”"
 frame = 26
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogChoice" type="Node" parent="NPC/DialogInteraction/Repeat"]
+[node name="DialogChoice" type="Node" parent="Disappear/DialogInteraction/Repeat"]
 script = ExtResource("12_b4lej")
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://b8kxiife71bd1"
 
-[node name="DialogBranch" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice"]
+[node name="DialogBranch" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice"]
 script = ExtResource("13_5cgqs")
 text = "I want to talk about X"
 npc_info = ExtResource("11_n0ty7")
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
-[node name="DialogText" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
+[node name="DialogText" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
 script = ExtResource("9_wvfgd")
 text = "“I want to talk about X.”"
 npc_info = ExtResource("11_n0ty7")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText2" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
+[node name="DialogText2" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
 script = ExtResource("9_wvfgd")
 text = "“About X?”"
 frame = 30
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText3" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
+[node name="DialogText3" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
 script = ExtResource("9_wvfgd")
 text = "“Oh that old grouch.”"
 frame = 14
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText4" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
+[node name="DialogText4" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
 script = ExtResource("9_wvfgd")
 text = "“He might seem cold but he’s just always like that.”"
 frame = 8
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText5" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
+[node name="DialogText5" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
 script = ExtResource("9_wvfgd")
 text = "“I’m clearly the better one in this duo.”"
 frame = 18
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText6" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
+[node name="DialogText6" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch"]
 script = ExtResource("9_wvfgd")
 text = "“Uh huh…”"
 frame = 9
 npc_info = ExtResource("11_n0ty7")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogBranch2" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice"]
+[node name="DialogBranch2" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice"]
 script = ExtResource("13_5cgqs")
 text = "I want to talk about you"
 npc_info = ExtResource("11_n0ty7")
 metadata/_custom_type_script = "uid://cm6c0rnohy8s1"
 
-[node name="DialogText" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("9_wvfgd")
 text = "“I want to talk about you.”"
 npc_info = ExtResource("11_n0ty7")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText2" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText2" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("9_wvfgd")
 text = "“What about me?”"
 frame = 26
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText3" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText3" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("9_wvfgd")
 text = "“Just your background and all.”"
 frame = 16
 npc_info = ExtResource("11_n0ty7")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText4" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText4" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("9_wvfgd")
 text = "“Do you always wear perfume and gloves?”"
 frame = 15
 npc_info = ExtResource("11_n0ty7")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText5" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText5" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("9_wvfgd")
 text = "“Oh, so you noticed!”"
 frame = 10
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText6" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText6" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("9_wvfgd")
 text = "“Not often, if I’m being honest with myself.”"
 frame = 14
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText7" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText7" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("9_wvfgd")
 text = "“But I just had to dress up nice for you, great detective.”"
 frame = 18
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText8" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText8" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("9_wvfgd")
 text = "“Right…”"
 frame = 9
 npc_info = ExtResource("11_n0ty7")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText9" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText9" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("9_wvfgd")
 text = "“I’m joking, hon!”"
 frame = 8
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText10" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText10" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("9_wvfgd")
 text = "“I just believe in the power of looks.”"
 frame = 14
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText11" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText11" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("9_wvfgd")
 text = "“Appearance is everything in a world full of watchers.”"
 frame = 13
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText12" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText12" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("9_wvfgd")
 text = "“You got a boyfriend, Amelia?”"
 frame = 18
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText13" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText13" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("9_wvfgd")
 text = "“Wha…!”"
 frame = 4
 npc_info = ExtResource("11_n0ty7")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText14" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText14" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("9_wvfgd")
 text = "“No…?”"
 frame = 3
 npc_info = ExtResource("11_n0ty7")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText15" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText15" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("9_wvfgd")
 text = "“You’ve much to learn about the world, hon.”"
 frame = 26
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText16" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText16" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("9_wvfgd")
 text = "“Besides observation, experience builds a great detective.”"
 frame = 8
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText17" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText17" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("9_wvfgd")
 text = "Bit of advice for you…”"
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText18" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText18" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("9_wvfgd")
 text = "“…your looks matter as much as your evidence.”"
 frame = 14
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText19" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText19" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("9_wvfgd")
 text = "“The right evidence with the wrong outfit will be overlooked.”"
 frame = 4
 npc_info = ExtResource("10_d1f0s")
 metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
-[node name="DialogText20" type="Node" parent="NPC/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
+[node name="DialogText20" type="Node" parent="Disappear/DialogInteraction/Repeat/DialogChoice/DialogBranch2"]
 script = ExtResource("9_wvfgd")
 text = "“Now shoo.”"
 frame = 18
@@ -329,7 +329,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="Mirror" parent="." instance=ExtResource("8_aq41s")]
 z_index = 1
-position = Vector2(150, 84)
+position = Vector2(144, 84)
 size = Vector2(6, 24)
 
 [node name="DialogText" type="Node" parent="Mirror"]
@@ -346,7 +346,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="Mirror2" parent="." instance=ExtResource("8_aq41s")]
 z_index = 1
-position = Vector2(174, 84)
+position = Vector2(168, 84)
 size = Vector2(6, 24)
 
 [node name="DialogText" type="Node" parent="Mirror2"]
@@ -363,8 +363,8 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="Sink" parent="." instance=ExtResource("8_aq41s")]
 z_index = 1
-position = Vector2(138, 92)
-size = Vector2(12, 8)
+position = Vector2(128, 92)
+size = Vector2(10, 8)
 
 [node name="DialogText" type="Node" parent="Sink"]
 script = ExtResource("9_wvfgd")
@@ -374,8 +374,8 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="Sink2" parent="." instance=ExtResource("8_aq41s")]
 z_index = 1
-position = Vector2(162, 92)
-size = Vector2(12, 8)
+position = Vector2(156, 92)
+size = Vector2(2, 8)
 
 [node name="DialogText" type="Node" parent="Sink2"]
 script = ExtResource("9_wvfgd")
@@ -385,8 +385,8 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="Sink3" parent="." instance=ExtResource("8_aq41s")]
 z_index = 1
-position = Vector2(186, 92)
-size = Vector2(12, 8)
+position = Vector2(184, 92)
+size = Vector2(10, 8)
 
 [node name="DialogText" type="Node" parent="Sink3"]
 script = ExtResource("9_wvfgd")

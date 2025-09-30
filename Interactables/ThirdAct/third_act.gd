@@ -115,6 +115,7 @@ func _on_y() -> void:
 	PlayerManager.player.sprite2.texture = load( "res://npc/sprites/y.png" )
 	PlayerManager.player.sprite.visible = false
 	PlayerManager.player.sprite2.visible = true
+	LevelManager.flags.hospital = true
 	LevelManager.load_new_level( "res://Levels/Part3/01.tscn", "", Vector2.ZERO )
 	DialogSystem.show_dialog( dialog_items_y_3 )
 	pass
