@@ -100,6 +100,7 @@ func _on_y() -> void:
 	await DialogSystem.finished
 	get_tree().paused = true
 	PauseMenu.waiting_for_item_use = true
+	PauseMenu.show_pause_menu()
 	while true:
 		if await PauseMenu.item_used == "Bloody Sink Piece":
 			break
@@ -107,13 +108,14 @@ func _on_y() -> void:
 			DialogSystem.show_dialog( dialog_items_wrong_y )
 			await DialogSystem.finished
 			get_tree().paused = true
+			PauseMenu.show_pause_menu()
 	PauseMenu.waiting_for_item_use = false
 	DialogSystem.show_dialog( dialog_items_y_2 )
 	await DialogSystem.finished
 	PlayerManager.player.sprite2.texture = load( "res://npc/sprites/y.png" )
 	PlayerManager.player.sprite.visible = false
 	PlayerManager.player.sprite2.visible = true
-	get_tree().change_scene_to_file( "res://Levels/Part3/01.tscn" )
+	LevelManager.load_new_level( "res://Levels/Part3/01.tscn", "", Vector2.ZERO )
 	DialogSystem.show_dialog( dialog_items_y_3 )
 	pass
 
@@ -125,6 +127,7 @@ func _on_x() -> void:
 	await DialogSystem.finished
 	get_tree().paused = true
 	PauseMenu.waiting_for_item_use = true
+	PauseMenu.show_pause_menu()
 	while true:
 		if await PauseMenu.item_used == "Bloody Sink Piece":
 			break
@@ -132,6 +135,7 @@ func _on_x() -> void:
 			DialogSystem.show_dialog( dialog_items_wrong_x )
 			await DialogSystem.finished
 			get_tree().paused = true
+			PauseMenu.show_pause_menu()
 	PauseMenu.waiting_for_item_use = false
 	PauseMenu.play_audio( load( "res://GUI/dialog_system/audio/evidence OR _THIS IS IT!_ SFX.mp3" ) )
 	SceneTransition.texture_rect.texture = load( "res://FullScreenArt/this is it fs.png" )
@@ -160,6 +164,7 @@ func _on_shift_partner() -> void:
 	await DialogSystem.finished
 	get_tree().paused = true
 	PauseMenu.waiting_for_item_use = true
+	PauseMenu.show_pause_menu()
 	while true:
 		if await PauseMenu.item_used == "Bloody Sink Piece":
 			break
@@ -167,11 +172,13 @@ func _on_shift_partner() -> void:
 			DialogSystem.show_dialog( dialog_items_wrong_partner )
 			await DialogSystem.finished
 			get_tree().paused = true
+			PauseMenu.show_pause_menu()
 	PauseMenu.waiting_for_item_use = false
 	DialogSystem.show_dialog( dialog_items_partner_2 )
 	await DialogSystem.finished
 	get_tree().paused = true
 	PauseMenu.waiting_for_item_use = true
+	PauseMenu.show_pause_menu()
 	while true:
 		if await PauseMenu.item_used == "Employee Handbook":
 			break
@@ -179,6 +186,7 @@ func _on_shift_partner() -> void:
 			DialogSystem.show_dialog( dialog_items_wrong_partner )
 			await DialogSystem.finished
 			get_tree().paused = true
+			PauseMenu.show_pause_menu()
 	PauseMenu.waiting_for_item_use = false
 	DialogSystem.show_dialog( dialog_items_partner_3 )
 	pass
@@ -190,6 +198,7 @@ func player_interact() -> void:
 	await DialogSystem.finished
 	get_tree().paused = true
 	PauseMenu.waiting_for_item_use = true
+	PauseMenu.show_pause_menu()
 	while true:
 		if await PauseMenu.item_used == "Employee Handbook":
 			break
@@ -197,7 +206,9 @@ func player_interact() -> void:
 			DialogSystem.show_dialog( dialog_items_wrong )
 			await DialogSystem.finished
 			get_tree().paused = true
+			PauseMenu.show_pause_menu()
 	PauseMenu.waiting_for_item_use = false
+	get_tree().paused = true
 	AudioManager.play_music( null )
 	PauseMenu.play_audio( load( "res://GUI/dialog_system/audio/evidence OR _THIS IS IT!_ SFX.mp3" ) )
 	SceneTransition.texture_rect.texture = load( "res://FullScreenArt/this is it fs.png" )

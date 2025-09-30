@@ -11,12 +11,7 @@ var connected_containers : Array[ValveContainer] = []
 
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if connected_containers.size() == current_capacity:
-			for c in connected_containers:
-				c.add(1)
-		else:
-			pick_best().add(current_capacity)
-		add(-current_capacity)
+		pass
 
 
 func percentage_full() -> float:
@@ -50,3 +45,12 @@ func pick_best() -> ValveContainer:
 		return a.percentage_full() < b.percentage_full()
 	)
 	return sorted[0]
+
+
+func run() -> void:
+	if connected_containers.size() == current_capacity:
+		for c in connected_containers:
+			c.add(1)
+	else:
+		pick_best().add(current_capacity)
+	add(-current_capacity)

@@ -58,6 +58,8 @@ func load_new_level(
 	
 	if level_path == "res://Levels/Part2/10.tscn" && !(flags.x_interacted && flags.y_interacted && flags.teresa_interacted):
 		level_path = "res://Levels/Part2/13.tscn"
+	elif level_path == "res://Levels/Part2/02.tscn" && flags.part_3:
+		level_path = "res://Levels/Part2/20.tscn"
 	
 	if _target_transition != "":
 		await SceneTransition.fade_out()
@@ -84,7 +86,7 @@ func load_new_level(
 		if ( !get_tree().current_scene.dialog_items.is_empty() ):
 			DialogSystem.show_dialog( get_tree().current_scene.dialog_items )
 	else:
-		if target_transition != "":
+		if target_transition != "" && target_transition != "load":
 			var node = get_tree().current_scene.get_node(target_transition)
 			if ( !node.dialog_items.is_empty() && node.name != "WChangeroomTransition" ):
 				DialogSystem.show_dialog( node.dialog_items )

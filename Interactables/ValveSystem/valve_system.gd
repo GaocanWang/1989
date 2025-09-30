@@ -36,6 +36,17 @@ func _ready() -> void:
 	pass
 
 
+func _physics_process(_delta: float) -> void:
+	if Input.is_action_just_pressed( "ui_up" ):
+		top.run()
+	if Input.is_action_just_pressed( "ui_right" ):
+		right.run()
+	if Input.is_action_just_pressed( "ui_down" ):
+		bottom.run()
+	if Input.is_action_just_pressed( "ui_left" ):
+		left.run()
+
+
 func _on_area_enter( _a : Area2D ) -> void:
 	PlayerManager.interact_pressed.connect( player_interact )
 	LevelManager.near_valve = true

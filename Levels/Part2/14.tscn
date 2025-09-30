@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=4 uid="uid://d4fo6454x1ptb"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_8sunn"]
-[ext_resource type="AudioStream" uid="uid://0aojls0cgt76" path="res://Levels/music/searching.mp3" id="2_tiff0"]
+[ext_resource type="AudioStream" uid="uid://bapmjca2el4vh" path="res://Levels/music/searching.ogg" id="2_tiff0"]
 [ext_resource type="TileSet" uid="uid://k4sa1rxa7ww0" path="res://Tile Maps/Tile Sets/pool.tres" id="3_m1tnn"]
 [ext_resource type="Script" uid="uid://2hobeot03u4v" path="res://Tile Maps/level_tile_map.gd" id="4_6yulb"]
 [ext_resource type="PackedScene" uid="uid://uqut3xy8f7mb" path="res://Levels/player_spawn.tscn" id="5_2ppjh"]
@@ -24,7 +24,7 @@
 [ext_resource type="Script" uid="uid://b8kxiife71bd1" path="res://Interactables/dialog/scripts/dialog_choice.gd" id="21_lflvu"]
 [ext_resource type="Script" uid="uid://cm6c0rnohy8s1" path="res://Interactables/dialog/scripts/dialog_branch.gd" id="22_spnby"]
 [ext_resource type="Script" uid="uid://dst30i4jr8cmt" path="res://Interactables/dialog/scripts/dialog_sfx.gd" id="23_1j61h"]
-[ext_resource type="AudioStream" uid="uid://dwf1vpjwlp858" path="res://GUI/dialog_system/audio/debate system music.mp3" id="24_hp26m"]
+[ext_resource type="AudioStream" uid="uid://depblp8gej778" path="res://Levels/music/debate system music.ogg" id="25_tiff0"]
 [ext_resource type="Script" uid="uid://cpgbhw0gipvs7" path="res://Interactables/dialog/scripts/debate_text.gd" id="25_tujkg"]
 [ext_resource type="Resource" uid="uid://db6m3p8sr6mxj" path="res://npc/00_npcs/lowkey_np.tres" id="26_1kaft"]
 [ext_resource type="Script" uid="uid://cfslpprw6tope" path="res://Interactables/dialog/scripts/debate_choice.gd" id="27_cgroq"]
@@ -546,7 +546,7 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 
 [node name="DialogSFX" type="Node" parent="NPC/Debate/DialogChoice/DialogBranch2"]
 script = ExtResource("23_1j61h")
-sfx = ExtResource("24_hp26m")
+sfx = ExtResource("25_tiff0")
 npc_info = ExtResource("11_0yrxr")
 metadata/_custom_type_script = "uid://dst30i4jr8cmt"
 

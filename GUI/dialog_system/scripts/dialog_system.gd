@@ -74,15 +74,16 @@ func _unhandled_input( _event: InputEvent ) -> void:
 			_event.is_action_pressed("ui_accept")
 	):
 		if text_in_progress == true:
-			content.visible_characters = text_length
-			timer.stop()
-			if ( dialog_item_index < dialog_items.size() - 1 ):
-				if ( dialog_items[ dialog_item_index ] is DebateText && dialog_items[ dialog_item_index + 1 ] is DebateChoice ):
-					dialog_item_index += 1
-					start_dialog()
-					return
-			text_in_progress = false
-			show_dialog_button_indicator( true )
+			if !slow:
+				content.visible_characters = text_length
+				timer.stop()
+				if ( dialog_item_index < dialog_items.size() - 1 ):
+					if ( dialog_items[ dialog_item_index ] is DebateText && dialog_items[ dialog_item_index + 1 ] is DebateChoice ):
+						dialog_item_index += 1
+						start_dialog()
+						return
+				text_in_progress = false
+				show_dialog_button_indicator( true )
 			return
 		elif waiting_for_choice == true:
 			return
@@ -290,6 +291,7 @@ func _dialog_choice_selected( _d ) -> void:
 
 
 func set_dialog_background( _d : DialogBackground ):
+	advance_dialog()
 	if ( background.texture == null ):
 		background.texture = _d.background
 		background_animation_player.play( "initial_fade_in" )
@@ -302,10 +304,6 @@ func set_dialog_background( _d : DialogBackground ):
 		background_animation_player.play( "final_fade_out" )
 		await background_animation_player.animation_finished
 		background.texture = null
-	
-	dialog_item_index += 1
-	start_dialog()
-	
 	pass
 
 

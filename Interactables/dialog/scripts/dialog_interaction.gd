@@ -13,6 +13,8 @@ var dialog_items_2 : Array[ DialogItem ]
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+var wait : bool = false
+
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
@@ -20,6 +22,8 @@ func _ready() -> void:
 	
 	area_entered.connect( _on_area_enter )
 	area_exited.connect( _on_area_exit )
+	
+	LevelManager.extra_dialogue.connect( _on_extra_dialogue )
 	
 	if name == "Debate":
 		DialogSystem.debate_failed.connect( _on_debate_fail )
@@ -39,18 +43,19 @@ func _ready() -> void:
 
 
 func player_interact() -> void:
-	player_interacted.emit()
-	await get_tree().process_frame
-	await get_tree().process_frame
-	if ( !LevelManager.interacted.has( str( get_path() ) ) ):
-		LevelManager.interacted.append( str( get_path() ) )
-		DialogSystem.show_dialog( dialog_items )
-	else:
-		if ( !dialog_items_2.is_empty() ):
-			DialogSystem.show_dialog( dialog_items_2 )
-		else:
+	if name != "wait" || wait:
+		player_interacted.emit()
+		await get_tree().process_frame
+		await get_tree().process_frame
+		if ( !LevelManager.interacted.has( str( get_path() ) ) ):
+			LevelManager.interacted.append( str( get_path() ) )
 			DialogSystem.show_dialog( dialog_items )
-	DialogSystem.finished.connect( _on_dialog_finished )
+		else:
+			if ( !dialog_items_2.is_empty() ):
+				DialogSystem.show_dialog( dialog_items_2 )
+			else:
+				DialogSystem.show_dialog( dialog_items )
+		DialogSystem.finished.connect( _on_dialog_finished )
 	pass
 
 
@@ -114,3 +119,7 @@ func _set_size( value : Vector2 ) -> void:
 	var shape = RectangleShape2D.new()
 	shape.size = size
 	$CollisionShape2D.set_shape( shape )
+
+
+func _on_extra_dialogue() -> void:
+	wait = true

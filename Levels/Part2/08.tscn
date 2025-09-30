@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=4 uid="uid://c5b6raoo2orms"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_0j080"]
-[ext_resource type="AudioStream" uid="uid://0aojls0cgt76" path="res://Levels/music/searching.mp3" id="2_0j080"]
+[ext_resource type="AudioStream" uid="uid://bapmjca2el4vh" path="res://Levels/music/searching.ogg" id="2_0j080"]
 [ext_resource type="TileSet" uid="uid://k4sa1rxa7ww0" path="res://Tile Maps/Tile Sets/pool.tres" id="3_0tvew"]
 [ext_resource type="Script" uid="uid://2hobeot03u4v" path="res://Tile Maps/level_tile_map.gd" id="4_5ix0d"]
 [ext_resource type="PackedScene" uid="uid://uqut3xy8f7mb" path="res://Levels/player_spawn.tscn" id="5_nfqsk"]

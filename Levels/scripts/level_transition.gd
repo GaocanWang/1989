@@ -48,6 +48,7 @@ func _ready() -> void:
 		body_entered.connect( _player_entered )
 	
 	LevelManager.part3.connect( _on_part_3 )
+	LevelManager.extra_dialogue.connect( _on_extra_dialogue )
 	
 	for c in get_children():
 		dialog_items.append( c )
@@ -128,3 +129,7 @@ func _on_area_exit( _a : Area2D ) -> void:
 func _on_part_3() -> void:
 	if level == "uid://dfd4xxeb28efh":
 		level = "res://Levels/Part2/17.tscn"
+
+
+func _on_extra_dialogue() -> void:
+	level = "res://Levels/Part2/21.tscn"

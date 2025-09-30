@@ -1,4 +1,5 @@
 class_name SinkPieceEffect extends ItemEffect
 
 func use() -> void:
-	PauseMenu.hide_pause_menu()
+	if PauseMenu.waiting_for_item_use:
+		PauseMenu.hide_pause_menu()

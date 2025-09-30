@@ -80,7 +80,7 @@ func load_game( path : String ) -> void:
 	var save_dict : Dictionary = json.get_data() as Dictionary
 	current_save = save_dict
 	
-	LevelManager.load_new_level( current_save.scene_path, "", Vector2.ZERO )
+	LevelManager.load_new_level( current_save.scene_path, "load", Vector2.ZERO )
 	
 	await LevelManager.level_load_started
 	

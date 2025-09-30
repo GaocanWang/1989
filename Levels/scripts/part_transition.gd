@@ -167,6 +167,7 @@ func _on_yes() -> void:
 	#play door opening sound
 	DialogSystem.show_dialog( dialog_items_3 )
 	await DialogSystem.finished
+	get_tree().paused = true
 	art.show()
 	animation_player.play("lower_art")
 	SceneTransition.fade_in()

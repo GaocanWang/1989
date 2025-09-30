@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dykoc6tspwxgs" path="res://FullScreenArt/debate eris talking.png" id="1_hmeyp"]
 [ext_resource type="Script" uid="uid://cg8c1j6taerih" path="res://npc/scripts/npc_resource.gd" id="1_p0pt8"]
-[ext_resource type="Texture2D" uid="uid://b6f5ynd5tphr" path="res://npc/sprites/portraits/OFFICER Y FULL SPRITESHEET.png" id="2_hmeyp"]
+[ext_resource type="Texture2D" uid="uid://b6f5ynd5tphr" path="res://portraits/OFFICER Y FULL SPRITESHEET.png" id="2_hmeyp"]
 [ext_resource type="Texture2D" uid="uid://cht6lgnfn4ay2" path="res://npc/sprites/y.png" id="3_ckrfj"]
 
 [resource]

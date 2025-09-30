@@ -7,7 +7,8 @@ var document : Array[String] = ["Kickboards (14)\nNoodles (20)\nTowel (8)",
 
 func use() -> void:
 	PauseMenu.hide_pause_menu()
-	DocumentViewer.show_document(document)
-	if PauseMenu.tree().current_scene.name == "09":
+	if !PauseMenu.waiting_for_item_use:
+		DocumentViewer.show_document(document)
+	elif PauseMenu.tree().current_scene.name == "09":
 		await DocumentViewer.finished
 		LevelManager.extra_dialogue.emit()

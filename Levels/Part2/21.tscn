@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://dpavb4uyqvct1"]
+[gd_scene load_steps=18 format=4 uid="uid://dpavb4uyqvct1"]
 
 [ext_resource type="Script" uid="uid://b3mbmxr3iysya" path="res://Levels/scripts/level.gd" id="1_o81uh"]
 [ext_resource type="TileSet" uid="uid://k4sa1rxa7ww0" path="res://Tile Maps/Tile Sets/pool.tres" id="3_btstd"]
@@ -12,7 +12,6 @@
 [ext_resource type="Resource" uid="uid://di457jgt256ub" path="res://npc/00_npcs/teresa.tres" id="11_snorm"]
 [ext_resource type="Resource" uid="uid://ctbf7x8e37pym" path="res://npc/00_npcs/eris.tres" id="12_wuioh"]
 [ext_resource type="Resource" uid="uid://c2w2tyjg78bol" path="res://npc/00_npcs/amelia.tres" id="13_1eu4u"]
-[ext_resource type="Script" uid="uid://c705kjd7gp3mf" path="res://Levels/scripts/storage_transition.gd" id="14_xwlx7"]
 [ext_resource type="PackedScene" uid="uid://bkssnj2mcwv8c" path="res://Interactables/dialog/dialog_interaction.tscn" id="15_anugu"]
 [ext_resource type="Script" uid="uid://6cyylp4dfkoi" path="res://Interactables/dialog/scripts/dialog_background.gd" id="15_ur74q"]
 [ext_resource type="Texture2D" uid="uid://lif6ysy0jebs" path="res://FullScreenArt/1920x1080-black-solid-color-background.jpg" id="16_1r7dw"]
@@ -39,11 +38,11 @@ tile_map_data = PackedByteArray("AAABAAIAAQAEAAEAADABAAMAAQAEAAEAADABAAQAAQAEAAE
 tile_set = ExtResource("3_btstd")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_f4025")]
-position = Vector2(326, 110)
+position = Vector2(596, 490)
 
 [node name="LevelTransition" parent="." instance=ExtResource("6_s1ui4")]
 position = Vector2(36, 600)
-level = "uid://obu8sxcupoxb"
+level = "uid://cur31np6gtsa8"
 target_transition_area = "LevelTransition2"
 
 [node name="LevelTransition2" parent="." instance=ExtResource("6_s1ui4")]
@@ -120,10 +119,9 @@ metadata/_custom_type_script = "uid://dqrok5vg7oa3d"
 position = Vector2(36, 384)
 level = "uid://casrrdxe161c7"
 
-[node name="StorageTransition" parent="." instance=ExtResource("6_s1ui4")]
+[node name="LevelTransition5" parent="." instance=ExtResource("6_s1ui4")]
 position = Vector2(612, 480)
-script = ExtResource("14_xwlx7")
-level = "uid://clhqjnwycitrn"
+level = "uid://b45lxy5k60grj"
 side = 1
 
 [node name="LevelTransition6" parent="." instance=ExtResource("6_s1ui4")]

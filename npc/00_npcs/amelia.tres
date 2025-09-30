@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ciglpb54evyeb" path="res://FullScreenArt/debate amelia talking.png" id="1_q6sta"]
 [ext_resource type="Script" uid="uid://cg8c1j6taerih" path="res://npc/scripts/npc_resource.gd" id="1_tw8mj"]
 [ext_resource type="Texture2D" uid="uid://c5mo4ugu2uvtj" path="res://Player/Sprites/amelia.png" id="2_o5vo6"]
-[ext_resource type="Texture2D" uid="uid://cev1rrqyljobf" path="res://npc/sprites/portraits/amelia 4 rows.png" id="2_q6sta"]
+[ext_resource type="Texture2D" uid="uid://cev1rrqyljobf" path="res://portraits/amelia 4 rows.png" id="2_q6sta"]
 
 [resource]
 script = ExtResource("1_tw8mj")

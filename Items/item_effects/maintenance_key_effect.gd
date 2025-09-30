@@ -5,6 +5,7 @@ var dialog_items : Array[DialogItem] = [DialogText.new(), DialogText.new(), Dial
 func use() -> void:
 	if !LevelManager.flags.valve_unlocked && LevelManager.near_valve:
 		PauseMenu.hide_pause_menu()
+		PauseMenu.tree().paused = true
 	
 		dialog_items[0].text = "“That should do it.”"
 		dialog_items[0].npc_info = load( "res://npc/00_npcs/amelia.tres" )
@@ -20,5 +21,7 @@ func use() -> void:
 		await PauseMenu.tree().create_timer(1.0).timeout
 		DialogSystem.show_dialog( dialog_items )
 		LevelManager.flags.valve_unlocked = true
+	elif PauseMenu.waiting_for_item_use:
+		PauseMenu.hide_pause_menu()
 	else:
 		PauseMenu.play_audio( load( "res://GUI/dialog_system/audio/error sfx.mp3" ) )

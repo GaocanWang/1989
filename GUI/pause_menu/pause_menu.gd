@@ -44,7 +44,7 @@ func _ready() -> void:
 		music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")))
 		sfx_slider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX")))
 	
-	continue_button.pressed.connect( hide_pause_menu )
+	continue_button.pressed.connect( _on_continue_pressed )
 	quit_to_menu.pressed.connect( _quit_to_menu )
 	quit_to_desktop.pressed.connect( _quit_to_desktop )
 	
@@ -79,7 +79,7 @@ func _on_button_focus(button: Button):
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("pause"):
+	if event.is_action_pressed("pause") && !waiting_for_item_use:
 		if is_paused == false:
 			if DialogSystem.is_active || is_title_scene_active:
 				return
@@ -90,12 +90,16 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func show_pause_menu() -> void:
+	PlayerManager.player.state_machine.change_state( PlayerManager.player.state_machine.states[0] )
 	get_tree().paused = true
 	visible = true
 	is_paused = true
 	shown.emit()
 	await get_tree().process_frame
-	continue_button.grab_focus()
+	if waiting_for_item_use:
+		$Control/SideBar/Inventory.grab_focus()
+	else:
+		continue_button.grab_focus()
 
 
 func hide_pause_menu() -> void:
@@ -103,6 +107,7 @@ func hide_pause_menu() -> void:
 	visible = false
 	is_paused = false
 	hidden.emit()
+	PlayerManager.player.check_pressed()
 
 
 func _quit_to_menu() -> void:
@@ -144,3 +149,8 @@ func play_audio( audio : AudioStream ) -> void:
 
 func tree() -> SceneTree:
 	return get_tree()
+
+
+func _on_continue_pressed() -> void:
+	if !waiting_for_item_use:
+		hide_pause_menu()

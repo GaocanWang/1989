@@ -18,5 +18,7 @@ func use() -> void:
 		LevelManager.flags.storage_open = true
 		await PauseMenu.tree().create_timer(1.0).timeout
 		DialogSystem.show_dialog( dialog_items )
+	elif PauseMenu.waiting_for_item_use:
+		PauseMenu.hide_pause_menu()
 	else:
 		PauseMenu.play_audio( load( "res://GUI/dialog_system/audio/error sfx.mp3" ) )
