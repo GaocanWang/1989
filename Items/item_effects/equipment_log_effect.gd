@@ -9,6 +9,6 @@ func use() -> void:
 	PauseMenu.hide_pause_menu()
 	if !PauseMenu.waiting_for_item_use:
 		DocumentViewer.show_document(document)
-	elif PauseMenu.tree().current_scene.name == "09":
+	if PauseMenu.tree().current_scene.name == "09":
 		await DocumentViewer.finished
 		LevelManager.extra_dialogue.emit()
